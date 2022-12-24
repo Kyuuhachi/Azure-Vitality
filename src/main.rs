@@ -82,9 +82,11 @@ impl Context {
 			let psp = scena::ed7::read(GameData::AO, &std::fs::read(self.psp_path.join(format!("{name}.bin"))).unwrap()).unwrap();
 			let evo = scena::ed7::read(GameData::AO_EVO, &std::fs::read(self.evo_path.join(format!("{name}.bin"))).unwrap()).unwrap();
 			assert_eq!(gf.functions.len(), psp.functions.len());
-			for (a, b) in gf.functions.iter_mut().zip(psp.functions.iter()) {
+			for (i, (a, b)) in gf.functions.iter_mut().zip(psp.functions.iter()).enumerate() {
 				if let Some(c) = merge_gf(a, b) {
 					*a = c;
+				} else {
+					eprintln!("failed to merge {name}:{i}, using plain GF");
 				}
 			}
 			AScena {
@@ -126,11 +128,28 @@ fn merge_gf(gf: &[FlatInsn], psp: &[FlatInsn]) -> Option<Vec<FlatInsn>> {
 	});
 	texts.reverse();
 	let mut success = true;
-	psp.accept_mut(&mut |a| match (a, texts.pop()) {
-		(IAM::Text(a), Some(I::Text(b))) => *a = b,
-		(IAM::TextTitle(a), Some(I::TextTitle(b))) => *a = b,
-		(IAM::MenuItem(a), Some(I::MenuItem(b))) => *a = b,
-		(IAM::Text(..) | IAM::TextTitle(..) | IAM::MenuItem(..), _) => success = false,
+	psp.accept_mut(&mut |a| match a {
+		IAM::Text(a) => {
+			if let Some(I::Text(b)) = texts.pop() {
+				*a = b
+			} else {
+				success = false
+			}
+		}
+		IAM::TextTitle(a) => {
+			if let Some(I::TextTitle(b)) = texts.pop() {
+				*a = b
+			} else {
+				success = false
+			}
+		}
+		IAM::MenuItem(a) => {
+			if let Some(I::MenuItem(b)) = texts.pop() {
+				*a = b
+			} else {
+				success = false
+			}
+		}
 		_ => {}
 	});
 	success &= texts.is_empty();
