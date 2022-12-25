@@ -113,7 +113,7 @@ fn translate_text(tl: &mut impl Translator, t: &Text) -> Text {
 		static ref CONTENT: Regex = Regex::new(r"(?xs)
 			^
 			((?:\{.*?\}|\#\d+[S])*)
-			((?:\#\d*[ABFPVWZ])*)
+			((?:\#\d*[ABFNPVWZ])*)
 			(.*?)
 			((?:\{wait\})?)
 			$

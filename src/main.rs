@@ -227,6 +227,7 @@ struct AList<'a, T> {
 }
 
 impl AList<'_, Vec<TreeInsn>> {
+	#[track_caller]
 	fn ifs(&mut self, n: usize) -> AList<Vec<(Option<Expr>, Vec<TreeInsn>)>> {
 		AList {
 			main: self.main.iter_mut().filter_map(f!(TreeInsn::If(x) => x)).nth(n).unwrap(),
@@ -236,6 +237,7 @@ impl AList<'_, Vec<TreeInsn>> {
 }
 
 impl<A: PartialEq, B> AList<'_, Vec<(A, B)>> {
+	#[track_caller]
 	fn clause(&mut self, k: &A) -> AList<B> {
 		AList {
 			main: self.main.iter_mut().find_map(|(a,b)| (a == k).then_some(b)).unwrap(),
@@ -245,6 +247,7 @@ impl<A: PartialEq, B> AList<'_, Vec<(A, B)>> {
 }
 
 impl<T: Clone + VisitMut> AList<'_, Vec<T>> {
+	#[track_caller]
 	fn tail(&mut self, tl: &mut impl Translator) {
 		self.main.extend(self.evo[self.main.len()..].iter().map(|a| translate(tl, a)))
 	}
@@ -262,24 +265,47 @@ fn main() {
 		"./data/ao-gf/data_en/text/t_quest._dt",
 		"./data/vita/extract/ao/data/data/text/t_quest._dt",
 	);
+	quest125(&mut ctx);
+}
+
+fn quest125(ctx: &mut Context) {
 	let nil = &mut Nil;
 
 	let tl = &mut Dump {};
-	tl.comment("quest");
 	ctx.copy_quest(QuestId(125), tl);
 
-	tl.comment("c1300");
-	let c1300 = ctx.scena("c1300");
-	c1300.main.chcp.push(Some("chr/ch06000.itc".to_owned()));
-	c1300.copy_npc(1, tl);  // Grace
-	c1300.copy_npc(10, tl); // Shirley
-	c1300.copy_npc(11, tl); // Sigmund
-	c1300.copy_func(0, 9, tl); // talk Grace
-	c1300.func(1, |a| a.ifs(1).clause(&Some(flag![2564])).tail(nil));
+	tl.comment("c1300 - IBC exterior");
+	let s = ctx.scena("c1300");
+	s.main.chcp.push(Some("chr/ch06000.itc".to_owned()));
+	s.copy_npc(1, tl);  // Grace
+	s.copy_npc(10, tl); // Shirley
+	s.copy_npc(11, tl); // Sigmund
+	s.copy_func(0, 9, tl); // talk Grace
+	s.func(1, |a| a.ifs(1).clause(&Some(flag![2564])).tail(nil));
 
-	tl.comment("c1200");
-	let c1200 = ctx.scena("c1200");
-	c1200.main.chcp[19] = Some("chr/ch28100.itc".to_owned());
-	c1200.copy_npc(31, tl); // Reins
-	c1200.copy_func(0, 107, tl); // talk Reins
+	tl.comment("c1200 - Harbor District");
+	let s = ctx.scena("c1200");
+	s.main.chcp[19] = Some("chr/ch28100.itc".to_owned());
+	s.copy_npc(31, tl); // Reins
+	s.copy_func(0, 107, tl); // talk Reins
+
+	tl.comment("c0490 - Neue Blanc");
+	let s = ctx.scena("c0490");
+	s.copy_npc(18, tl); // Wazy's patron
+	s.copy_npc(19, tl); // Grace
+	s.copy_npc(20, tl); // Woman
+	s.copy_npc(21, tl); // Man
+	s.copy_npc(22, tl); // Man
+	s.copy_npc(23, tl); // Imperial mafioso
+	s.copy_npc(24, tl); // Republic mafioso
+	s.copy_func(0, 15, tl); // main event
+	s.copy_func(0, 16, tl); // fork
+	s.copy_func(0, 17, tl); // camera preset
+	s.copy_func(0, 18, tl); // camera preset
+	s.copy_func(0, 19, tl); // fork
+	s.copy_func(0, 20, tl); // fork
+	s.copy_func(0, 21, tl); // fork
+	s.copy_func(0, 22, tl); // fork: shake
+	s.copy_func(0, 23, tl); // fork: emote
+	s.func(1, |a| a.ifs(0).tail(nil));
 }

@@ -23,6 +23,13 @@ impl<T: VisitMut> VisitMut for Vec<T> {
 	}
 }
 
+impl<A: VisitMut, B: VisitMut> VisitMut for (A, B) {
+	fn accept_mut(&mut self, v: &mut impl FnMut(IAM)) {
+		self.0.accept_mut(v);
+		self.1.accept_mut(v);
+	}
+}
+
 impl VisitMut for ed7::Entry {
 	fn accept_mut(&mut self, v: &mut impl FnMut(IAM)) {
 		accept_val_mut(IAM::FuncRef(&mut self.init), v);
