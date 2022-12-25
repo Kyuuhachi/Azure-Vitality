@@ -303,6 +303,13 @@ fn quest125(ctx: &mut Context) {
 	let tl = &mut Dump {};
 	ctx.copy_quest(QuestId(125), tl);
 
+	tl.comment("c1200 - Harbor District");
+	let s = ctx.scena("c1200");
+	s.main.chcp[19] = Some("chr/ch28100.itc".to_owned());
+	s.copy_npc(31, tl); // Reins
+	s.copy_func(0, 107, tl); // talk Reins
+	s.func(8, |a| a.ifs(1).clause(&Some(flag![2564])).tail(nil));
+
 	tl.comment("c1300 - IBC exterior");
 	let s = ctx.scena("c1300");
 	s.main.chcp.push(Some("chr/ch06000.itc".to_owned()));
@@ -311,13 +318,6 @@ fn quest125(ctx: &mut Context) {
 	s.copy_npc(11, tl); // Sigmund
 	s.copy_func(0, 9, tl); // talk Grace
 	s.func(1, |a| a.ifs(1).clause(&Some(flag![2564])).tail(nil));
-
-	tl.comment("c1200 - Harbor District");
-	let s = ctx.scena("c1200");
-	s.main.chcp[19] = Some("chr/ch28100.itc".to_owned());
-	s.copy_npc(31, tl); // Reins
-	s.copy_func(0, 107, tl); // talk Reins
-	s.func(8, |a| a.ifs(1).clause(&Some(flag![2564])).tail(nil));
 
 	tl.comment("c0490 - Neue Blanc");
 	let s = ctx.scena("c0490");
