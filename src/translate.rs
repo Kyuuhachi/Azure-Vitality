@@ -1,3 +1,5 @@
+use std::collections::VecDeque;
+
 use regex::Regex;
 use themelios::text::{Text, TextSegment};
 use themelios::scena::code::InsnArgMut as IAM;
@@ -33,6 +35,63 @@ impl Translator for Nil {
 
 	fn translate(&mut self, s: &str) -> String {
 		panic!("no translation expected! {s}");
+	}
+}
+
+pub struct Translate(VecDeque<(String, String)>);
+impl Translate {
+	pub fn load(i: &str) -> Translate {
+		let mut lines = Vec::<(String, String)>::new();
+		#[derive(PartialEq)]
+		enum State { None, Raw, Tl }
+		let mut state = State::None;
+		for line in i.lines() {
+			let line = line.split_once("##").map_or_else(|| line, |a| a.0.trim_end_matches(' '));
+
+			if state == State::Tl && !line.starts_with('\t') {
+				state = State::None;
+			}
+
+			if line.is_empty() && state == State::None {
+				continue
+			}
+
+			if let Some(line) = line.strip_prefix('\t') {
+				assert!(state != State::None);
+				if state == State::Tl {
+					lines.last_mut().unwrap().1.push('\n');
+				}
+				lines.last_mut().unwrap().1.push_str(line);
+				state = State::Tl;
+			} else {
+				if state == State::Raw {
+					lines.last_mut().unwrap().0.push('\n');
+				} else {
+					lines.push((String::new(), String::new()));
+				}
+				lines.last_mut().unwrap().0.push_str(line);
+				state = State::Raw;
+			}
+		}
+		assert!(state != State::Raw);
+		Translate(lines.into())
+	}
+}
+
+impl Drop for Translate {
+	fn drop(&mut self) {
+		if !self.0.is_empty() {
+			panic!("Not all was translated! {:?}", &self.0);
+		}
+	}
+}
+
+impl Translator for Translate {
+	fn comment(&mut self, _: &str) {}
+
+	fn translate(&mut self, s: &str) -> String {
+		assert_eq!(Some(s), self.0.front().map(|a| a.0.as_str()));
+		self.0.pop_front().unwrap().1
 	}
 }
 
