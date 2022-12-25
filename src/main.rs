@@ -288,6 +288,7 @@ fn quest125(ctx: &mut Context) {
 	s.main.chcp[19] = Some("chr/ch28100.itc".to_owned());
 	s.copy_npc(31, tl); // Reins
 	s.copy_func(0, 107, tl); // talk Reins
+	s.func(8, |a| a.ifs(1).clause(&Some(flag![2564])).tail(nil));
 
 	tl.comment("c0490 - Neue Blanc");
 	let s = ctx.scena("c0490");
