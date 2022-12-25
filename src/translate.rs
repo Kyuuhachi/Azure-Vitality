@@ -17,10 +17,10 @@ impl Translator for Dump {
 
 	fn translate(&mut self, s: &str) -> String {
 		println!();
-		for l in s.split(|a| a == '\n' || a == '\r') {
+		for l in s.split('\n') {
 			println!("{l}");
 		}
-		for l in s.split(|a| a == '\n' || a == '\r') {
+		for l in s.split('\n') {
 			println!("\t{l}");
 		}
 		s.to_owned()
@@ -129,7 +129,7 @@ fn translate_text(tl: &mut impl Translator, t: &Text) -> Text {
 	assert_eq!(t, &str2text(&s));
 	let s2 = s.split("{page}").map(|p| {
 		let c = CONTENT.captures(p).unwrap();
-		format!("{}{}{}", &c[2], tl.translate(&format!("{}{}", &c[1], &c[3])), &c[4])
+		format!("{}{}{}", &c[2], tl.translate(&format!("{}{}", &c[1], &c[3]).replace('\r', "\n")), &c[4])
 	}).collect::<Vec<_>>().join("{page}");
 	str2text(&s2)
 }
