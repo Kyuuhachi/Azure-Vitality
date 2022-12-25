@@ -12,11 +12,17 @@ pub trait Translator {
 pub struct Dump {}
 impl Translator for Dump {
 	fn comment(&mut self, s: &str) {
-		println!("## {s}");
+		println!("\n## {s} {{{{{{1");
 	}
 
 	fn translate(&mut self, s: &str) -> String {
-		println!("{s:?}");
+		println!();
+		for l in s.split(|a| a == '\n' || a == '\r') {
+			println!("{l}");
+		}
+		for l in s.split(|a| a == '\n' || a == '\r') {
+			println!("\t{l}");
+		}
 		s.to_owned()
 	}
 }
