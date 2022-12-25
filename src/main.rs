@@ -39,16 +39,16 @@ impl Context {
 		psp: impl AsRef<Path>,
 		evo: impl AsRef<Path>,
 		gf: impl AsRef<Path>,
-		quests: impl AsRef<Path>,
-		evo_quests: impl AsRef<Path>,
+		quests: Vec<ED7Quest>,
+		evo_quests: Vec<ED7Quest>,
 	) -> Context {
 		Context {
 			psp_path: psp.as_ref().to_owned(),
 			evo_path: evo.as_ref().to_owned(),
 			gf_path: gf.as_ref().to_owned(),
 			scenas: HashMap::new(),
-			quests: quest::read_ed7(GameData::AO, &std::fs::read(quests).unwrap()).unwrap(),
-			evo_quests: quest::read_ed7(GameData::AO_EVO, &std::fs::read(evo_quests).unwrap()).unwrap(),
+			quests,
+			evo_quests,
 		}
 	}
 
@@ -257,15 +257,44 @@ macro_rules! flag {
 	($n:literal) => { Expr::Flag(Flag($n)) }
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
+	use std::fs;
+	use std::io::BufWriter;
 	let mut ctx = Context::new(
 		"./data/ao-psp/PSP_GAME/USRDIR/data/scena/",
 		"./data/vita/extract/ao/data1/data/scena/",
 		"./data/ao-gf/data_en/scena/",
-		"./data/ao-gf/data_en/text/t_quest._dt",
-		"./data/vita/extract/ao/data/data/text/t_quest._dt",
+		quest::read_ed7(GameData::AO, &fs::read("./data/ao-gf/data_en/text/t_quest._dt")?)?,
+		quest::read_ed7(GameData::AO_EVO, &fs::read("./data/vita/extract/ao/data/data/text/t_quest._dt")?)?,
 	);
 	quest125(&mut ctx);
+
+	let outdir = Path::new("./patch");
+	if outdir.exists() {
+		fs::remove_dir_all(outdir)?;
+	}
+	let scenadir = outdir.join("scena");
+	let textdir = outdir.join("text");
+	fs::create_dir_all(&scenadir)?;
+	fs::create_dir_all(&textdir)?;
+
+	fs::write(textdir.join("t_quest._dt"), quest::write_ed7(GameData::AO, &ctx.quests)?)?;
+	for (name, v) in &ctx.scenas {
+		fs::write(scenadir.join(format!("{name}.bin")), scena::ed7::write(GameData::AO, &v.main)?)?;
+	}
+
+	let dumpdir = Path::new("./patch-dump");
+	if dumpdir.exists() {
+		fs::remove_dir_all(dumpdir)?;
+	}
+	fs::create_dir_all(dumpdir)?;
+
+	for (name, v) in &ctx.scenas {
+		let ctx = calmare::Context::new(BufWriter::new(fs::File::create(dumpdir.join(name))?));
+		calmare::ed7::write(ctx, &v.main)?;
+	}
+
+	Ok(())
 }
 
 fn quest125(ctx: &mut Context) {
