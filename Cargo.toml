@@ -9,6 +9,8 @@ themelios = { path = "../kaiseki/themelios" }
 calmare = { path = "../kaiseki/calmare" }
 extend = "1.1.2"
 derive_more = "0.99.17"
+regex = "1.7.0"
+lazy_static = "1.4.0"
 
 [profile.dev.package.'*']
 opt-level = 3
