@@ -13,7 +13,7 @@ use visit::VisitMut;
 
 mod visit;
 mod translate;
-use translate::{Nil, Dump, Translator, translate};
+use translate::*;
 
 macro_rules! f {
 	($p:pat => $v:expr) => { |_a| {
@@ -300,7 +300,8 @@ fn main() -> anyhow::Result<()> {
 fn quest125(ctx: &mut Context) {
 	let nil = &mut Nil;
 
-	let tl = &mut Dump {};
+	let tl = &mut Translate::load(include_str!("../text/quest125.txt"));
+	tl.comment("t_quest");
 	ctx.copy_quest(QuestId(125), tl);
 
 	tl.comment("c1200 - Harbor District");
