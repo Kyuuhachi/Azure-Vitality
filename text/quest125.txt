@@ -1,10 +1,10 @@
 ## t_quest {{{1
 
 不正取引の張りこみ
-	不正取引の張りこみ
+	Illicit Trade Stakeout
 
 グレイス
-	グレイス
+	Grace
 
 　グレイスさんが、
 　耳寄りな情報があると言う。
@@ -217,26 +217,27 @@
 うふふん♪
 ロイド君たち、
 いいところで会ったわ
-	Oh, if it isn't my
-	favorite Special Support
-	gang. Great timing! ♪
+	Oh, if it isn't my favorite
+	Special Support gang.
+	Great timing! ♪
 
 お姉さんから、
 耳寄りな情報があるの。
 聞いて損はないと思うわよ？
 	I've got some really tasty
-	intel for you, which I don't
-	think has gotten out yet.
+	intel for you. I don't think
+	it has gotten out yet.
 
 ## L
 どんな情報ですか？
-	And what kind of intel would this be?
+	And what kind of intel
+	would this be?
 
 ## G
 あまり大きな声では
 言えないのよね。
-	The kind that should only be
-	discussed in whispers.
+	The kind that should only
+	be discussed in whispers.
 
 ## E
 もしかして、
@@ -247,7 +248,7 @@
 ## W
 フフ……
 ちょっと怪しいよね。
-	Heh... Yeah, that's not
+	Heh... Yeah, this doesn't sound
 	suspicious in the slightest.
 
 情報を欲しがるのが
@@ -273,9 +274,9 @@
 
 ある場所で、不正な取引が行われる、
 という噂を小耳に挟んだのよ。
-	I happened to overhear that some
-	rather distasteful trade deals are
-	going to be served in a certain place.
+	I happened to overhear rumors of a
+	rather distasteful trade deal being
+	cooked up.
 
 ## W
 そういう情報って、
@@ -288,14 +289,15 @@
 ## G
 もちろん！
 現場を押さえて、大スクープ！
-	Of course I would! I'd pin the place
-	down and get the scoop of the century!
+	Of course I would!
+	I'd catch them red-handed and
+	get the scoop of the century!
 
 ……と新聞に載せるつもりだったのよ。
 取引するのがクロスベルの人ならね～。
-	...Or that was what I was going
-	to do, if only the culprits
-	were Crossbellan.
+	...Or that was what I was
+	going to do, if only the
+	culprits were Crossbellan.
 
 ## L
 なるほど……
@@ -348,12 +350,12 @@
 だから、逮捕劇を記事にしたほうが、
 いいと思ったわけよ。
 	That's the gist of it. So I was
-	thinking, an article on their
-	arrest would be pretty sweet, too.
+	thinking, an article on their arrests
+	would be pretty sweet, too.
 
 ## W
 フフ、抜け目ないね。
-	Oho, feeling shrewd today.
+	Ho, feeling shrewd today.
 
 ## G
 犯人の顔写真はあるのよ。
@@ -367,11 +369,11 @@
 取引材料を持っているだけの人を
 逮捕するわけにはいかないな。
 	We can't arrest people for just
-	being in possesion of contraband.
+	being in possession of contraband.
 
 不正な取引の現場を押さえないと。
 	We'll need to stake out the scene
-	of the m-- I mean deal.
+	of the m-#300W-#W I mean deal.
 
 ## N
 その取引は、今日なんですか？
@@ -403,8 +405,9 @@
 ……もしかして、その場所というのは、
 遅い時間から営業するお店なんじゃ
 ないかしら？
-	Would this place perhaps be
-	somewhere with late opening hours?
+	Would this place perhaps
+	be somewhere with late
+	opening hours?
 
 ## G
 さすが、エリィさん。
@@ -460,488 +463,593 @@
 そうこなくっちゃ！
 きっちり捕まえて、いい記事になって
 ちょうだいね。
-	そうこなくっちゃ！
-	きっちり捕まえて、いい記事になって
-	ちょうだいね。
+	That's the spirit!
+	Now go out there and make
+	me a great arrest article.
 
+## L
 いい記事のために捜査するわけじゃ
 ないですけど……
-	いい記事のために捜査するわけじゃ
-	ないですけど……
+	We're not doing this to make
+	you an article.
 
 外国人同士の不正な取引が
 あるんですよね？
-	外国人同士の不正な取引が
-	あるんですよね？
+	To sum it up, we're after a number
+	of foreign citizens looking to
+	conduct an illicit trade deal.
 
+## G
 ええ、今日、ある場所でね。
 信用できる筋からの情報よ。
-	ええ、今日、ある場所でね。
-	信用できる筋からの情報よ。
+	Yes, today, at that one place.
+	The intel is from a reliable source.
 
+## R
 その、ある場所ってのは？
-	その、ある場所ってのは？
+	And by "that one place", you mean...?
 
+## G
 焦らないの。たぶん、あなたたちも
 名前くらい知ってるんじゃないかしら？
-	焦らないの。たぶん、あなたたちも
-	名前くらい知ってるんじゃないかしら？
+	Don't give me that. I'm sure you've
+	all at least heard of the place.
 
 ロイド君は潔癖だから、
 行ったことはないと思うけど
-	ロイド君は潔癖だから、
-	行ったことはないと思うけど
+	Well, Lloyd is a goody two-shoes,
+	so I bet you've never been there.
 
+## E
 …………いかがわしいところみたいね
-	…………いかがわしいところみたいね
+	...Sounds like a shady place.
 
+## N
 まぁ、犯罪者が選ぶ場所ですもんね
-	まぁ、犯罪者が選ぶ場所ですもんね
+	Well, it's the kind of place
+	that crooks would choose.
 
+## G
 ノイエ＝ブラン、って知ってるかしら？
-	ノイエ＝ブラン、って知ってるかしら？
+	Neue Blanc. Heard of it?
 
+## L
 そんな場所で……
-	そんな場所で……
+	That place...
 
+## R
 …………
-	…………
+	...
 
+## E
 それって……
 昨日、ランディが……その店よね？
-	それって……
-	昨日、ランディが……その店よね？
+	Isn't that...
+	The place Randy went to yesterday?
 
+## L
 ああ、やっかいな場所だ。
 警察も遊撃士も、おいそれと手出しできない。
-	ああ、やっかいな場所だ。
-	警察も遊撃士も、おいそれと手出しできない。
+	That place's nothing but trouble.
+	Neither the police nor the guild
+	have any influence there.
 
+## W
 ……まさか、彼らが絡んでるってこと？
-	……まさか、彼らが絡んでるってこと？
+	...Don't tell me THEY are involved.
 
+## G
 いいえ、この件に《クリムゾン商会》は
 絡んでないわ。たぶんね。
-	いいえ、この件に《クリムゾン商会》は
-	絡んでないわ。たぶんね。
+	No, Crimson & Co. are
+	thankfully unaffiliated.
+	I think.
 
+## E
 ほっ……
-	ほっ……
+	Phew.
 
+## N
 その《クリムゾン商会》って、
 猟兵団《赤い星座》のダミー会社ですよね？
-	その《クリムゾン商会》って、
-	猟兵団《赤い星座》のダミー会社ですよね？
+	This Crimson & Co., they're a front
+	for the Red Constellation, aren't they?
 
+## L
 放っておけない相手ではあるけど、
 今、衝突するのは避けたいな。
-	放っておけない相手ではあるけど、
-	今、衝突するのは避けたいな。
+	We can't let this go uninterrupted,
+	but they are not an opponent we can
+	deal with right now.
 
+## N
 そうですね。
 かなり危険そうですもんね……
-	そうですね。
-	かなり危険そうですもんね……
+	Yes... That would be
+	very dangerous.
 
 あ、いえ……
 クロスベルを守るためならば、
 誰とでも戦う覚悟ですが！
-	あ、いえ……
-	クロスベルを守るためならば、
-	誰とでも戦う覚悟ですが！
+	No! If it's for Crossbell's
+	safety, I'll fight anyone.
 
+## Sh
 少女の声
-	少女の声
-
+	Girl's voice
 ふ～ん、覚悟があるんだ？
-	ふ～ん、覚悟があるんだ？
+	Oh? Are you sure about that?
 
+## Sh
 また会ったね、ランディ兄たち
-	また会ったね、ランディ兄たち
+	We meet again, Dolphy.
 
+## R
 チッ……
 なんで、こんなところにいるんだ。
 今度こそ、さっさと失せろ
-	チッ……
-	なんで、こんなところにいるんだ。
-	今度こそ、さっさと失せろ
+	Tch...
+	What in Genenna are you doing here?
+	Get lost. Now.
 
+## Sh
 えー、またまたつれないなあ。
 さっきは手伝ってあげたじゃん！
-	えー、またまたつれないなあ。
-	さっきは手伝ってあげたじゃん！
+	Aww... Still so cold.
+	Even though I helped you out just now.
 
+## E
 ……たしかに、手伝ってもらったけれど
-	……たしかに、手伝ってもらったけれど
+	...I can't deny that she did help.
 
+## N
 ……この件は、相談できませんよね
-	……この件は、相談できませんよね
+	But this time is not a joke.
 
+## L
 すまないが、今回は話せないよ
-	すまないが、今回は話せないよ
+	Sorry, but we can't talk now.
 
+## Sh
 本気で《赤い星座》とやろうっての？
 やめといたほうがいいと思うよ
-	本気で《赤い星座》とやろうっての？
-	やめといたほうがいいと思うよ
+	Are you really going to face the
+	Constellation? Because I wouldn't
+	do that if I were you.
 
 シャーリィは楽しそうだからいいけど
-	シャーリィは楽しそうだからいいけど
+	Well, I'm up for it any time, of course.
 
+## N
 そ、そういう話じゃ……
-	そ、そういう話じゃ……
+	Th-that's not what I...
 
+## Sh
 でも、そう聞こえたけどなあ
-	でも、そう聞こえたけどなあ
+	That's what it sounded like to me.
 
+## R
 はぁ……
 ロイド、こうなっちまうと
-	はぁ……
-	ロイド、こうなっちまうと
+	*sigh* Lloyd, when she gets like this...
 
+## L
 そうみたいだな……
 引いてくれないのは、さっきの件で
 身に沁みてるよ
-	そうみたいだな……
-	引いてくれないのは、さっきの件で
-	身に沁みてるよ
+	Yeah, I see what you mean.
+	The harder we pull, the deeper
+	the hook gets stuck.
 
 仕方ない……説明するしかないか
-	仕方ない……説明するしかないか
+	We've got no choice...
+	I'll explain the situation.
 
+## N
 ううぅ……
 声が大きくてすみません
-	ううぅ……
-	声が大きくてすみません
+	Ugh...
+	Me and my big mouth...
 
+## L
 グレイスさん、実は、この子は……
-	グレイスさん、実は、この子は……
+	Grace, this girl...
 
+## G
 もちろん知ってるわ。
 こんな大物の顔と名前が一致しない
 ようじゃ、ジャーナリスト失格よ。
-	もちろん知ってるわ。
-	こんな大物の顔と名前が一致しない
-	ようじゃ、ジャーナリスト失格よ。
+	Of course I know of her.
+	How could I call myself a
+	journalist if I didn't?
 
+## Sh
 えへへっ。
-	えへへっ。
+	Ehehe.
 
+## G
 うふふん♪
 こんなところで会えるなんて
 ラッキーだわ！
-	うふふん♪
-	こんなところで会えるなんて
-	ラッキーだわ！
+	How lucky to meet you in
+	a place like this! ♪
 
 ぜひ取材を！
 この街に来た目的をズバリ！
-	ぜひ取材を！
-	この街に来た目的をズバリ！
+	A word, if I may!
+	Could you tell me why
+	you came to this city?
 
+## Sh
 仕事だよ、仕事。
 それ以上は言えないんだよね～
-	仕事だよ、仕事。
-	それ以上は言えないんだよね～
+	Work, duh. Can't say
+	any more than that~
 
+## L
 グレイスさん、話が逸れてますよ。
-	グレイスさん、話が逸れてますよ。
+	Grace, I think you're
+	getting sidetracked.
 
+## G
 おっと！
-	おっと！
+	Oops!
 
+## R
 さすが、つーか……
-	さすが、つーか……
+	A reporter to the core, that one.
 
+## E
 たくましいわね。
-	たくましいわね。
+	She's rather fearless.
 
+## G
 じゃあ、この件は私から説明させて
 もらうわね。
-	じゃあ、この件は私から説明させて
-	もらうわね。
+	Well, how about I take
+	care of the explanation?
 
+## L
 お願いします。
-	お願いします。
+	Please do.
 
+## Sh
 うんうん、どういうことなの？
-	うんうん、どういうことなの？
+	What kind of fascinating story
+	will you tell me?
 
+## Sys
+## This one is labeled as "Girl's voice", but I don't think that's my fault. Either it's in Evo too, or it's an engine bug.
 {color 5}グレイスが外国人の不正取引について
 手早く説明した。{color 0}
-	{color 5}グレイスが外国人の不正取引について
-	手早く説明した。{color 0}
+	{color 5}Grace hurriedly summarized the case
+	of the foreigners and the trade deal.{color 0}
 
+## Sh
 なるほど……うちの店で……
 そいつは、ずいぶん楽しそうな連中が
 いるみたいだね。
-	なるほど……うちの店で……
-	そいつは、ずいぶん楽しそうな連中が
-	いるみたいだね。
+	Hmm... At our place?
+	Sounds like a fun bunch.
 
+## L
 言っておくけど、これは警察の仕事だ。
 今度こそ手出し無用だぞ。
-	言っておくけど、これは警察の仕事だ。
-	今度こそ手出し無用だぞ。
+	You should already know, but this is
+	a police matter. Please don't meddle.
 
+## Sh
 わかってるって、お兄さん
-	わかってるって、お兄さん
+	I know, detective boy.
 
 でも……場所がうちの店なら、
 それなりの協力を求めるのが
 スジじゃないの？
-	でも……場所がうちの店なら、
-	それなりの協力を求めるのが
-	スジじゃないの？
+	But... Since the stage is our
+	turf, shouldn't you be asking
+	for our cooperation instead?
 
+## L
 そ、それは……
 たしかに……
-	そ、それは……
-	たしかに……
+	That's... Well...
 
+## E
 取引の現場を押さえるためには、
 お店の協力が必要よね。
-	取引の現場を押さえるためには、
-	お店の協力が必要よね。
+	If we want to catch them in the
+	act, having the proprietors' help
+	would be useful.
 
+## Sh
 そういうこと！
 ちょうど、お店を仕切ってる人が
 来てるから、連れてくるよ。
-	そういうこと！
-	ちょうど、お店を仕切ってる人が
-	来てるから、連れてくるよ。
+	Yup, yup!
+	The guy who runs the shop is
+	just around here, I'll go get him.
 
 そのほうが、話が早いでしょ？
-	そのほうが、話が早いでしょ？
+	That'll make this faster.
 
+## L
 そ、そうかもしれないが……
 うーん……
-	そ、そうかもしれないが……
-	うーん……
+	Err, maybe...?
+	Hmm...
 
 ……よし、わかった。
 お願いするよ。
-	……よし、わかった。
-	お願いするよ。
+	Well, alright.
+	Sure, go ahead.
 
+## N
 大丈夫なんですか、ロイドさん？
-	大丈夫なんですか、ロイドさん？
+	Are you sure, Lloyd?
 
+## L
 いずれにしても、不正な取引があるなら
 放っておけないし……
-	いずれにしても、不正な取引があるなら
-	放っておけないし……
+	We can't let this
+	case go unchecked.
 
 捜査のためには取引場所にされるお店
 の協力は必要だからね。
-	捜査のためには取引場所にされるお店
-	の協力は必要だからね。
+	So yes, having the cooperation
+	of the location in question
+	would help with the investigation.
 
+## N
 そうですね……
-	そうですね……
+	That's true.
 
+## Sh
 じゃあ、ちょっと待っててね！
-	じゃあ、ちょっと待っててね！
+	Well then, be right back!
 
+## R
 なんだか、すげえ
 嫌な予感がするんだが……
-	なんだか、すげえ
-	嫌な予感がするんだが……
+	Somehow, I'm getting a
+	really bad feeling about this.
 
+## W
 フフ、また振り回されそうな気がするね。
-	フフ、また振り回されそうな気がするね。
+	I feel like we just got
+	played like a fiddle.
 
+## N
 ワジ君は、どうして楽しそうなの？
-	ワジ君は、どうして楽しそうなの？
+	And why are you looking
+	so happy about that?
 
+## L
 え？　あれは…………
-	え？　あれは…………
+	Huh? Isn't that...
 
+## Si
 また会ったな。
 《クリムゾン商会》代表、
 シグムント・オルランドだ。
-	また会ったな。
-	《クリムゾン商会》代表、
-	シグムント・オルランドだ。
+	We meet again.
+	I am the representative of
+	Crimson & Co., Sigmund Orlando.
 
+## R
 チッ……
-	チッ……
+	Ugh...
 
+## E
 こ、この人が……
-	こ、この人が……
+	This person...
 
+## N
 すごく……強そうです……
-	すごく……強そうです……
+	...Looks really strong.
 
+## G
 …………すごいわね。
 私も記者として、いろいろな人に
 会ってきたけど……
-	…………すごいわね。
-	私も記者として、いろいろな人に
-	会ってきたけど……
+	Amazing. I'm meeting a lot
+	of impressive people today.
 
+## L
 お呼び立てしてしまって、すみません。
-	お呼び立てしてしまって、すみません。
+	I apologize for taking time
+	of your busy schedule.
 
+## Si
 事情は聞いた。
 うちの店で、なにやら取引をしよう
 という連中がいるらしいな
-	事情は聞いた。
-	うちの店で、なにやら取引をしよう
-	という連中がいるらしいな
+	I heard. Some ragtag bunch's trying
+	to use our turf for their smuggling.
 
+## L
 その可能性があります。
-	その可能性があります。
+	We believe so, yes.
 
+## Sh
 そんなヤツ、ぶっ殺しちゃおうよ！
-	そんなヤツ、ぶっ殺しちゃおうよ！
+	We should just put
+	'em down already!
 
+## L
 そんなことしたら、俺たちは
 君を逮捕しないといけなくなるよ……
-	そんなことしたら、俺たちは
-	君を逮捕しないといけなくなるよ……
+	If we do that, we won't have any
+	choice but to go after you.
 
+## Sh
 それはそれで面白そう！
-	それはそれで面白そう！
+	That's the fun part!
 
+## Si
 やめておけ。
 《クリムゾン商会》は表向きは健全な
 法人なのでな。
-	やめておけ。
-	《クリムゾン商会》は表向きは健全な
-	法人なのでな。
+	Quit it. Crimson & Co. is, publicly,
+	a legitimate business.
 
 警察と揉めるつもりはない。
-	警察と揉めるつもりはない。
+	We do not intend to clash with the police.
 
+## Sh
 あははっ、そうだったね。
-	あははっ、そうだったね。
+	Ahaha, that's true.
 
+## L
 なるべく、穏便に捜査したいのですが、
 協力していただけませんか？
-	なるべく、穏便に捜査したいのですが、
-	協力していただけませんか？
+	If possible, we would like to conduct
+	our investigation peacefully.
+	Would you be willing to cooperate?
 
+## Si
 どうするつもりだ？
-	どうするつもりだ？
+	What are you planning to do?
 
 怪しい人物は判明していますが……
 取引の現場を押さえなければいけません。
 張りこみが必要だと思います。
-	怪しい人物は判明していますが……
-	取引の現場を押さえなければいけません。
-	張りこみが必要だと思います。
+	We have already identified the suspects,
+	but we need to catch them in the act.
+	I believe we will need to lie in wait.
 
 不正な取引が行われた瞬間に
 取り押さえます。
-	不正な取引が行われた瞬間に
-	取り押さえます。
+	The moment they do their trade,
+	we'll arrest them.
 
+## E
 お客さんに紛れて見張るのね。
-	お客さんに紛れて見張るのね。
+	We'll have to blend into the
+	patronage and stand watch.
 
+## W
 でも、客席からだと、他の客のことは
 見えにくいんじゃない？
-	でも、客席からだと、他の客のことは
-	見えにくいんじゃない？
+	But if we hide as guests,
+	won't it be hard to monitor
+	the other guests?
 
+## L
 そ、そういえば……
 あの席だと……
-	そ、そういえば……
-	あの席だと……
+	That's true.
+	Those seats aren't very...
 
+## R
 半個室みたいな感じだったよな。
-	半個室みたいな感じだったよな。
+	They're arranged as semi-private booths.
 
 あんまりキョロキョロしてると、
 怪しまれちまいそうだし。
-	あんまりキョロキョロしてると、
-	怪しまれちまいそうだし。
+	Looking around too much would
+	look suspicious.
 
+## G
 あら？
 ランディ君とワジ君はわかるけど……
-	あら？
-	ランディ君とワジ君はわかるけど……
+	Oh? I can understand Randy
+	and Wazy...
 
 ロイド君も行ったことあるのね。
 意外だわ。
-	ロイド君も行ったことあるのね。
-	意外だわ。
+	But even Lloyd is is
+	familiar with the place.
+	That's unexpected.
 
+## L
 昨日、いろいろありまして。
-	昨日、いろいろありまして。
+	Yesterday was a long day.
 
+## R
 ……そんなことより、どう張りこむのか
 考えねえとな。
-	……そんなことより、どう張りこむのか
-	考えねえとな。
+	Anyway, we need to think of
+	a way to catch 'em.
 
+## W
 客席から、他の客席を見張るのは
 難しいと思うよ。
-	客席から、他の客席を見張るのは
-	難しいと思うよ。
+	We can't see the other customers
+	if we pose as customers.
 
+## Sh
 じゃあ、店員をやってみたら
 いいんじゃない！？
-	じゃあ、店員をやってみたら
-	いいんじゃない！？
+	Then why don't you play as
+	employees?
 
+## L
 いや、それは……
-	いや、それは……
+	No, that's...
 
+## E
 準備する時間もないから……
-	準備する時間もないから……
+	We don't have much time
+	to prepare for that.
 
+## W
 フフ……たしかに、面白そうだけどね。
-	フフ……たしかに、面白そうだけどね。
+	That sounds fun. I'm in.
 
+## N
 ワジ君は得意そうだよね。
 バーの店員なんて、私には無理だけど。
-	ワジ君は得意そうだよね。
-	バーの店員なんて、私には無理だけど。
+	This sounds perfect for Wazy.
+	Me, I could never work at a bar.
 
+## W
 何事もやってみないとわからないさ。
 ノエルも店員をやってみたらいいん
 じゃない？
-	何事もやってみないとわからないさ。
-	ノエルも店員をやってみたらいいん
-	じゃない？
+	Don't knock it 'til you've tried it.
+	Don't you think Noel would make a
+	great bartender?
 
+## N
 無理だと思う……
 やってみなくてもわかることもあるよ。
-	無理だと思う……
-	やってみなくてもわかることもあるよ。
+	No, I'm pretty sure.
+	I can tell without trying it.
 
+## Si
 客席でも店員でも好きにするがいい。
 ただし、あまり大勢で
 ウロチョロされては迷惑だ。
-	客席でも店員でも好きにするがいい。
-	ただし、あまり大勢で
-	ウロチョロされては迷惑だ。
+	Guests or staff, I don't care.
+	But I don't want too many of
+	you making a mess of the place.
 
 フロアに出るのは
 二人までにしてもらおう。
-	フロアに出るのは
-	二人までにしてもらおう。
+	You get two people on the floor.
 
+## L
 二人か……
-	二人か……
+	Only two...
 
+## Sh
 そろそろ、店が開く時間だよ！
 急いだほうが、いいんじゃない？
-	そろそろ、店が開く時間だよ！
-	急いだほうが、いいんじゃない？
+	The bar will open soon!
+	Shouldn't you hurry up a bit?
 
+## L
 仕方ない。
 俺とワジで店員をやろう。
-	仕方ない。
-	俺とワジで店員をやろう。
+	Guess we have no choice.
+	Me and Wazy'll do it.
 
+## W
 了解（ヤー）。
-	了解（ヤー）。
+	Ja.
 
 {color 2}クエスト【不正取引の張りこみ】{color 0}を開始した！
-	{color 2}クエスト【不正取引の張りこみ】{color 0}を開始した！
+	Quest {color 2}[Illicit Trade Stakeout]{color 0} started!
 
 ## c0490 - Neue Blanc {{{1
 
