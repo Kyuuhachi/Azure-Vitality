@@ -299,6 +299,8 @@
 	going to do, if only the
 	culprits were Crossbellan.
 
+## (Everyone [!])
+
 ## L
 なるほど……
 外国人たちの取引か……
@@ -336,8 +338,8 @@
 ## W
 外国人が犯人では、大スクープには
 ならないね。
-	And with the culprits being foreigners,
-	you can't make a big deal out of it.
+	With the culprits being foreigners,
+	it won't be a front-page article.
 
 新聞が出た頃には、犯人たちは国外に
 出てしまっているだろうから。
@@ -418,7 +420,7 @@
 	the deal can't have happened.
 
 どうする、ロイド君？
-	How about it, Lloyd?
+	So what do you say, Lloyd?
 
 ## L
 （不正取引の捜査になりそうだな。
@@ -455,6 +457,9 @@
 そ、そういう意味じゃなくて……
 	That-- That's not what I...
 
+## (Lloyd sweatdrops)
+
+## L
 とにかく、今は無理なんです
 	Anyway, we can't right now.
 
@@ -482,12 +487,12 @@
 ## G
 ええ、今日、ある場所でね。
 信用できる筋からの情報よ。
-	Yes, today, at that one place.
+	Yes, today, at this one place.
 	The intel is from a reliable source.
 
 ## R
 その、ある場所ってのは？
-	And by "that one place", you mean...?
+	And by "this one place", you mean...?
 
 ## G
 焦らないの。たぶん、あなたたちも
@@ -512,6 +517,8 @@
 ## G
 ノイエ＝ブラン、って知ってるかしら？
 	Neue Blanc. Heard of it?
+
+## (L, R, W [!])
 
 ## L
 そんな場所で……
@@ -542,7 +549,7 @@
 いいえ、この件に《クリムゾン商会》は
 絡んでないわ。たぶんね。
 	No, Crimson & Co. are
-	thankfully unaffiliated.
+	thankfully not in on deal.
 	I think.
 
 ## E
@@ -559,14 +566,14 @@
 放っておけない相手ではあるけど、
 今、衝突するのは避けたいな。
 	We can't let this go uninterrupted,
-	but they are not an opponent we can
-	deal with right now.
+	but they are not an opponent we
+	can deal with right now.
 
 ## N
 そうですね。
 かなり危険そうですもんね……
 	Yes... That would be
-	very dangerous.
+	very dangerous...
 
 あ、いえ……
 クロスベルを守るためならば、
@@ -574,11 +581,13 @@
 	No! If it's for Crossbell's
 	safety, I'll fight anyone.
 
-## Sh
+## Sh, from off-screen
 少女の声
 	Girl's voice
 ふ～ん、覚悟があるんだ？
 	Oh? Are you sure about that?
+
+## (Everyone [!], Shirly jumps in)
 
 ## Sh
 また会ったね、ランディ兄たち
@@ -588,15 +597,16 @@
 チッ……
 なんで、こんなところにいるんだ。
 今度こそ、さっさと失せろ
-	Tch...
-	What in Genenna are you doing here?
+	Tch... What in Genenna
+	are you doing here?
 	Get lost. Now.
 
 ## Sh
 えー、またまたつれないなあ。
 さっきは手伝ってあげたじゃん！
 	Aww... Still so cold.
-	Even though I helped you out just now.
+	Even though I helped
+	you out just now.
 
 ## E
 ……たしかに、手伝ってもらったけれど
@@ -643,7 +653,8 @@
 
 仕方ない……説明するしかないか
 	We've got no choice...
-	I'll explain the situation.
+	We'll have to tell her
+	the situation.
 
 ## N
 ううぅ……
@@ -667,6 +678,8 @@
 えへへっ。
 	Ehehe.
 
+## (Grace [♪] and steps forward a bit)
+
 ## G
 うふふん♪
 こんなところで会えるなんて
@@ -684,16 +697,22 @@
 仕事だよ、仕事。
 それ以上は言えないんだよね～
 	Work, duh. Can't say
-	any more than that~
+	any more than that～
+
+## (Lloyd sweatdrops)
 
 ## L
 グレイスさん、話が逸れてますよ。
 	Grace, I think you're
 	getting sidetracked.
 
+## (Grace steps back, surprised)
+
 ## G
 おっと！
 	Oops!
+
+## (E, R, W, N sweatdrop)
 
 ## R
 さすが、つーか……
@@ -715,15 +734,20 @@
 
 ## Sh
 うんうん、どういうことなの？
-	What kind of fascinating story
-	will you tell me?
+	What kind of fascinating
+	story will you tell me?
 
-## Sys
-## This one is labeled as "Girl's voice", but I don't think that's my fault. Either it's in Evo too, or it's an engine bug.
+## (Fade to black)
+
+## System
+## This one is labeled as "Girl's voice", but I don't think that's my fault.
+## Either it's in Evo too, or it's an engine bug.
 {color 5}グレイスが外国人の不正取引について
 手早く説明した。{color 0}
 	{color 5}Grace hurriedly summarized the case
 	of the foreigners and the trade deal.{color 0}
+
+## (Fade back in)
 
 ## Sh
 なるほど……うちの店で……
@@ -767,7 +791,7 @@
 来てるから、連れてくるよ。
 	Yup, yup!
 	The guy who runs the shop is
-	just around here, I'll go get him.
+	on his way. I'll go get him.
 
 そのほうが、話が早いでしょ？
 	That'll make this faster.
@@ -776,7 +800,6 @@
 そ、そうかもしれないが……
 うーん……
 	Err, maybe...?
-	Hmm...
 
 ……よし、わかった。
 お願いするよ。
@@ -795,9 +818,9 @@
 
 捜査のためには取引場所にされるお店
 の協力は必要だからね。
-	So yes, having the cooperation
-	of the location in question
-	would help with the investigation.
+	And yes, having the cooperation
+	of the location in question would
+	make the investigation go smoother.
 
 ## N
 そうですね……
@@ -806,6 +829,8 @@
 ## Sh
 じゃあ、ちょっと待っててね！
 	Well then, be right back!
+
+## (Shirley jumps away)
 
 ## R
 なんだか、すげえ
@@ -826,6 +851,8 @@
 ## L
 え？　あれは…………
 	Huh? Isn't that...
+
+## (Camera fades to show Sigmund, walking up the slope. Shirley also comes jumping back.)
 
 ## Si
 また会ったな。
@@ -878,7 +905,7 @@
 ## L
 そんなことしたら、俺たちは
 君を逮捕しないといけなくなるよ……
-	If we do that, we won't have any
+	If you do that, we won't have any
 	choice but to go after you.
 
 ## Sh
@@ -889,7 +916,8 @@
 やめておけ。
 《クリムゾン商会》は表向きは健全な
 法人なのでな。
-	Quit it. Crimson & Co. is, publicly,
+	Quit it.
+	Crimson & Co. is, publicly,
 	a legitimate business.
 
 警察と揉めるつもりはない。
@@ -980,8 +1008,10 @@
 ## Sh
 じゃあ、店員をやってみたら
 いいんじゃない！？
-	Then why don't you play as
-	employees?
+	Then why don't you play
+	as employees?
+
+## (Everyone [!])
 
 ## L
 いや、それは……
@@ -1048,8 +1078,12 @@
 了解（ヤー）。
 	Ja.
 
+## (Fade to black)
+
 {color 2}クエスト【不正取引の張りこみ】{color 0}を開始した！
 	Quest {color 2}[Illicit Trade Stakeout]{color 0} started!
+
+## (Continue in c0490)
 
 ## c0490 - Neue Blanc {{{1
 
