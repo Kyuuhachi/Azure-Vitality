@@ -15,15 +15,14 @@
 　取引の内容や時間についての情報
 　は曖昧だが、きちんと調べていけば
 　取引を未然に防げるだろう。
-	　グレイスさんが、
-	　耳寄りな情報があると言う。
-	　外国から違法な取引を目的とした連中が
-	　クロスベルにやってくるというのだ。
-	　情報の提供と引き換えに、逮捕する所を
-	　記事にしたいとグレイスさんは言う。
-	　取引の内容や時間についての情報
-	　は曖昧だが、きちんと調べていけば
-	　取引を未然に防げるだろう。
+	　Grace says she has some interesting intel.
+	　Foreign actors are planning to conduct an
+	　illegal trade in Crossbell.
+	　By giving us this information, she hopes to
+	　write an article on the resulting arrest.
+	　The contents and time of the trade are
+	　unclear, but with some luck we can stop
+	　the trade before it happens.
 
 ★グレイスさんからの
 　依頼を引き受けることにした。
@@ -47,55 +46,50 @@
 　しまい、他のメンバーに店員をやって
 　もらうしかなくなった。
 　さて、誰にやってもらおうか……
-	★グレイスさんからの
-	　依頼を引き受けることにした。
-	　取引の場所は、ノイエ＝ブラン。
-	　《赤い星座》がダミー会社を介して経営
-	　する店だ。
-	　今回の件に彼らは絡んでいないと
-	　グレイスさんは言うが、この事件を追う
-	　過程で衝突する可能性はある……
-	★クロスベルの街は、思いのほか、狭い。
-	　偶然ＩＢＣに来ていた
-	　シャーリィと出会えたのは幸運だった。
-	　取引の件を話した結果、彼女は経営者の
-	　シグムントに話を取り次いでくれ、
-	　ノイエ＝ブランで張り込みをさせてくれ
-	　ることになった。
-	　ただし、店員に変装してだが。
-	★ノイエ＝ブランにて、ワジと店員の変装
-	　をして張り込む。
-	　しかし、ワジの顔を知っている客が来て
-	　しまい、他のメンバーに店員をやって
-	　もらうしかなくなった。
-	　さて、誰にやってもらおうか……
+	★Accepted Grace's support request.
+	　The trade will take place at Neue Blanc,
+	　which is run by the Red Constellation's front
+	　company.
+	　Grace says they aren't involved in the trade,
+	　but we may come to clash with them in the
+	　process...
+	★Crossbell sure is small. Shirley suddenly
+	　appeared outside the IBC -- which,
+	　surprisingly, worked out nicely.
+	　After telling her about the trade, she called
+	　in her manager, Sigmund, who allowed us to do
+	　a stakeout on the premises, disguised as
+	　employees.
+	★I and Wazy disguised ourselves as employees,
+	　to catch the criminals in the act.
+	　Unfortunately, a customer appeared who knows
+	　Wazy, so he had to step back.
+	　I'll have to pick another member to help me.
+	　Who should I pick...?
 
 ★店員は、エリィにやってもらおう。
 　エリィなら、どんな客が相手でも、
 　そつなくこなしてくれるだろう。
-	★店員は、エリィにやってもらおう。
-	　エリィなら、どんな客が相手でも、
-	　そつなくこなしてくれるだろう。
+	★I'll pick Elie. She'll be able to handle any
+	　customer with ease.
 
 ★店員は、ランディにやってもらおう。
 　この店で働くことに多少の抵抗は
 　あるだろうが、捜査のためなら
 　ランディはやってくれるはずだ。
-	★店員は、ランディにやってもらおう。
-	　この店で働くことに多少の抵抗は
-	　あるだろうが、捜査のためなら
-	　ランディはやってくれるはずだ。
+	★I'll pick Randy. I'm sure he's reluctant to
+	　work at this shop that's owned by his
+	　family, but he'll do fine.
 
 ★店員は、ノエルにやってもらおう。
 　客あしらいはうまくないかもしれないが
 　何事も一所懸命なノエルなら、
 　なんとしてでも
 　目的を果たしてくれるはずだ。
-	★店員は、ノエルにやってもらおう。
-	　客あしらいはうまくないかもしれないが
-	　何事も一所懸命なノエルなら、
-	　なんとしてでも
-	　目的を果たしてくれるはずだ。
+	★I'll pick Noel. She might not be the greatest
+	　at the hospitality business, but with how much
+	　we've gone through together I know she'll pull
+	　through this one as well.
 
 ★客が増えてきて忙しくなってきた。
 　こうなると、想定外のアクシデントに
@@ -124,11 +118,11 @@
 　に、どう対応するかが大事になる。
 　冷静な対応を心掛けて、なにが起きても
 　慌てないようにしないとな。
-	★客が増えてきて忙しくなってきた。
-	　こうなると、ちょっとしたイレギュラー
-	　に、どう対応するかが大事になる。
-	　冷静な対応を心掛けて、なにが起きても
-	　慌てないようにしないとな。
+	★It's getting more and more busy.
+	　In this situation we need to decide
+	　how to deal with any irregularities.
+	　We need to keep a cool head and act calmly
+	　no matter what happens.
 
 ★不安だった接客だが、
 　思った以上に上手くいった。
@@ -151,9 +145,9 @@
 ★やはり、接客は向いていないのか、
 　思った通りにはいかなかった。
 　事前に決めた対応が間違いだったか……
-	★やはり、接客は向いていないのか、
-	　思った通りにはいかなかった。
-	　事前に決めた対応が間違いだったか……
+	★I knew customer service wasn't for me; this
+	　did not work out well at all.
+	　We handled the situation all wrong...
 
 ★取引の現場は押えたし、
 　犯人を逮捕するところをグレイスさんが
@@ -164,15 +158,13 @@
 　今回は協力してくれた事に感謝しよう。
 　彼らの動向に、これからも気が抜けない
 　事に変わりは無いが。
-	★取引の現場は押えたし、
-	　犯人を逮捕するところをグレイスさんが
-	　取材することもできた。
-	　依頼は無事に解決できた……
-	　シグムントやシャーリィの動きが
-	　気になるのは確かだが、
-	　今回は協力してくれた事に感謝しよう。
-	　彼らの動向に、これからも気が抜けない
-	　事に変わりは無いが。
+	★We managed to catch them in the act, and
+	　Grace got some good photos of the arrest.
+	　I'm concerned about what Sigmund and
+	　Shirley are up to, but this time we owe
+	　them our thanks.
+	　We'll stay alert for any further movements
+	　from them.
 
 ## c1200 - Harbor District {{{1
 
@@ -345,13 +337,13 @@
 出てしまっているだろうから。
 	And by the time the news is out,
 	our friends would be out of
-	the country, too.
+	the country, anyway.
 
 ## G
 そういうこと。
 だから、逮捕劇を記事にしたほうが、
 いいと思ったわけよ。
-	That's the gist of it. So I was
+	That's about the gist of it. So I was
 	thinking, an article on their arrests
 	would be pretty sweet, too.
 
@@ -380,7 +372,7 @@
 ## N
 その取引は、今日なんですか？
 何時くらいでしょう？
-	Is the deal happening today?
+	Is the trade happening today?
 	Do you know around when?
 
 ## G
@@ -475,8 +467,8 @@
 ## L
 いい記事のために捜査するわけじゃ
 ないですけど……
-	We're not doing this to make
-	you an article.
+	We're not doing this to
+	make you an article.
 
 外国人同士の不正な取引が
 あるんですよね？
@@ -487,7 +479,7 @@
 ## G
 ええ、今日、ある場所でね。
 信用できる筋からの情報よ。
-	Yes, today, at this one place.
+	Yes, today, at... this one place.
 	The intel is from a reliable source.
 
 ## R
@@ -549,8 +541,8 @@
 いいえ、この件に《クリムゾン商会》は
 絡んでないわ。たぶんね。
 	No, Crimson & Co. are
-	thankfully not in on deal.
-	I think.
+	thankfully not in on
+	the deal. I think.
 
 ## E
 ほっ……
@@ -581,13 +573,15 @@
 	No! If it's for Crossbell's
 	safety, I'll fight anyone.
 
+## (Music cuts)
+
 ## Sh, from off-screen
 少女の声
 	Girl's voice
 ふ～ん、覚悟があるんだ？
 	Oh? Are you sure about that?
 
-## (Everyone [!], Shirly jumps in)
+## (Everyone [!], Shirley jumps in.)
 
 ## Sh
 また会ったね、ランディ兄たち
@@ -813,8 +807,7 @@
 ## L
 いずれにしても、不正な取引があるなら
 放っておけないし……
-	We can't let this
-	case go unchecked.
+	We can't let this case go unchecked.
 
 捜査のためには取引場所にされるお店
 の協力は必要だからね。
@@ -830,7 +823,7 @@
 じゃあ、ちょっと待っててね！
 	Well then, be right back!
 
-## (Shirley jumps away)
+## (Shirley jumps away.)
 
 ## R
 なんだか、すげえ
@@ -858,13 +851,13 @@
 また会ったな。
 《クリムゾン商会》代表、
 シグムント・オルランドだ。
-	We meet again.
-	I am the representative of
-	Crimson & Co., Sigmund Orlando.
+	We meet again. I am the
+	representative of Crimson & Co.,
+	Sigmund Orlando.
 
 ## R
 チッ……
-	Ugh...
+	Urk...
 
 ## E
 こ、この人が……
@@ -921,7 +914,8 @@
 	a legitimate business.
 
 警察と揉めるつもりはない。
-	We do not intend to clash with the police.
+	We do not intend to
+	clash with the police.
 
 ## Sh
 あははっ、そうだったね。
@@ -980,8 +974,8 @@
 ## G
 あら？
 ランディ君とワジ君はわかるけど……
-	Oh? I can understand Randy
-	and Wazy...
+	Oh? I can understand
+	Randy and Wazy...
 
 ロイド君も行ったことあるのね。
 意外だわ。
@@ -1083,311 +1077,411 @@
 {color 2}クエスト【不正取引の張りこみ】{color 0}を開始した！
 	Quest {color 2}[Illicit Trade Stakeout]{color 0} started!
 
-## (Continue in c0490)
+## (Continue in c0490:15)
 
 ## c0490 - Neue Blanc {{{1
 
+## char[26]
 ワジの得意客
-	ワジの得意客
+	Wazy's patron
 
+## char[27]
 グレイス
-	グレイス
+	Grace
 
+## char[28]
 女性客
-	女性客
+	Woman
 
+## char[29]
 男性客
-	男性客
+	Man
 
+## char[30]
 男性客
-	男性客
+	Man
 
+## char[31]
 帝国マフィア
-	帝国マフィア
+	Erebonian mafioso
 
+## char[32]
 共和国マフィア
-	共和国マフィア
+	Calvardian mafioso
 
+## :15 Main event {{{2
+
+## (Camera moves in from the right, showing Lloyd and Wazy standing, while Elie, Randy, and Noel sit in a booth nearby.)
+
+## N
 ロイドさん、大丈夫でしょうか？
-	ロイドさん、大丈夫でしょうか？
+	Lloyd, are you sure this is okay?
 
+## E
 そうね……
 レストランならともかく、
 バーの店員なんて。
-	そうね……
-	レストランならともかく、
-	バーの店員なんて。
+	A restaurant would be one thing,
+	but working at a bar?
 
+## N
 ランディ先輩のほうが
 詳しそうじゃないですか？
-	ランディ先輩のほうが
-	詳しそうじゃないですか？
+	Wouldn't Randy be
+	better for this?
 
+## R
 うっ……そうかもしれねえが……
 この店で働くのは、捜査だとしてもな。
-	うっ……そうかもしれねえが……
-	この店で働くのは、捜査だとしてもな。
+	Maybe, but I can't work HERE of
+	all places.
 
 まぁ、ワジに任せておけば大丈夫だろ。
-	まぁ、ワジに任せておけば大丈夫だろ。
+	Well, just let Wazy take the lead.
 
+## (Camera focuses on Lloyd and Wazy)
+
+## L
 はぁ……
 こんな緊張する張りこみは、
 ちょっと記憶にないよ。
-	はぁ……
-	こんな緊張する張りこみは、
-	ちょっと記憶にないよ。
+	I can't remember the last time
+	I was this nervous about a stakeout.
 
+## W
 大丈夫、普通のレストランと、
 そう変わらないさ。
-	大丈夫、普通のレストランと、
-	そう変わらないさ。
+	Don't worry, it's not so
+	different from a normal
+	restaurant.
 
+## (Wazy notices something and turns to look)
+
+## W
 おっ、さっそく出番かな。
-	おっ、さっそく出番かな。
+	Looks like it's time.
 
+## (Lloyd follows suit with a [?])
+
+## L
 え？　とくに呼んでる人は
 いないと思うけど……
-	え？　とくに呼んでる人は
-	いないと思うけど……
+	Huh? I don't hear anyone calling...?
 
+## Wazy walks up to a customer a few booths away.
+
+## W
 追加のご注文はございますか？
-	追加のご注文はございますか？
+	Did you want anything else?
 
+## Customer
 ああ、このボトルを、もう一本。
-	ああ、このボトルを、もう一本。
+	Yes. Another bottle of this, please.
 
+## W
 かしこまりました
-	かしこまりました
+	Very good, sir.
 
+## (Wazy walks back, past Lloyd. Camera stops at Lloyd, who looks at Wazy.)
+
+## L
 …………。
-	…………。
+	...
 
+## (Fade to black)
+
+## L
 どうして、注文があるって
 わかったんだ？
-	どうして、注文があるって
-	わかったんだ？
+	How did you know he wanted
+	to order something?
 
+## (Fade in. Wazy is back next to Lloyd.)
+
+## W
 グラスに傾けたボトルが、
 空だったからね。
-	グラスに傾けたボトルが、
-	空だったからね。
+	The bottle he was pouring
+	from was empty.
 
+## L
 そんな細かいところまで
 見てたのか！？
-	そんな細かいところまで
-	見てたのか！？
+	You saw that at this
+	kind of distance?
 
+## W
 フフ、取引を見つけるんだろう？
 客の顔を見るついでに、
 手元くらい注意するさ。
-	フフ、取引を見つけるんだろう？
-	客の顔を見るついでに、
-	手元くらい注意するさ。
+	We're here to find our dealers, no?
+	You have to pay attention to more
+	than their faces.
 
+## L
 そ、そんな簡単そうに言われても……
-	そ、そんな簡単そうに言われても……
+	When you put it like that...
 
+## (A woman nearby calls for attention)
+
+## W
 おっと、呼ばれたみたいだ。
-	おっと、呼ばれたみたいだ。
+	There's another one.
 
+## (Wazy walks over)
+
+## Customer
 ねぇ、オススメのワインあるかしら？
 このワイン、ちょっと渋くて……
-	ねぇ、オススメのワインあるかしら？
-	このワイン、ちょっと渋くて……
+	Do you have any wine you
+	would recommend? This one
+	is somewhat tart.
 
+## W
 お客さまが選ばれたのは、
 こちらのワインですね？
-	お客さまが選ばれたのは、
-	こちらのワインですね？
+	Would that be this bottle here?
 
 渋みが強い若いワインなのですが……
 お口に合いませんでしたか。
-	渋みが強い若いワインなのですが……
-	お口に合いませんでしたか。
+	This one is indeed quite tart.
+	I see it did not suit your palate.
 
 それでしたら……こちらのワインなど、
 熟成されてマイルドかと。
 いかがでしょうか？
-	それでしたら……こちらのワインなど、
-	熟成されてマイルドかと。
-	いかがでしょうか？
+	In that case... How about
+	this one? It is aged, but mild.
+	How does that sound?
 
+## Customer
 よさそうね、それをもらうわ。
-	よさそうね、それをもらうわ。
+	That sounds good.
+	I'll have that one.
 
+## W
 ありがとうございます。
-	ありがとうございます。
+	Thank you very much.
 
+## (Fade to black, then back in. Wazy is back next to Lloyd.)
+
+## L
 すごいな……
 俺にはワインの蘊蓄#4Rうんちく#なんて無理だよ。
-	すごいな……
-	俺にはワインの蘊蓄#4Rうんちく#なんて無理だよ。
+	I'm in awe.
+	My knowledge of wine
+	is next to nil.
 
+## W
 フフ、慣れ#4R㈲　㈲#の問題だよ
-	フフ、慣れ#4R㈲　㈲#の問題だよ
+	It's something you pick up
+	over time, my friend.
 
+## L
 ……ワジは未成年#6R㈲　㈲　㈲#だよな？
-	……ワジは未成年#6R㈲　㈲　㈲#だよな？
+	...Aren't you underage?
 
+## W
 ああ、もちろん。
 説明するうちに慣れる、
 という意味だよ。
-	ああ、もちろん。
-	説明するうちに慣れる、
-	という意味だよ。
+	Well, yeah. I meant
+	from having it explained
+	to you, of course.
 
+## L
 まったく……
-	まったく……
+	Wazy...
 
 （とはいえ……
 　この調子なら、取引の現場も、
 　ワジが見つけてくれそうだな）
-	（とはいえ……
-	　この調子なら、取引の現場も、
-	　ワジが見つけてくれそうだな）
+	(If it's like this, Wazy'll
+	find the dealers in no time.)
 
+## W
 あ…………
-	あ…………
+	Oh...
 
+## (Lloyd looks confused, as a woman walks past.)
+## {The woman's walk animation clips through her dress, but that's not my problem.}
+
+## W
 すまない、ロイド。
-	すまない、ロイド。
+	Excuse me, Lloyd.
 
+## L
 どうしたんだ？
-	どうしたんだ？
+	What's up?
 
+## W
 僕は客席に隠れるから、
 この後は、別の仲間を選んでくれ。
-	僕は客席に隠れるから、
-	この後は、別の仲間を選んでくれ。
+	I'll have to stay low from now.
+	You'll have to pick another partner.
 
+## L
 えっ！？
-	えっ！？
+	What?
 
+## W
 今、入ってきた女性客。
 僕がホストをしてるときの、
 お得意様なんだけど……
-	今、入ってきた女性客。
-	僕がホストをしてるときの、
-	お得意様なんだけど……
+	The lady who just entered.
+	She's a patron of mine.
 
+## L
 ああ……
 たしかに、女性が入ってきた、かな？
-	ああ……
-	たしかに、女性が入ってきた、かな？
+	From your side gigs, I take it.
 
+## W
 話し始めると長いんだよ。
 とにかく、話が長いんだ。
 しかも、声が大きくて目立つ。
-	話し始めると長いんだよ。
-	とにかく、話が長いんだ。
-	しかも、声が大きくて目立つ。
+	If you get her started, she'll
+	talk your ear off. And her voice
+	is loud and stands out.
 
+## L
 張りこみ中に、それは困るな。
-	張りこみ中に、それは困るな。
+	That would be a problem.
 
+## W
 彼女は、僕が特務支援課に入ったことも
 新聞で知ってるしね。
-	彼女は、僕が特務支援課に入ったことも
-	新聞で知ってるしね。
+	And she knows from the newspaper
+	that I'm in the SSS.
 
 そんなわけで、他の仲間を選んでくれ。
 僕は交代させてもらうよ。
-	そんなわけで、他の仲間を選んでくれ。
-	僕は交代させてもらうよ。
+	So you'll have to pick another partner.
+	I'll have to sit this one out.
 
+## L
 そういう事情なら、仕方ないか……
-	そういう事情なら、仕方ないか……
+	Not much else we can do
+	in this situation...
 
+## (Camera pans to show the whole group)
+
+## L
 （うーん、誰に頼もうかな？）
-	（うーん、誰に頼もうかな？）
+	(Hmm... Who should I pick?)
 
+## Menu
 エリィ
-	エリィ
-
+	Elie
 ランディ
-	ランディ
-
+	Randy
 ノエル
-	ノエル
+	Noel
 
+## (Fade to black)
+
+## Choose Elie {{{3
+
+## E
 わ、私で大丈夫かしら？
-	わ、私で大丈夫かしら？
+	You want me?
 
+## (Fade in. Elie is now next to Lloyd, instead of Wazy.)
+
+## L
 急で、すまない。
 エリィなら、料理やワインに
 詳しいかと思って。
-	急で、すまない。
-	エリィなら、料理やワインに
-	詳しいかと思って。
+	Sorry for calling you all of sudden.
+	I just thought you'd know everything
+	about food and drinks.
 
+## E
 そ、そんなの無理よ……
-	そ、そんなの無理よ……
+	That's not really...
 
 とはいえ、張りこみなのだし……
 がんばるわ。
-	とはいえ、張りこみなのだし……
-	がんばるわ。
+	Well, I'll do what I can.
 
+## L
 頼むよ。
 協力してくれている店に
 迷惑をかけたくないんだ。
-	頼むよ。
-	協力してくれている店に
-	迷惑をかけたくないんだ。
+	Thanks. I don't want to
+	cause trouble for the shop.
 
+## E
 それは、わかるけど……
-	それは、わかるけど……
+	Yes, I concur...
 
 はぁ……
 バーの店員だなんて……
 務まるかしら？
-	はぁ……
-	バーの店員だなんて……
-	務まるかしら？
+	Still... Me, work at a bar?
+	Can I do this?
 
+## L
 （とはいえ、ノエルよりは詳しそうだし、
 　ランディは、この店で働きたくない
 　だろうからな……）
-	（とはいえ、ノエルよりは詳しそうだし、
-	　ランディは、この店で働きたくない
-	　だろうからな……）
+	(She's definitely more knowledgeable
+	about this than Noel, and I don't want
+	to force Randy into working here...)
 
+## E
 とにかく、不正な取引を見つけないと。
 情報にあった人物は、まだ来てないのよね？
-	とにかく、不正な取引を見つけないと。
-	情報にあった人物は、まだ来てないのよね？
+	Anyway, we have to find the traders.
+	No people matching the photo yet?
 
+## L
 そうみたいだな。
-	そうみたいだな。
+	None that I've seen.
 
+## (Elie notices a customer)
+
+## E
 あっ、お客さんが呼んでるわ。
 行ってくるわね。
-	あっ、お客さんが呼んでるわ。
-	行ってくるわね。
+	Oh, a customer's calling.
+	I'll come back later.
 
+## (Elie walks over)
+
+## Customer
 おっ、店員さん、すごい美人だね！
 新入りかい？
-	おっ、店員さん、すごい美人だね！
-	新入りかい？
+	Hey, lass, you're a real beaut!
+	You a new hire?
 
+## E
 ありがとうございます。
 臨時の店員です。
 ご注文ですか？
-	ありがとうございます。
-	臨時の店員です。
-	ご注文ですか？
+	Thank you very much.
+	I am only working here temporarily.
+	Did you have anything to order?
 
+## Customer
 ああ、じゃあ、これと、これを……
-	ああ、じゃあ、これと、これを……
+	Well, yes, this, and... this...
 
+## (Elie sparkles)
+
+## E
 かしこまりました。
-	かしこまりました。
+	Understood.
 
+## (Camera shows both Lloyd and Elie)
+
+## L
 （さすがエリィだ。
 　うまくやってくれそうだな。）
-	（さすがエリィだ。
-	　うまくやってくれそうだな。）
+	(That's Elie for you.
+	Nicely done.)
+
+## Choose Randy {{{3
 
 おいおい、かんべんしてくれよ。
 	おいおい、かんべんしてくれよ。
@@ -1469,6 +1563,7 @@
 	（ランディなら、
 	　うまくやってくれそうだな。）
 
+## Choose Noel {{{3
 む、む、無理ですよ！？
 	む、む、無理ですよ！？
 
@@ -1547,38 +1642,51 @@
 	（……やっぱり
 	人選ミスだったかな？）
 
+## }}}3
+
+## (Camera pans to show the whole room. There are a few more customers than before.)
+
+## L
 ちょっと混んできたみたいだな
-	ちょっと混んできたみたいだな
+	It's getting rather crowded.
 
+## If Elie {{{3
+
+## L
 エリィ、調子はどうだい？
-	エリィ、調子はどうだい？
+	Elie, how is it?
 
+## E:
 普通の給仕くらいは問題ないと思うわ。
 でも、トラブル対処が不安よね。
-	普通の給仕くらいは問題ないと思うわ。
-	でも、トラブル対処が不安よね。
+	For normal waitress matters I'm
+	holding up alright, but I'm worried
+	there may be trouble later.
 
 重大なものなら、本物の店員さんが
 助けてくれるでしょうけど……
-	重大なものなら、本物の店員さんが
-	助けてくれるでしょうけど……
+	If it's anything big, we'll have to
+	ask the real employees for help...
 
 でも、そう考えると、
 私たちが、あまり積極的に動いて
 いいものかどうか……
-	でも、そう考えると、
-	私たちが、あまり積極的に動いて
-	いいものかどうか……
+	So if anything happens, I'm not
+	sure how assertive I should be.
 
+## L
 たしかに、ちょっとしたイレギュラーが、
 一番難しいかもしれないな。
-	たしかに、ちょっとしたイレギュラーが、
-	一番難しいかもしれないな。
+	Yeah, things going off-track would
+	definitely be difficult to handle.
 
+## E
 ロイドは、そういうとき、
 どうしたらいいと思う？
-	ロイドは、そういうとき、
-	どうしたらいいと思う？
+	So if something were to happen,
+	what do you think I should do?
+
+## If Randy {{{3
 
 ああ、混んできやがったな……
 	ああ、混んできやがったな……
@@ -1605,6 +1713,8 @@
 
 トラブルが起きたら、どうすっかな？
 	トラブルが起きたら、どうすっかな？
+
+## If Noel {{{3
 
 ノエル、調子はどうだい？
 	ノエル、調子はどうだい？
@@ -1635,108 +1745,135 @@
 せめて、基本方針が欲しいところです。
 	せめて、基本方針が欲しいところです。
 
+## }}}3
+
+## L
 （問題が起きたときの対処方法か……
 　人それぞれだとは思うけど……）
-	（問題が起きたときの対処方法か……
-	　人それぞれだとは思うけど……）
+	(What do do in case trouble arises?
+	It's different for everyone, but...)
 
+## Menu
 控えめに
-	控えめに
-
+	Act reservedly
 積極的に
-	積極的に
-
+	Act assertively
 冷静に
-	冷静に
+	Act calmly
 
+## Elie,  reservedly (ok) {{{3
+
+## E
 そうね……
 私たちの目的は、張りこみだもの。
 控えめのほうがいいわよね
-	そうね……
-	私たちの目的は、張りこみだもの。
-	控えめのほうがいいわよね
+	That's true... Our objective is
+	the stakeout. We shouldn't get too
+	involved otherwise.
 
+## Customer
 店員さん！
-	店員さん！
+	Waitress!
 
+## (Elie notices)
+
+## E
 あ、お客さんが呼んでるみたい。
 ちょっと行ってくるわね
-	あ、お客さんが呼んでるみたい。
-	ちょっと行ってくるわね
+	That's a customer.
+	I'll be back later.
 
+## (Elie walks to the customer)
+
+## Customer
 このワイン、あるかい？
-	このワイン、あるかい？
+	Do you have any of this wine?
 
+## E
 えっと……品切れリストにはないので、
 あると思います。
-	えっと……品切れリストにはないので、
-	あると思います。
+	Let me see... It's not on the
+	sold-out list, so I think we
+	should have some left.
 
+## Customer
 おっ、そうかい！
-	おっ、そうかい！
+	That's great.
 
 いやあ、懐かしいなあ。
 俺の祖国のワインなんだよ！
-	いやあ、懐かしいなあ。
-	俺の祖国のワインなんだよ！
+	This wine is from my homeland,
+	so it's somewhat nostalgic.
 
+## L, off-screen
 （……あの人も、
 外国から来ているのか）
-	（……あの人も、
-	外国から来ているのか）
+	(So this man is a foreigner.)
 
 #5Sラララ～♪
 我が故郷の日々よ～♪#3S
-	#5Sラララ～♪
-	我が故郷の日々よ～♪#3S
+	#5SLa la la～♪
+	My home town is every day～♪#3S
 
+## L, off-screen
 （うわっ……歌いだしちゃったぞ。
 　エリィ、大丈夫か！？）
-	（うわっ……歌いだしちゃったぞ。
-	　エリィ、大丈夫か！？）
+	(What-- he started singing?
+	Will Elie be okay?)
 
+## E
 …………
-	…………
+	...
 
+## System
 {color 5}エリィは目立たず騒がず、
 歌が終わるのを待っていた。{color 0}
-	{color 5}エリィは目立たず騒がず、
-	歌が終わるのを待っていた。{color 0}
+	{color 5}Elie waits for the song to end
+	without attracting any more attention.{color 0}
 
+## Customer
 いや～。
 思わず歌っちゃったよ。
-	いや～。
-	思わず歌っちゃったよ。
+	Oh man. I just couldn't help
+	but to sing a little ditty.
 
+## E
 お客さま、このワインをご注文で
 よろしいでしょうか？
-	お客さま、このワインをご注文で
-	よろしいでしょうか？
+	Dear customer, would you like
+	to order this wine?
 
+## Customer
 あ、うん。
 じゃあ、持ってきておくれよ。
-	あ、うん。
-	じゃあ、持ってきておくれよ。
+	Ah, yes. I will
+	be waiting, then.
 
+## E
 かしこまりました。
-	かしこまりました。
+	Very well.
 
+## (Camera shifts to show the whole gang. Elie continues to talk with the customer, while Lloyd looks thoughtful.)
+
+## R
 なんか歌ってたけど、
 大丈夫か？
-	なんか歌ってたけど、
-	大丈夫か？
+	Man, that sure was some
+	singing. You all okay?
 
+## N
 下手に止めて、
 騒ぎになっても
 困りますから……
-	下手に止めて、
-	騒ぎになっても
-	困りますから……
+	Trying to stop it would
+	have caused a scene...
 
+## W
 ……それは、
 どうだろうね？
-	……それは、
-	どうだろうね？
+	I wonder about that.
+
+## Randy, reservedly (good) {{{3
 
 まぁ、控えめにしとくのが無難だよな。
 目的は取引を押さえることだし。
@@ -1810,6 +1947,8 @@
 うまくやってるみたいだね。
 	フフ……
 	うまくやってるみたいだね。
+
+## Noel,  reservedly (bad) {{{3
 
 控えめ……そうですよね。
 とにかく、目立たないようにしないと！
@@ -1916,66 +2055,92 @@
 	思うけど……ちょっと店に
 	迷惑かけちゃったかな。
 
+## Elie,  assertively (good) {{{3
+
+## E
 そう？
 目立たないほうがいいと思ったけど……
-	そう？
-	目立たないほうがいいと思ったけど……
+	You think so? I would have
+	thought a non-confrontational
+	approach would be better...
 
 ロイドが言うなら、
 積極的にやってみるわね。
-	ロイドが言うなら、
-	積極的にやってみるわね。
+	But if you say so, I'll give
+	it a try.
 
+## Customer
 #5Sオオオ～♪
 我らが祖国に栄光あれ～♪#3S
-	#5Sオオオ～♪
-	我らが祖国に栄光あれ～♪#3S
+	#5SOooohhh～♪
+	Glooory to the
+	moootherlaaand～♪#3S
 
+## L
 なんか、急に歌いだした客がいるぞ。
-	なんか、急に歌いだした客がいるぞ。
+	Oh. A customer just started
+	singing. Badly.
 
+## E
 行ってくるわね。
-	行ってくるわね。
+	I'll head over.
 
+## (She heads over.)
+
+## Customer
 #5S進め～♪　進め～♪
 力の限り～！#3S
-	#5S進め～♪　進め～♪
-	力の限り～！#3S
+	#5SMove out～♪ Move out～♪
+	With aaall your pooower～!#3S
 
+## E
 お客さま……
-	お客さま……
+	Sir...
 
+## Customer
 #5S戦え～♪　戦え～♪
 勝利を掴むまで～！#3S
-	#5S戦え～♪　戦え～♪
-	勝利を掴むまで～！#3S
+	#5SFight on～♪ Fight on～♪
+	Until victory is in your haaands～!#3S
 
+## E
 #5Sお客さま！#3S
-	#5Sお客さま！#3S
+	#5SSIR!#3S
 
+## (The customer notices.)
+
+## Customer
 うっ？　ああ、俺のことか？
-	うっ？　ああ、俺のことか？
+	Huh? Oh, me?
 
+## E
 他のお客さまもいらっしゃいます。
 お静かに、お願いいたします。
-	他のお客さまもいらっしゃいます。
-	お静かに、お願いいたします。
+	There are other customers here.
+	Would you mind keeping it down?
 
+## Customer
 あ、うん……そう、だな
-	あ、うん……そう、だな
+	Oh... Oh, my bad.
 
+## (Camera shifts to show the whole gang. Elie continues to talk with the customer, while Lloyd looks impressed.)
+
+## R
 さすが、お嬢だな。
-	さすが、お嬢だな。
+	Nice, Mademois-Elie.
 
+## N
 ビシッと言ってやって、
 かっこよかったですね！
-	ビシッと言ってやって、
-	かっこよかったですね！
+	It was so cool how she
+	just shut him down.
 
+## W
 フフ……
 上手くやってるじゃない。
-	フフ……
-	上手くやってるじゃない。
+	Heh... Nicely done indeed.
+
+## Randy, assertively (bad) {{{3
 
 積極的にか……まぁ、何事も自分から
 動かないとダメだよな
@@ -2069,6 +2234,8 @@
 	やれやれ、ちょっとお店に
 	迷惑をかけちゃったかな？
 
+## Noel,  assertively (bad) {{{3
+
 積極的？　なるほど……
 たしかに、遠慮しつつ働いてても、
 いい活躍はできません。
@@ -2112,55 +2279,65 @@
 かなり店に迷惑かけちゃったね。
 	かなり店に迷惑かけちゃったね。
 
+## Elie,  calmly (bad) {{{3
+
+## E
 え…………？
 ロイドには、私が冷静じゃないように
 見えるってこと？
-	え…………？
-	ロイドには、私が冷静じゃないように
-	見えるってこと？
+	Huh? Are you saying I don't seem
+	calm already?
 
 そう……
 なんだか、申し訳ないわね。
-	そう……
-	なんだか、申し訳ないわね。
+	Well, sorry about that. I am
+	nervous about this, you know.
 
 自分では、とくに慌てたりしてない
 つもりだったけど……
-	自分では、とくに慌てたりしてない
-	つもりだったけど……
+	But I wasn't going to let that
+	affect how I act.
 
+## L
 あ、いや、そういうわけじゃ……
-	あ、いや、そういうわけじゃ……
+	I didn't mean it that way.
 
+## E
 ううん、いいの。
 冷静を心がけてみるわ。
-	ううん、いいの。
-	冷静を心がけてみるわ。
+	I know. Don't worry, I'll
+	keep your advice in mind.
 
 えっと…………
-	えっと…………
+	Let's see...
 
+## L
 （エリィは充分に冷静だったよな。
 　どうして、あんなことを……）
-	（エリィは充分に冷静だったよな。
-	　どうして、あんなことを……）
+	(She seemed pretty composed already.
+	Why did I say something like that?)
 
+## (Camera shows the rest of the group.)
+
+## R
 どうしたんだ？
 お嬢が落ちこんでねえか？
-	どうしたんだ？
-	お嬢が落ちこんでねえか？
+	What did you just do, Lloyd?
+	Looks like you upset Mademois-Elie.
 
+## N
 なんか、店の雰囲気が
 暗くなっちゃったような……
-	なんか、店の雰囲気が
-	暗くなっちゃったような……
+	They're souring the mood
+	of the whole place...
 
+## W
 そうだね……
 ちょっと店に
 迷惑かけちゃったかな。
-	そうだね……
-	ちょっと店に
-	迷惑かけちゃったかな。
+	Our benefactors won't like that.
+
+## Randy, calmly (ok) {{{3
 
 冷静に？
 そうしてるつもりだけどな？
@@ -2251,6 +2428,8 @@
 らしくないですね？
 	らしくないですね？
 
+## Noel,  calmly (good) {{{3
+
 冷静に……？
 	冷静に……？
 
@@ -2301,317 +2480,432 @@
 	フフ……とくに
 	問題なさそうだね。
 
+## }}}3
+
+## (Lloyd and the partner are back in position. Lloyd notices something.)
+
+## L
 （あれは！？）
-	（あれは！？）
+	(Over there!)
 
+## (The partner notices. A man walks past, and Grace notices him, too.)
+
+## E, if chosen
 ロイド、あの人じゃないの！？
-	ロイド、あの人じゃないの！？
+	Lloyd, isn't that him?
 
+## R, if chosen
 ロイド、来たみたいだぜ？
-	ロイド、来たみたいだぜ？
+	Lloyd, that's our mark.
 
+## N, if chosen
 ロイドさん、来ましたか！？
-	ロイドさん、来ましたか！？
+	Lloyd, isn't that our target?
 
+## L
 ああ……でも、まだ……
-	ああ……でも、まだ……
+	Yes... But...
 
 （取引が行われたところを
 　押さえないと、意味がないからな）
-	（取引が行われたところを
-	　押さえないと、意味がないからな）
+	(If we blow our cover now,
+	we won't get anything done.)
 
 慎重に行動しないと。
-	慎重に行動しないと。
+	We need to act carefully.
 
+## (Camera pans to the innermost table, where the man stands in front, while another is already seated.)
+
+## Erebonian mafioso (the sitting guy)
 遅かったな。
-	遅かったな。
+	You're late.
 
+## Calvardian mafioso
 いいや？
 君の時計が悪くなってるんじゃ
 ないのかね？
-	いいや？
-	君の時計が悪くなってるんじゃ
-	ないのかね？
+	That so?
+	You sure it's not your
+	watch that is broken?
 
+## Ereb.
 馬鹿を言え。俺の時計は、帝国の
 貴族御用達ブランド品だ。
-	馬鹿を言え。俺の時計は、帝国の
-	貴族御用達ブランド品だ。
+	Don't be daft. This watch is
+	made by a brand that caters
+	to Imperial nobles.
 
+## Calv.
 じゃあ、やっぱり故障だろうね。
 時計は共和国産が一番だ。
-	じゃあ、やっぱり故障だろうね。
-	時計は共和国産が一番だ。
+	Well, it's clearly broken.
+	Everyone knows Republican
+	watches are the best.
 
+## Ereb.
 ククク……
-	ククク……
+	Heh heh heh...
 
+## Calv.
 ふふふ……
-	ふふふ……
+	Ha ha ha...
 
+## Ereb.
 まぁ、座れよ。
-	まぁ、座れよ。
+	Well, take a seat.
 
+## Calv.
 うむ
-	うむ
+	Don't mind if I do.
 
+## (The Calvardian man does that. A waiter comes to the table.)
+
+## Calv.
 同じものを頼む
-	同じものを頼む
+	I'll have the same as he.
 
+## Waiter
 かしこまりました
-	かしこまりました
+	Very well.
 
+## (The waiter walks away as the screen fades to black.)
+
+## Calv.
 この街は、本当に仕事がしやすいね。
 警察は観光客のごたごたばかり
 気にしているのだから。
-	この街は、本当に仕事がしやすいね。
-	警察は観光客のごたごたばかり
-	気にしているのだから。
+	Man, work is so easy here.
+	The cops are all out nagging
+	tourists.
 
+## (Fade in. The Calvardian man now has a drink in front of him.)
+
+## Ereb.
 ああ、国境の警備も甘いしな。
 荷物検査をごまかすのも簡単だったぜ。
-	ああ、国境の警備も甘いしな。
-	荷物検査をごまかすのも簡単だったぜ。
+	Sure is. The guards at the border are easy too.
+	Those baggage checks are nothing.
 
 この国の警備や警察は無能ぞろいだな。
 ははは！
-	この国の警備や警察は無能ぞろいだな。
-	ははは！
+	Guards, cops, they're all a bunch
+	of incompetents. Hahaha!
 
+## Calv.
 まあまあ、そう悪く言うものでは
 ないだろう。
-	まあまあ、そう悪く言うものでは
-	ないだろう。
+	Well now, there's no need to
+	speak ill of them, is there?
 
 おかげで、我々の仕事がしやすいの
 だから、感謝しないとね。
-	おかげで、我々の仕事がしやすいの
-	だから、感謝しないとね。
+	We should praise them for
+	making our work so easy.
 
+## Ereb.
 違いない！　ははは！
-	違いない！　ははは！
+	Ain't that the truth, haha.
 
+## Calv.
 我々の仕事がしやすいクロスベルに
 乾杯しようではないか。
-	我々の仕事がしやすいクロスベルに
-	乾杯しようではないか。
+	Shall we have a toast in honor
+	of this city's hospitality?
 
+## Ereb.
 ああ、俺たちの仕事がしやすい
 クロスベルに乾杯！　ははは！
-	ああ、俺たちの仕事がしやすい
-	クロスベルに乾杯！　ははは！
+	Indeed. Cheers to Crossbell,
+	the city where dreams come true!
 
+## Calv.
 ふふふ……乾杯。
-	ふふふ……乾杯。
+	Haha... Cheers.
 
+## (Sound of glasses clinking. Camera shifts back to Lloyd and partner.)
+
+## L
 （……さんざんな言われようだな）
-	（……さんざんな言われようだな）
+	(What a load of rubbish.)
 
+## E, if chosen
 （……否定しきれないのが、悔しいわね）
-	（……否定しきれないのが、悔しいわね）
+	(As much as it hurts,
+	I can't deny any of it.)
 
+## R, if chosen
 （言ってくれるねえ。
 　ぶん殴ってやりたいぜ。）
-	（言ってくれるねえ。
-	　ぶん殴ってやりたいぜ。）
+	(They sure aren't mincing their words.
+	I want to go up and wallop them.)
 
+## N, if chosen
 （ううぅ……ロイドさん、悔しいです！）
-	（ううぅ……ロイドさん、悔しいです！）
+	(Ugh... Lloyd, this hurts to listen to.)
 
+## (Camera shifts back to the mafiosi)
+
+## Calv.
 さて、そろそろ本題に入ろうか。
-	さて、そろそろ本題に入ろうか。
+	I suppose it's time for the main course.
 
+## Ereb.
 ああ、こいつが、お望みのサンプルだ。
-	ああ、こいつが、お望みのサンプルだ。
+	Yes. I have the samples you requested.
 
+## Calv.
 うむ。確認させてもらうよ。
-	うむ。確認させてもらうよ。
+	Good. Allow me to confirm.
 
+## Ereb.
 ああ、かまわねえぜ。
 騙しはナシだ。
-	ああ、かまわねえぜ。
-	騙しはナシだ。
+	I don't mind.
+	I'm an honest man.
 
+## Calv.
 ……ふむ……
 ほほう、資料も……
 これは間違いないようだな。
-	……ふむ……
-	ほほう、資料も……
-	これは間違いないようだな。
+	...Hmmhmm...
+	Yes, this all seems to be
+	in order.
 
+## Ereb.
 ミラはあるんだろうな？
-	ミラはあるんだろうな？
+	And the mira?
 
+## Calv.
 うむ
-	うむ
+	Got it here.
 
+## (Sound of something being handed over)
+
+## Ereb.
 数えさせてもらうぜ？
-	数えさせてもらうぜ？
+	You don't mind if I check the sum?
 
+## Calv.
 当然だろうね。
 目立たないように頼むよ。
-	当然だろうね。
-	目立たないように頼むよ。
+	Naturally. Just be discreet.
 
+## Ereb.
 わかってるさ。
-	わかってるさ。
+	Got it.
 
+## (Camera is back on Lloyd.)
+
+## L
 （……もう充分だな）
-	（……もう充分だな）
+	(That's enough.)
 
 よし、行こう。
-	よし、行こう。
+	Let's go.
 
+## E, if chosen
 ええ、行きましょう、ロイド
-	ええ、行きましょう、ロイド
+	Yes. Let's go, Lloyd.
 
+## R, if chosen
 おっしゃ！　本領発揮するぜ！
-	おっしゃ！　本領発揮するぜ！
+	Alright! It's showtime!
 
+## N, if chosen
 はい！　突撃です！
-	はい！　突撃です！
+	Yes! Charge!
 
+## (The gang rushes forward.)
+
+## L
 そこまでだ！
-	そこまでだ！
+	That's enough!
 
+## Ereb.
 な、なんだ、お前ら！？
-	な、なんだ、お前ら！？
+	And who the hell are you?
 
+## Calv.
 ……まさか……特務支援課！？
-	……まさか……特務支援課！？
+	Don't tell me... The SSS?
 
+## E, if chosen
 今、取引した物品、
 調べさせてもらうわよ！
-	今、取引した物品、
-	調べさせてもらうわよ！
+	We would like to inspect
+	those goods you just traded.
 
+## R, if chosen
 痛い目みたくなきゃ、大人しくしな！
-	痛い目みたくなきゃ、大人しくしな！
+	Don't resist if you know
+	what's best for you!
 
+## E, if chosen
 動かないで！　手を頭の上へ！
-	動かないで！　手を頭の上へ！
+	Don't move! Keep your hands
+	where we can see them!
 
+## W
 フフ……
 どうやら、うまく取引を押さえられた
 みたいだね。
-	フフ……
-	どうやら、うまく取引を押さえられた
-	みたいだね。
+	Looks like we put a nice little
+	dent in that plan of yours.
 
+## Ereb.
 チッ……警察だと……
-	チッ……警察だと……
+	Damn cops.
 
+## Calv...
 ううぅ……なんてことだ……
-	ううぅ……なんてことだ……
+	Aww... How could this happen...
 
+## Ereb.
 ふん！　クロスベルの腰抜け警察なぞ、
 やってやる！！
-	ふん！　クロスベルの腰抜け警察なぞ、
-	やってやる！！
+	Hmph! We can take on a couple
+	of cowardly Crossbell cops.
 
+## Calv.
 ぐくくっ……こうなったら……
-	ぐくくっ……こうなったら……
+	Ggghh... If it's come to this...
 
 豪胆な声
-	豪胆な声
-
+	Fierce voice
 おい、貴様ら！
-	おい、貴様ら！
+	Oi.
 
+## (Everyone turns around, shocked. The camera shifts slightly, revealing Sigmund and Shirley.)
+
+## Si
 まさか俺の店で、
 暴れる気じゃあるまいな？
-	まさか俺の店で、
-	暴れる気じゃあるまいな？
+	You don't intend to fight in
+	OUR establishment, do you?
 
+## (Sigmund brings out his dual axes with a fierce aura.)
+
+## Si
 死に急ぐなら手伝ってやろう！！
-	死に急ぐなら手伝ってやろう！！
+	If you're that eager to die,
+	I wouldn't mind helping out!
 
+## Ereb.
 っ……！？
-	っ……！？
+	...
 
+## Calv.
 ひっ……！？
-	ひっ……！？
+	Eek...
 
+## L
 うっ……すごい殺気だ。
-	うっ……すごい殺気だ。
+	That's some fierce bloodlust.
 
+## R
 チッ……凄味が増してやがるぜ。
-	チッ……凄味が増してやがるぜ。
+	And it's getting stronger by the minute.
 
+## (The Erebonian sits back down. The aura is no longer visible.)
+
+## Ereb.
 か、かんべんしてください……
-	か、かんべんしてください……
+	Please spare me!
 
+## Calv.
 ううぅ……もうだめだ……
-	ううぅ……もうだめだ……
+	Ugh... I can't do this anymore...
 
+## (The calvardian walks over and sits next to the Erebonian. Grace swoops in, camera flashing.)
+
+## G
 いいわよ～！　いい記事になりそう！
-	いいわよ～！　いい記事になりそう！
+	Oh yeah! This'll make a great article.
 
+## (Zoom out to show most of the room. Grace continues photographing, while other customers applaud.)
+## (Fade to black, fade in with the gang standing Neue Blanc's foyer. Shirley and Grace are with them, Sigmund is not.)
+
+## L
 なんとかなったようだな。
-	なんとかなったようだな。
+	Well, we did it. Somehow.
 
+## G
 お疲れさま！
 お姉さん、興奮しちゃったわ～
-	お疲れさま！
-	お姉さん、興奮しちゃったわ～
+	Great job!
+	I was on the edge of my seat!
 
 面白い記事が書けそうよ！
-	面白い記事が書けそうよ！
+	I can make a great article with this!
 
+## L
 はは……
 期待しています。
-	はは……
-	期待しています。
+	Haha... I'm looking forward to it.
 
 情報提供、ありがとうございました。
-	情報提供、ありがとうございました。
+	We couldn't have done it without
+	your information.
 
+## If good outcome {{{3
+## If chose Elie {{{4
+
+## N
 お店に迷惑をかけずに済んだみたいで、
 よかったですね。
-	お店に迷惑をかけずに済んだみたいで、
-	よかったですね。
+	And we did it without causing any
+	trouble for the shop.
 
+## R
 お嬢、なかなか様になってたぜ？
-	お嬢、なかなか様になってたぜ？
+	Looked pretty swell out there,
+	Mademois-Elie.
 
+## E
 からかわないで。
 必死だったんだから。
-	からかわないで。
-	必死だったんだから。
+	Please don't tease me...
+	I was desperate.
 
+## L
 はは……
 助かったよ、エリィ。
-	はは……
-	助かったよ、エリィ。
+	Haha...
+	Good job, Elie.
 
+## W
 なかなかよかったんじゃない。
-	なかなかよかったんじゃない。
+	A job well done indeed.
 
 フフ……
 今度、僕が顔を出してる店でも
 働いてみない？
-	フフ……
-	今度、僕が顔を出してる店でも
-	働いてみない？
+	Heh... Want to try a gig
+	at this other shop I frequent?
 
+## Sh
 客からの評判もよかったみたいだよ。
-	客からの評判もよかったみたいだよ。
+	The customer reviews were
+	positive, too.
 
 お姉さん、特務支援課が嫌になったら、
 うちに来なよ。
-	お姉さん、特務支援課が嫌になったら、
-	うちに来なよ。
+	If you get tired of this SSS
+	thing, you could get a job here.
 
 まぁ、お姉さんなら、
 《赤い星座》のほうでもいいけどね♪
-	まぁ、お姉さんなら、
-	《赤い星座》のほうでもいいけどね♪
+	But you're pretty good in battle
+	too, so the Red Constellation
+	would also welcome you. ♪
 
+## E
 もう、からかわないで！
 お断りです！
-	もう、からかわないで！
-	お断りです！
+	I said please don't tease me!
+	I refuse!
+
+## If chose Randy {{{4
 
 お店に迷惑をかけずに済んだみたいで、
 よかったですね。
@@ -2671,6 +2965,8 @@
 	えへへっ。そうだね。
 	そうしといてあげるよ！
 
+## If chose Noel {{{4
+
 お店に迷惑をかけずに済んだみたい。
 よかったわ。
 	お店に迷惑をかけずに済んだみたい。
@@ -2723,41 +3019,55 @@
 じょ、冗談じゃありませんよ！？
 	じょ、冗談じゃありませんよ！？
 
+## }}}4
+
+## W
 ロイドの指示も、
 的確だったみたいだね。
-	ロイドの指示も、
-	的確だったみたいだね。
+	Lloyd's directions were spot-on.
 
 さすがリーダー。
 みんなの癖をよく把握してる。
-	さすがリーダー。
-	みんなの癖をよく把握してる。
+	That's our leader. I knew we were
+	keeping him around for something.
 
+## L
 ワジが動けたら、よかったんだけどな。
-	ワジが動けたら、よかったんだけどな。
+	Would have gone better if Wazy
+	could have worked, though.
 
+## W
 フフ、それを言われるとつらいね。
-	フフ、それを言われるとつらいね。
+	It hurts when you say that.
 
+## If ok outcome {{{3
+## If chose Elie {{{4
+
+## N
 お店に、そんなに迷惑をかけずに、
 済んだと思いますし。
-	お店に、そんなに迷惑をかけずに、
-	済んだと思いますし。
+	And we did it without causing
+	too much trouble for the shop.
 
+## R
 お嬢、お疲れさん。
-	お嬢、お疲れさん。
+	Nice job, Mademois-Elie.
 
+## E
 本当に疲れちゃった……
 もう懲り懲りだわ。
-	本当に疲れちゃった……
-	もう懲り懲りだわ。
+	I'm so exhausted...
+	That sucked.
 
+## L
 すまなかった、エリィ。
-	すまなかった、エリィ。
+	Sorry, Elie.
 
+## W
 初めてにしては上出来だったよ。
-	初めてにしては上出来だったよ。
+	Pretty good for a first-timer.
 
+## If chose Randy {{{4
 お店に、そんなに迷惑をかけずに、
 済んだと思いますし。
 	お店に、そんなに迷惑をかけずに、
@@ -2797,40 +3107,58 @@
 	えへへっ。仕方ないな～。
 	そうしといてあげるよ！
 
-ワジが動けたら、よかったんだけどな。
-	ワジが動けたら、よかったんだけどな。
+## There is no way to get an ok result with Noel. {{{4
+## }}}4
 
+## L
+ワジが動けたら、よかったんだけどな。
+	Would have gone better if Wazy
+	could have worked, though.
+
+## W
 まぁ、ロイドの指示は、
 ほどほどだったんじゃない？
-	まぁ、ロイドの指示は、
-	ほどほどだったんじゃない？
+	Your instructions were
+	kinda so-so.
 
+## If bad outcome {{{3
+## If chose Elie {{{4
+
+## E
 でも……
 お店に迷惑をかけてしまったわね。
-	でも……
-	お店に迷惑をかけてしまったわね。
+	But we did cause some trouble
+	for the shop.
 
+## R
 いや、あんなもんじゃねえか？
-	いや、あんなもんじゃねえか？
+	Nah, that's nothing to worry about.
 
+## N
 素人なんだから、仕方ありませんよ。
-	素人なんだから、仕方ありませんよ。
+	It was inevitable, since we're all
+	beginners at this.
 
+## L
 俺の言った方針がマズかったな。
 すまなかった。
-	俺の言った方針がマズかったな。
-	すまなかった。
+	No, the fault is mine.
+	I steered us all wrong.
 
+## W
 まぁ、こんなことも経験じゃない？
-	まぁ、こんなことも経験じゃない？
+	Well, it was certainly an experience.
 
+## Sh
 シャーリィは笑わせてもらったけど。
 楽しかったよ、お姉さん
-	シャーリィは笑わせてもらったけど。
-	楽しかったよ、お姉さん
+	It was hilarious. Thanks, lady.
 
+## E
 ううぅ……
-	ううぅ……
+	Just drop it already...
+
+## If chose Randy {{{4
 
 しかし、店に迷惑かけちまったかな？
 貸しを作った気がして、微妙だぜ。
@@ -2867,6 +3195,8 @@
 
 ちぇっ……かんべんしろよなぁ……
 	ちぇっ……かんべんしろよなぁ……
+
+## If chose Noel {{{4
 
 ううぅ……
 私が失敗したせいで、
@@ -2911,48 +3241,64 @@
 くうぅぅ……
 	くうぅぅ……
 
+## }}}3
+
+## Sh
 さて、と……
-	さて、と……
+	Righty, then.
 
 よかったら、
 この後も店で楽しんでってよ。
 サービスするからさ♪
-	よかったら、
-	この後も店で楽しんでってよ。
-	サービスするからさ♪
+	Feel free to come back
+	here at any time. You will
+	be warmly welcomed. ♪
 
 シャーリィは忙しいから、
 もう行くね！
-	シャーリィは忙しいから、
-	もう行くね！
+	I have things to do
+	now, so I'm out.
 
+## (Shirley leaves.)
+
+## R
 忙しい、ねえ？
 なにを企んでいるやら。
-	忙しい、ねえ？
-	なにを企んでいるやら。
+	Things to do? Can't be
+	anything but bad news.
 
+## E
 そういえば、あのとき……
 なんのためにＩＢＣにいたのかしら？
-	そういえば、あのとき……
-	なんのためにＩＢＣにいたのかしら？
+	Now that I think about it...
+	What was Grace doing outside
+	the IBC in the first place?
 
+## W
 フフ、さてね……
-	フフ、さてね……
+	Well, let's see...
 
 共和国のロックスミス大統領が
 ＩＢＣを視察していたそうだけど、
 果たして関係あるのかどうか……
-	共和国のロックスミス大統領が
-	ＩＢＣを視察していたそうだけど、
-	果たして関係あるのかどうか……
+	Calvard's President Rocksmith
+	is visiting the IBC today.
+	Maybe that's why?
 
+## L
 なんにしても、油断はできないな。
-	なんにしても、油断はできないな。
+	Well, whatever the case, we
+	can't let our guard down.
 
 俺たちも、俺たちにできることを
 全力でがんばろう。
-	俺たちも、俺たちにできることを
-	全力でがんばろう。
+	We have to do everything
+	in our power to keep the
+	city safe.
+
+## (Fade to black.)
 
 {color 2}クエスト【不正取引の張りこみ】{color 0}を達成した！
-	{color 2}クエスト【不正取引の張りこみ】{color 0}を達成した！
+	Quest {color 2}Illicit Trade Stakeout{color 0} completed!
+
+## (Resumes control in the Entertainment District.)
