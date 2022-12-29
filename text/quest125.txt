@@ -78,8 +78,8 @@
 　あるだろうが、捜査のためなら
 　ランディはやってくれるはずだ。
 	★I'll pick Randy. I'm sure he's reluctant to
-	　work at this shop that's owned by his
-	　family, but he'll do fine.
+	　work at this shop that's owned by his family,
+	　but he'll do fine.
 
 ★店員は、ノエルにやってもらおう。
 　客あしらいはうまくないかもしれないが
@@ -87,31 +87,31 @@
 　なんとしてでも
 　目的を果たしてくれるはずだ。
 	★I'll pick Noel. She might not be the greatest
-	　at the hospitality business, but with how much
-	　we've gone through together I know she'll pull
-	　through this one as well.
+	　at the hospitality business, but with how
+	　much we've gone through together I know
+	　she'll pull through this one as well.
 
 ★客が増えてきて忙しくなってきた。
 　こうなると、想定外のアクシデントに
 　どう対応するかが大事になる。
 　やはり、問題を極力起こさないように、
 　控えめの対応を心掛けるべきだな。
-	★客が増えてきて忙しくなってきた。
-	　こうなると、想定外のアクシデントに
-	　どう対応するかが大事になる。
-	　やはり、問題を極力起こさないように、
-	　控えめの対応を心掛けるべきだな。
+	★It's getting more and more busy.
+	　In this situation we need to decide how to
+	　deal with any accidents.
+	　I think our best bet is to lie low and
+	　hope nothing happens.
 
 ★客が増えてきて忙しくなってきた。
 　こうなると、ちょっとしたトラブルに
 　どう対応するかが大事になる。
 　積極的に動いて、トラブルが大きく
 　なる前に対処するようにしよう。
-	★客が増えてきて忙しくなってきた。
-	　こうなると、ちょっとしたトラブルに
-	　どう対応するかが大事になる。
-	　積極的に動いて、トラブルが大きく
-	　なる前に対処するようにしよう。
+	★It's getting more and more busy.
+	　In this situation we need to decide how to
+	　deal with any trouble.
+	　Let's try to nip it in the bud before it
+	　becomes anything big.
 
 ★客が増えてきて忙しくなってきた。
 　こうなると、ちょっとしたイレギュラー
@@ -119,28 +119,28 @@
 　冷静な対応を心掛けて、なにが起きても
 　慌てないようにしないとな。
 	★It's getting more and more busy.
-	　In this situation we need to decide
-	　how to deal with any irregularities.
-	　We need to keep a cool head and act calmly
-	　no matter what happens.
+	　In this situation we need to decide how to
+	　deal with any irregularities.
+	　We should to keep a cool head and act
+	　calmly no matter what happens.
 
 ★不安だった接客だが、
 　思った以上に上手くいった。
 　いざという時にどう対応するか、
 　方針を決めておいたのは正解だったな。
-	★不安だった接客だが、
-	　思った以上に上手くいった。
-	　いざという時にどう対応するか、
-	　方針を決めておいたのは正解だったな。
+	★There was a troublesome customer, but it
+	　was resolved rather easily.
+	　Seems like we picked a good policy.
 
 ★いざという時に、どう対応するかを
 　決めておいたからか、接客はそこそこ
 　上手くこなせたみたいだ。
 　でも、もっと上手くやれた気もするな。
-	★いざという時に、どう対応するかを
-	　決めておいたからか、接客はそこそこ
-	　上手くこなせたみたいだ。
-	　でも、もっと上手くやれた気もするな。
+	★We managed to stop the situation from
+	　escalating, but there was still a
+	　disturbance.
+	　We could probably have handled that
+	　situation better.
 
 ★やはり、接客は向いていないのか、
 　思った通りにはいかなかった。
@@ -163,8 +163,8 @@
 	　I'm concerned about what Sigmund and
 	　Shirley are up to, but this time we owe
 	　them our thanks.
-	　We'll stay alert for any further movements
-	　from them.
+	　Still, we'll have to stay alert for any
+	　further movements from them.
 
 ## c1200 - Harbor District {{{1
 
@@ -670,7 +670,7 @@
 
 ## Sh
 えへへっ。
-	Ehehe.
+	Heeheehee.
 
 ## (Grace [♪] and steps forward a bit)
 
@@ -1384,7 +1384,7 @@
 
 ## E
 わ、私で大丈夫かしら？
-	You want me?
+	You're okay with me?
 
 ## (Fade in. Elie is now next to Lloyd, instead of Wazy.)
 
@@ -1483,168 +1483,216 @@
 
 ## Choose Randy {{{3
 
+## R
 おいおい、かんべんしてくれよ。
-	おいおい、かんべんしてくれよ。
+	Why me? Couldn't you have
+	picked someone else?
 
+## (Fade in. Randy is now standing in Wazy's former spot.)
+
+## L
 すまない……
 こういう店に一番慣れてるのは、
 ランディだと思うんだ。
-	すまない……
-	こういう店に一番慣れてるのは、
-	ランディだと思うんだ。
+	Sorry... But you are the one who
+	is most used to this kind of places.
 
+## R
 まぁ、否定はしないけどよ。
-	まぁ、否定はしないけどよ。
+	Can't deny that.
 
 しかし、この店で働くのはなぁ……
-	しかし、この店で働くのはなぁ……
+	Still, working at THIS bar...
 
+## L
 やっぱり、無理かな？
-	やっぱり、無理かな？
+	Want me to ask someone else?
 
+## R
 ……いや……まぁ、これは俺の私情か。
 仕事に持ちこんでちゃ、それこそ、
 叔父貴とシャーリィに笑われちまうな。
-	……いや……まぁ、これは俺の私情か。
-	仕事に持ちこんでちゃ、それこそ、
-	叔父貴とシャーリィに笑われちまうな。
+	No. Can't let my personal feelings
+	get in the way of work.{wait}{page}'Sides, Uncle Sigmund and Shirley
+	would never let me hear the end
+	of it if I chickened out here.
 
 まかせとけ。
 ワジより、ばっちりキメてやるぜ。
-	まかせとけ。
-	ワジより、ばっちりキメてやるぜ。
+	I've got this.
+	I'll do Wazy's damn job for him.
 
+## L
 助かる。
 協力してくれてる店に
 迷惑をかけたくないからな。
-	助かる。
-	協力してくれてる店に
-	迷惑をかけたくないからな。
+	Thanks. We'll want to avoid
+	interfering with the shop's
+	normal business if possible.
 
+## R
 そうだな。
 借りは作りたくないぜ。
-	そうだな。
-	借りは作りたくないぜ。
+	Right. Don't want them hounding
+	our asses for payback.
 
+## L
 （さすが、ランディだ。
 　切り替えてくれてるみたいだな）
-	（さすが、ランディだ。
-	　切り替えてくれてるみたいだな）
+	(Randy is impressive, going along
+	with this despite everything.)
 
+## R
 まだ情報にあったヤツは来てない
 みたいだな？
-	まだ情報にあったヤツは来てない
-	みたいだな？
+	No sight of our guy?
 
+## L
 ああ、見てないよ。
-	ああ、見てないよ。
+	No, not yet.
 
+## (Randy notices something.)
+
+## R
 おっと、なんか呼んでるみたいだな。
 行ってくるぜ。
-	おっと、なんか呼んでるみたいだな。
-	行ってくるぜ。
+	There's a customer. You stay
+	here and keep watch.
 
+## (Randy heads over. It's Wazy's patron.)
+
+## Patron
 あら、見かけない店員さんね。
-	あら、見かけない店員さんね。
+	Oh, my. I don't think I've
+	seen you here before.
 
+## R
 ああ、臨時雇いでね。
 なにか注文かい？
-	ああ、臨時雇いでね。
-	なにか注文かい？
+	Yeah, I'm subbing in for now.
+	May I take your order?
 
+## (The patron does a ㈱ bubble)
+
+## Patron
 まぁ、粗野な感じが、ス・テ・キ！
-	まぁ、粗野な感じが、ス・テ・キ！
+	That rugged look is so handsome!
 
+## R
 …………かんべんしてくれ
-	…………かんべんしてくれ
+	...Just kill me already.
 
+## Camera shifts to show both Lloyd, Randy, and the still-㈱-ing patron.)
+
+## L
 （ランディなら、
 　うまくやってくれそうだな。）
-	（ランディなら、
-	　うまくやってくれそうだな。）
+	(...Well, I'm sure Randy
+	can handle this.)
 
 ## Choose Noel {{{3
+
+## N
 む、む、無理ですよ！？
-	む、む、無理ですよ！？
+	N-n-no way! I can't do it!
 
 どうして、私なんですか！？
-	どうして、私なんですか！？
+	Why would you pick me?
 
+## (Fade in. Noel is now in Wazy's place.)
+
+## L
 えっと……
 こういうのは、意外性が
 大切なんじゃないかと思うんだ。
-	えっと……
-	こういうのは、意外性が
-	大切なんじゃないかと思うんだ。
+	Err... In a case like this,
+	the element of surprise is
+	important. Right?
 
+## N
 ロイドさん、マジメに考えて
 くれてますか！？
-	ロイドさん、マジメに考えて
-	くれてますか！？
+	Lloyd, are you really
+	thinking this through?
 
+## L
 あ、いや……
 何事も少し苦手だと思ってる人の
 ほうが上手くやるものだからさ。
-	あ、いや……
-	何事も少し苦手だと思ってる人の
-	ほうが上手くやるものだからさ。
+	Well, you know... People do
+	perform best when they're a
+	little uncertain.
 
+## N
 少しじゃなく苦手だと
 思いますけど……
-	少しじゃなく苦手だと
-	思いますけど……
+	I'm very certain, though.
 
 はぁ……
 わかりました。
-	はぁ……
-	わかりました。
+	Oh well... I'll give it
+	a shot.
 
 ロイドさんが言うのでしたら、
 全力でがんばります！
-	ロイドさんが言うのでしたら、
-	全力でがんばります！
+	If you're putting your
+	trust in me, I'll have
+	to respond in kind.
 
+## L
 まだ情報にあった外国人は来てない
 みたいだ。
 リラックスしていこう。
-	まだ情報にあった外国人は来てない
-	みたいだ。
-	リラックスしていこう。
+	Still no signs of our suspect.
+	We can take it easy for now.
 
+## N
 了解であります！
-	了解であります！
+	Understood!
 
+## (Noel notices a customer.)
+
+## N
 あっ、お客さんが呼んでいますね！
 行ってきます！
-	あっ、お客さんが呼んでいますね！
-	行ってきます！
+	A customer is calling! Let
+	me take care of it.
 
+## (She heads over.)
+
+## Customer
 おっ、店員さん、かわいいねえ！
 新入りかい？
-	おっ、店員さん、かわいいねえ！
-	新入りかい？
+	Oh, that's a cute face.
+	Are you new here?
 
+## N
 えっ！？　な、なに言ってるんですか！
 注文してください！
-	えっ！？　な、なに言ってるんですか！
-	注文してください！
+	What are you saying!?
+	...Your orders, please?
 
+## Customer
 あ、ああ……
 じゃあ、これと、これを……
-	あ、ああ……
-	じゃあ、これと、これを……
+	Oh, well...
+	Yes, this, and... this...
 
+## N
 了解しました！
-	了解しました！
+	Y-yes, sir!
 
+## (Camera shifts to show both Lloyd and Noel.)
+
+## L
 （……やっぱり
 人選ミスだったかな？）
-	（……やっぱり
-	人選ミスだったかな？）
+	(Maybe I picked the wrong
+	person after all?)
 
 ## }}}3
 
-## (Camera pans to show the whole room. There are a few more customers than before.)
+## (Fade to black and then back in. Camera pans to show the whole room. There are a few more customers than before.)
 
 ## L
 ちょっと混んできたみたいだな
@@ -1688,62 +1736,78 @@
 
 ## If Randy {{{3
 
+## R
 ああ、混んできやがったな……
-	ああ、混んできやがったな……
+	Yeah, it's getting hard to keep
+	track of everyone.
 
 こういうときは、ちょっとしたトラブルが
 起きやすいんだよな。
-	こういうときは、ちょっとしたトラブルが
-	起きやすいんだよな。
+	And when it's like this, trouble
+	could break out at any moment.
 
 いつもなら、ビッと仕切ってやる
 ところだけど……
-	いつもなら、ビッと仕切ってやる
-	ところだけど……
+	Normally I'd have my ways to
+	deal with it...
 
 あまり目立つわけにもなあ？
-	あまり目立つわけにもなあ？
+	But we don't want to stand
+	out, yeah?
 
+## L
 たしかに。
 一番の目的は、不正な取引の現場を
 押さえることだからな。
-	たしかに。
-	一番の目的は、不正な取引の現場を
-	押さえることだからな。
+	Our primary objective is catching
+	the criminals, yes. Standing out
+	would work against us.
 
+## R
 トラブルが起きたら、どうすっかな？
-	トラブルが起きたら、どうすっかな？
+	So if something comes up, how
+	d'you think we should deal with it?
 
 ## If Noel {{{3
 
+## L
 ノエル、調子はどうだい？
-	ノエル、調子はどうだい？
+	Noel, how are you feeling?
 
+## N
 普通に注文をもらうだけなら、
 なんとかできそうですけど……
-	普通に注文をもらうだけなら、
-	なんとかできそうですけど……
+	If it's just taking orders, I can
+	more or less handle it...
 
 想定外のアクシデントが起きたとき、
 どう対応したらいいのか不安です。
-	想定外のアクシデントが起きたとき、
-	どう対応したらいいのか不安です。
+	But if there are any unforeseen
+	problems, I'm not sure what I can do.
 
+## L
 うーん、臨機応変に対処するしかないと
 思うけれど……
-	うーん、臨機応変に対処するしかないと
-	思うけれど……
+	I don't think we can do much
+	other than just dealing with
+	it as it comes.
 
+## N
 問題が起きたからって、武力で解決できる
 わけじゃありませんしね……
-	問題が起きたからって、武力で解決できる
-	わけじゃありませんしね……
+	I'm trained in resolving these
+	things by force, but I don't think
+	that's the right approach here.
 
+## L
 それこそ、お店の迷惑になりそうだな。
-	それこそ、お店の迷惑になりそうだな。
+	Yeah, I don't think our hosts
+	would appreciate that.
 
+## N
 せめて、基本方針が欲しいところです。
-	せめて、基本方針が欲しいところです。
+	Do you have any advice on what
+	overall approach to use?
 
 ## }}}3
 
@@ -1755,13 +1819,13 @@
 
 ## Menu
 控えめに
-	Act reservedly
+	Act unassuming
 積極的に
-	Act assertively
+	Act assertive
 冷静に
-	Act calmly
+	Act calm
 
-## Elie,  reservedly (ok) {{{3
+## Elie,  unassuming (ok) {{{3
 
 ## E
 そうね……
@@ -1810,6 +1874,7 @@
 外国から来ているのか）
 	(So this man is a foreigner.)
 
+## Customer
 #5Sラララ～♪
 我が故郷の日々よ～♪#3S
 	#5SLa la la～♪
@@ -1846,14 +1911,14 @@
 ## Customer
 あ、うん。
 じゃあ、持ってきておくれよ。
-	Ah, yes. I will
-	be waiting, then.
+	Ah, yes. Please do
+	bring me a bottle.
 
 ## E
 かしこまりました。
 	Very well.
 
-## (Camera shifts to show the whole gang. Elie continues to talk with the customer, while Lloyd looks thoughtful.)
+## (Camera shifts to show the whole gang.)
 
 ## R
 なんか歌ってたけど、
@@ -1873,189 +1938,232 @@
 どうだろうね？
 	I wonder about that.
 
-## Randy, reservedly (good) {{{3
+## Randy, unassuming (good) {{{3
 
+## R
 まぁ、控えめにしとくのが無難だよな。
 目的は取引を押さえることだし。
-	まぁ、控えめにしとくのが無難だよな。
-	目的は取引を押さえることだし。
+	Yeah, playing it safe would
+	be... safest. Don't want to
+	startle the little rascals.
 
+## Customer, off-screen
 店員さん！
-	店員さん！
+	Waiter!
 
+## R
 おっ、ちょっくら行ってきますかね。
-	おっ、ちょっくら行ってきますかね。
+	Gimme a minute.
 
+## (Randy walks over.)
+
+## Customer
 このワイン、あるかい？
-	このワイン、あるかい？
+	Do you have any of this wine?
 
+## R
 ああ、もちろんだぜ。
-	ああ、もちろんだぜ。
+	Yup, sure do.
 
+## Customer
 おっ、そうかい！
-	おっ、そうかい！
+	That's great.
 
 いやあ、懐かしいなあ。
 俺の祖国のワインなんだよ！
-	いやあ、懐かしいなあ。
-	俺の祖国のワインなんだよ！
+	This wine is from my homeland,
+	so it's somewhat nostalgic.
 
+## L, off-screen
 （……あの人も、
 外国から来ているのか）
-	（……あの人も、
-	外国から来ているのか）
+	(So this man is a foreigner.)
 
+## Customer
 #5Sラララ～♪
 我が故郷の日々よ～♪#3S
-	#5Sラララ～♪
-	我が故郷の日々よ～♪#3S
+	#5SLa la la～♪
+	My home town is every day～♪#3S
 
+## L, off-screen
 （うわっ……歌いだしちゃったぞ。
 　ランディ、大丈夫か！？）
-	（うわっ……歌いだしちゃったぞ。
-	　ランディ、大丈夫か！？）
+	(What-- he started singing?
+	Will Randy be okay?)
 
+## R
 おいおい……
-	おいおい……
+	Hey, now...
 
 ……いや、控えめに……だったな。
-	……いや、控えめに……だったな。
+	...Wait no, unassuming...
 
 お客さん、ワインはどうするんで？
-	お客さん、ワインはどうするんで？
+	Dear customer, would you like this wine?
 
+## Customer
 ラララ～……ハッ！
 思わず歌っちゃったよ。
 騒がしくして、すみません
-	ラララ～……ハッ！
-	思わず歌っちゃったよ。
-	騒がしくして、すみません
+	La la la～... Huh?
+	Oh man. I just couldn't help
+	but to sing a little ditty.
+	Sorry about that.
 
 じゃあ、持ってきてください。
-	じゃあ、持ってきてください。
+	Yes, please do bring
+	me a bottle.
 
+## R
 おう、おとなしく待ってな。
-	おう、おとなしく待ってな。
+	Righty, be there in a jiffy.
 
+## (Camera shifts to show the whole gang.)
+
+## E
 さすが、ランディだわ。
-	さすが、ランディだわ。
+	Nicely done, Randy.
 
+## N
 手慣れてますね。
-	手慣れてますね。
+	He's like a pro at this.
 
+## W
 フフ……
 うまくやってるみたいだね。
-	フフ……
-	うまくやってるみたいだね。
+	Not too shabby.
 
-## Noel,  reservedly (bad) {{{3
+## Noel,  unassuming (bad) {{{3
 
+## N
 控えめ……そうですよね。
 とにかく、目立たないようにしないと！
-	控えめ……そうですよね。
-	とにかく、目立たないようにしないと！
+	Unassuming... Makes sense.
+	We mustn't stand out.
 
 私たちの目的は、
 不正な取引を見つけることですから！
-	私たちの目的は、
-	不正な取引を見つけることですから！
+	That would get in the way of
+	arresting those villains.
 
+## L
 あ、ああ……
-	あ、ああ……
+	Yeah, something like that.
 
 （だいぶ入れこんでるなあ。
 　大丈夫かな？）
-	（だいぶ入れこんでるなあ。
-	　大丈夫かな？）
+	(She seems pumped. Will
+	she be okay?)
 
+## Customer, off-screen
 店員さん！
-	店員さん！
+	Waitress!
 
+## N
 わわっ！？
 よ、呼ばれたので行ってきます！
-	わわっ！？
-	よ、呼ばれたので行ってきます！
+	Whoa!
+	Someone's calling for me!
 
+## (She heads over.)
+
+## Customer
 このワイン、あるかい？
-	このワイン、あるかい？
+	Do you have any of this wine?
 
+## N
 ワイン……えっと……はい。
 欠品リストには載っていません。
 備蓄されています。
-	ワイン……えっと……はい。
-	欠品リストには載っていません。
-	備蓄されています。
+	Wine... Let me check.
+	Yes, it's not on the sold-out list,
+	so we should have some in stock.
 
+## Customer
 おっ、そうかい！
-	おっ、そうかい！
+	That's great.
 
 いやあ、懐かしいなあ。
 俺の祖国のワインなんだよ！
-	いやあ、懐かしいなあ。
-	俺の祖国のワインなんだよ！
+	This wine is from my homeland,
+	so it's somewhat nostalgic.
 
+## L, off-screen
 （……あの人も、
 外国から来ているのか）
-	（……あの人も、
-	外国から来ているのか）
+	(So this man is a foreigner.)
 
+## Customer
 #5Sラララ～♪
 我が故郷の日々よ～♪#3S
-	#5Sラララ～♪
-	我が故郷の日々よ～♪#3S
+	#5SLa la la～♪
+	My home town is every day～♪#3S
 
+## L, off-screen
 （うわっ……歌いだしちゃったぞ。
 　ノエル、大丈夫か！？）
-	（うわっ……歌いだしちゃったぞ。
-	　ノエル、大丈夫か！？）
+	(What-- he started singing?
+	Will Noel be okay?)
 
+## N
 っ……！？
-	っ……！？
+	Huh?
 
 え、えっと…………
-	え、えっと…………
+	Err... What to do...?
 
 #4S控えめにお願いします！！#3S
-	#4S控えめにお願いします！！#3S
+	#4SYou mustn't stand out!!#3S
 
+## Customer
 っ……！？
-	っ……！？
+	Huh?
 
 ………………はい。すみません
-	………………はい。すみません
+	...Oh. I apologize.
 
+## L, off-screen
 （ああ……
 　店中の視線が痛い）
-	（ああ……
-	　店中の視線が痛い）
+	(Ouch. Those stares.)
 
+## N
 ひ、控えめで、お願いします！
-	ひ、控えめで、お願いします！
+	Please show some restraint.
+	You're bothering the other
+	customers.
 
+## Customer
 あ、はい……
 えっと、すみませんでした。
-	あ、はい……
-	えっと、すみませんでした。
+	Yes...
+	I'm sorry.
 
+## N
 わかってくれればいいです。
-	わかってくれればいいです。
+	As long as you understand.
 
+## (Camera shifts to show the whole gang.)
+
+## E
 ……だいぶ、
 目立っちゃったわね。
-	……だいぶ、
-	目立っちゃったわね。
+	And just like that, she has
+	the whole shop watching her.
 
+## R
 人選ミスじゃねえか？
-	人選ミスじゃねえか？
+	That's not the right role for her.
 
+## W
 それだけでもないと
 思うけど……ちょっと店に
 迷惑かけちゃったかな。
-	それだけでもないと
-	思うけど……ちょっと店に
-	迷惑かけちゃったかな。
+	I think this counts as
+	"causing a scene", as
+	the saying goes.
 
-## Elie,  assertively (good) {{{3
+## Elie,  assertive (good) {{{3
 
 ## E
 そう？
@@ -2140,153 +2248,192 @@
 上手くやってるじゃない。
 	Heh... Nicely done indeed.
 
-## Randy, assertively (bad) {{{3
+## Randy, assertive (bad) {{{3
 
+## R
 積極的にか……まぁ、何事も自分から
 動かないとダメだよな
-	積極的にか……まぁ、何事も自分から
-	動かないとダメだよな
+	Assertive? Just be
+	myself, then.
 
+## Customer, off-screen
 店員さん！
-	店員さん！
+	Waiter!
 
+## R
 おっ、ちょっくら行ってきますかね。
-	おっ、ちょっくら行ってきますかね。
+	Gimme a minute.
 
+## (Randy walks over.)
+
+## Customer
 このワイン、あるかい？
-	このワイン、あるかい？
+	Do you have any of this wine?
 
+## R
 ああ、たぶんな
-	ああ、たぶんな
+	Yeah, probably.
 
+## Customer
 おっ、そうかい！
-	おっ、そうかい！
+	That's great.
 
+## Customer
 いやあ、懐かしいなあ。
 俺の祖国のワインなんだよ！
-	いやあ、懐かしいなあ。
-	俺の祖国のワインなんだよ！
+	This wine is from my homeland,
+	so it's somewhat nostalgic.
 
+## L, off-screen
 （……あの人も、
 外国から来ているのか）
-	（……あの人も、
-	外国から来ているのか）
+	(So this man is a foreigner.)
 
+## Customer
 #5Sラララ～♪
 我が故郷の日々よ～♪#3S
-	#5Sラララ～♪
-	我が故郷の日々よ～♪#3S
+	#5SLa la la～♪
+	My home town is every day～♪#3S
 
+## L, off-screen
 （うわっ……歌いだしちゃったぞ。
 　ランディ、大丈夫か！？）
-	（うわっ……歌いだしちゃったぞ。
-	　ランディ、大丈夫か！？）
+	(What-- he started singing?
+	Will Randy be okay?)
 
+## R
 おいおい、なに歌ってんだ。
 他の客に迷惑だろうが？
-	おいおい、なに歌ってんだ。
-	他の客に迷惑だろうが？
+	Hey, the heck you doing?
+	Think of the other customers!
 
+## Customer
 #5Sラララ～♪　遠ざかる街。
 汽車は進むよ～♪#3S
-	#5Sラララ～♪　遠ざかる街。
-	汽車は進むよ～♪#3S
+	#5SLa la la～♪ O, distant city,
+	driven by steam～♪#3S
 
+## R
 #5S静かにしろ！#3S
-	#5S静かにしろ！#3S
+	#5SShut it!#3S
 
+## Customer
 ……ッ！？
-	……ッ！？
+	...!?
 
 あ、う…………
-	あ、う…………
+	Oh, I...
 
+## R
 んで？　注文は？
-	んで？　注文は？
+	Well? Your order.
 
+## Customer
 ひ～。す、す、すみません！
 帰ります～！
-	ひ～。す、す、すみません！
-	帰ります～！
+	Eek! S-S-Sorry!
+	I'll go home!
 
+## (The man runs out of the bar, crying.)
+
+## R
 おいおい、びびり過ぎだろ。
-	おいおい、びびり過ぎだろ。
+	Hey, isn't that a bit much?
 
+## (Camera shifts to show the whole gang.)
+
+## E
 ふぅ……ケンカに
 なるんじゃないかと、
 ハラハラしたわ。
-	ふぅ……ケンカに
-	なるんじゃないかと、
-	ハラハラしたわ。
+	Well... At least it didn't
+	turn into a fistfight. But
+	only barely.
 
+## N
 さすが、
 ランディ先輩！
-	さすが、
-	ランディ先輩！
+	That's such a Randy
+	thing to do.
 
 ……と、言って
 いいものかどうか？
-	……と、言って
-	いいものかどうか？
+	...But maybe that's
+	not such a good thing
+	in this case.
 
+## W
 やれやれ、ちょっとお店に
 迷惑をかけちゃったかな？
-	やれやれ、ちょっとお店に
-	迷惑をかけちゃったかな？
+	Didn't we all agree to
+	NOT cause a ruckus?
 
-## Noel,  assertively (bad) {{{3
+## Noel,  assertive (bad) {{{3
 
+## N
 積極的？　なるほど……
 たしかに、遠慮しつつ働いてても、
 いい活躍はできません。
-	積極的？　なるほど……
-	たしかに、遠慮しつつ働いてても、
-	いい活躍はできません。
+	Assertive? That makes sense.
+	You don't get anywhere in
+	life if you hold back.
 
 どんな苦手なことでも、
 積極的に動かないといけませんよね！
-	どんな苦手なことでも、
-	積極的に動かないといけませんよね！
+	Whatever is in your way,
+	just go full steam ahead!
 
+## L
 そうだね。
-	そうだね。
+	That's right.
 
 （まぁ、俺たちの目的は、
 　不正な取引を押さえることだけど）
-	（まぁ、俺たちの目的は、
-	　不正な取引を押さえることだけど）
+	(Our goal is to stop the
+	trade deal, but there's no
+	harm in being energetic.)
 
+## N
 積極的に、店の中を巡回してきます！
-	積極的に、店の中を巡回してきます！
+	I shall begin patrolling the
+	store at once!
 
+## (She runs toward the back. A loud clang resounds.)
+
+## N, off-screen
 ひゃあ！？
-	ひゃあ！？
-
+	Augh!?
+## Clerk, simultaneously
 うわっ！？
-	うわっ！？
+	Whoa!
 
+## L
 あ………………
-	あ………………
+	...Nevermind.
 
+## (Camera shifts to show the whole gang. Lloyd and Noel are both near the clerk.)
+
+## R
 これまた、やらかしたな……
-	これまた、やらかしたな……
+	That did not look pretty.
 
+## E
 ……私、片付けだけでも
 手伝ってくるわね。
-	……私、片付けだけでも
-	手伝ってくるわね。
+	I'd better go and help clean up.
 
+## W
 かなり店に迷惑かけちゃったね。
-	かなり店に迷惑かけちゃったね。
+	So much for being discreet.
 
-## Elie,  calmly (bad) {{{3
+## Elie,  calm (bad) {{{3
 
 ## E
 え…………？
 ロイドには、私が冷静じゃないように
 見えるってこと？
-	Huh? Are you saying I don't seem
-	calm already?
+	Act calm? Are you saying I
+	don't seem calm already?
 
 そう……
 なんだか、申し訳ないわね。
@@ -2337,148 +2484,174 @@
 迷惑かけちゃったかな。
 	Our benefactors won't like that.
 
-## Randy, calmly (ok) {{{3
+## Randy, calm (ok) {{{3
 
+## R
 冷静に？
 そうしてるつもりだけどな？
-	冷静に？
-	そうしてるつもりだけどな？
+	Calmly? Well, that goes
+	without saying, doesn't it?
 
+## Customer, off-screen
 店員さん！
-	店員さん！
+	Waiter!
 
+## R
 ん？　ちょっと行ってくるか。
-	ん？　ちょっと行ってくるか。
+	Be back in a minute.
 
+## (Randy walks over.)
+
+## Customer
 このワイン、あるかい？
-	このワイン、あるかい？
+	Do you have any of this wine?
 
+## R
 ああ、たぶんな。
-	ああ、たぶんな。
+	Yeah, probably.
 
+## Customer
 おっ、そうかい！
-	おっ、そうかい！
+	That's great.
 
+## Customer
 いやあ、懐かしいなあ。
 俺の祖国のワインなんだよ！
-	いやあ、懐かしいなあ。
-	俺の祖国のワインなんだよ！
+	This wine is from my homeland,
+	so it's somewhat nostalgic.
 
+## L, off-screen
 （……あの人も、
 外国から来ているのか）
-	（……あの人も、
-	外国から来ているのか）
+	(So this man is a foreigner.)
 
+## Customer
 #5Sラララ～♪
 我が故郷の日々よ～♪#3S
-	#5Sラララ～♪
-	我が故郷の日々よ～♪#3S
+	#5SLa la la～♪
+	My home town is every day～♪#3S
 
+## L, off-screen
 （うわっ……歌いだしちゃったぞ。
 　ランディ、大丈夫か！？）
-	（うわっ……歌いだしちゃったぞ。
-	　ランディ、大丈夫か！？）
+	(What-- he started singing?
+	Will Randy be okay?)
 
+## R
 冷静に……冷静に……
-	冷静に……冷静に……
+	Keep calm... Gotta keep calm...
 
 うーん……とめるべきか？
 いや、それは、冷静じゃないのか？
-	うーん……とめるべきか？
-	いや、それは、冷静じゃないのか？
+	Uh... Should I stop him? No,
+	that wouldn't be calm, would it?
 
+## System
 {color 5}ランディは悩みつつ、
 歌が終わるのを待ってしまった。{color 0}
-	{color 5}ランディは悩みつつ、
-	歌が終わるのを待ってしまった。{color 0}
+	{color 5}Randy waits indecisively for the song to end.{color 0}
 
+## Customer
 いや～。
 思わず歌っちゃったよ。
-	いや～。
-	思わず歌っちゃったよ。
+	Oh man. I just couldn't help
+	but to sing a little ditty.
 
+## R
 お、おう……
 止めるかどうか、悩んでるうちに
 歌い終わってたな。
-	お、おう……
-	止めるかどうか、悩んでるうちに
-	歌い終わってたな。
+	Oh... Well, the song is over.
 
 そういや、ワインはどうするんだ？
-	そういや、ワインはどうするんだ？
+	So anyway, you want that wine?
 
+## Customer
 じゃあ、持ってきてください。
-	じゃあ、持ってきてください。
+	Yes, please do bring
+	me a bottle.
 
+## R
 ああ、すぐだ。たぶん
-	ああ、すぐだ。たぶん
+	Sure. It'll be right over,
+	I guess.
 
+## (Camera shifts to show the whole gang.)
+
+## W
 なんだか、
 妙に不慣れな感じだね。
 迷っているのかな？
-	なんだか、
-	妙に不慣れな感じだね。
-	迷っているのかな？
+	He seems less used to this
+	than I thought. I wonder
+	What's wrong?
 
+## E
 ランディ、
 どうしたのかしら？
-	ランディ、
-	どうしたのかしら？
+	What's up with Randy?
 
+## N
 らしくないですね？
-	らしくないですね？
+	This isn't like him.
 
-## Noel,  calmly (good) {{{3
+## Noel,  calm (good) {{{3
 
+## N
 冷静に……？
-	冷静に……？
+	Calm down?
 
 ……たしかに、ちょっと落ち着きを
 失っていたかもしれません。
-	……たしかに、ちょっと落ち着きを
-	失っていたかもしれません。
+	You're right, I did lose my
+	cool back there.
 
 ありがとうございます、ロイドさん。
 深呼吸して、がんばります。
-	ありがとうございます、ロイドさん。
-	深呼吸して、がんばります。
+	Thanks, Lloyd.
+	(Deep breaths...)
 
+## L
 俺たちの目的は、不正な取引を
 押さえることだ。
-	俺たちの目的は、不正な取引を
-	押さえることだ。
+	Our goal here is to confirm
+	and arrest our suspects.
 
 店員としては、できることを着実に
 やっていけばいいと思う。
-	店員としては、できることを着実に
-	やっていけばいいと思う。
+	We should play our roles normally
+	until it's time to act.
 
+## N
 そうですね。
 なんか、いい仕事をしようと、
 張り切りすぎていました。
-	そうですね。
-	なんか、いい仕事をしようと、
-	張り切りすぎていました。
+	You're right. I think I got
+	too immersed in my role.
 
+## System
 {color 5}落ち着きを取り戻したノエルと、
 無難に仕事をこなしていった。{color 0}
-	{color 5}落ち着きを取り戻したノエルと、
-	無難に仕事をこなしていった。{color 0}
+	{color 5}Having calmed down, Noel finished
+	her work without any further incidents.{color 0}
 
+## (Camera shows Lloyd and Noel interacting with the customers, before panning over to the rest of the gang.)
+
+## R
 うまくやれてるじゃねえか。
-	うまくやれてるじゃねえか。
+	Huh. She's actually doing pretty well.
 
+## E
 そうね。
 今日が初めてとは思えない
 くらい、落ち着いてるわ。
-	そうね。
-	今日が初めてとは思えない
-	くらい、落ち着いてるわ。
+	Looking at her, you wouldn't
+	think this is her first time.
 
+## W
 フフ……とくに
 問題なさそうだね。
-	フフ……とくに
-	問題なさそうだね。
+	No problems here.
 
 ## }}}3
 
@@ -2512,7 +2685,7 @@
 	we won't get anything done.)
 
 慎重に行動しないと。
-	We need to act carefully.
+	We need to be patient.
 
 ## (Camera pans to the innermost table, where the man stands in front, while another is already seated.)
 
@@ -2907,117 +3080,142 @@
 
 ## If chose Randy {{{4
 
+## N
 お店に迷惑をかけずに済んだみたいで、
 よかったですね。
-	お店に迷惑をかけずに済んだみたいで、
-	よかったですね。
+	And we did it without causing any
+	trouble for the shop.
 
+## E
 さすが、ランディは慣れてたわね。
-	さすが、ランディは慣れてたわね。
+	Figures that Randy would
+	be good at this sort of job.
 
+## R
 肩が凝って仕方なかったぜ。
 やっぱり、バーは給仕するより、
 給仕される場所だな。
-	肩が凝って仕方なかったぜ。
-	やっぱり、バーは給仕するより、
-	給仕される場所だな。
+	I'm all stiff...
+	I'd much rather be waited on
+	than do the waiting.
 
+## L
 はは……
 助かったよ、ランディ。
-	はは……
-	助かったよ、ランディ。
+	Maybe next time.
+	Anyway, great job, Randy.
 
+## W
 なかなかよかったんじゃない。
-	なかなかよかったんじゃない。
+	A job well done indeed.
 
 フフ……
 今度、僕が顔を出してる店でも
 働いてみない？
-	フフ……
-	今度、僕が顔を出してる店でも
-	働いてみない？
+	Heh... Want to try a gig
+	at this other shop I frequent?
 
+## R
 かんべんしてくれ。
-	かんべんしてくれ。
+	Spare me.
 
+## Sh
 客からの評判もよかったみたいだよ。
-	客からの評判もよかったみたいだよ。
+	The customer reviews were
+	positive, too.
 
 ランディ兄、やっぱり戻ってくれば？
-	ランディ兄、やっぱり戻ってくれば？
+	Dolphy, you sure you won't come back?
 
 もちろん、店員としてじゃなく……
 だけどね♪
-	もちろん、店員としてじゃなく……
-	だけどね♪
+	It wouldn't have to be as
+	a bartender of course. ♪
 
+## R
 今は、その話はナシで頼むぜ。
-	今は、その話はナシで頼むぜ。
+	Can you not bring that up
+	right now? Please.
 
+## G
 ん？　なになに？
-	ん？　なになに？
+	Hm? I smell a scoop.
 
+## R
 なんでもねえって。
-	なんでもねえって。
+	It's nothing.
 
+## Sh
 えへへっ。そうだね。
 そうしといてあげるよ！
-	えへへっ。そうだね。
-	そうしといてあげるよ！
+	Ahaha, I guess so.
+	I'll leave it at that,
+	for now.
 
 ## If chose Noel {{{4
 
+## E
 お店に迷惑をかけずに済んだみたい。
 よかったわ。
-	お店に迷惑をかけずに済んだみたい。
-	よかったわ。
+	And we did it without causing any
+	trouble for the shop.
 
+## R
 意外とやれてたじゃねえか、ノエル。
-	意外とやれてたじゃねえか、ノエル。
+	You did better than I expected, Noel.
 
+## N
 かんべんしてください……
 強行軍の演習より疲れました……
-	かんべんしてください……
-	強行軍の演習より疲れました……
+	Cut me some slack...
+	That was more exhausting than
+	a forced march exercise.
 
+## L
 はは……
 助かったよ、ノエル。
-	はは……
-	助かったよ、ノエル。
+	Well, great job, Noel.
 
+## W
 まあまあよかったんじゃない？
-	まあまあよかったんじゃない？
+	It wasn't that bad, was it?
 
 フフ……
 今度、僕にも給仕をしてもらおうかな？
-	フフ……
-	今度、僕にも給仕をしてもらおうかな？
+	Maybe I should have you serve
+	me next time?
 
+## N
 ……朝食の牛乳くらいなら、
 グラスについであげるよ、ワジ君
-	……朝食の牛乳くらいなら、
-	グラスについであげるよ、ワジ君
+	I can pour you a glass of
+	milk at breakfast.
 
+## W
 フフ……
 早起きしないとね。
-	フフ……
-	早起きしないとね。
+	Me, awake for breakfast?
+	Perish the thought.
 
+## Sh
 客からの評判もよかったみたいだよ。
-	客からの評判もよかったみたいだよ。
+	The customer reviews were
+	positive, too.
 
 お姉さん、特務支援課が嫌になったら、
 うちに来なよ。
-	お姉さん、特務支援課が嫌になったら、
-	うちに来なよ。
+	If you get tired of this SSS
+	thing, you could get a job here.
 
 まぁ、お姉さんの場合、
 《赤い星座》のほうが向いてそうだけど。
-	まぁ、お姉さんの場合、
-	《赤い星座》のほうが向いてそうだけど。
+	But you're pretty good in battle
+	too, so maybe you'd do better in
+	the Red Constellation.
 
+## N
 じょ、冗談じゃありませんよ！？
-	じょ、冗談じゃありませんよ！？
+	Th-that's a joke, right?
 
 ## }}}4
 
@@ -3068,44 +3266,57 @@
 	Pretty good for a first-timer.
 
 ## If chose Randy {{{4
+
+## N
 お店に、そんなに迷惑をかけずに、
 済んだと思いますし。
-	お店に、そんなに迷惑をかけずに、
-	済んだと思いますし。
+	And we did it without causing
+	too much trouble for the shop.
 
+## E
 ランディ、お疲れさま。
-	ランディ、お疲れさま。
+	Good job, Randy.
 
+## R
 やっぱり、この店で働くのは、
 俺には無理だな。
-	やっぱり、この店で働くのは、
-	俺には無理だな。
+	I knew this. This shop
+	is not for me.
 
+## L
 すまなかった、ランディ。
-	すまなかった、ランディ。
+	Sorry, Randy.
 
+## W
 そんなに悪くなかったと思うけどね。
-	そんなに悪くなかったと思うけどね。
+	I don't think it went that badly, really.
 
+## Sh
 まあ、いいんじゃない？
-	まあ、いいんじゃない？
+	Well, that's okay with me.
 
 ランディ兄には、こんな店より……
-	ランディ兄には、こんな店より……
+	We wouldn't want you working
+	at the shop anyway.
 
+## R
 シャーリィ、その話はナシで頼むぜ。
-	シャーリィ、その話はナシで頼むぜ。
+	Shirley, can you please not
+	bring that up?
 
+## G
 ん？　なになに？
-	ん？　なになに？
+	Hm? I smell a scoop.
 
+## R
 なんでもねえ。
-	なんでもねえ。
+	It's nothing.
 
+## Sh
 えへへっ。仕方ないな～。
 そうしといてあげるよ！
-	えへへっ。仕方ないな～。
-	そうしといてあげるよ！
+	Ahaha, fine～. I'll leave
+	it at that, for now.
 
 ## There is no way to get an ok result with Noel. {{{4
 ## }}}4
@@ -3152,7 +3363,7 @@
 ## Sh
 シャーリィは笑わせてもらったけど。
 楽しかったよ、お姉さん
-	It was hilarious. Thanks, lady.
+	It was hilarious. Thanks, miss.
 
 ## E
 ううぅ……
@@ -3160,86 +3371,104 @@
 
 ## If chose Randy {{{4
 
+## R
 しかし、店に迷惑かけちまったかな？
 貸しを作った気がして、微妙だぜ。
-	しかし、店に迷惑かけちまったかな？
-	貸しを作った気がして、微妙だぜ。
+	But we kinda made a huge mess of everything.
+	Wouldn't be surprised if they come looking
+	for our blood tonight.
 
+## E
 私には、よくわからなかったけど……
-	私には、よくわからなかったけど……
+	I'm not really sure what happened...
 
+## N
 ランディ先輩、お疲れさまでした。
-	ランディ先輩、お疲れさまでした。
+	Well, you did your best.
 
+## L
 俺の言った方針がマズかったな。
 すまなかった。
-	俺の言った方針がマズかったな。
-	すまなかった。
+	I gave him bad advice.
+	This is entirely on me.
 
+## W
 フフ……
 店で楽しむのと、楽しませるのは、
 違うことだからね。
-	フフ……
-	店で楽しむのと、楽しませるのは、
-	違うことだからね。
+	You underestimated the
+	difference between entertaining
+	and being entertained.
 
+## R
 はー……
 俺、楽しませるほうは、向いてねえわ……
-	はー……
-	俺、楽しませるほうは、向いてねえわ……
+	In the future I'll stick to
+	being entertained...
 
+## Sh
 シャーリィは爆笑させてもらったけど。
 面白かったよ、ランディ兄
-	シャーリィは爆笑させてもらったけど。
-	面白かったよ、ランディ兄
+	I, for one, couldn't stop laughing.
+	Great job, Dolphy.
 
+## R
 ちぇっ……かんべんしろよなぁ……
-	ちぇっ……かんべんしろよなぁ……
+	Just leave me alone...
 
 ## If chose Noel {{{4
 
+## N
 ううぅ……
 私が失敗したせいで、
 お店に迷惑をかけてしまいました。
-	ううぅ……
-	私が失敗したせいで、
-	お店に迷惑をかけてしまいました。
+	Due to my inability, we ended
+	up causing a huge scene...
 
+## R
 いや、あんなもんじゃねえか？
-	いや、あんなもんじゃねえか？
+	Could've been worse. Didn't
+	light anything on fire.
 
+## E
 がんばってたと思うわ。
-	がんばってたと思うわ。
+	You did your best.
 
+## L
 俺の言った方針がマズかったな。
 すまなかった。
-	俺の言った方針がマズかったな。
-	すまなかった。
+	No, the fault is mine.
+	I steered us all wrong.
 
+## W
 なにごとも経験だと思うよ。
-	なにごとも経験だと思うよ。
+	It's something to learn from,
+	at least.
 
 この機会に、そんなお店にでも
 行ってみるかい？
-	この機会に、そんなお店にでも
-	行ってみるかい？
+	What do you say about coming
+	back as guests someday?
 
+## N
 はぁ……
 しばらく、お酒の出てくるお店は、
 遠慮しとく……
-	はぁ……
-	しばらく、お酒の出てくるお店は、
-	遠慮しとく……
+	I think I'll stay away from shops
+	involving alcoholic beverages
+	for the time being...
 
+## S
 まぁ、シャーリィは笑わせてもらった
 からいいけどね。
 面白かったよ、お姉さん
-	まぁ、シャーリィは笑わせてもらった
-	からいいけどね。
-	面白かったよ、お姉さん
+	I don't think it's a big deal.
+	I was laughing the whole time.
 
+## N
 くうぅぅ……
-	くうぅぅ……
+	Can't you at least keep
+	that part to yourself?
 
 ## }}}3
 
@@ -3271,8 +3500,8 @@
 そういえば、あのとき……
 なんのためにＩＢＣにいたのかしら？
 	Now that I think about it...
-	What was Grace doing outside
-	the IBC in the first place?
+	Why were they at the IBC
+	in the first place?
 
 ## W
 フフ、さてね……
@@ -3283,22 +3512,21 @@
 果たして関係あるのかどうか……
 	Calvard's President Rocksmith
 	is visiting the IBC today.
-	Maybe that's why?
+	Maybe that's related?
 
 ## L
 なんにしても、油断はできないな。
-	Well, whatever the case, we
-	can't let our guard down.
+	Well, whatever their deal is,
+	we can't let our guard down.
 
 俺たちも、俺たちにできることを
 全力でがんばろう。
-	We have to do everything
-	in our power to keep the
-	city safe.
+	We have to do everything in
+	our power to protect our city.
 
 ## (Fade to black.)
 
 {color 2}クエスト【不正取引の張りこみ】{color 0}を達成した！
-	Quest {color 2}Illicit Trade Stakeout{color 0} completed!
+	Quest {color 2}[Illicit Trade Stakeout]{color 0} completed!
 
 ## (Resumes control in the Entertainment District.)

@@ -339,4 +339,6 @@ fn quest125(ctx: &mut Context) {
 	s.copy_func(0, 22, tl); // fork: shake
 	s.copy_func(0, 23, tl); // fork: emote
 	s.func(1, |a| a.ifs(0).tail(nil));
+
+	// TODO patch in post-quest dialogue in c1030 and termination in c0110
 }
