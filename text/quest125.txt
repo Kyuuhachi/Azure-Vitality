@@ -1075,7 +1075,7 @@
 ## (Fade to black)
 
 {color 2}クエスト【不正取引の張りこみ】{color 0}を開始した！
-	Quest {color 2}[Illicit Trade Stakeout]{color 0} started!
+	{color 0}Quest {color 2}[Illicit Trade Stakeout]{color 0} started!
 
 ## (Continue in c0490:15)
 
@@ -3527,7 +3527,7 @@
 ## (Fade to black.)
 
 {color 2}クエスト【不正取引の張りこみ】{color 0}を達成した！
-	Quest {color 2}[Illicit Trade Stakeout]{color 0} completed!
+	{color 0}Quest {color 2}[Illicit Trade Stakeout]{color 0} completed!
 
 ## (Resumes control in c0400, the Entertainment District.)
 
