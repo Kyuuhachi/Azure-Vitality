@@ -297,6 +297,7 @@ fn main() -> anyhow::Result<()> {
 	});
 
 	quest125(&mut ctx);
+	quest158(&mut ctx);
 
 	let outdir = Path::new("./patch");
 	if outdir.exists() {
@@ -351,22 +352,13 @@ fn quest125(ctx: &mut Context) {
 
 	tl.comment("c0490 - Neue Blanc");
 	let s = ctx.scena("c0490");
-	s.copy_npc(18, tl); // Wazy's patron
-	s.copy_npc(19, tl); // Grace
-	s.copy_npc(20, tl); // Woman
-	s.copy_npc(21, tl); // Man
-	s.copy_npc(22, tl); // Man
-	s.copy_npc(23, tl); // Imperial mafioso
-	s.copy_npc(24, tl); // Republic mafioso
-	s.copy_func(0, 15, tl); // main event
-	s.copy_func(0, 16, tl); // fork
-	s.copy_func(0, 17, tl); // camera preset
-	s.copy_func(0, 18, tl); // camera preset
-	s.copy_func(0, 19, tl); // fork
-	s.copy_func(0, 20, tl); // fork
-	s.copy_func(0, 21, tl); // fork
-	s.copy_func(0, 22, tl); // fork: shake
-	s.copy_func(0, 23, tl); // fork: emote
+	for i in 18..=24 {
+		s.copy_npc(i, tl); // Wazy's patron, Grace, Woman, Man, Man, Imperial mafioso, Republic mafioso
+	}
+	s.copy_func(0, 15, tl);
+	for i in 16..=23 {
+		s.copy_func(0, i, nil);
+	}
 	s.func(1, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
 
 	// c0400 - Entertainment District, where you end up after the quest
@@ -395,4 +387,50 @@ fn quest125(ctx: &mut Context) {
 		do_translate(tl, &mut if_[1].1);
 		a.0.insert(i, TreeInsn::If(if_));
 	});
+}
+
+fn quest158(ctx: &mut Context) {
+	let nil = &mut Nil;
+
+	let tl = &mut Translate::load(include_str!("../text/quest158.txt"));
+	tl.comment("t_quest");
+	ctx.copy_quest(QuestId(158), tl);
+
+	tl.comment("c0100 - Central square");
+	let s = ctx.scena("c0100");
+	s.main.chcp.push(Some("chr/ch41600.itc".to_owned()));
+	s.copy_npc(57, tl); // Uniformed man
+	s.func(7, |a| {
+		let b = a.if_clause(&flag![2848]);
+		let tail = b.0.split_off(b.1.len()-1);
+		let Some(TreeInsn::If(xx)) = b.1.last() else { panic!() };
+		b.0.push(TreeInsn::If(vec![(translate(nil, &xx[0].0), tail)]));
+	});
+	s.func(7, |a| a.if_clause(&flag![2573]).copy_tail(nil));
+
+	let s = ctx.scena("c0100_1");
+	s.copy_func(1, 27, tl); // talk to uniformed man
+
+	tl.comment("t3520 - Crossbell Airport");
+	let s = ctx.scena("t3520");
+	s.copy_npc(23, tl); // Guardsman
+	s.copy_func(0, 35, tl);
+	for i in 36..=45 {
+		s.copy_func(0, i, nil);
+	}
+	s.func(1, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![275]), nil));
+
+	tl.comment("e3210 - Arseille");
+	let s = ctx.scena("e3210");
+	s.func(1, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![273]), nil));
+	s.copy_func(0, 14, tl);
+
+	let tl = &mut Dump;
+
+	let tl = &mut Nop;
+	tl.comment("e3210 - Arseille, round two");
+	let s = ctx.scena("e3210");
+	s.func(1, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
+	s.copy_func(0, 15, tl);
+	s.copy_func(0, 16, nil);
 }

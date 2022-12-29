@@ -11,7 +11,9 @@ pub trait Translator {
 	fn translate(&mut self, s: &str) -> String;
 }
 
-pub struct Dump {}
+#[deprecated]
+pub struct Dump;
+#[allow(deprecated)]
 impl Translator for Dump {
 	fn comment(&mut self, s: &str) {
 		println!("\n## {s} {{{{{{1");
@@ -36,6 +38,15 @@ impl Translator for Nil {
 	fn translate(&mut self, s: &str) -> String {
 		panic!("no translation expected! {s}");
 	}
+}
+
+#[deprecated]
+pub struct Nop;
+#[allow(deprecated)]
+impl Translator for Nop {
+	fn comment(&mut self, _: &str) {}
+
+	fn translate(&mut self, s: &str) -> String { s.to_owned() }
 }
 
 pub struct Translate(VecDeque<(String, String)>);
