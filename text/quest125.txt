@@ -3530,3 +3530,33 @@
 	Quest {color 2}[Illicit Trade Stakeout]{color 0} completed!
 
 ## (Resumes control in c0400, the Entertainment District.)
+
+## c0300 - Long Lao Tavern & Inn {{{1
+
+## :37 Talk to Grace or Reins {{{2
+## G
+もしかして、
+ロイド君たちも食事？
+	You guys here for lunch?
+
+ふふ、さっきはありがとうね。
+かっこいい記事にするから
+楽しみにしてて♪
+	Hey, thanks for earlier.
+	I'll make you look really
+	cool in my article.
+
+## L
+こちらこそ、
+情報提供、ありがとうございました。
+	Same to you. We couldn't
+	have done it without your info.
+
+## L
+どういたしまして。
+	You're very welcome.
+
+それはそうと、
+除幕式はすごかったわね～！
+	But hey, what'd you think of the unveiling
+	ceremony? Wasn't it amazing?

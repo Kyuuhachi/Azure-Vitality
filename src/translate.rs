@@ -97,6 +97,11 @@ impl Translator for Translate {
 
 pub fn translate<T: Clone + VisitMut>(tl: &mut impl Translator, a: &T) -> T {
 	let mut a = a.clone();
+	do_translate(tl, &mut a);
+	a
+}
+
+pub fn do_translate<T: VisitMut + ?Sized>(tl: &mut impl Translator, a: &mut T) {
 	a.accept_mut(&mut |a| {
 		match a {
 			IAM::Text(a) => *a = translate_text(tl, a),
@@ -105,7 +110,6 @@ pub fn translate<T: Clone + VisitMut>(tl: &mut impl Translator, a: &T) -> T {
 			_ => {}
 		}
 	});
-	a
 }
 
 fn text2str(t: &Text) -> String {

@@ -15,6 +15,14 @@ impl<T: VisitMut> VisitMut for Option<T> {
 	}
 }
 
+impl<T: VisitMut> VisitMut for [T] {
+	fn accept_mut(&mut self, v: &mut impl FnMut(IAM)) {
+		for a in self {
+			a.accept_mut(v)
+		}
+	}
+}
+
 impl<T: VisitMut> VisitMut for Vec<T> {
 	fn accept_mut(&mut self, v: &mut impl FnMut(IAM)) {
 		for a in self {

@@ -362,13 +362,19 @@ fn quest125(ctx: &mut Context) {
 
 	tl.comment("c0300 - Long Lao Tavern & Inn");
 	let s = ctx.scena("c1030");
-	// Make Grace and Reins not appear in the tavern while the quest is available
-	s.func(3, |a| {
+	s.func(3, |a| { // Make Grace and Reins not appear in the tavern while the quest is available
 		let b = a.if_clause(&flag![2564]);
 		let tail = b.0.split_off(b.1.len()-1);
 		let Some(TreeInsn::If(xx)) = b.1.last() else { panic!() };
 		b.0.push(TreeInsn::If(vec![(translate(nil, &xx[0].0), tail)]));
 	});
+	s.func(37, |a| { // Talk to Grace or Reins
+		let (i, if_) = a.1.iter().enumerate().find_map(f!((i, TreeInsn::If(c)) => (i, c))).unwrap();
+		let mut if_ = if_.clone();
+		if_[0].1 = a.0.drain(i..i+if_[0].1.len()).collect();
+		do_translate(tl, &mut if_[1].1);
+		a.0.insert(i, TreeInsn::If(if_));
+	});
 
-	// TODO patch in post-quest dialogue in c1030 and termination in c0110
+	// TODO patch in termination in c0110
 }
