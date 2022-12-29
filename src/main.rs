@@ -380,7 +380,7 @@ fn quest125(ctx: &mut Context) {
 		a.0.insert(i, a.1[i].clone());
 	});
 
-	tl.comment("c0300 - Long Lao Tavern & Inn");
+	tl.comment("c1030 - Long Lao Tavern & Inn");
 	let s = ctx.scena("c1030");
 	s.func(3, |a| { // Make Grace and Reins not appear in the tavern while the quest is available
 		let b = a.if_clause(&flag![2564]);

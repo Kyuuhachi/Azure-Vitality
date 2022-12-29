@@ -3531,7 +3531,7 @@
 
 ## (Resumes control in c0400, the Entertainment District.)
 
-## c0300 - Long Lao Tavern & Inn {{{1
+## c1030 - Long Lao Tavern & Inn {{{1
 
 ## :37 Talk to Grace or Reins {{{2
 ## G
