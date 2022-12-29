@@ -278,10 +278,10 @@ fn main() -> anyhow::Result<()> {
 	use std::io::BufWriter;
 	let mut ctx = Context::new(
 		"./data/ao-psp/PSP_GAME/USRDIR/data/scena/",
-		"./data/vita/extract/ao/data1/data/scena/",
+		"./data/ao-evo/data/scena/",
 		"./data/ao-gf/data_en/scena/",
 		quest::read_ed7(GameData::AO, &fs::read("./data/ao-gf/data_en/text/t_quest._dt")?)?,
-		quest::read_ed7(GameData::AO_EVO, &fs::read("./data/vita/extract/ao/data/data/text/t_quest._dt")?)?,
+		quest::read_ed7(GameData::AO_EVO, &fs::read("./data/ao-evo/data/text/t_quest._dt")?)?,
 	);
 
 	// c0110 (SSS base) has some functions moved to _1, which makes this ugly.
@@ -312,6 +312,12 @@ fn main() -> anyhow::Result<()> {
 	for (name, v) in &ctx.scenas {
 		fs::write(scenadir.join(format!("{name}.bin")), scena::ed7::write(GameData::AO, &v.main)?)?;
 	}
+
+	// TODO do this in a better way
+	fs::create_dir_all(outdir.join("ops"))?;
+	fs::create_dir_all(outdir.join("map/objects"))?;
+	fs::copy("./data/ao-evo/data/ops/e3210.op2", outdir.join("ops/e3210.op2"))?;
+	fs::copy("./data/ao-evo/data/map/objects/e3210isu.it3", outdir.join("map/objects/e3210isu.it3"))?;
 
 	let dumpdir = Path::new("./patch-dump");
 	if dumpdir.exists() {
