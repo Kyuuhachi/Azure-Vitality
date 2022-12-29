@@ -3529,4 +3529,4 @@
 {color 2}クエスト【不正取引の張りこみ】{color 0}を達成した！
 	Quest {color 2}[Illicit Trade Stakeout]{color 0} completed!
 
-## (Resumes control in the Entertainment District.)
+## (Resumes control in c0400, the Entertainment District.)

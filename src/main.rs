@@ -16,12 +16,17 @@ mod translate;
 use translate::*;
 
 macro_rules! f {
-	($p:pat => $v:expr) => { |_a| {
-		#[allow(irrefutable_let_patterns)]
-		if let $p = _a { Some($v) } else { None }
+	($p:pat $(if $e:expr)? => $v:expr) => { |_a| {
+		match _a {
+			$p $(if $e)? => Some($v),
+			_ => None
+		}
 	} };
-	($p:pat) => { |_a| {
-		matches!(_a, $p)
+	($p:pat $(if $e:expr)? ) => { |_a| {
+		match _a {
+			$p $(if $e)? => true,
+			_ => false
+		}
 	} };
 }
 
@@ -216,40 +221,51 @@ impl AScena {
 	fn func(&mut self, idx: usize, f: impl FnOnce(&mut AList<Vec<TreeInsn>>)) {
 		let mut f1 = decompile(&self.main.functions[idx]).unwrap();
 		let f2 = decompile(&self.evo.functions[idx]).unwrap();
-		f(&mut AList { main: &mut f1, evo: &f2 });
+		f(&mut AList(&mut f1, &f2));
 		self.main.functions[idx] = recompile(&f1).unwrap();
 	}
 }
 
-struct AList<'a, T> {
-	main: &'a mut T,
-	evo: &'a T,
+struct AList<'a, T>(&'a mut T, &'a T);
+
+macro_rules! alist_map {
+	($e:expr; $($t:tt)*) => { {
+		let x = $e;
+		AList(
+			x.0.iter_mut() $($t)*,
+			x.1.iter() $($t)*,
+		)
+	} }
 }
 
 impl AList<'_, Vec<TreeInsn>> {
 	#[track_caller]
 	fn ifs(&mut self, n: usize) -> AList<Vec<(Option<Expr>, Vec<TreeInsn>)>> {
-		AList {
-			main: self.main.iter_mut().filter_map(f!(TreeInsn::If(x) => x)).nth(n).unwrap(),
-			evo:  self.evo     .iter().filter_map(f!(TreeInsn::If(x) => x)).nth(n).unwrap(),
-		}
+		alist_map!(self; .filter_map(f!(TreeInsn::If(x) => x)).nth(n).unwrap())
+	}
+
+	#[track_caller]
+	fn if_with(&mut self, e: &Expr) -> AList<Vec<(Option<Expr>, Vec<TreeInsn>)>> {
+		alist_map!(self; .find_map(f!(TreeInsn::If(x) if x.iter().any(|a| a.0.as_ref() == Some(e)) => x)).unwrap())
 	}
 }
 
 impl<A: PartialEq, B> AList<'_, Vec<(A, B)>> {
 	#[track_caller]
 	fn clause(&mut self, k: &A) -> AList<B> {
-		AList {
-			main: self.main.iter_mut().find_map(|(a,b)| (a == k).then_some(b)).unwrap(),
-			evo:  self.evo     .iter().find_map(|(a,b)| (a == k).then_some(b)).unwrap(),
-		}
+		alist_map!(self; .find_map(|(a,b)| (a == k).then_some(b)).unwrap())
+	}
+
+	#[track_caller]
+	fn copy_clause(&mut self, k: &A, tl: &mut impl Translator) where (A, B): Clone + VisitMut {
+		self.0.push(translate(tl, self.1.iter().find(|a| &a.0 == k).unwrap()));
 	}
 }
 
 impl<T: Clone + VisitMut> AList<'_, Vec<T>> {
 	#[track_caller]
 	fn tail(&mut self, tl: &mut impl Translator) {
-		self.main.extend(self.evo[self.main.len()..].iter().map(|a| translate(tl, a)))
+		self.0.extend(self.1[self.0.len()..].iter().map(|a| translate(tl, a)))
 	}
 }
 
@@ -339,6 +355,10 @@ fn quest125(ctx: &mut Context) {
 	s.copy_func(0, 22, tl); // fork: shake
 	s.copy_func(0, 23, tl); // fork: emote
 	s.func(1, |a| a.ifs(0).tail(nil));
+
+	// c0400 - Entertainment District, where you end up after the quest
+	let s = ctx.scena("c0400");
+	s.func(5, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![279]), nil));
 
 	// TODO patch in post-quest dialogue in c1030 and termination in c0110
 }
