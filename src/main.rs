@@ -264,7 +264,7 @@ impl<A: PartialEq, B> AList<'_, Vec<(A, B)>> {
 
 impl<T: Clone + VisitMut> AList<'_, Vec<T>> {
 	#[track_caller]
-	fn tail(&mut self, tl: &mut impl Translator) {
+	fn copy_tail(&mut self, tl: &mut impl Translator) {
 		self.0.extend(self.1[self.0.len()..].iter().map(|a| translate(tl, a)))
 	}
 }
@@ -325,7 +325,7 @@ fn quest125(ctx: &mut Context) {
 	s.main.chcp[19] = Some("chr/ch28100.itc".to_owned());
 	s.copy_npc(31, tl); // Reins
 	s.copy_func(0, 107, tl); // talk Reins
-	s.func(8, |a| a.ifs(1).clause(&Some(flag![2564])).tail(nil));
+	s.func(8, |a| a.ifs(1).clause(&Some(flag![2564])).copy_tail(nil));
 
 	tl.comment("c1300 - IBC exterior");
 	let s = ctx.scena("c1300");
@@ -334,7 +334,7 @@ fn quest125(ctx: &mut Context) {
 	s.copy_npc(10, tl); // Shirley
 	s.copy_npc(11, tl); // Sigmund
 	s.copy_func(0, 9, tl); // talk Grace
-	s.func(1, |a| a.ifs(1).clause(&Some(flag![2564])).tail(nil));
+	s.func(1, |a| a.ifs(1).clause(&Some(flag![2564])).copy_tail(nil));
 
 	tl.comment("c0490 - Neue Blanc");
 	let s = ctx.scena("c0490");
@@ -354,7 +354,7 @@ fn quest125(ctx: &mut Context) {
 	s.copy_func(0, 21, tl); // fork
 	s.copy_func(0, 22, tl); // fork: shake
 	s.copy_func(0, 23, tl); // fork: emote
-	s.func(1, |a| a.ifs(0).tail(nil));
+	s.func(1, |a| a.ifs(0).copy_tail(nil));
 
 	// c0400 - Entertainment District, where you end up after the quest
 	let s = ctx.scena("c0400");
