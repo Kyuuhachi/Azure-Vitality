@@ -2,7 +2,7 @@ use std::path::{Path, PathBuf};
 use std::collections::HashMap;
 
 use themelios::gamedata::GameData;
-use themelios::scena;
+use themelios::scena::{self, FuncRef};
 use themelios::scena::code::{Expr, FlatInsn, Insn, InsnArgMut as IAM};
 use themelios::scena::code::decompile::{TreeInsn, decompile, recompile};
 use themelios::scena::ed7::Scena;
@@ -283,6 +283,19 @@ fn main() -> anyhow::Result<()> {
 		quest::read_ed7(GameData::AO, &fs::read("./data/ao-gf/data_en/text/t_quest._dt")?)?,
 		quest::read_ed7(GameData::AO_EVO, &fs::read("./data/vita/extract/ao/data/data/text/t_quest._dt")?)?,
 	);
+
+	// c0110 (SSS base) has some functions moved to _1, which makes this ugly.
+	let s = ctx.scena("c0110");
+	s.evo.functions.insert(35, vec![]);
+	s.evo.functions.insert(36, vec![]);
+	s.remap(&mut |a| {
+		if let IAM::FuncRef(FuncRef(0, i)) = a {
+			if *i >= 35 {
+				*i += 2;
+			}
+		}
+	});
+
 	quest125(&mut ctx);
 
 	let outdir = Path::new("./patch");
@@ -360,6 +373,13 @@ fn quest125(ctx: &mut Context) {
 	let s = ctx.scena("c0400");
 	s.func(5, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![279]), nil));
 
+	// c0110 - SSS building, quest deadline
+	let s = ctx.scena("c0110");
+	s.func(37, |a| {
+		let i = a.0.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::Sc_C4Unset(_))) => i)).unwrap();
+		a.0.insert(i, a.1[i].clone());
+	});
+
 	tl.comment("c0300 - Long Lao Tavern & Inn");
 	let s = ctx.scena("c1030");
 	s.func(3, |a| { // Make Grace and Reins not appear in the tavern while the quest is available
@@ -375,6 +395,4 @@ fn quest125(ctx: &mut Context) {
 		do_translate(tl, &mut if_[1].1);
 		a.0.insert(i, TreeInsn::If(if_));
 	});
-
-	// TODO patch in termination in c0110
 }
