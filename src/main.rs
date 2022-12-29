@@ -218,10 +218,10 @@ impl AScena {
 		todo!();
 	}
 
-	fn func(&mut self, idx: usize, f: impl FnOnce(&mut AList<Vec<TreeInsn>>)) {
+	fn func(&mut self, idx: usize, f: impl FnOnce(AList<Vec<TreeInsn>>)) {
 		let mut f1 = decompile(&self.main.functions[idx]).unwrap();
 		let f2 = decompile(&self.evo.functions[idx]).unwrap();
-		f(&mut AList(&mut f1, &f2));
+		f(AList(&mut f1, &f2));
 		self.main.functions[idx] = recompile(&f1).unwrap();
 	}
 }
@@ -238,21 +238,21 @@ macro_rules! alist_map {
 	} }
 }
 
-impl AList<'_, Vec<TreeInsn>> {
+impl<'a> AList<'a, Vec<TreeInsn>> {
 	#[track_caller]
-	fn ifs(&mut self, n: usize) -> AList<Vec<(Option<Expr>, Vec<TreeInsn>)>> {
-		alist_map!(self; .filter_map(f!(TreeInsn::If(x) => x)).nth(n).unwrap())
+	fn if_with(self, e: &Expr) -> AList<'a, Vec<(Option<Expr>, Vec<TreeInsn>)>> {
+		alist_map!(self; .find_map(f!(TreeInsn::If(x) if x.iter().any(|a| a.0.as_ref() == Some(e)) => x)).unwrap())
 	}
 
 	#[track_caller]
-	fn if_with(&mut self, e: &Expr) -> AList<Vec<(Option<Expr>, Vec<TreeInsn>)>> {
-		alist_map!(self; .find_map(f!(TreeInsn::If(x) if x.iter().any(|a| a.0.as_ref() == Some(e)) => x)).unwrap())
+	fn if_clause(self, e: &Expr) -> AList<'a, Vec<TreeInsn>> {
+		self.if_with(e).clause(&Some(e.clone()))
 	}
 }
 
-impl<A: PartialEq, B> AList<'_, Vec<(A, B)>> {
+impl<'a, A: PartialEq, B> AList<'a, Vec<(A, B)>> {
 	#[track_caller]
-	fn clause(&mut self, k: &A) -> AList<B> {
+	fn clause(self, k: &A) -> AList<'a, B> {
 		alist_map!(self; .find_map(|(a,b)| (a == k).then_some(b)).unwrap())
 	}
 
@@ -262,7 +262,7 @@ impl<A: PartialEq, B> AList<'_, Vec<(A, B)>> {
 	}
 }
 
-impl<T: Clone + VisitMut> AList<'_, Vec<T>> {
+impl<'a, T: Clone + VisitMut> AList<'a, Vec<T>> {
 	#[track_caller]
 	fn copy_tail(&mut self, tl: &mut impl Translator) {
 		self.0.extend(self.1[self.0.len()..].iter().map(|a| translate(tl, a)))
@@ -325,7 +325,7 @@ fn quest125(ctx: &mut Context) {
 	s.main.chcp[19] = Some("chr/ch28100.itc".to_owned());
 	s.copy_npc(31, tl); // Reins
 	s.copy_func(0, 107, tl); // talk Reins
-	s.func(8, |a| a.if_with(&flag![2564]).clause(&Some(flag![2564])).copy_tail(nil));
+	s.func(8, |a| a.if_clause(&flag![2564]).copy_tail(nil));
 
 	tl.comment("c1300 - IBC exterior");
 	let s = ctx.scena("c1300");
@@ -334,7 +334,7 @@ fn quest125(ctx: &mut Context) {
 	s.copy_npc(10, tl); // Shirley
 	s.copy_npc(11, tl); // Sigmund
 	s.copy_func(0, 9, tl); // talk Grace
-	s.func(1, |a| a.if_with(&flag![2564]).clause(&Some(flag![2564])).copy_tail(nil));
+	s.func(1, |a| a.if_clause(&flag![2564]).copy_tail(nil));
 
 	tl.comment("c0490 - Neue Blanc");
 	let s = ctx.scena("c0490");
@@ -359,6 +359,16 @@ fn quest125(ctx: &mut Context) {
 	// c0400 - Entertainment District, where you end up after the quest
 	let s = ctx.scena("c0400");
 	s.func(5, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![279]), nil));
+
+	tl.comment("c0300 - Long Lao Tavern & Inn");
+	let s = ctx.scena("c1030");
+	// Make Grace and Reins not appear in the tavern while the quest is available
+	s.func(3, |a| {
+		let b = a.if_clause(&flag![2564]);
+		let tail = b.0.split_off(b.1.len()-1);
+		let Some(TreeInsn::If(xx)) = b.1.last() else { panic!() };
+		b.0.push(TreeInsn::If(vec![(translate(nil, &xx[0].0), tail)]));
+	});
 
 	// TODO patch in post-quest dialogue in c1030 and termination in c0110
 }
