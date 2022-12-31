@@ -81,7 +81,16 @@ impl Context {
 	}
 
 	fn copy_scena(&mut self, name: &str, tl: &mut impl Translator) -> &mut AScena {
-		todo!("copy a whole scena, usually a _1, wholesale")
+		self.scenas.entry(name.to_owned()).or_insert_with(|| {
+			let evo = scena::ed7::read(GameData::AO_EVO, &std::fs::read(self.evo_path.join(format!("{name}.bin"))).unwrap()).unwrap();
+			AScena {
+				main: translate(tl, &evo),
+				evo,
+				new_npcs: Vec::new(),
+				new_lps: Vec::new(),
+				new_funcs: Vec::new(),
+			}
+		})
 	}
 
 	fn copy_quest(&mut self, id: QuestId, tl: &mut impl Translator) -> &mut ED7Quest {
@@ -189,6 +198,19 @@ impl AScena {
 		self.main.npcs.insert(new_idx, translate(tl, &npc));
 		self.evo.npcs.insert(new_idx, npc);
 		self.new_npcs.push(new_idx);
+	}
+
+	fn swap_scp(&mut self, scp1: u16, scp2: u16) {
+		self.evo.includes.swap(scp1 as usize, scp2 as usize);
+		self.remap(&mut |a| {
+			if let IAM::FuncRef(a) = a {
+				if a.0 == scp1 {
+					a.0 = scp2;
+				} else if a.0 == scp2 {
+					a.0 = scp1;
+				}
+			}
+		});
 	}
 
 	fn copy_func(&mut self, scp: u16, idx: usize, tl: &mut impl Translator) {
@@ -433,9 +455,86 @@ fn quest158(ctx: &mut Context) {
 	s.func(1, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![273]), nil));
 	s.copy_func(0, 14, tl);
 
-	let tl = &mut Dump;
+	tl.comment("c1100 - Administrative District");
+	let s = ctx.scena("c1100");
+	s.swap_scp(1, 2);
+	s.main.includes[2] = s.evo.includes[2].clone();
+	s.copy_npc(63, tl); // Princess Klaudia
+	s.copy_npc(64, tl); // Senior Captain Schwarz
+	s.func(7, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![276]), nil));
+	ctx.copy_scena("c1100_1", tl);
 
-	let tl = &mut Nop;
+	tl.comment("c0170 - Times Department Store");
+	let s = ctx.scena("c0170");
+	s.copy_npc(28, tl); // Princess Klaudia
+	s.copy_npc(29, tl); // Senior Captain Schwarz
+	s.copy_func(0, 54, tl);
+	s.copy_func(0, 55, tl);
+	s.copy_func(0, 56, nil);
+	s.copy_func(0, 57, nil);
+	s.copy_func(0, 58, nil);
+	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![273]), nil));
+
+	tl.comment("c0200 - West Street");
+	let s = ctx.scena("c0200");
+	s.copy_npc(30, tl); // Princess Klaudia
+	s.copy_npc(31, tl); // Senior Captain Schwarz
+	s.copy_func(0, 84, tl);
+	s.func(11, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![275]), nil));
+
+	tl.comment("c0210 - Morges Bakery");
+	let s = ctx.scena("c0210");
+	s.copy_npc(9, tl); // Princess Klaudia
+	s.copy_npc(10, tl); // Senior Captain Schwarz
+	s.copy_func(0, 33, tl);
+	s.copy_func(0, 34, tl);
+	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
+
+	tl.comment("c1000 - East Street");
+	let s = ctx.scena("c1000");
+	s.copy_npc(35, tl); // Princess Klaudia
+	s.copy_npc(36, tl); // Senior Captain Schwarz
+	s.copy_func(0, 48, tl);
+	s.copy_func(0, 49, tl);
+	s.func(8, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![282]), nil));
+
+	tl.comment("c1400 - Downtown District");
+	let s = ctx.scena("c1400");
+	s.copy_npc(18, tl); // Princess Klaudia
+	s.copy_npc(19, tl); // Senior Captain Schwarz
+	s.copy_func(0, 54, tl);
+	s.copy_func(0, 55, tl);
+	s.func(4, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![276]), nil));
+
+	tl.comment("c0400 - Entertainment District");
+	let s = ctx.scena("c0400");
+	s.copy_npc(15, tl); // Princess Klaudia
+	s.copy_npc(16, tl); // Senior Captain Schwarz
+	s.copy_func(0, 42, tl);
+	s.copy_func(0, 43, nil);
+	s.func(5, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![280]), nil));
+
+	tl.comment("c0410 - Arc en Ciel");
+	let s = ctx.scena("c0410");
+	s.copy_npc(15, tl); // Princess Klaudia
+	s.copy_npc(16, tl); // Senior Captain Schwarz
+	s.copy_func(0, 38, tl);
+	s.main.functions.pop();
+	s.new_funcs.pop();
+	s.copy_func(0, 59, tl);
+	for i in 60..=68 {
+		s.copy_func(0, i, nil);
+	}
+	s.func(5, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![275]), nil));
+
+	tl.comment("c0420 - Arc en Ciel (??)");
+	let s = ctx.scena("c0420");
+	s.copy_npc(15, tl); // Princess Klaudia
+	s.copy_npc(16, tl); // Senior Captain Schwarz
+	s.copy_func(0, 59, tl);
+	s.copy_func(0, 60, tl);
+	s.func(4, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![273]), nil));
+
 	tl.comment("e3210 - Arseille, round two");
 	let s = ctx.scena("e3210");
 	s.func(1, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
