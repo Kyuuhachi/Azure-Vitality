@@ -405,12 +405,10 @@
 制服姿の男
 	Uniformed man
 
-## c0100_1:27 Talking to the guard {{{2
-
 ## Talking the first time {{{3
 ## G
 おはようございます
-	Good morning.
+	Good morning, ladies and gentlemen.
 
 私は、とある人物の遣いで、
 ここで待たせてもらっていました。
@@ -610,8 +608,6 @@
 親衛隊
 	Guardsman
 
-## :35 main event {{{3
-
 ## Julia
 よく来てくれた、
 特務支援課の諸君。
@@ -650,8 +646,9 @@
 （昨日の今日で、
 　お忍びの呼び出しだもの。
 　そりゃ、事情があるだろうね。）
-	(The princess did sneak out yesterday.
-	That'd be a pretty decent explanation, no?)
+	(The princess did secretly summon
+	us yesterday, too. Maybe she's
+	upset about that.)
 
 ## T
 （この方が、ユリア准佐ですか……）
@@ -672,8 +669,8 @@
 
 #2S（あぁ、またサインをお願いできないかしら。
 ジョアンナが欲しがっていたのよね。）
-	#2S(Oh, I haven't gotten her autograph yet.
-	I'm sure Johanna wanted one?)
+	#2S(Oh, I haven't gotten her autograph
+	yet. I'm sure Johanna wanted one?)
 
 ## N
 #2S（え、エリィさんもですか？
@@ -774,408 +771,483 @@
 
 ## e3210 - Arseille {{{1
 
+## K
 あら？　あなたとは、
 初めまして、ですよね。
-	あら？　あなたとは、
-	初めまして、ですよね。
+	Oh? I've met the others
+	before, but I don't think
+	we have had the pleasure.
 
+## T
 あ、はい……
-	あ、はい……
+	It would seem so.
 
+## K
 ふふっ、リベール王国、王太女の
 クローディアと申します。
-	ふふっ、リベール王国、王太女の
-	クローディアと申します。
+	Heehee. I am the crown princess
+	of Liberl, Klaudia von Auslese.
 
+## T
 ……ティオ・プラトーです。
 よろしくです。
-	……ティオ・プラトーです。
-	よろしくです。
+	Tio Plato. Nice to meet you.
 
+## L
 それで……
 姫殿下から、俺たちに、
 どのような依頼でしょうか？
-	それで……
-	姫殿下から、俺たちに、
-	どのような依頼でしょうか？
+	So... What was it you wanted
+	to ask of us, your highness?
 
+## E
 私的な用事だと伺っていますが、
 私たちでよかったのでしょうか？
-	私的な用事だと伺っていますが、
-	私たちでよかったのでしょうか？
+	You have been saying this is a
+	personal matter, but are you
+	really okay with involving us?
 
+## K
 ええ。昨日、話してみて……
 ぜひ特務支援課の皆さんに、
 お願いしたいと思いまして。
-	ええ。昨日、話してみて……
-	ぜひ特務支援課の皆さんに、
-	お願いしたいと思いまして。
+	Of course. When we talked yesterday,
+	I felt that you were definitely the
+	right people for the job.
 
+## J
 はぁ……
-	はぁ……
+	*sigh*
 
 自分は、殿下の希望であれば、
 可能なかぎり叶えたいと思って
 いるが……
-	自分は、殿下の希望であれば、
-	可能なかぎり叶えたいと思って
-	いるが……
+	Even though I do endeavor to
+	fulfill Her Highness' wishes
+	as much as I am able....
 
+## N
 （なんだか、深刻な様子ですね？）
-	（なんだか、深刻な様子ですね？）
+	(She doesn't seem happy about this.)
 
+## R
 （ちょっとばかり、
 　面倒事の予感がすんだが……）
-	（ちょっとばかり、
-	　面倒事の予感がすんだが……）
+	(I smell trouble.)
 
+## W
 （ふふ……面倒事じゃなきゃ、
 　偉い人が、僕たちを頼るなんて
 　ないんじゃない？）
-	（ふふ……面倒事じゃなきゃ、
-	　偉い人が、僕たちを頼るなんて
-	　ないんじゃない？）
+	(If there was no trouble,
+	we would all be out of a
+	job, wouldn't we?)
 
+## T
 …………
-	…………
+	...
 
+## K
 依頼したいのは、
 このクロスベルの案内なのです。
-	依頼したいのは、
-	このクロスベルの案内なのです。
+	What I would ask you to do
+	is to show me around this
+	beautiful city.
 
+## L
 え？　それなら、すでに
 スケジュールに組みこまれて
 いましたよね？
-	え？　それなら、すでに
-	スケジュールに組みこまれて
-	いましたよね？
+	Wasn't that already on the
+	itinerary?
 
+## E
 通商会議に参加される方々に、
 クロスベル市内を案内した
 はずですが……
-	通商会議に参加される方々に、
-	クロスベル市内を案内した
-	はずですが……
+	Yes. I believe the participants of
+	the trade conference were given a
+	guided tour to some major locations.
 
+## R
 そうなのか？
-	そうなのか？
+	That so?
 
+## N
 ランディ先輩……
 他の部署のスケジュールも
 目を通しておきましょうよ。
-	ランディ先輩……
-	他の部署のスケジュールも
-	目を通しておきましょうよ。
+	Randy, it never hurts to
+	keep up-to-date on the other
+	divisions' schedules, you know.
 
+## T
 ……百貨店や警察署やＩＢＣなどを
 観光されたようですね。
-	……百貨店や警察署やＩＢＣなどを
-	観光されたようですね。
+	With highlights such as the
+	department store, the police
+	station, and the IBC...
 
 最後にアルカンシェルで観劇を
 されたとか……
-	最後にアルカンシェルで観劇を
-	されたとか……
+	Before ending with a private
+	Arc en Ciel performance.
 
+## R
 ティオすけ、昨日、合流したばかり
 なのに、よく知ってるな！？
-	ティオすけ、昨日、合流したばかり
-	なのに、よく知ってるな！？
+	You know all that, even though
+	you only arrived yesterday?
 
+## T
 ……要人のスケジュールくらい
 把握していて当然かと。
-	……要人のスケジュールくらい
-	把握していて当然かと。
+	Naturally. I studied the
+	schedules for all of the VIPs.
 
+## K
 おっしゃる通り、それらの場所は
 観て回りました。
-	おっしゃる通り、それらの場所は
-	観て回りました。
+	It is as you say, we had a
+	very pleasant tour of those
+	places yesterday.
 
 でも……
 それらはクロスベルの華やかな面だけ
 ではないかしら？
-	でも……
-	それらはクロスベルの華やかな面だけ
-	ではないかしら？
+	But those are only part of the
+	true Crossbell experience, no?
+	That is only the public face.
 
+## L
 たしかに……
-	たしかに……
+	That's true. It's not exactly
+	representative of daily life.
 
+## E
 クロスベルの抱えている負の面は、
 また別にありますね……
-	クロスベルの抱えている負の面は、
-	また別にありますね……
+	If we're talking about the less
+	glamorous parts of the city,
+	that's a completely different matter.{wait}{page}And not one that the officials
+	would want you to see.
 
+## K
 本当のクロスベルを知りたい……
 街の生活を見ておきたいんです。
-	本当のクロスベルを知りたい……
-	街の生活を見ておきたいんです。
+	I want to know the true Crossbell.
+	To see with my own eyes what it is
+	like to live here.
 
+## R
 生活ね……
 俺らの昼飯でも見せますか？
-	生活ね……
-	俺らの昼飯でも見せますか？
+	What it is like to live here? You
+	want to see what we have for lunch?
 
+## W
 ふふ……
 そういう意味じゃ
 ないんじゃない？
-	ふふ……
-	そういう意味じゃ
-	ないんじゃない？
+	I don't think that's exactly
+	the part she's interested in.
 
+## R
 わーってるけどよ……
 どうしろってんだ？
-	わーってるけどよ……
-	どうしろってんだ？
+	Figures... But then
+	what should we do?
 
+## L
 ……つまり、姫殿下は。
-	……つまり、姫殿下は。
+	Simply put...
 
 このクロスベルの……
 普通の暮らしを見てみたい、と？
-	このクロスベルの……
-	普通の暮らしを見てみたい、と？
+	You want to see the ordinary
+	folks living their ordinary lives.
+	Is that correct, Your Highness?
 
+## K
 はい。
 その通りです、ロイドさん。
-	はい。
-	その通りです、ロイドさん。
+	Yes, that is exactly it.
+	Nicely put, Lloyd.
 
+## J
 大勢の護衛を従えては、
 あまりに目立ちすぎて、
 街の生活はわからないだろう。
-	大勢の護衛を従えては、
-	あまりに目立ちすぎて、
-	街の生活はわからないだろう。
+	If I were to assign her a guard detail,
+	she would attract undue attention, and
+	likely influence the citizenry's behavior.
 
 殿下は、お忍びでの視察を
 希望している。
-	殿下は、お忍びでの視察を
-	希望している。
+	So Her Highness wishes to survey
+	the city undercover.
 
+## E
 お忍びですか！？
 ろくに護衛も連れずに！？
-	お忍びですか！？
-	ろくに護衛も連れずに！？
+	Undercover? Wouldn't that leave
+	her underprotected?
 
+## If has cleared quest 118, "Search for a Musician" {{{3
+
+## K
 ええ、オリヴァルト皇子も
 街の様子をお忍びで
 見てまわられたとか。
-	ええ、オリヴァルト皇子も
-	街の様子をお忍びで
-	見てまわられたとか。
+	Not to worry. I believe Prince
+	Olivert also covertly toured
+	the city recently.
 
+## (Everyone except Tio sweatdrops.)
+
+## L
 ……あれは……
-	……あれは……
+	In a manner of speaking.
 
+## E
 ……忍んでいたかしら？
-	……忍んでいたかしら？
+	I'm not sure if I would
+	call that covert.
 
+## N
 身分を隠していたのは、
 事実ですけど……
-	身分を隠していたのは、
-	事実ですけど……
+	It is true that he DID
+	to conceal his status
+	quite effectively.
 
+## K
 そうやって、自分の目で
 本当のクロスベルを見ることが、
 必要なのではないか、と……
-	そうやって、自分の目で
-	本当のクロスベルを見ることが、
-	必要なのではないか、と……
+	Doing so is necessary if I want
+	to see the real Crossbell with
+	my own eyes.
 
 私は思うのです。
-	私は思うのです。
+	That's what I believe.
 
+## If not {{{3
+
+## (Exactly the same as before, but all of Klaudia's text in one box.)
+
+## K
 ええ、オリヴァルト皇子も
 街の様子をお忍びで
 見てまわられたとか。
-	ええ、オリヴァルト皇子も
-	街の様子をお忍びで
-	見てまわられたとか。
+	Not to worry. I believe Prince
+	Olivert also covertly toured
+	the city recently.
 
 そうやって、自分の目で
 本当のクロスベルを見ることが、
 必要なのではないか、と……
-	そうやって、自分の目で
-	本当のクロスベルを見ることが、
-	必要なのではないか、と……
+	Doing so is necessary if I want
+	to see the real Crossbell with
+	my own eyes.
 
 私は思うのです。
-	私は思うのです。
+	That's what I believe.
 
+## }}}3
+
+## J
 自分としては、危険すぎると
 感じているが……
-	自分としては、危険すぎると
-	感じているが……
+	I personally believe this
+	is far too perilous.
 
+## E
 そうですよね。
 あまりにも……
-	そうですよね。
-	あまりにも……
+	Yes... Going without
+	guards would be risky.
 
+## J
 しかし、安全な場所に閉じこめて
 おくならば、護衛など必要ない。
-	しかし、安全な場所に閉じこめて
-	おくならば、護衛など必要ない。
+	But we can dispense with the guard detail,
+	as long as we keep to safe areas.
 
 殿下のご意向を最大限に尊重しつつ、
 その身をお護りしてこその
 護衛ではないだろうか？
-	殿下のご意向を最大限に尊重しつつ、
-	その身をお護りしてこその
-	護衛ではないだろうか？
+	I believe this is an acceptable way to
+	comply with Her Highness' wishes without
+	unduely compromising on security.
 
+## N
 な、なるほど！
 さすがです、ユリア准佐！
-	な、なるほど！
-	さすがです、ユリア准佐！
+	That sounds like a good
+	compromise to me, Captain.
 
 私、感動しました！
 どうか、お手伝いさせてください！
-	私、感動しました！
-	どうか、お手伝いさせてください！
+	Please, allow us to help!
 
+## J
 ありがとう。
-	ありがとう。
+	Thank you.
 
 諸君らには案内役としてだけでなく、
 護衛としての腕前にも、
 期待している。
-	諸君らには案内役としてだけでなく、
-	護衛としての腕前にも、
-	期待している。
+	I am trusting you not only as
+	tour guides, but also to keep
+	Her Highness safe.
 
+## N
 はい！
-	はい！
+	Yes, sir!
 
+## R
 おいおい……
 なんか、引き受ける流れに
 なってるけど……
-	おいおい……
-	なんか、引き受ける流れに
-	なってるけど……
+	Hey, don't get carried away.
+	We're a team, remember?
 
 いいのかよ、ロイド？
-	いいのかよ、ロイド？
+	You think this is okay,
+	Lloyd?
 
+## W
 ふふ、責任重大だね。
-	ふふ、責任重大だね。
+	This isn't something to take lightly.
 
+## L
 姫殿下は俺たちを信用して
 依頼してくれたんだ。
-	姫殿下は俺たちを信用して
-	依頼してくれたんだ。
+	This is a request from the crown
+	princess of a foreign nation.
 
 しかも、クロスベルを
 より深く知ろうと
 してくれている。
-	しかも、クロスベルを
-	より深く知ろうと
-	してくれている。
+	Moreover, it is an effort to get
+	familiar with this city we all love.
 
 断る理由はないだろう。
-	断る理由はないだろう。
+	I believe both parties will greatly
+	benefit from this. I say we do it.
 
+## E
 そうね。こんな大切な役目、
 他の人たちには譲れないわ。
-	そうね。こんな大切な役目、
-	他の人たちには譲れないわ。
+	I concur. And really, I don't
+	like the thought of letting
+	someone else handle this.
 
+## N
 当然ですよ！
 ユリア准佐の手助けをして、
 姫殿下のお役に立てるなんて。
-	当然ですよ！
-	ユリア准佐の手助けをして、
-	姫殿下のお役に立てるなんて。
+	We get to help out Captain Schwarz,
+	AND be of use to the princess!
 
 こんな光栄なことはありません！
-	こんな光栄なことはありません！
+	There could be no greater honor!
 
+## K
 それでは、お願いできますか？
-	それでは、お願いできますか？
+	I take it you are all in favor?
 
+## L
 はい、よろこんで。
-	はい、よろこんで。
+	Yes, gladly.
 
+## K
 ありがとう！
-	ありがとう！
+	Thank you!
 
 よろしくお願いしますね。
-	よろしくお願いしますね。
+	I'll be in your hands.
 
+## J
 時間的にも、安全面からも、
 見て回れる場所は、
 三カ所といったところだろう。
-	時間的にも、安全面からも、
-	見て回れる場所は、
-	三カ所といったところだろう。
+	With regards to security and our
+	time budget, I believe we will be
+	able to visit three places in total.
 
 場所は、諸君らにお任せする。
-	場所は、諸君らにお任せする。
+	I'll leave the choice of which to you.
 
+## K
 べつに悪いところばかり
 見たいわけじゃないんです。
-	べつに悪いところばかり
-	見たいわけじゃないんです。
+	I don't want to see only
+	the bad parts, of course.
 
 クロスベルの街の普通の生活が
 見たいだけですから。
-	クロスベルの街の普通の生活が
-	見たいだけですから。
+	I would like to see a
+	fair and balanced account
+	of the Crossbellan lifestyle.
 
+## E
 普通の生活というと……
-	普通の生活というと……
+	A fair and balanced account...
 
+## N
 やっぱり、ご飯を食べる
 ところでしょうか？
-	やっぱり、ご飯を食べる
-	ところでしょうか？
+	So should we include
+	the lunch after all?
 
+## W
 買い物するところなんかも
 いいんじゃない？
-	買い物するところなんかも
-	いいんじゃない？
+	Or maybe some shopping?
 
+## T
 たしかに……
-	たしかに……
+	That is a good point.
 
 みっしぃグッズを買うのは
 生活ですね。
-	みっしぃグッズを買うのは
-	生活ですね。
+	Buying Mishy merchandise is
+	an important part of the
+	Crossbellan lifestyle.
 
+## (Collective sweatdrop, followed by a fade to an aerial view of the city.)
+
+## R
 んで？
 どうするんだ、ロイド？
-	んで？
-	どうするんだ、ロイド？
+	So? What'll we do, Lloyd?
 
+## L, first time
 そうだな……
 最初は……
-	そうだな……
-	最初は……
+	Good question. How
+	about we start with...
 
+## L, second choice
 次に行く場所は……
-	次に行く場所は……
+	Next, let's head to...
 
+## L, last choice
 最後に案内するなら……
-	最後に案内するなら……
+	To end it off, how about...
 
+## Menu (choices are only present if not already chosen)
 行政区の屋台
-	行政区の屋台
-
+	Administrative District stalls ## c1100
 中央広場の百貨店
-	中央広場の百貨店
-
+	Times Department Store ## c0170
 ベーカリー・モルジュ
-	ベーカリー・モルジュ
-
+	Morges Bakery ## c0200
 東通りの屋台
-	東通りの屋台
-
+	East Street market ## c1000
 旧市街
-	旧市街
-
+	Downtown District ## c1400
 アルカンシェル
-	アルカンシェル
+	Arc en Ciel ## c0400

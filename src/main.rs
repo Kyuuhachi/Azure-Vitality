@@ -316,8 +316,10 @@ fn main() -> anyhow::Result<()> {
 	// TODO do this in a better way
 	fs::create_dir_all(outdir.join("ops"))?;
 	fs::create_dir_all(outdir.join("map/objects"))?;
+	fs::create_dir_all(outdir.join("visual"))?;
 	fs::copy("./data/ao-evo/data/ops/e3210.op2", outdir.join("ops/e3210.op2"))?;
 	fs::copy("./data/ao-evo/data/map/objects/e3210isu.it3", outdir.join("map/objects/e3210isu.it3"))?;
+	fs::copy("./data/ao-evo/data/visual/c_vis600.itp", outdir.join("visual/c_vis600.itp"))?;
 
 	let dumpdir = Path::new("./patch-dump");
 	if dumpdir.exists() {
