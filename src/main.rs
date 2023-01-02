@@ -534,7 +534,7 @@ fn quest158(ctx: &mut Context) {
 	}
 	s.func(5, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![275]), nil));
 
-	tl.comment("c0420 - Arc en Ciel (??)");
+	tl.comment("c0420 - Arc en Ciel stage");
 	let s = ctx.scena("c0420");
 	s.copy_npc(15, tl); // Princess Klaudia
 	s.copy_npc(16, tl); // Senior Captain Schwarz
