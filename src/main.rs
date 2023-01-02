@@ -386,7 +386,7 @@ fn quest125(ctx: &mut Context) {
 	let s = ctx.scena("c0110");
 	s.func(37, |a| {
 		let i = a.0.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::Sc_C4Unset(_))) => i)).unwrap();
-		a.0.insert(i, a.1[i].clone());
+		a.0.insert(i, translate(nil, &a.1[i]));
 	});
 
 	tl.comment("c1030 - Long Lao Tavern & Inn");
@@ -560,5 +560,20 @@ fn quest158(ctx: &mut Context) {
 		if_[0].1 = a.0.drain(i..i+if_[0].1.len()).collect();
 		do_translate(tl, &mut if_[1].1);
 		a.0.insert(i, TreeInsn::If(if_));
+	});
+
+	// Timing stuff, Orchis Tower exterior
+	let s = ctx.scena("c1500");
+	s.func(58, |a| {
+		// Different dialogue if you have outstanding quests, so add this to the list
+		let a = alist_map!(a; .find_map(f!(TreeInsn::If(x) => x)).unwrap());
+		a.0[0].0 = translate(nil, &a.1[0].0);
+	});
+
+	// c0110 - Orchis Tower interior (?), quest deadline
+	let s = ctx.scena("c1510");
+	s.func(42, |a| {
+		let i = a.0.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::_1B(..))) => i)).unwrap();
+		a.0.insert(i, translate(nil, &a.1[i-1])); // there's a SoundLoad to account for
 	});
 }
