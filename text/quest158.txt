@@ -1,10 +1,10 @@
 ## t_quest {{{1
 
 クロスベルの案内
-	クロスベルの案内
+	Introduction to Crossbell
 
 クローディア殿下
-	クローディア殿下
+	Princess Klaudia
 
 支援課の玄関に立っていた制服姿の男性。
 彼はとある人物の遣いで、支援課に依頼
@@ -774,7 +774,7 @@
 ## K
 あら？　あなたとは、
 初めまして、ですよね。
-	Oh? I've met the others
+	Oh? I've met everyone else
 	before, but I don't think
 	we have had the pleasure.
 
@@ -839,9 +839,9 @@
 （ふふ……面倒事じゃなきゃ、
 　偉い人が、僕たちを頼るなんて
 　ないんじゃない？）
-	(If there was no trouble,
-	we would all be out of a
-	job, wouldn't we?)
+	(If there was no trouble in
+	the world, we would all be
+	out of a job, wouldn't we?)
 
 ## T
 …………
@@ -928,8 +928,8 @@
 クロスベルの抱えている負の面は、
 また別にありますね……
 	If we're talking about the less
-	glamorous parts of the city,
-	that's a completely different matter.{wait}{page}And not one that the officials
+	glamorous parts of the city, that's
+	a completely different matter.{wait}{page}And not one that the officials
 	would want you to see.
 
 ## K
@@ -979,7 +979,7 @@
 あまりに目立ちすぎて、
 街の生活はわからないだろう。
 	If I were to assign her a guard detail,
-	she would attract undue attention, and
+	that would attract undue attention, and
 	likely influence the citizenry's behavior.
 
 殿下は、お忍びでの視察を
@@ -1188,9 +1188,9 @@
 
 クロスベルの街の普通の生活が
 見たいだけですから。
-	I would like to see a
-	fair and balanced account
-	of the Crossbellan lifestyle.
+	I would like to see a fair
+	and balanced account of the
+	Crossbellan lifestyle.
 
 ## E
 普通の生活というと……
@@ -1240,7 +1240,7 @@
 
 ## Menu (choices are only present if not already chosen)
 行政区の屋台
-	Administrative District stalls ## c1100
+	Administrative District food stalls ## c1100
 中央広場の百貨店
 	Times Department Store ## c0170
 ベーカリー・モルジュ
@@ -1255,605 +1255,721 @@
 ## c1100 - Administrative District {{{1
 
 クローディア姫
-	クローディア姫
+	Princess Klaudia
 
 ユリア准佐
-	ユリア准佐
+	Senior Captain Schwarz
 
+## (Camera pans over the police station and the library, before stopping at the group, walking in from the south.)
+
+## L
 クロスベルの生活ということで……
-	クロスベルの生活ということで……
+	If you speak of daily life in
+	Crossbell...
 
 行政広場の屋台など、どうかと
-	行政広場の屋台など、どうかと
+	Nothing could be more representative
+	than the food stalls in the
+	Administrative District.
 
+## If visited East Street already {{{2
+
+## K
 ……これは、東通りの屋台と、
 似たような感じですね。
-	……これは、東通りの屋台と、
-	似たような感じですね。
+	This looks similar to the stalls on
+	East Street.
 
+## R
 同じようなものを見せても
 意味ないんじゃねえか？
-	同じようなものを見せても
-	意味ないんじゃねえか？
+	There's no point in showing her
+	more of the same, you know?
 
+## L
 そ、そうか……
-	そ、そうか……
+	That's true...
 
+## K
 あっ、いえ！
-	あっ、いえ！
+	No, not at all!
 
 これはこれで、
 違った趣もありますから。
-	これはこれで、
-	違った趣もありますから。
+	These ones have a quite
+	different feeling from
+	the other ones.
 
+## W
 ロイド、女性のエスコートも
 慣れだよ？
-	ロイド、女性のエスコートも
-	慣れだよ？
+	Lloyd, you should be used
+	to escorting women by now.
 
+## Otherwise {{{2
+
+## K
 屋台！？
 私、こういうの好きなんです！
-	屋台！？
-	私、こういうの好きなんです！
+	Food stalls?
+	Oh, I love those!
 
+## L
 そうなんですか？　意外と言ったら
 失礼かもしれませんが……
-	そうなんですか？　意外と言ったら
-	失礼かもしれませんが……
+	Is that so? I don't mean to be
+	rude, but that's rather unexpected.
 
+## E
 たしかに、イメージが違うわね。
-	たしかに、イメージが違うわね。
+	It doesn't really fit your image.
 
+## K
 ジェニス王立学園の生徒だった頃に、
 学園祭の屋台を見て回ったことが
 あるんです。
-	ジェニス王立学園の生徒だった頃に、
-	学園祭の屋台を見て回ったことが
-	あるんです。
+	When I was a student at the royal academy,
+	I used to look around all the stalls at
+	the campus festival.
 
 とっても楽しかったわ。
-	とっても楽しかったわ。
+	It really was a lot of fun.
 
+## L
 なるほど。
-	なるほど。
+	I see.
 
+## R
 こんだけ積極的な性格だったら、
 本国でも屋台くらい見たことあるか。
-	こんだけ積極的な性格だったら、
-	本国でも屋台くらい見たことあるか。
+	Figures that you'd have seen
+	some stalls back home, with
+	a personality like that.
 
+## L
 失敗だったかな……？
-	失敗だったかな……？
+	Was this a miss...?
 
+## K
 あら、そんなことありません。
 土地ごとに屋台の様子も違うものです。
-	あら、そんなことありません。
-	土地ごとに屋台の様子も違うものです。
+	That is not the case at all.
+	The regional goods and the appearance
+	of the stalls is very different.
 
 なにより、クロスベルの人たちの
 生活を身近に感じられますから。
-	なにより、クロスベルの人たちの
-	生活を身近に感じられますから。
+	More than anything, I can feel
+	that this is very close to the
+	heart of the Crossbell spirit.
 
+## J
 殿下、はしゃぎすぎて、
 目立ちませんよう。
-	殿下、はしゃぎすぎて、
-	目立ちませんよう。
+	Princess, if you talk this
+	loudly, people will notice.
 
+## K
 あっ、ご、ごめんなさい。
-	あっ、ご、ごめんなさい。
+	Oh. Apologies.
 
+## (Camera zooms out, mostly focusing on the fountain.)
+
+## L
 こうして噴水のそばで
 くつろぎながらおしゃべりして……
-	こうして噴水のそばで
-	くつろぎながらおしゃべりして……
+	And then there's the fountain.
+	Relaxing here and chattering away
+	with friends...
 
 ときどき、飲み物やおやつを
 屋台で買うんです。
-	ときどき、飲み物やおやつを
-	屋台で買うんです。
+	And of course buying drinks
+	or snacks at the stalls.
 
+## K
 自由でいいですね。
 それに、平和そうです。
-	自由でいいですね。
-	それに、平和そうです。
+	That seems nice and peaceful.
 
+## L
 そうですね。
 広場は街の人々の憩いの場所に
 なっていると思います。
-	そうですね。
-	広場は街の人々の憩いの場所に
-	なっていると思います。
+	It is. I think a lot of the
+	citizens things of this as a
+	place of relaxation.
 
+## (Camera zooms back in. Kloe walks forward a little.)
+
+## K
 私が買い物しても大丈夫かしら？
-	私が買い物しても大丈夫かしら？
+	Would it be alright if I
+	buy something?
 
+## E
 たぶん、姫殿下本人だなんて、
 店の人も思わないんじゃ
 ないでしょうか？
-	たぶん、姫殿下本人だなんて、
-	店の人も思わないんじゃ
-	ないでしょうか？
+	I think so, the shopkeepers
+	have no reason to think a
+	princess would be here.
 
+## R
 おめかしした外国人客は、
 そう珍しくないしな。
-	おめかしした外国人客は、
-	そう珍しくないしな。
+	They see plenty of dolled up
+	customers from abroad these
+	days.
 
+## K
 そうですよね。
-	そうですよね。
+	That would make sense.
 
 ユリアさん、一緒に屋台で
 お買い物しましょう。
-	ユリアさん、一緒に屋台で
-	お買い物しましょう。
+	Julia, how about we visit
+	this stall together?
 
+## J
 私もですか！？
-	私もですか！？
+	Huh? Me?
 
+## K
 ……ダメ、ですか？
-	……ダメ、ですか？
+	Can't we?
 
+## J
 あ、いえ……
 	あ、いえ……
 
+## (Julia walks up to her.)
+
+## J
 殿下のお望みとあらば！
-	殿下のお望みとあらば！
+	If Your Highness wishes so.
 
+## R
 なんか、面白いことになってんな。
-	なんか、面白いことになってんな。
+	This'll be good.
 
+## K
 ユリアさん、あのアイス！
 すごく美味しそうですよ。
 あっ、パフェがいいかしら？
-	ユリアさん、あのアイス！
-	すごく美味しそうですよ。
-	あっ、パフェがいいかしら？
+	Julia, look! Doesn't this ice
+	cream look delicious? Oh, but
+	this parfait looks marvellous too.
 
+## J
 え……
 いや、私は甘いものは……
-	え……
-	いや、私は甘いものは……
+	Er... I'm not good with
+	sweets.
 
+## K
 …………そうですか。
-	…………そうですか。
+	I see...
 
+## J
 あ、いえ……
 とっても美味しそうですね、殿下。
-	あ、いえ……
-	とっても美味しそうですね、殿下。
+	Ah, no... It does look
+	very delicious indeed,
+	your highness.
 
+## L
 はは……
 本当によかったのかな？
-	はは……
-	本当によかったのかな？
+	Will they be alright?
 
+## (Elie walks up to them.)
+
+## E
 あの……
 私も、ご一緒させてください。
-	あの……
-	私も、ご一緒させてください。
+	Would you let me join in too?
+
+## (And noel.)
 
 あ、わ、私も！
-	あ、わ、私も！
+	Me-- Me too!
 
+## K
 ええ、もちろん。
 皆さんのぶんを買いましょう。
-	ええ、もちろん。
-	皆さんのぶんを買いましょう。
+	Yes, of course. I'll
+	buy enough for everyone.
 
+## (They walk up to the stall. Camera moves to focus mainly on the remaining group.)
+
+## W
 ふふ……
 喜んでもらえたみたいだね。
-	ふふ……
-	喜んでもらえたみたいだね。
+	She looks like she's enjoying
+	herself.
 
 女の子は、甘いものに
 目がないからね。
-	女の子は、甘いものに
-	目がないからね。
+	Girls love sweets, you know.
 
+## (Fade into the map screen.)
+
+## If out of time, continue below.
+
+## W, if third time
 ロイド、最後はどうするんだい？
 同じようなところは
 避けた方がいいと思うよ。
-	ロイド、最後はどうするんだい？
-	同じようなところは
-	避けた方がいいと思うよ。
+	So, where should we take her last?
+	We should avoid anything too similar.
 
+## W, if second time
 ロイド、次はどうするんだい？
 同じようなところは
 避けた方がいいと思うよ。
-	ロイド、次はどうするんだい？
-	同じようなところは
-	避けた方がいいと思うよ。
+	So, where should we take her next?
+	We should avoid anything too similar.
 
+## This part is repeated
 そうだな……
 最初は……
-	そうだな……
-	最初は……
-
+	Good question. How
+	about we start with...
 次に行く場所は……
-	次に行く場所は……
-
+	Next, let's head to...
 最後に案内するなら……
-	最後に案内するなら……
-
+	To end it off, how about...
 行政区の屋台
-	行政区の屋台
-
+	Administrative District food stalls
 中央広場の百貨店
-	中央広場の百貨店
-
+	Times Department Store
 ベーカリー・モルジュ
-	ベーカリー・モルジュ
-
+	Morges Bakery
 東通りの屋台
-	東通りの屋台
-
+	East Street market
 旧市街
-	旧市街
-
+	Downtown District
 アルカンシェル
-	アルカンシェル
+	Arc en Ciel
 
+## This is repeated several times later.
+
+## J
 ん……
 そろそろ、時間だな。
-	ん……
-	そろそろ、時間だな。
+	Hm. I think we're out of time.
 
+## K
 え？　もう、そんなに
 経っちゃったんですか。
-	え？　もう、そんなに
-	経っちゃったんですか。
+	Oh? I don't feel like it
+	has been that long.
 
+## J
 名残惜しいですが……
 公務に遅れるわけには
 まいりません。
-	名残惜しいですが……
-	公務に遅れるわけには
-	まいりません。
+	Though it pains me to say...
+	You mustn't be tardy to
+	today's events.
 
+## K
 ええ、もちろんです。
-	ええ、もちろんです。
+	Yes, of course.
 
 そのために、
 私はクロスベルに
 来たんですもの。
-	そのために、
-	私はクロスベルに
-	来たんですもの。
+	That is what I came
+	to Crossbell for in
+	the first place.
 
+## J
 一度、アルセイユに
 戻るとしよう。
-	一度、アルセイユに
-	戻るとしよう。
+	How about we make our way back to the Arseille for now?
 
+## L
 わかりました。
-	わかりました。
+	Understood.
+## Continued below, at the Arseille.
 
 ## c0170 - Times Department Store {{{1
 
 クローディア姫
-	クローディア姫
+	Princess Klaudia
 
 ユリア准佐
-	ユリア准佐
+	Senior Captain Schwarz
 
+## (Camera swoops around the store before settling on the group who just walked in.)
+
+## L
 やっぱり、生活を見せるといえば、
 百貨店ですよね。
-	やっぱり、生活を見せるといえば、
-	百貨店ですよね。
+	Speaking of the quintessential
+	Crossbellan life, that's got
+	to be Times.
 
+## E
 え、ええ……
 でも……
-	え、ええ……
-	でも……
+	Yes, but...
 
+## If went to Arc en Ciel {{{2
+
+## T
 ロイドさん……
 先ほどの失敗の件、
 もう忘れたんですか……？
-	ロイドさん……
-	先ほどの失敗の件、
-	もう忘れたんですか……？
+	Lloyd, have you already forgotten
+	about your previous blunder?
 
+## Otherwise {{{2
+
+## T
 ふぅ……
-	ふぅ……
+	Hmm...
 
 ロイドさんも、
 要人のスケジュールを
 把握していませんでしたか……
-	ロイドさんも、
-	要人のスケジュールを
-	把握していませんでしたか……
+	Lloyd, I see you did not study the
+	VIPs' schedules sufficiently either.
 
+## }}}2
+
+## W
 やれやれだね……
-	やれやれだね……
+	Oh, here we go.
 
+## L
 あ、あれ？
-	あ、あれ？
+	Wait, what?
 
+## K
 すみません……
 ここは、昨日、
 案内された場所ですから。
-	すみません……
-	ここは、昨日、
-	案内された場所ですから。
+	I'm sorry, but we already
+	visited here yesterday.
 
+## L
 そ、そうでした！
-	そ、そうでした！
+	Oh, I forgot.
 
+## J
 まぁ、安全ではあるが……
-	まぁ、安全ではあるが……
+	Well, at least it's
+	safe as can be.
 
+## L
 （しまった。大失敗だ……）
-	（しまった。大失敗だ……）
+	(What a blunder.)
 
+## K
 せっかくだから、
 店内を見てみますね。
-	せっかくだから、
-	店内を見てみますね。
+	Well, why don't we shop
+	a little while we're here?
 
+## (Klaudia and Julia walk toward the Mishy corner.)
+
+## L
 ……すみません。
-	……すみません。
+	Sorry.
 
+## (The rest of the group follow suit. Tio notices them at the Mishies and runs ahead.)
+
+## T
 #5Sクローディア姫も、
 みっしぃがお好きなんですか！？#3S
-	#5Sクローディア姫も、
-	みっしぃがお好きなんですか！？#3S
+	#5SYour Highness likes Mishy too!?#3S
 
+## K
 えっ……？
 ええっと……
-	えっ……？
-	ええっと……
+	Huh? Well...
 
+## T
 やはり、みっしぃの人気は
 国を越えているのですね。
-	やはり、みっしぃの人気は
-	国を越えているのですね。
+	Of course, Mishy's greatness
+	knows no national borders.
 
 今回の限定グッズはチェックされて
 いますか？
-	今回の限定グッズはチェックされて
-	いますか？
+	Have you checked the
+	limited edition merchandise?
 
+## K
 限定グッズ？
-	限定グッズ？
+	Limited edition merchandise?
 
+## T
 はい。これは、今回の通商会議に
 合わせた限定グッズです。
-	はい。これは、今回の通商会議に
-	合わせた限定グッズです。
+	Yes. On this shelf lies a large
+	number of Mishy, specifically
+	collected for the trade conference.
 
 とても愛らしいです。
 さすがは、みっしぃです。
-	とても愛らしいです。
-	さすがは、みっしぃです。
+	It is very adorable. As
+	one would expect from Mishy.
 
 この瞳、この口元。
 癒しとは、このことでしょう。
-	この瞳、この口元。
-	癒しとは、このことでしょう。
+	These pupils, those eyes.
+	Nothing could be more soothing.
 
+## (Collective sweatdrop.)
+
+## E
 あれは、大丈夫なのかしら？
-	あれは、大丈夫なのかしら？
+	Is this really alright...?
 
+## L
 どうだろう……？
-	どうだろう……？
+	I wonder about that too.
 
+## R
 止めたほうがよさそうだな。
-	止めたほうがよさそうだな。
+	I think we'd better stop her.
 
+## (Elie and Randy go and pick Tio up.)
+
+## E
 ティオちゃん、その辺にしておきましょう。
-	ティオちゃん、その辺にしておきましょう。
+	Tio, how about we wait over there?
 
+## R
 おい、ティオすけ、
 ほどほどにしとけよな。
-	おい、ティオすけ、
-	ほどほどにしとけよな。
+	Tio Tot, take it easy.
 
+## (They drag Tio away.)
+
+## L
 すみません、姫……
-	すみません、姫……
+	Sorry, Princess...
 
+## K
 あ、いえ……
 いろいろと種類があるんですね。
-	あ、いえ……
-	いろいろと種類があるんですね。
+	No, it's okay... There really
+	are all sorts, aren't there.
 
+## T
 まだ、ぜんぜん説明していないのですが……
-	まだ、ぜんぜん説明していないのですが……
+	Let go. I still haven't explained
+	about the exquisite fluffiness of
+	Mishy's fur.
 
+## (Fade to map.)
+
+## N, if third time
 き、気を取り直して、
 最後の場所へ行きましょう、
 ロイドさん！
-	き、気を取り直して、
-	最後の場所へ行きましょう、
-	ロイドさん！
+	Let us regroup and head toward
+	our final destination, Lloyd.
 
 き、気を取り直して、
 次へ行きましょう、ロイドさん！
-	き、気を取り直して、
-	次へ行きましょう、ロイドさん！
+	Let us regroup and head toward
+	our next destination, Lloyd.
 
+## This part is repeated
 そうだな……
 最初は……
-	そうだな……
-	最初は……
-
+	Good question. How
+	about we start with...
 次に行く場所は……
-	次に行く場所は……
-
+	Next, let's head to...
 最後に案内するなら……
-	最後に案内するなら……
-
+	To end it off, how about...
 行政区の屋台
-	行政区の屋台
-
+	Administrative District food stalls
 中央広場の百貨店
-	中央広場の百貨店
-
+	Times Department Store
 ベーカリー・モルジュ
-	ベーカリー・モルジュ
-
+	Morges Bakery
 東通りの屋台
-	東通りの屋台
-
+	East Street market
 旧市街
-	旧市街
-
+	Downtown District
 アルカンシェル
-	アルカンシェル
-
+	Arc en Ciel
 ん……
 そろそろ、時間だな。
-	ん……
-	そろそろ、時間だな。
-
+	Hm. I think we're out of time.
 え？　もう、そんなに
 経っちゃったんですか。
-	え？　もう、そんなに
-	経っちゃったんですか。
-
+	Oh? I don't feel like it
+	has been that long.
 名残惜しいですが……
 公務に遅れるわけには
 まいりません。
-	名残惜しいですが……
-	公務に遅れるわけには
-	まいりません。
-
+	Though it pains me to say...
+	You mustn't be tardy to
+	today's events.
 ええ、もちろんです。
-	ええ、もちろんです。
-
+	Yes, of course.
 そのために、
 私はクロスベルに
 来たんですもの。
-	そのために、
-	私はクロスベルに
-	来たんですもの。
-
+	That is what I came
+	to Crossbell for in
+	the first place.
 一度、アルセイユに
 戻るとしよう。
-	一度、アルセイユに
-	戻るとしよう。
-
+	How about we make our way back to the Arseille for now?
 わかりました。
-	わかりました。
+	Understood.
 
 ## c0200 - West Street {{{1
 
 クローディア姫
-	クローディア姫
+	Princess Klaudia
 
 ユリア准佐
-	ユリア准佐
+	Senior Captain Schwarz
 
+## (The group comes walking in from the Central Square, stopping in front of the bakery.)
+
+## L
 ここは、俺たちもよく使っている
 パン屋です。
-	ここは、俺たちもよく使っている
-	パン屋です。
+	This here is a bakery that is
+	popular with the people.
 
 クロスベルの街の人たちの
 生活に密着した店だと
 思うんですよ。
-	クロスベルの街の人たちの
-	生活に密着した店だと
-	思うんですよ。
+	I think this store is a
+	good representative of
+	Crossbellan daily life.
 
+## K
 あ…………
 このお店は……
-	あ…………
-	このお店は……
+	Oh, this shop.
 
+## L
 え！？
 もしかして、来たことが
 ありましたか！？
-	え！？
-	もしかして、来たことが
-	ありましたか！？
+	Have you been here before?
 
+## K
 いいえ……
 そうじゃないんです。
-	いいえ……
-	そうじゃないんです。
+	No, not exactly.
 
 クロスベルのことを調べるとき、
 新聞で、このお店の記事を
 見たんです。
-	クロスベルのことを調べるとき、
-	新聞で、このお店の記事を
-	見たんです。
+	But when I was reading up on
+	Crossbell, I saw a report on
+	this store in the newspaper.
 
 ぜひ、訪れたいと思っていた
 場所でした。
-	ぜひ、訪れたいと思っていた
-	場所でした。
+	So I was thinking that I
+	wanted to visit it.
 
 ふふ、素敵な偶然です。
-	ふふ、素敵な偶然です。
+	What a nice coincidence.
 
+## L
 それはよかったです。
-	それはよかったです。
+	That's great.
 
+## W
 これは、ポイント高いんじゃない？
-	これは、ポイント高いんじゃない？
+	This turned out quite nicely.
 
+## R
 偶然とか運命とか、効くよな。
-	偶然とか運命とか、効くよな。
+	Dunno if it's coincidence or
+	fate, but hey, it works.
 
+## N
 いつも使っているお店が、
 そんなふうに思われていたなんて、
 なんだか、嬉しいですね！
-	いつも使っているお店が、
-	そんなふうに思われていたなんて、
-	なんだか、嬉しいですね！
+	It makes me happy that you think
+	that highly of this shop that we
+	visit all the time.
 
+## E
 ええ、本当ね。
-	ええ、本当ね。
+	Doesn't it?
 
+## K
 私が買い物しても、大丈夫かしら？
-	私が買い物しても、大丈夫かしら？
+	Would it be alright if I
+	try shopping for a bit?
 
+## L
 ここの店員とは顔見知りです。
 大丈夫ですよ。
-	ここの店員とは顔見知りです。
-	大丈夫ですよ。
+	We're friends with the people
+	there, so I think it should be fine.
 
+## K
 ふふ、じゃあ、パンを買いましょう、
 ユリアさんも一緒に！
-	ふふ、じゃあ、パンを買いましょう、
-	ユリアさんも一緒に！
+	Then let us go and buy some bread!
+	Julia, you too.
 
+## J
 わ、私もですか！？
-	わ、私もですか！？
+	M-Me too?
 
+## (She thinks for a minute.)
+
+## J
 ……わかりました。
 お供いたします。
-	……わかりました。
-	お供いたします。
+	Very well. I
+	shall accompany you.
 
+## K
 みなさんも、ぜひ一緒に。
-	みなさんも、ぜひ一緒に。
+	You are of course all
+	welcome to join in.
 
+## E
 よろしいのですか？
 ありがとうございます。
-	よろしいのですか？
-	ありがとうございます。
+	Are you sure? It
+	would be an honor.
 
+## N
 わわ……
 クローディア姫やユリア准佐と
 一緒にお買い物だなんて！
-	わわ……
-	クローディア姫やユリア准佐と
-	一緒にお買い物だなんて！
+	Going shopping together with
+	Princess Klaudia and Captain Schwarz?
+	I can hardly believe this.
 
 夢みたいです！
-	夢みたいです！
+	Someone pinch me, I must be dreaming.
+
+## (They all go in.)
 
 ## c0210 - Morges Bakery {{{1
 
 クローディア姫
-	クローディア姫
+	Princess Klaudia
 
 ユリア准佐
-	ユリア准佐
+	Senior Captain Schwarz
+
+## (The game freezes.)
 
 わあ！　素敵！
 	わあ！　素敵！
@@ -1978,150 +2094,154 @@
 	ロイドさん、いいチョイスでした。
 	次も、お願いします。
 
+## This part is repeated
 そうだな……
 最初は……
-	そうだな……
-	最初は……
-
+	Good question. How
+	about we start with...
 次に行く場所は……
-	次に行く場所は……
-
+	Next, let's head to...
 最後に案内するなら……
-	最後に案内するなら……
-
+	To end it off, how about...
 行政区の屋台
-	行政区の屋台
-
+	Administrative District food stalls
 中央広場の百貨店
-	中央広場の百貨店
-
+	Times Department Store
 ベーカリー・モルジュ
-	ベーカリー・モルジュ
-
+	Morges Bakery
 東通りの屋台
-	東通りの屋台
-
+	East Street market
 旧市街
-	旧市街
-
+	Downtown District
 アルカンシェル
-	アルカンシェル
-
+	Arc en Ciel
 ん……
 そろそろ、時間だな。
-	ん……
-	そろそろ、時間だな。
-
+	Hm. I think we're out of time.
 え？　もう、そんなに
 経っちゃったんですか。
-	え？　もう、そんなに
-	経っちゃったんですか。
-
+	Oh? I don't feel like it
+	has been that long.
 名残惜しいですが……
 公務に遅れるわけには
 まいりません。
-	名残惜しいですが……
-	公務に遅れるわけには
-	まいりません。
-
+	Though it pains me to say...
+	You mustn't be tardy to
+	today's events.
 ええ、もちろんです。
-	ええ、もちろんです。
-
+	Yes, of course.
 そのために、
 私はクロスベルに
 来たんですもの。
-	そのために、
-	私はクロスベルに
-	来たんですもの。
-
+	That is what I came
+	to Crossbell for in
+	the first place.
 一度、アルセイユに
 戻るとしよう。
-	一度、アルセイユに
-	戻るとしよう。
-
+	How about we make our way back to the Arseille for now?
 わかりました。
-	わかりました。
+	Understood.
 
 ## c1000 - East Street {{{1
 
 クローディア姫
-	クローディア姫
+	Princess Klaudia
 
 ユリア准佐
-	ユリア准佐
+	Senior Captain Schwarz
 
+## L
 クロスベルの生活
 ということで……
-	クロスベルの生活
-	ということで……
+	It doesn't get much more
+	Crossbell than this...
 
 東通りの屋台など、どうかと
-	東通りの屋台など、どうかと
+	The market on East Street.
 
+## If visited Administrative District {{{2
+
+## K
 ……これは、行政区の屋台と、
 似たような感じですね。
-	……これは、行政区の屋台と、
-	似たような感じですね。
+	This is very similar to the
+	stalls at the administrative
+	district, no?
 
+## L
 そ、そうか……
 売ってる物が違うから、
 大丈夫かと思ったんだけど……
-	そ、そうか……
-	売ってる物が違うから、
-	大丈夫かと思ったんだけど……
+	Is that so? They sell different
+	things here, so I thought it would
+	be okay.
 
+## R
 そういう問題か？
-	そういう問題か？
+	I don't think that's
+	the problem here.
 
+## W
 やれやれ……
-	やれやれ……
+	What did I tell you?
 
+## K
 あっ、いえ！
 たしかに、売ってる物が違えば、
 買う人も違いますよね。
-	あっ、いえ！
-	たしかに、売ってる物が違えば、
-	買う人も違いますよね。
+	No, you're right! Since the
+	wares are different, the
+	people must be different, too.
 
+## E
 ちょっと微妙だったかも
 しれないわね。
-	ちょっと微妙だったかも
-	しれないわね。
+	A very diplomatic resolution.
 
+## Otherwise {{{2
+
+## K
 わぁ、屋台がいっぱい。
 ここでは野菜や魚が売ってるのね。
-	わぁ、屋台がいっぱい。
-	ここでは野菜や魚が売ってるのね。
+	Oh, there are lots of little
+	stalls here. Looks like they're
+	selling fish and vegetables?
 
 屋台は見たことあるけど、
 こういう雰囲気のは初めてです！
-	屋台は見たことあるけど、
-	こういう雰囲気のは初めてです！
+	I've seen food stalls before,
+	but these are a bit different.
 
+## L
 他にも屋台を見たことが
 ありましたか。
-	他にも屋台を見たことが
-	ありましたか。
+	Oh, so you've seen
+	food stalls before?
 
+## K
 ええ、ジェニス王立学園の
 生徒だった頃に、
 学園祭の屋台を見ました。
-	ええ、ジェニス王立学園の
-	生徒だった頃に、
-	学園祭の屋台を見ました。
+	Yes, there were some stalls
+	at the royal academy's
+	campus festival.
 
+## K
 なるほど、学園祭で。
-	なるほど、学園祭で。
+	The campus festival? Sounds fun.
 
+## K
 こういう屋台はいいですね。
 クロスベルの人たちの生活を
 肌で感じられるように思います。
-	こういう屋台はいいですね。
-	クロスベルの人たちの生活を
-	肌で感じられるように思います。
+	I like this kind of stalls.
+	They show a lot of what
+	Crossbellan life is like.
 
+## J
 殿下、あまり目立ちすぎませぬよう。
-	殿下、あまり目立ちすぎませぬよう。
+	Highness, please remember to
+	keep a low profile.
 
 ええ、気をつけるわ。
 	ええ、気をつけるわ。
@@ -2192,77 +2312,61 @@
 	ロイド、次はどこへ？
 	いろいろな場所を案内したいわね。
 
+## This part is repeated
 そうだな……
 最初は……
-	そうだな……
-	最初は……
-
+	Good question. How
+	about we start with...
 次に行く場所は……
-	次に行く場所は……
-
+	Next, let's head to...
 最後に案内するなら……
-	最後に案内するなら……
-
+	To end it off, how about...
 行政区の屋台
-	行政区の屋台
-
+	Administrative District food stalls
 中央広場の百貨店
-	中央広場の百貨店
-
+	Times Department Store
 ベーカリー・モルジュ
-	ベーカリー・モルジュ
-
+	Morges Bakery
 東通りの屋台
-	東通りの屋台
-
+	East Street market
 旧市街
-	旧市街
-
+	Downtown District
 アルカンシェル
-	アルカンシェル
-
+	Arc en Ciel
 ん……
 そろそろ、時間だな。
-	ん……
-	そろそろ、時間だな。
-
+	Hm. I think we're out of time.
 え？　もう、そんなに
 経っちゃったんですか。
-	え？　もう、そんなに
-	経っちゃったんですか。
-
+	Oh? I don't feel like it
+	has been that long.
 名残惜しいですが……
 公務に遅れるわけには
 まいりません。
-	名残惜しいですが……
-	公務に遅れるわけには
-	まいりません。
-
+	Though it pains me to say...
+	You mustn't be tardy to
+	today's events.
 ええ、もちろんです。
-	ええ、もちろんです。
-
+	Yes, of course.
 そのために、
 私はクロスベルに
 来たんですもの。
-	そのために、
-	私はクロスベルに
-	来たんですもの。
-
+	That is what I came
+	to Crossbell for in
+	the first place.
 一度、アルセイユに
 戻るとしよう。
-	一度、アルセイユに
-	戻るとしよう。
-
+	How about we make our way back to the Arseille for now?
 わかりました。
-	わかりました。
+	Understood.
 
 ## c1400 - Downtown District {{{1
 
 クローディア姫
-	クローディア姫
+	Princess Klaudia
 
 ユリア准佐
-	ユリア准佐
+	Senior Captain Schwarz
 
 ここは……
 大丈夫なのだろうか？
@@ -2354,77 +2458,61 @@
 	（伝えたいことは、受け取って
 	　もらえた気がするな……）
 
+## This part is repeated, almost
 そうだな……
 最初は……
-	そうだな……
-	最初は……
-
+	Good question. How
+	about we start with...
 ……さて、次に行く場所は……
-	……さて、次に行く場所は……
-
+	Well, next, let's head to...
 ……さて、最後に案内するなら……
-	……さて、最後に案内するなら……
-
+	Well, to end it off, how about...
 行政区の屋台
-	行政区の屋台
-
+	Administrative District food stalls
 中央広場の百貨店
-	中央広場の百貨店
-
+	Times Department Store
 ベーカリー・モルジュ
-	ベーカリー・モルジュ
-
+	Morges Bakery
 東通りの屋台
-	東通りの屋台
-
+	East Street market
 旧市街
-	旧市街
-
+	Downtown District
 アルカンシェル
-	アルカンシェル
-
+	Arc en Ciel
 ん……
 そろそろ、時間だな。
-	ん……
-	そろそろ、時間だな。
-
+	Hm. I think we're out of time.
 え？　もう、そんなに
 経っちゃったんですか。
-	え？　もう、そんなに
-	経っちゃったんですか。
-
+	Oh? I don't feel like it
+	has been that long.
 名残惜しいですが……
 公務に遅れるわけには
 まいりません。
-	名残惜しいですが……
-	公務に遅れるわけには
-	まいりません。
-
+	Though it pains me to say...
+	You mustn't be tardy to
+	today's events.
 ええ、もちろんです。
-	ええ、もちろんです。
-
+	Yes, of course.
 そのために、
 私はクロスベルに
 来たんですもの。
-	そのために、
-	私はクロスベルに
-	来たんですもの。
-
+	That is what I came
+	to Crossbell for in
+	the first place.
 一度、アルセイユに
 戻るとしよう。
-	一度、アルセイユに
-	戻るとしよう。
-
+	How about we make our way back to the Arseille for now?
 わかりました。
-	わかりました。
+	Understood.
 
 ## c0400 - Entertainment District {{{1
 
 クローディア姫
-	クローディア姫
+	Princess Klaudia
 
 ユリア准佐
-	ユリア准佐
+	Senior Captain Schwarz
 
 クロスベルの案内といえば、
 アルカンシェルですよね。
@@ -2510,10 +2598,10 @@
 ## c0410 - Arc en Ciel {{{1
 
 クローディア姫
-	クローディア姫
+	Princess Klaudia
 
 ユリア准佐
-	ユリア准佐
+	Senior Captain Schwarz
 
 こ、これは！
 クローディア姫！
@@ -2548,10 +2636,10 @@
 ## c0420 - Arc en Ciel (??) {{{1
 
 クローディア姫
-	クローディア姫
+	Princess Klaudia
 
 ユリア准佐
-	ユリア准佐
+	Senior Captain Schwarz
 
 あら、クローディア姫じゃないの！
 	あら、クローディア姫じゃないの！
@@ -2683,78 +2771,65 @@
 	まあまあだったかな。
 	次は派手なとこに行こうぜ！
 
+## This part is repeated
 そうだな……
 最初は……
-	そうだな……
-	最初は……
-
+	Good question. How
+	about we start with...
 次に行く場所は……
-	次に行く場所は……
-
+	Next, let's head to...
 最後に案内するなら……
-	最後に案内するなら……
-
+	To end it off, how about...
 行政区の屋台
-	行政区の屋台
-
+	Administrative District food stalls
 中央広場の百貨店
-	中央広場の百貨店
-
+	Times Department Store
 ベーカリー・モルジュ
-	ベーカリー・モルジュ
-
+	Morges Bakery
 東通りの屋台
-	東通りの屋台
-
+	East Street market
 旧市街
-	旧市街
-
+	Downtown District
 アルカンシェル
-	アルカンシェル
-
+	Arc en Ciel
 ん……
 そろそろ、時間だな。
-	ん……
-	そろそろ、時間だな。
-
+	Hm. I think we're out of time.
 え？　もう、そんなに
 経っちゃったんですか。
-	え？　もう、そんなに
-	経っちゃったんですか。
-
+	Oh? I don't feel like it
+	has been that long.
 名残惜しいですが……
 公務に遅れるわけには
 まいりません。
-	名残惜しいですが……
-	公務に遅れるわけには
-	まいりません。
-
+	Though it pains me to say...
+	You mustn't be tardy to
+	today's events.
 ええ、もちろんです。
-	ええ、もちろんです。
-
+	Yes, of course.
 そのために、
 私はクロスベルに
 来たんですもの。
-	そのために、
-	私はクロスベルに
-	来たんですもの。
-
+	That is what I came
+	to Crossbell for in
+	the first place.
 一度、アルセイユに
 戻るとしよう。
-	一度、アルセイユに
-	戻るとしよう。
-
+	How about we make our way back to the Arseille for now?
 わかりました。
-	わかりました。
+	Understood.
 
 ## e3210 - Arseille, round two {{{1
 
+## L
 お疲れさまでした。
 期待されたような案内に
 なったでしょうか？
-	お疲れさまでした。
-	期待されたような案内に
-	なったでしょうか？
+	Good job today. I hope
+	the tour was able to
+	meet your expectations?
+
+## If ≥4 points {{{2
 
 いいえ。
 	いいえ。
@@ -2803,43 +2878,55 @@
 	ふふ、急な依頼を引き受けてくれて、
 	本当に感謝している。
 
+## If ≥2 points {{{2
+
+## K
 もちろん。
-	もちろん。
+	Of course.
 
 特務支援課の皆さんに
 案内を頼んで、正解でした。
-	特務支援課の皆さんに
-	案内を頼んで、正解でした。
+	Asking the Special Support
+	Section for a tour was clearly
+	the right choice.
 
+## J
 とくに危険も感じなかった。
 的確な選択だったと思う。
 感謝する。
-	とくに危険も感じなかった。
-	的確な選択だったと思う。
-	感謝する。
+	And you measured your choices to
+	stay away from any excessively
+	dangerous areas. Thank you.
 
+## L
 あ、いえ……
 ご期待に添えたのなら、
 よかったです。
-	あ、いえ……
-	ご期待に添えたのなら、
-	よかったです。
+	Not at all. If we managed to
+	meet your expectations, that's
+	more than enough.
 
+## E
 よかったわね、ロイド。
-	よかったわね、ロイド。
+	Nicely done, Lloyd.
 
+## T
 さすがです、ロイドさん。
-	さすがです、ロイドさん。
+	You chose well.
 
+## W
 ふふ……
 なかなかやるじゃない。
-	ふふ……
-	なかなかやるじゃない。
+	Well, I've seen worse.
 
+## J
 急な依頼を引き受けてくれて、
 本当に感謝している。
-	急な依頼を引き受けてくれて、
-	本当に感謝している。
+	I must thank you again for
+	responding to our call on
+	such short notice.
+
+## If <2 {{{2
 
 え、ええ……
 そうですね。
@@ -2883,30 +2970,35 @@
 	引き受けてくれて、
 	本当に感謝している。
 
+## }}}2
+
+## J
 諸君らの拠点まで、
 導力車で送らせよう。
-	諸君らの拠点まで、
-	導力車で送らせよう。
+	We will have a car take
+	you back to your headquarters.
 
+## J
 殿下は、大急ぎで支度を
 してもらいます。
-	殿下は、大急ぎで支度を
-	してもらいます。
+	Princess, we need to
+	hurry and prepare.
 
+## K
 大丈夫、もう出発できるわ。
-	大丈夫、もう出発できるわ。
+	It's alright, I am already
+	ready to depart.
 
+## J
 さすがです。
 それでは、参りましょう。
-	さすがです。
-	それでは、参りましょう。
+	I see. Let us set off, then.
 
+## N
 （はぁ……
 　やっぱり、ユリア准佐は
 　凛々しいです。）
-	（はぁ……
-	　やっぱり、ユリア准佐は
-	　凛々しいです。）
+	(Captain Schwarz is still so cool...)
 
 {color 2}クエスト【クロスベルの案内】{color 0}を達成した！
-	{color 2}クエスト【クロスベルの案内】{color 0}を達成した！
+	{color 0}Quest {color 2}[Introduction to Crossbell]{color 0} completed!
