@@ -1264,7 +1264,7 @@
 
 ## Menu (choices are only present if not already chosen)
 行政区の屋台
-	Administrative District food stalls ## c1100
+	Administrative District stalls ## c1100
 中央広場の百貨店
 	Times Department Store ## c0170
 ベーカリー・モルジュ
@@ -1565,7 +1565,7 @@
 最後に案内するなら……
 	To end it off, how about...
 行政区の屋台
-	Administrative District food stalls
+	Administrative District stalls
 中央広場の百貨店
 	Times Department Store
 ベーカリー・モルジュ
@@ -1815,7 +1815,7 @@
 最後に案内するなら……
 	To end it off, how about...
 行政区の屋台
-	Administrative District food stalls
+	Administrative District stalls
 中央広場の百貨店
 	Times Department Store
 ベーカリー・モルジュ
@@ -2128,7 +2128,7 @@
 最後に案内するなら……
 	To end it off, how about...
 行政区の屋台
-	Administrative District food stalls
+	Administrative District stalls
 中央広場の百貨店
 	Times Department Store
 ベーカリー・モルジュ
@@ -2346,7 +2346,7 @@
 最後に案内するなら……
 	To end it off, how about...
 行政区の屋台
-	Administrative District food stalls
+	Administrative District stalls
 中央広場の百貨店
 	Times Department Store
 ベーカリー・モルジュ
@@ -2492,7 +2492,7 @@
 ……さて、最後に案内するなら……
 	Well, to end it off, how about...
 行政区の屋台
-	Administrative District food stalls
+	Administrative District stalls
 中央広場の百貨店
 	Times Department Store
 ベーカリー・モルジュ
@@ -2805,7 +2805,7 @@
 最後に案内するなら……
 	To end it off, how about...
 行政区の屋台
-	Administrative District food stalls
+	Administrative District stalls
 中央広場の百貨店
 	Times Department Store
 ベーカリー・モルジュ
