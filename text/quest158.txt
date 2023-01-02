@@ -11,11 +11,12 @@
 したいことがあると言う。
 『公務の予定』があり多忙という依頼主、
 そして彼の制服から推測されるのは……
-	支援課の玄関に立っていた制服姿の男性。
-	彼はとある人物の遣いで、支援課に依頼
-	したいことがあると言う。
-	『公務の予定』があり多忙という依頼主、
-	そして彼の制服から推測されるのは……
+	A man in uniform was standing outside our
+	front entrance. He said he was dispatched
+	by an anonymous but very busy person to
+	request our help with a "personal matter".
+	From the uniform I think we can make a
+	good guess who it is from.
 
 ★依頼主は、クローディア姫殿下だった。
 　依頼内容はクロスベルの案内。
@@ -24,13 +25,15 @@
 ★これはクロスベルの『今』を
 　知ってもらえる、またとない機会だ。
 　引き受けない手はないだろう。
-	★依頼主は、クローディア姫殿下だった。
-	　依頼内容はクロスベルの案内。
-	　華やかな面ばかりではない、ごく普通の
-	　クロスベルの生活を知りたいとのこと。
-	★これはクロスベルの『今』を
-	　知ってもらえる、またとない機会だ。
-	　引き受けない手はないだろう。
+	★The client was Princess Klaudia of Liberl,
+	　who wants a tour of Crossbell City, in
+	　order to see the true life of Crossbell
+	　rather than the public facade.
+	★This is a unique opportunity to let the
+	　current state of Crossbell be known.
+	　There's no way we could let this slip by.
+	
+## Stage 1 {{{2
 
 ★まず最初は、行政区の屋台へ案内した。
 　噴水広場に集まる人々の憩いの風景は、
@@ -39,13 +42,13 @@
 ★屋台に喜ぶ殿下の笑顔。
 　ここに案内したのは大成功だったと、
 　自信を持って記すことができる。
-	★まず最初は、行政区の屋台へ案内した。
-	　噴水広場に集まる人々の憩いの風景は、
-	　多忙であろう殿下の心の癒しに貢献して
-	　くれたようだ。
-	★屋台に喜ぶ殿下の笑顔。
-	　ここに案内したのは大成功だったと、
-	　自信を持って記すことができる。
+	★To start it off, we visited the food stalls
+	　in the Administrative District. The scene of
+	　people relaxing at the fountain seems to have
+	　been a welcome sight to the princess.
+	★Seeing her smile at the ice cream stall, I
+	　can write with confidence that taking her
+	　here was a good pick.
 
 ★まず最初は、広場の百貨店へ案内した。
 　しかし、よくよく考えてみたら、
@@ -54,13 +57,15 @@
 ★殿下にも気を使われてしまうし、
 　ティオは殿下にみっしぃを布教しようと
 　するしで、完全な選択ミスだった……
-	★まず最初は、広場の百貨店へ案内した。
-	　しかし、よくよく考えてみたら、
-	　前日の公式スケジュールですでに
-	　案内されていた場所だった。
-	★殿下にも気を使われてしまうし、
-	　ティオは殿下にみっしぃを布教しようと
-	　するしで、完全な選択ミスだった……
+	★To start it off, we went to Times
+	　Department Store. If I think about it
+	　really, really hard, maybe there was
+	　something about her visiting here on the
+	　public tour yesterday.
+	★Tio tried to salvage the situation by
+	　evangelizing to the princess about
+	　Mishy, but it is clear that this was a
+	　total flop.
 
 ★まず最初は、ベーカリーモルジュへ
 　案内することにした。
@@ -85,12 +90,12 @@
 　と言えるだろう。
 ★殿下の反応もまずまずで、このチョイス
 　は正解だったと言えそうだ。
-	★まず最初は、東通りの屋台を案内した。
-	　屋台の列はいつも買い物客で賑わって
-	　いるし、クロスベルの生活風景のひとつ
-	　と言えるだろう。
-	★殿下の反応もまずまずで、このチョイス
-	　は正解だったと言えそうだ。
+	★To start it off, we visited the market on
+	　East Street. The lines of people shopping
+	　shows a great picture of Crossbellan life.
+	★The princess' reaction was somewhat half-
+	　hearted, but this seems to have been a good
+	　pick.
 
 ★まず最初は、旧市街を案内した。
 　治安に若干の不安がある地域だが、
@@ -126,6 +131,8 @@
 	　文化の一端に触れる良い機会だった……
 	　と、いうことにしておこう。
 
+## Stage 2 {{{2
+
 ★続いて、行政区の屋台へ案内した。
 　噴水広場に集まる人々の憩いの風景は、
 　多忙であろう殿下の心の癒しに貢献して
@@ -133,13 +140,14 @@
 ★屋台に喜ぶ殿下の笑顔。
 　ここに案内したのは大成功だったと、
 　自信を持って記すことができる。
-	★続いて、行政区の屋台へ案内した。
-	　噴水広場に集まる人々の憩いの風景は、
-	　多忙であろう殿下の心の癒しに貢献して
-	　くれたようだ。
-	★屋台に喜ぶ殿下の笑顔。
-	　ここに案内したのは大成功だったと、
-	　自信を持って記すことができる。
+	★Following this, we visited the food
+	　stalls in the Administrative District.
+	　The scene of people relaxing at the
+	　fountain square seems to have been a
+	　welcome sight to the princess.
+	★Seeing her smile at the ice cream stall, I
+	　can write with confidence that taking her
+	　here was a good pick.
 
 ★続いて、広場の百貨店へ案内した。
 　しかし、よくよく考えてみたら、
@@ -148,13 +156,15 @@
 ★殿下にも気を使われてしまうし、
 　ティオは殿下にみっしぃを布教しようと
 　するしで、完全な選択ミスだった……
-	★続いて、広場の百貨店へ案内した。
-	　しかし、よくよく考えてみたら、
-	　前日の公式スケジュールですでに
-	　案内されていた場所だった。
-	★殿下にも気を使われてしまうし、
-	　ティオは殿下にみっしぃを布教しようと
-	　するしで、完全な選択ミスだった……
+	★Following this, we went to Times
+	　Department Store. If I think about it
+	　really, really hard, maybe there was
+	　something about her visiting here on the
+	　public tour yesterday.
+	★Tio tried to salvage the situation by
+	　evangelizing to the princess about
+	　Mishy, but it is clear that this was a
+	　total flop.
 
 ★続いて、ベーカリーモルジュへ
 　案内することにした。
@@ -179,12 +189,12 @@
 　と言えるだろう。
 ★殿下の反応もまずまずで、このチョイス
 　は正解だったと言えそうだ。
-	★続いて、東通りの屋台を案内した。
-	　屋台の列はいつも買い物客で賑わって
-	　いるし、クロスベルの生活風景のひとつ
-	　と言えるだろう。
-	★殿下の反応もまずまずで、このチョイス
-	　は正解だったと言えそうだ。
+	★Following this, we visited the market on
+	　East Street. The lines of people shopping
+	　shows a great picture of Crossbellan life.
+	★The princess' reaction was somewhat half-
+	　hearted, but this seems to have been a good
+	　pick.
 
 ★続いて、旧市街を案内した。
 　治安に若干の不安がある地域だが、
@@ -225,22 +235,28 @@
 　というのは失敗だったようだ。
 　双方の違いを見比べてみるのもアリかな
 　と思ったんだけど……
-	★続いて行政区の屋台に案内したが、
-	　東通りの屋台を案内した後に、屋台続き
-	　というのは失敗だったようだ。
-	　双方の違いを見比べてみるのもアリかな
-	　と思ったんだけど……
+	★Following this, we visited the market on
+	　East Street.
+	　Since we already visited the Administrative
+	　District before, she didn't seem very
+	　interested.
+	　I thought seeing the difference between the
+	　two would be plenty interesting...
 
 ★続いて東通りの屋台に案内したが、
 　行政区の屋台を案内した後に、屋台続き
 　というのは失敗だったようだ。
 　双方の違いを見比べてみるのもアリかな
 　と思ったんだけど……
-	★続いて東通りの屋台に案内したが、
-	　行政区の屋台を案内した後に、屋台続き
-	　というのは失敗だったようだ。
-	　双方の違いを見比べてみるのもアリかな
-	　と思ったんだけど……
+	★Following this, we visited the food
+	　stalls in the Administrative District.
+	　Since we already visited the East Street
+	　market before, she didn't seem very
+	　interested.
+	　I thought seeing the difference between the
+	　two would be plenty interesting...
+
+## Stage 3 {{{2
 
 ★最後は、行政区の屋台へ案内した。
 　噴水広場に集まる人々の憩いの風景は、
@@ -249,13 +265,14 @@
 ★屋台に喜ぶ殿下の笑顔。
 　ここに案内したのは大成功だったと、
 　自信を持って記すことができる。
-	★最後は、行政区の屋台へ案内した。
-	　噴水広場に集まる人々の憩いの風景は、
-	　多忙であろう殿下の心の癒しに貢献して
-	　くれたようだ。
-	★屋台に喜ぶ殿下の笑顔。
-	　ここに案内したのは大成功だったと、
-	　自信を持って記すことができる。
+	★To finish off, we visited the food
+	　stalls in the Administrative District.
+	　The scene of people relaxing at the
+	　fountain square seems to have been a
+	　welcome sight to the princess.
+	★Seeing her smile at the food stall, I can
+	　write with confidence that taking her here
+	　was a good pick.
 
 ★最後は、広場の百貨店へ案内した。
 　しかし、よくよく考えてみたら、
@@ -264,13 +281,15 @@
 ★殿下にも気を使われてしまうし、
 　ティオは殿下にみっしぃを布教しようと
 　するしで、完全な選択ミスだった……
-	★最後は、広場の百貨店へ案内した。
-	　しかし、よくよく考えてみたら、
-	　前日の公式スケジュールですでに
-	　案内されていた場所だった。
-	★殿下にも気を使われてしまうし、
-	　ティオは殿下にみっしぃを布教しようと
-	　するしで、完全な選択ミスだった……
+	★To finish off, we went to Times
+	　Department Store. If I think about it
+	　really, really hard, maybe there was
+	　something about her visiting here on the
+	　public tour yesterday.
+	★Tio tried to salvage the situation by
+	　evangelizing to the princess about
+	　Mishy, but it is clear that this was a
+	　total flop.
 
 ★最後は、ベーカリーモルジュへ
 　案内することにした。
@@ -295,12 +314,12 @@
 　と言えるだろう。
 ★殿下の反応もまずまずで、このチョイス
 　は正解だったと言えそうだ。
-	★最後は、東通りの屋台を案内した。
-	　屋台の列はいつも買い物客で賑わって
-	　いるし、クロスベルの生活風景のひとつ
-	　と言えるだろう。
-	★殿下の反応もまずまずで、このチョイス
-	　は正解だったと言えそうだ。
+	★To finish off, we visited the market on
+	　East Street. The lines of people shopping
+	　shows a great picture of Crossbellan life.
+	★The princess' reaction was somewhat half-
+	　hearted, but this seems to have been a good
+	　pick.
 
 ★最後は、旧市街を案内した。
 　治安に若干の不安がある地域だが、
@@ -341,22 +360,28 @@
 　というのは失敗だったようだ。
 　双方の違いを見比べてみるのもアリかな
 　と思ったんだけど……
-	★最後は行政区の屋台に案内したが、
-	　東通りの屋台を案内した後に、屋台続き
-	　というのは失敗だったようだ。
-	　双方の違いを見比べてみるのもアリかな
-	　と思ったんだけど……
+	★To finish off, we visited the market on
+	　East Street.
+	　Since we already visited the Administrative
+	　District before, she didn't seem very
+	　interested.
+	　I thought seeing the difference between the
+	　two would be plenty interesting...
 
 ★最後は東通りの屋台に案内したが、
 　行政区の屋台を案内した後に、屋台続き
 　というのは失敗だったようだ。
 　双方の違いを見比べてみるのもアリかな
 　と思ったんだけど……
-	★最後は東通りの屋台に案内したが、
-	　行政区の屋台を案内した後に、屋台続き
-	　というのは失敗だったようだ。
-	　双方の違いを見比べてみるのもアリかな
-	　と思ったんだけど……
+	★To finish off, we visited the food
+	　stalls in the Administrative District.
+	　Since we already visited the East Street
+	　market before, she didn't seem very
+	　interested.
+	　I thought seeing the difference between the
+	　two would be plenty interesting...
+
+## }}}2
 
 ★時間も差し迫っていたので３箇所しか
 　案内できなかったが、
@@ -364,12 +389,12 @@
 　依頼は大成功だったと言えるだろう。
 　またいずれ、ゆっくりと案内できる機会
 　があれば良いのだが。
-	★時間も差し迫っていたので３箇所しか
-	　案内できなかったが、
-	　姫殿下も大変喜ばれていたし、
-	　依頼は大成功だったと言えるだろう。
-	　またいずれ、ゆっくりと案内できる機会
-	　があれば良いのだが。
+	★We ran out of time and could only show
+	　three places.
+	　The princess seemed to enjoy herself, so
+	　I think we can count this as a success.
+	　If we ever get the opportunity, I would
+	　love to do a slower-paced tour.
 
 ★時間も差し迫っていたので３箇所しか
 　案内できなかったが、
@@ -377,12 +402,12 @@
 　言って良いだろう。
 　またいずれ、ゆっくりと案内できる機会
 　があれば良いのだが。
-	★時間も差し迫っていたので３箇所しか
-	　案内できなかったが、
-	　依頼はまずまず成功したと
-	　言って良いだろう。
-	　またいずれ、ゆっくりと案内できる機会
-	　があれば良いのだが。
+	★We ran out of time and could only show
+	　three places.
+	　I think it is fair to say we could have
+	　done better.
+	　If we ever get the opportunity, I would
+	　love to do a slower-paced tour.
 
 ★時間も差し迫っていたので３箇所しか
 　案内できなかったが、
@@ -391,13 +416,12 @@
 　機会だったのに……
 　またいずれ、ゆっくりと案内できる機会
 　があれば良いのだが。
-	★時間も差し迫っていたので３箇所しか
-	　案内できなかったが、
-	　あまり良い選択ができなかったようだ。
-	　せっかくクロスベルを知ってもらう良い
-	　機会だったのに……
-	　またいずれ、ゆっくりと案内できる機会
-	　があれば良いのだが。
+	★We ran out of time and could only show
+	　three places.
+	　I don't think we did a good job at all.
+	　A shame, with such a great opportunity.
+	　If we ever get the opportunity, I would
+	　love to do a slower-paced tour.
 
 ## c0100 - Central square {{{1
 
@@ -2165,8 +2189,8 @@
 ……これは、行政区の屋台と、
 似たような感じですね。
 	This is very similar to the
-	stalls at the administrative
-	district, no?
+	stalls at the Administrative
+	District, no?
 
 ## L
 そ、そうか……
