@@ -551,4 +551,14 @@ fn quest158(ctx: &mut Context) {
 	// c0110 - Special Support Section
 	let s = ctx.scena("c0110");
 	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![287]), nil));
+
+	tl.comment("t4100 - Orchis Tower");
+	let s = ctx.scena("t4100");
+	s.func(22, |a| {
+		let (i, if_) = a.1.iter().enumerate().find_map(f!((i, TreeInsn::If(c)) => (i, c))).unwrap();
+		let mut if_ = if_.clone();
+		if_[0].1 = a.0.drain(i..i+if_[0].1.len()).collect();
+		do_translate(tl, &mut if_[1].1);
+		a.0.insert(i, TreeInsn::If(if_));
+	});
 }

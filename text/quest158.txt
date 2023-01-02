@@ -3176,3 +3176,17 @@
 
 {color 2}クエスト【クロスベルの案内】{color 0}を達成した！
 	{color 0}Quest {color 2}[Introduction to Crossbell]{color 0} completed!
+
+## t4100 - Orchis Tower {{{1
+## Klaudia normally remarks on not having met Tio, but if doing the quest, she has.
+
+## K
+ふふ、ジークは王室親衛隊の
+情報伝達役ですから。
+	Sieg is a recognized informant of the
+	Royal Guard, after all.
+
+えっと、それで……
+みなさんはこちらへは何をしに？
+	But enough about that. What brings
+	you all here today?
