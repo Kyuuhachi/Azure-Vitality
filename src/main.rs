@@ -200,19 +200,6 @@ impl AScena {
 		self.new_npcs.push(new_idx);
 	}
 
-	fn swap_scp(&mut self, scp1: u16, scp2: u16) {
-		self.evo.includes.swap(scp1 as usize, scp2 as usize);
-		self.remap(&mut |a| {
-			if let IAM::FuncRef(a) = a {
-				if a.0 == scp1 {
-					a.0 = scp2;
-				} else if a.0 == scp2 {
-					a.0 = scp1;
-				}
-			}
-		});
-	}
-
 	fn copy_func(&mut self, scp: u16, idx: usize, tl: &mut impl Translator) {
 		let new_idx = self.main.functions.len();
 
@@ -457,12 +444,31 @@ fn quest158(ctx: &mut Context) {
 
 	tl.comment("c1100 - Administrative District");
 	let s = ctx.scena("c1100");
-	s.swap_scp(1, 2);
+	s.evo.includes.swap(1, 2);
+	s.remap(&mut |a| {
+		if let IAM::FuncRef(a) = a {
+			if a.0 == 1 {
+				a.0 = 2;
+			} else if a.0 == 2 {
+				a.0 = 1;
+			}
+		}
+	});
 	s.main.includes[2] = s.evo.includes[2].clone();
 	s.copy_npc(63, tl); // Princess Klaudia
 	s.copy_npc(64, tl); // Senior Captain Schwarz
 	s.func(7, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![276]), nil));
-	ctx.copy_scena("c1100_1", tl);
+	let s = ctx.copy_scena("c1100_1", tl);
+	s.new_funcs = (0..s.main.functions.len()).collect();
+	s.remap(&mut |a| {
+		if let IAM::FuncRef(a) = a {
+			if a.0 == 1 {
+				a.0 = 2;
+			} else if a.0 == 2 {
+				a.0 = 1;
+			}
+		}
+	});
 
 	tl.comment("c0170 - Times Department Store");
 	let s = ctx.scena("c0170");
@@ -488,6 +494,7 @@ fn quest158(ctx: &mut Context) {
 	s.copy_npc(10, tl); // Senior Captain Schwarz
 	s.copy_func(0, 33, tl);
 	s.copy_func(0, 34, tl);
+	s.copy_func(0, 35, tl);
 	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
 
 	tl.comment("c1000 - East Street");
@@ -540,4 +547,8 @@ fn quest158(ctx: &mut Context) {
 	s.func(1, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
 	s.copy_func(0, 15, tl);
 	s.copy_func(0, 16, nil);
+
+	// c0110 - Special Support Section
+	let s = ctx.scena("c0110");
+	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![287]), nil));
 }
