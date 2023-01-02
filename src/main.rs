@@ -494,7 +494,7 @@ fn quest158(ctx: &mut Context) {
 	s.copy_npc(10, tl); // Senior Captain Schwarz
 	s.copy_func(0, 33, tl);
 	s.copy_func(0, 34, tl);
-	s.copy_func(0, 35, tl);
+	s.copy_func(0, 35, nil);
 	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
 
 	tl.comment("c1000 - East Street");
