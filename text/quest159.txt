@@ -1,0 +1,534 @@
+## t_quest {{{1
+
+森林道での捜索
+	Searching the Forest
+
+ソーニャ司令
+	Commander Baelz
+
+ベルガード門のソーニャ司令から、
+人捜しの手伝いを依頼された。
+ノックス森林道の樹海を監視していた、
+若い警備隊員からの定時連絡が
+途絶えたと言う……
+	ベルガード門のソーニャ司令から、
+	人捜しの手伝いを依頼された。
+	ノックス森林道の樹海を監視していた、
+	若い警備隊員からの定時連絡が
+	途絶えたと言う……
+
+★現地へは、ミレイユ三尉が
+　同行してくれることになった。
+　警備隊員が無事だと良いのだが……
+	★現地へは、ミレイユ三尉が
+	　同行してくれることになった。
+	　警備隊員が無事だと良いのだが……
+
+★行方不明の隊員が直前まで警備していた
+　訓練場の崖にやって来た。
+　周辺には彼の姿は見当たらず、
+　気配もないようだ。
+★後は下に降りてみるしかないが、
+　昨日のヴァルドの件もある。
+　焦らず注意しながら進もう。
+	★行方不明の隊員が直前まで警備していた
+	　訓練場の崖にやって来た。
+	　周辺には彼の姿は見当たらず、
+	　気配もないようだ。
+	★後は下に降りてみるしかないが、
+	　昨日のヴァルドの件もある。
+	　焦らず注意しながら進もう。
+
+★崖下へ降りたところで、隊員のものと
+　思われる落し物を見つけた。
+　通信機のアンテナのようだ。
+★彼がここに降りてきたと見て、
+　間違いないだろう。
+	★崖下へ降りたところで、隊員のものと
+	　思われる落し物を見つけた。
+	　通信機のアンテナのようだ。
+	★彼がここに降りてきたと見て、
+	　間違いないだろう。
+
+★空になった水筒を発見した。
+　余程慌てていたのだろうか。
+　この険しい樹海で満足な水分補給が
+　できないのは厳しいだろう。
+　早く彼を見つけないと……
+	★空になった水筒を発見した。
+	　余程慌てていたのだろうか。
+	　この険しい樹海で満足な水分補給が
+	　できないのは厳しいだろう。
+	　早く彼を見つけないと……
+
+★真新しい薬莢を発見した。
+　付近で戦闘があったのだろうか？
+　だが、周辺に目立った破壊の形跡は
+　認められず、
+　他の落し物も発見できなかった。
+　別の場所を捜してみよう。
+	★真新しい薬莢を発見した。
+	　付近で戦闘があったのだろうか？
+	　だが、周辺に目立った破壊の形跡は
+	　認められず、
+	　他の落し物も発見できなかった。
+	　別の場所を捜してみよう。
+
+★アンテナのない通信機を発見した。
+　これでは連絡がとれないのも道理だ。
+　ただ、意識を失ったため連絡が取れない
+　という可能性は下がったのも確かだ。
+　捜索を再開しよう。
+	★アンテナのない通信機を発見した。
+	　これでは連絡がとれないのも道理だ。
+	　ただ、意識を失ったため連絡が取れない
+	　という可能性は下がったのも確かだ。
+	　捜索を再開しよう。
+
+★樹海の奥で隊員を発見、しかしそこには
+　魔人化したヴァルドもいた。
+　戦闘になるかと思われたが、
+　俺たちに警告を残して去って行った。
+★後を追いかけたいところだが、
+　隊員の救護を優先しないと。
+	★樹海の奥で隊員を発見、しかしそこには
+	　魔人化したヴァルドもいた。
+	　戦闘になるかと思われたが、
+	　俺たちに警告を残して去って行った。
+	★後を追いかけたいところだが、
+	　隊員の救護を優先しないと。
+
+★警備隊員は無事発見された。
+　大きなケガもなかったようで何よりだ。
+★ヴァルドのことは気がかりだが、
+　ソーニャ司令から、大型魔獣の件は
+　引き続き任せてほしいと言われた以上、
+　後のことはお願いするしかないだろう。
+	★警備隊員は無事発見された。
+	　大きなケガもなかったようで何よりだ。
+	★ヴァルドのことは気がかりだが、
+	　ソーニャ司令から、大型魔獣の件は
+	　引き続き任せてほしいと言われた以上、
+	　後のことはお願いするしかないだろう。
+
+★ひとまず訓練場から外へ出た。
+　ミレイユ三尉は入口で待機すると言う。
+　あまり待たせてしまっては悪い。
+　手早く用を済ませて戻らなければ。
+	★ひとまず訓練場から外へ出た。
+	　ミレイユ三尉は入口で待機すると言う。
+	　あまり待たせてしまっては悪い。
+	　手早く用を済ませて戻らなければ。
+
+★リンさんとエオリアさんが消息を絶った
+　件に気を取られ、訓練場で待たせている
+　ミレイユ三尉のことを失念していた。
+　ありえないミスだ。
+★慌てて導力通信で連絡を取ったが、
+　幸いにも警備隊員は訓練場を
+　自力で脱出してきたため、
+　捜索は無事終了したとのことだった。
+★状況が状況なので怒っていない様子では
+　あったが、あとで日を改めて謝りに
+　行かなければ……
+	★リンさんとエオリアさんが消息を絶った
+	　件に気を取られ、訓練場で待たせている
+	　ミレイユ三尉のことを失念していた。
+	　ありえないミスだ。
+	★慌てて導力通信で連絡を取ったが、
+	　幸いにも警備隊員は訓練場を
+	　自力で脱出してきたため、
+	　捜索は無事終了したとのことだった。
+	★状況が状況なので怒っていない様子では
+	　あったが、あとで日を改めて謝りに
+	　行かなければ……
+
+★後日改めてミレイユ三尉に
+　謝罪に行ったところ、お詫びの印として
+　ランディが彼女の買い物の荷物持ちを
+　する、ということで話がまとまった。
+	★後日改めてミレイユ三尉に
+	　謝罪に行ったところ、お詫びの印として
+	　ランディが彼女の買い物の荷物持ちを
+	　する、ということで話がまとまった。
+
+## t2020 - Bellguard Gate {{{1
+
+## :15 talk to Commander Baelz after clearing quest 139: Runaway Vehicle Pursuit {{{2
+
+## B
+暴走車の問題を解決してくれたそうね。
+私からも、お礼を言わせてもらうわ。
+ありがとう。
+	I must extend my thanks for
+	taking care of that runaway car.
+
+## L
+いえ、当然のことをしただけです。
+	Not at all. It's what any
+	decent person would have done.
+
+## N
+あんな危険なことをするなんて……
+ケガ人がでなくてよかったですよ。
+	I still can't believe that
+	nobody got hurt in that
+	whole ordeal.
+
+## R
+まったくだな。
+	If you don't count my nerves.
+
+## B
+ところで、もしよかったら、
+人捜しを手伝ってもらえないかしら？
+	By the way, would you be willing to
+	assist in a search-and-rescue mission?
+
+## E
+誰かいなくなってしまったんですか？
+	Has someone gone missing?
+
+## B
+ええ、大型魔獣の件があったから、
+警備隊は森林道を調査することにしたの。
+	Yes. After the... demon incident,
+	I sent out a squad to investigate
+	the forest.
+
+## R
+まぁ、蒼い花もあったし、
+放ってはおけないよな。
+	Makes sense. We need to know
+	more about those blue flowers.
+
+## B
+ところが、慢性的な人手不足で、
+すぐに大勢は用意できなかったのよ。
+	But with our chronic understaffing,
+	I could only dispatch a small force.
+
+## T
+……仕方がないかと。
+	That is unfortunate,
+	but understandable.
+
+## B
+とりあえず、若い警備隊員に
+森林道の入口の監視を
+命令しておいたのだけれど……
+	For the time being, I ordered
+	a young guardsman to stand
+	guard at the forest entrance.
+
+## L
+もしかして、人捜しっていうのは……
+	Is that the person
+	we're looking for?
+
+## B
+森林道を監視するように命じた
+若い警備隊員からの定時連絡がないの。
+	I have not received his regular
+	reports.
+
+職務熱心すぎるところがあったから……
+もしかしたら、中に入ってしまったのかも。
+	I fear that he may have gotten
+	overeager and ventured into
+	the forest.
+
+## E
+それは、放っておけませんね。
+	Alone? That is very dangerous.
+
+## B
+今すぐにでも捜索に行きたいけれど、
+中途半端な人員では、さらに行方不明者を
+増やすだけになるわ。
+	I would send out a rescue force immediately,
+	but with the manpower we have, that would
+	only lead to more people going missing.
+
+## R
+よくあるよな、そういう事故。
+	That kind of problems happen
+	all the time.
+
+## W
+二重遭難ってやつだね。
+	We have enough trouble already,
+	without making it double.
+
+## B
+警備隊の隊員たる者が、
+そうそう何かあるとは思えないけど……
+場所が場所だけに心配しているの。
+	They're well-trained enough that I
+	don't think he's in any immediate danger.
+	But still, that forest is dangerous.
+
+## L
+たしかに、心配ですね。
+	Especially now, with those flowers.
+
+## B
+もしよかったら、森林道での捜索を
+手伝ってもらえないかしら？
+	So I ask you again: would you be
+	willing to help out in this
+	search-and-rescue mission?
+
+## Second time {{{3
+
+## B
+森林道の入口を監視するように
+命令した若い隊員と、
+連絡が取れなくなっているの。
+	I haven't heard anything back from
+	the young guardsman I stationed
+	at the forest entrance.
+
+よかったら、捜索に協力して
+もらえないかしら？
+	Would you be able to
+	cooperate with the search?
+
+## }}}3
+
+## Menu
+【引き受ける】
+	[Count us in]
+【やめる】
+	[Not today]
+
+## If rejected {{{3
+
+## L
+すみません。
+今、急ぎの用事がありまして……
+	I'm sorry... We have other
+	pressing matters to deal with.
+
+## B
+そう……
+残念だけれど、どこも人手不足だものね。
+	That is unfortunate...
+	I suppose it is not only the CGF
+	that is understaffed.
+
+もし時間ができたら、手伝ってもらえると、
+とても助かるわ。
+	If you do change your minds, I would
+	greatly appreciate the help.
+
+## L
+わかりました。
+すみません。
+	Of course. Again, I'm sorry.
+
+## }}}3
+
+## B
+ありがとう！
+とても助かるわ。
+	Thank you! That will be a
+	huge help.
+
+捜索の担当者を呼ぶから、
+彼女を手伝ってあげてちょうだい。
+	Let me call in the person in
+	charge of the search. You will
+	be working with her.
+
+## (Baelz walks to the phone.)
+
+## L
+彼女？
+	Her?
+
+## R
+それって……もしかして……
+	Oh for Aidios' sake,
+	don't tell me--
+
+## B
+――私よ。
+至急、司令室に来てちょうだい。
+	It's me. Please come to
+	the command room ASAP.
+
+## (She walks back to her seat.)
+
+## B
+すぐ来ると思うわ。
+	She'll be here momentarily.
+
+## Mireille
+女性の声
+	Woman's voice
+失礼します！
+	Excuse me!
+
+## (She walks to stand next to Baelz.)
+
+## B
+お疲れさま。
+特務支援課の皆さんが、
+森林道での捜索を手伝ってくれるそうよ。
+	Thank you. The Special Support
+	Section have agreed to help out
+	with the search-and-rescue.
+
+## M
+あっ、それは助かります。
+	Oh, that'll be a huge help.
+
+助かるわ。正直、私だけで行っても、
+トラブルが発生したときに、
+対処できるかわからなかったし。
+	Frankly, I'm not confident I would
+	make it back out if I went alone.
+
+かといって、他の部署から、
+これ以上、人員は割けなくて。
+	And we can't spare any more
+	personnel from the other divisions.
+
+## R
+……そういや、手伝いって言ってたな。
+	Spare us the details. We already
+	said we're helping.
+
+## M
+あら、私が担当者だと知って、
+ランディが手伝ってくれるのかと
+思ったのに。
+	Oh, I thought you were going
+	to chicken out when you found
+	out I was in charge.
+## Not sure if that's what she's saying. Can't remember what their relationship was like at this point.
+
+## R
+特務支援課で受ける、と
+決めたのはロイドさ。
+もちろん、異論はないけどな。
+	Well, it was Lloyd who decided
+	that we'd take on this request.
+	Not that I disagree.
+
+## L
+さっそく、森林道に行ってみよう。
+	How about we go ahead to the forest?
+
+## M
+ええ、そうね。
+	Yes. Let's go.
+
+{color 2}クエスト【森林道での捜索】{color 0}を開始した！
+	{color 0}Quest {color 2}[Searching the Forest]{color 0} started!
+
+## R
+……で、どうやって現地へ行く？
+この雨模様だ。途中まででも
+導力車を使うのがいいんじゃねぇか？
+	So, how are we getting there?
+	With this downpour, maybe it's
+	better to use the car?
+
+## System
+{color 5}{#06}{#18}#1Kノックス森林道の手前まで導力車を使いますか？
+導力車は最寄りの西クロスベル街道に移動します。{color 0}
+	{color 5}{#06}{#18}#1KUse the car to get to near the Knox Forest Road?
+	The car will be moved to West Crossbell Highway.{color 0}
+
+## Menu (previous line stays. That's possibly the effect of either {#06}, {#18}, or #1K.
+【導力車で移動する】
+	[Go by car]
+【導力車は使わず移動する】
+	[Go on foot]
+
+## By car {{{3
+
+## L
+ああ、そうだな。
+ノエル、運転のほうは
+よろしく頼むよ。
+	You've got a point there.
+	Noel, can you take the wheel?
+
+## N
+お任せください！
+	It'd be my pleasure!
+
+## (Fade to black.)
+
+## System
+{color 5}支援課の導力車を
+西クロスベル街道に移動させました。{color 0}
+	{color 5}The orbal car was moved
+	to West Crossbell Highway.{color 0}
+
+## On foot {{{3
+
+## L
+いや、やめておこう。
+	No, let's not.
+
+## R
+そうか？
+そんじゃま、がんばって歩くとしますかね。
+	You sure? Right, let's
+	hop to it, then.
+
+## (Fade to black.)
+
+## }}}3
+
+## :16 {{{2
+
+お疲れさま、皆さん。
+連絡の取れなくなった隊員は、
+見つかったかしら？
+	お疲れさま、皆さん。
+	連絡の取れなくなった隊員は、
+	見つかったかしら？
+
+森林道にいると思うのだけれど……
+	森林道にいると思うのだけれど……
+
+まだ捜索中です。
+	まだ捜索中です。
+
+そう。忙しいとは思うけれど、
+よろしくお願いするわね。
+	そう。忙しいとは思うけれど、
+	よろしくお願いするわね。
+
+今回は、立て続けにお世話に
+なってしまったわね。
+	今回は、立て続けにお世話に
+	なってしまったわね。
+
+脱線事故の原因を見つけてくれて、
+暴走車の問題も解決してくれ……
+	脱線事故の原因を見つけてくれて、
+	暴走車の問題も解決してくれ……
+
+そのうえ、行方不明になっていた隊員も
+無事に捜し出してくれて。
+本当にありがとう。
+	そのうえ、行方不明になっていた隊員も
+	無事に捜し出してくれて。
+	本当にありがとう。
+
+大型魔獣のことは、引き続き
+こちらに任せてちょうだい。
+	大型魔獣のことは、引き続き
+	こちらに任せてちょうだい。
+
+大型魔獣のことは、引き続き
+こちらに任せてちょうだい。
+	大型魔獣のことは、引き続き
+	こちらに任せてちょうだい。
+

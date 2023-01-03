@@ -235,6 +235,7 @@ impl AScena {
 	}
 }
 
+#[derive(Debug)]
 struct AList<'a, T>(&'a mut T, &'a T);
 
 macro_rules! alist_map {
@@ -307,6 +308,7 @@ fn main() -> anyhow::Result<()> {
 
 	quest125(&mut ctx);
 	quest158(&mut ctx);
+	quest159(&mut ctx);
 
 	let outdir = Path::new("./patch");
 	if outdir.exists() {
@@ -339,6 +341,8 @@ fn main() -> anyhow::Result<()> {
 	for (name, v) in &ctx.scenas {
 		let ctx = calmare::Context::new(BufWriter::new(fs::File::create(dumpdir.join(name))?));
 		calmare::ed7::write(ctx, &v.main)?;
+		let ctx = calmare::Context::new(BufWriter::new(fs::File::create(dumpdir.join(format!("{name}.evo")))?));
+		calmare::ed7::write(ctx, &v.evo)?;
 	}
 
 	Ok(())
@@ -576,4 +580,75 @@ fn quest158(ctx: &mut Context) {
 		let i = a.0.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::_1B(..))) => i)).unwrap();
 		a.0.insert(i, translate(nil, &a.1[i-1])); // there's a SoundLoad to account for
 	});
+}
+
+fn quest159(ctx: &mut Context) {
+	let nil = &mut Nil;
+
+	let tl = &mut Translate::load(include_str!("../text/quest159.txt"));
+	tl.comment("t_quest");
+	ctx.copy_quest(QuestId(159), tl);
+
+	tl.comment("t2020 - Bellguard Gate");
+	let s = ctx.scena("t2020");
+	s.copy_func(0, 15, tl);
+	s.copy_func(0, 16, tl);
+	s.copy_func(0, 17, tl);
+	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![273]), nil));
+	s.func(8, |a| {
+		let a = a.if_clause(&flag![2848]);
+		let a = alist_map!(a; .find_map(f!(TreeInsn::If(x) => x)).unwrap());
+		a.0.insert(0, translate(nil, &a.1[0]));
+	});
+
+	let tl = &mut Dump;
+
+	tl.comment("r4000");
+	let s = ctx.scena("r4000");
+	s.main.chcp[0] = Some("chr/ch32600.itc".to_owned());
+	s.copy_npc(0, tl); // ミレイユ三尉, not to be confused with ミレイユ准
+	s.copy_func(0, 2, nil); // Mireille animation
+	s.copy_func(0, 39, tl); // event 273
+	s.copy_func(0, 40, tl); // event, unknown criteria. Maybe if leaving the forest?
+	s.copy_func(0, 41, tl); // when interacting with ladder
+	s.copy_func(0, 42, nil); // fork in :39
+	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![273]), nil));
+	s.func(2, |a| {
+		a.0.insert(a.0.len()-1, translate(nil, &a.1[a.0.len()-1]));
+	});
+	s.func(3, |a| { // reinit
+		fn f((a,b): (usize, &TreeInsn)) -> Option<usize> {
+			let e = flag![2845].bool_and(flag![2848].not());
+			if let TreeInsn::If(b) = b {
+				if let Some((b, _)) = b.get(0) {
+					if b.as_ref() == Some(&e) {
+						return Some(a);
+					}
+				}
+			}
+			None
+		}
+		let p0 = a.0.iter().enumerate().find_map(f).unwrap();
+		let p1 = a.1.iter().enumerate().find_map(f).unwrap();
+		a.0.insert(p0, translate(nil, &a.1[p1-1]));
+	});
+	s.func(8, |a| { // interact with rope
+		a.if_with(&flag![2847].not()).copy_tail(nil);
+	});
+
+	let tl = &mut Nop;
+	tl.comment("t2020 - Bellguard Gate, again");
+	let s = ctx.scena("t2020");
+	s.copy_func(0, 18, tl);
+}
+
+#[extend::ext]
+pub impl Expr {
+	fn bool_and(self, b: Expr) -> Expr {
+		Expr::Binop(scena::code::ExprBinop::BoolAnd, Box::new(self), Box::new(b))
+	}
+
+	fn not(self) -> Expr {
+		Expr::Unop(scena::code::ExprUnop::Not, Box::new(self))
+	}
 }
