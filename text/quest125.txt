@@ -3533,6 +3533,8 @@
 
 ## c1030 - Long Lao Tavern & Inn {{{1
 
+## NOTE: this is directly copied, re-check when the official release comes
+
 ## :37 Talk to Grace or Reins {{{2
 ## G
 もしかして、

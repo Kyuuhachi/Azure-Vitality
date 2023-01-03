@@ -3180,6 +3180,8 @@
 ## t4100 - Orchis Tower {{{1
 ## Klaudia normally remarks on not having met Tio, but if doing the quest, she has.
 
+## NOTE: this is directly copied, re-check when the official release comes
+
 ## K
 ふふ、ジークは王室親衛隊の
 情報伝達役ですから。
