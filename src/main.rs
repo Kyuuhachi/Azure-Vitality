@@ -330,7 +330,7 @@ fn main() -> anyhow::Result<()> {
 	fs::copy("./data/ao-evo/data/map/objects/e3210isu.it3", outdir.join("map/objects/e3210isu.it3"))?;
 	fs::copy("./data/ao-evo/data/visual/c_vis600.itp", outdir.join("visual/c_vis600.itp"))?;
 
-	let dumpdir = Path::new("./patch-dump");
+	let dumpdir = Path::new("./dump");
 	if dumpdir.exists() {
 		fs::remove_dir_all(dumpdir)?;
 	}
