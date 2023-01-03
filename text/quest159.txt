@@ -485,7 +485,7 @@
 
 ## }}}3
 
-## :16 {{{2
+## :16 talking during quest {{{2
 
 ## B
 お疲れさま、皆さん。
@@ -508,33 +508,35 @@
 	I see. I know you are busy,
 	but I'm counting on you.
 
-## :17 {{{2
+## :17 talking after quest {{{2
+
+## First time {{{3
+## B
 今回は、立て続けにお世話に
 なってしまったわね。
-	今回は、立て続けにお世話に
-	なってしまったわね。
-
+	You all have once again been
+	an invaluable aid to me.
 脱線事故の原因を見つけてくれて、
 暴走車の問題も解決してくれ……
-	脱線事故の原因を見つけてくれて、
-	暴走車の問題も解決してくれ……
-
+	You discovered the cause of the
+	train derailment, you resolved
+	the runaway car incident...
 そのうえ、行方不明になっていた隊員も
 無事に捜し出してくれて。
 本当にありがとう。
-	そのうえ、行方不明になっていた隊員も
-	無事に捜し出してくれて。
-	本当にありがとう。
-
+	And to top it off, you rescued one
+	of my men from a dangerous situation.
+	Truly, thank you.
 大型魔獣のことは、引き続き
 こちらに任せてちょうだい。
-	大型魔獣のことは、引き続き
-	こちらに任せてちょうだい。
+	As for the large monster,
+	we will continue to track it.
 
+## Again {{{3
 大型魔獣のことは、引き続き
 こちらに任せてちょうだい。
-	大型魔獣のことは、引き続き
-	こちらに任せてちょうだい。
+	As for the large monster,
+	we will continue to track it.
 
 ## r4000 - Knox Forest Road {{{1
 
@@ -587,7 +589,9 @@
 
 ## L
 とにかく、下に降りてみよう。
-	I suppose we should head down.
+	I think we should head down.
+
+## Continue in r4050
 
 ## Leaving the forest {{{2
 
@@ -646,886 +650,1084 @@
 
 ## r4050 - Knox Forest {{{1
 
+## Event {{{2
+
+## R
 相変わらず、蒼い花がいっぱいだな。
-	相変わらず、蒼い花がいっぱいだな。
+	Still full of those blue flowers.
+	No surprise there.
 
+## M
 色は綺麗なんだけれどね……
-	色は綺麗なんだけれどね……
+	The color is beautiful,
+	but there's something
+	about them...
 
+## T
 …………
-	…………
+	...
 
+## (Lloyd turns toward a glowing spot on the ground.)
+
+## L
 ん？　これは、なんだ？
-	ん？　これは、なんだ？
+	Hm? What's this?
 
+## (He bends down next to it, and takes out his tonfas for no obvious reason.)
+
+## E
 金属の棒……？
-	金属の棒……？
+	A metal rod?
 
+## N
 何かの部品かしら？
-	何かの部品かしら？
+	Is that a scrap of something?
 
+## W
 前に来たときには、なかったと思うけどね。
-	前に来たときには、なかったと思うけどね。
+	I'm pretty sure that wasn't
+	here when we were here before.
 
+## T
 ……小型通信機のアンテナでは
 ないでしょうか？
-	……小型通信機のアンテナでは
-	ないでしょうか？
+	Isn't this the antenna
+	for a handheld radio?
 
+## M
 あ、本当だわ。
 旧式の通信機のアンテナだと思う。
-	あ、本当だわ。
-	旧式の通信機のアンテナだと思う。
+	You're right. It's from
+	an old model, though.
 
 この部分が壊れやすかったのよ。
-	この部分が壊れやすかったのよ。
+	This part used to break
+	off all the time.
 
+## R
 そういや、俺が警備隊にいた頃は、
 そんなのを使ってたな。
-	そういや、俺が警備隊にいた頃は、
-	そんなのを使ってたな。
+	I used that thing
+	when I was enlisted.
 
+## M
 どんな装備も、急に全部を最新式に
 するのは無理だから、今でも旧式が
 使われているのよね。
-	どんな装備も、急に全部を最新式に
-	するのは無理だから、今でも旧式が
-	使われているのよね。
+	It's impossible to quickly phase
+	out any kind of equipment, so I'm
+	not surprised this is still in use.
 
+## L
 行方不明の警備員のものだと
 すると、何か手掛かりになるかも
 しれないな。
-	行方不明の警備員のものだと
-	すると、何か手掛かりになるかも
-	しれないな。
+	Assuming this belongs to our
+	lost guardsman, this might
+	be a clue.
 
+## M
 そうね。他にも手掛かりになる物を
 落としているかも。
-	そうね。他にも手掛かりになる物を
-	落としているかも。
+	That's true. I wonder if
+	there are other clues around?
 
+## W
 本人が落ちていれば、
 それが一番早いんだけどね。
-	本人が落ちていれば、
-	それが一番早いんだけどね。
+	Sounds like our best bet
+	to find him.
 
+## M
 そうね。早く合流できるといいけど。
-	そうね。早く合流できるといいけど。
+	Agreed. We should collect them.
 
+## E
 この辺りは、どうかしら……？
-	この辺りは、どうかしら……？
+	Are there any more around here...?
 
+## M
 この近くにはいないみたいね。
 念入りに探しつつ、奥へ進んでみましょう。
-	この近くにはいないみたいね。
-	念入りに探しつつ、奥へ進んでみましょう。
+	Doesn't look like it. Let's keep
+	our wits about us and head deeper in.
 
+## Checking the in the northeastern part, marked as object 3 on Zoel's map {{{2
+
+## L
 ん？　これは、何だろう？
-	ん？　これは、何だろう？
+	Hm? What's this?
 
+## M
 ちょっと、
 見せてもらっていいかしら？
-	ちょっと、
-	見せてもらっていいかしら？
+	Mind if I take a look?
 
+## M
 これは……
 水筒みたいね。
 空になってるわ。
-	これは……
-	水筒みたいね。
-	空になってるわ。
-
+	This is... a canteen?
+	It's empty.
 落とし物だと思う……
 空になったからって
 捨てるような物ではないし。
-	落とし物だと思う……
-	空になったからって
-	捨てるような物ではないし。
+	Someone must have dropped it.
+	It's not the sort of thing you
+	throw away just because it's empty.
 
+## W
 けっこう、うっかり者みたいだね。
-	けっこう、うっかり者みたいだね。
+	Seems like a rather
+	careless fellow.
 
+## M
 そうね。何かに夢中になると、
 他のことが頭から抜けちゃう
 タイプなのよね。
-	そうね。何かに夢中になると、
-	他のことが頭から抜けちゃう
-	タイプなのよね。
+	He is. He's the type to
+	get absorbed in one thing
+	and forget everything else.
 
+## E
 いるわね、そういうひと……
-	いるわね、そういうひと……
+	I've met all too many of
+	that type of people...
 
+## M
 そうね。もうすこし、
 周りを見てほしいというか。
-	そうね。もうすこし、
-	周りを見てほしいというか。
-
+	Me too. I wish they'd
+	just take a long, good
+	look around them.
 自分だけで何とかしようと
 思わないでほしいわね。
-	自分だけで何とかしようと
-	思わないでほしいわね。
+	Thinking they can just go
+	ahead and solve everything
+	on their own...
 
+## E
 ええ、まったく……
-	ええ、まったく……
+	How can they be
+	that oblivious?
 
+## L
 困ったものだな。
-	困ったものだな。
+	Sounds like a difficult person.
 
 まったくだぜ。
-	まったくだぜ。
+	You said it.
 
+## (Elie, Mireille, and Randy glare at Lloyd, Randy, and Mireille, respectively.)
+
+## W
 やれやれ……
 とにかく、もうすこし、この辺を
 探してみた方がいいんじゃない？
-	やれやれ……
-	とにかく、もうすこし、この辺を
-	探してみた方がいいんじゃない？
+	How about we put an end to the
+	entertainment and go and take
+	a long, good look around us?
 
+## Object 11, on Zoel's map {{{2
+
+## L
 これは、何だろう？
-	これは、何だろう？
+	What's this?
 
+## M
 それ、旧式の通信機だと思うわ。
 アンテナが壊れてるけど。
-	それ、旧式の通信機だと思うわ。
-	アンテナが壊れてるけど。
+	This looks like an old radio.
+	The antenna is broken off.
 
+## N
 もしかして、入口のところで拾った
 やつと合うんじゃ！？
-	もしかして、入口のところで拾った
-	やつと合うんじゃ！？
+	You think this is the one
+	we found at the entrance?
 
+## L
 これか……
-	これか……
+	It might be.
 
+## T
 ……たしかに、破損したところが、
 ほぼ、ぴったりです。
-	……たしかに、破損したところが、
-	ほぼ、ぴったりです。
+	Indeed, the damaged are
+	is almost a perfect fit.
 
+## R
 こんだけ奥に来て、
 ようやく無線を使おうとして、
 壊れてることに気付いたのか？
-	こんだけ奥に来て、
-	ようやく無線を使おうとして、
-	壊れてることに気付いたのか？
+	You think he tried to use
+	the radio here, but noticed
+	it was broken?
 
+## W
 しかし、それを投げ捨てちゃうなんて、
 短気な人みたいだね。
-	しかし、それを投げ捨てちゃうなんて、
-	短気な人みたいだね。
-
+	Throwing it away for something
+	like that, he must be a very
+	petty person.
 それとも、よほど焦っていたのかな？
-	それとも、よほど焦っていたのかな？
+	Don't you think he was just
+	in a hurry?
 
+## L
 とにかく、さらに奥へ行ってみよう。
-	とにかく、さらに奥へ行ってみよう。
-
+	Maybe we should check deeper in.
 あ……
 その前に、ちょっと休憩して
 おいたほうがいいな。
-	あ……
-	その前に、ちょっと休憩して
-	おいたほうがいいな。
+	Or maybe we should take
+	a short break first?
 
+## T
 え……
 私は大丈夫ですよ、ロイドさん。
-	え……
-	私は大丈夫ですよ、ロイドさん。
+	I am in sufficient condition
+	to continue.
 
+## E
 わ、私だって平気よ？
-	わ、私だって平気よ？
+	I'm okay, too.
 
+## L
 ……いや、何かあったときに、
 疲れていたら危ないからな。
-	……いや、何かあったときに、
-	疲れていたら危ないからな。
-
+	No. It would be dangerous
+	if something happened when
+	we're this tired.
 疲れ切ってしまう前に、
 休憩を取らないと。
-	疲れ切ってしまう前に、
-	休憩を取らないと。
+	We should get some rest
+	before anyone collapses.
 
+## N
 警備隊だと、こんな山歩きの
 ほうが多いけど……
-	警備隊だと、こんな山歩きの
-	ほうが多いけど……
-
+	This isn't all that much
+	by CFG standards.
 警察は市内を歩くことのほうが
 慣れてますからね。
-	警察は市内を歩くことのほうが
-	慣れてますからね。
+	You police people are just
+	too used to the city terrain.
 
+## M
 そうね。
 慣れないと、気付かないうちに
 疲労が溜まっていたりするわね。
-	そうね。
-	慣れないと、気付かないうちに
-	疲労が溜まっていたりするわね。
-
+	She's right, you know. If you're
+	not used to this kind of terrain,
+	you'll get tired before you know it.
 前に、この林道でリハビリ訓練したとき、
 ランディも似たようなこと言ってたわ。
-	前に、この林道でリハビリ訓練したとき、
-	ランディも似たようなこと言ってたわ。
-
+	Randy said the same thing during
+	our rehabilitation training.
 最近は、街中を歩くことが多いから、
 森林道はきついって……
 ねえ？
-	最近は、街中を歩くことが多いから、
-	森林道はきついって……
-	ねえ？
+	That he's been going around on roads
+	too much lately, so that the forest
+	terrain is getting tough. Didn't you?
 
+## R
 ……………………
-	……………………
+	...
 
+## R
 …………ん？
 あ、わりぃ。なんだ？
-	…………ん？
-	あ、わりぃ。なんだ？
+	Huh?
+	Sorry, you said something?
 
+## W
 キミがぼうっとするなんて、
 珍しいんじゃない？
-	キミがぼうっとするなんて、
-	珍しいんじゃない？
+	You're not one to
+	usually space out
+	like that.
 
+## R
 俺だって考え事くらい
 するんだっつーの。
-	俺だって考え事くらい
-	するんだっつーの。
+	Hey, I also have things
+	on my mind sometimes.
 
+## M
 何か、気になることがあるの、
 ランディ？
-	何か、気になることがあるの、
-	ランディ？
+	Anything you care to share
+	with the rest of the class,
+	Randy?
 
+## R
 …………いや。
 すまないな。
 たいしたことじゃねえよ。
-	…………いや。
-	すまないな。
-	たいしたことじゃねえよ。
+	...No. Sorry,
+	it's nothing.
 
+## M
 そう…………
-	そう…………
+	Right...
 
+## M
 ランディ、何かあるなら、
 できれば相談してほしいな。
-	ランディ、何かあるなら、
-	できれば相談してほしいな。
+	Randy, if something's bothering
+	you, you can always talk to me.
+	Or your colleagues, of course.
 
+## R
 あ、ああ……
 本当に平気だって。
 心配すんな。
-	あ、ああ……
-	本当に平気だって。
-	心配すんな。
-
+	Ah, okay...
+	Really, it's nothing.
+	Don't worry about it.
 ロイド、そろそろ行こうぜ。
-	ロイド、そろそろ行こうぜ。
+	Lloyd, let's get going.
 
+## L
 ……ああ、そうだな。
-	……ああ、そうだな。
+	Right. Okay.
 
+## Finding any item {{{2
+## Dialogue is random
+
+## Part 1
+
+## L
 これは……
-	これは……
+	What's this?
 
+## E
 あら、これは……
-	あら、これは……
+	Huh? What's this?
 
+## T
 あ……なにかありますよ。
-	あ……なにかありますよ。
+	Look. There is something here.
 
+## R
 おっ、こいつはどうだ？
-	おっ、こいつはどうだ？
+	Hey, look at that.
 
+## N
 あっ、これは……
-	あっ、これは……
+	Oh! I just saw something.
 
+## W
 そこ、何か光ってるよ……
-	そこ、何か光ってるよ……
+	Something's shining over there.
 
+## M
 あ……待って。
 何か落ちてるわ……！
-	あ……待って。
-	何か落ちてるわ……！
+	Wait. There's something
+	over here.
 
+## Part 2
+
+## M
 うーん……何かの部品かしら？
 警備隊の物ではなさそうね。
-	うーん……何かの部品かしら？
-	警備隊の物ではなさそうね。
+	Hmm... Looks like trash.
+	I don't think that's what
+	we're looking for.
 
+## M
 これは……導力車の部品？
 上の街道から落ちてきたのかしら？
-	これは……導力車の部品？
-	上の街道から落ちてきたのかしら？
-
+	This is... an orbal car part?
+	Must have fallen from the road above.
 何にせよ隊員とは関係なさそうね。
-	何にせよ隊員とは関係なさそうね。
+	Doesn't seem to be related
+	to our missing person.
 
+## M
 これは……ただの木の枝ね。
 濡れて光っていたから
 金属に見えてしまったけど。
-	これは……ただの木の枝ね。
-	濡れて光っていたから
-	金属に見えてしまったけど。
+	This... is just an ordinary
+	tree branch. It's so damp
+	it almost looked like metal.
 
+## M
 これは警備隊装備の
 バックルみたいだけど……
-	これは警備隊装備の
-	バックルみたいだけど……
-
+	This looks like the belt
+	buckle of a CGF uniform?
 さびているわね、少なくとも
 最近の落し物ではないみたい。
-	さびているわね、少なくとも
-	最近の落し物ではないみたい。
+	It's rusted, so I don't think
+	it was dropped recently.
 
+## Part 3
+
+## L
 よし、他を探そう。
-	よし、他を探そう。
+	Let's check somewhere else.
 
+## E
 違うようね、他を探しましょう。
-	違うようね、他を探しましょう。
+	That's not what we're looking for.
+	Let's search somewhere else.
 
+## T
 ここはハズレだったようです。
-	ここはハズレだったようです。
+	This place was a miss.
 
+## R
 ハズレだな、ほかを探そうぜ。
-	ハズレだな、ほかを探そうぜ。
+	Miss. Let's check somewhere else.
 
+## N
 他を探しましょう、
 何か手がかりがあるはずです！
-	他を探しましょう、
-	何か手がかりがあるはずです！
+	Let's look somewhere else.
+	There must be a clue!
 
+## W
 ハズレみたいだね。
-	ハズレみたいだね。
+	That's a miss.
 
+## M
 ここはハズレね、他を探しましょう。
-	ここはハズレね、他を探しましょう。
+	This was a miss.
+	Let's look somewhere else.
 
+## Trying to go to the next area without checking all sparkles {{{2
+
+## M
 行き違いになると困るし、
 もうちょっと、この辺を
 捜してみましょう。
-	行き違いになると困るし、
-	もうちょっと、この辺を
-	捜してみましょう。
-
+	We don't want to accidentally miss
+	him. I think we should search a bit
+	more in this area first.
 何か手掛かりが見つかるかも
 しれないわ。
-	何か手掛かりが見つかるかも
-	しれないわ。
+	We might be able to find a clue.
 
+## L
 そうだな。
 あちらも移動しているかもしれないし。
-	そうだな。
-	あちらも移動しているかもしれないし。
+	Right. He could still be somewhere
+	around here.
 
+## R
 かといって、大声を出して捜したら、
 魔獣だらけになっちまいそうだしなぁ。
-	かといって、大声を出して捜したら、
-	魔獣だらけになっちまいそうだしなぁ。
+	We can't exactly call for him.
+	We'd just get catfished by monsters.
 
+## N
 ぞっとしませんね……
-	ぞっとしませんね……
+	That's not terrifying at all.
 
 ## r4060 - Knox Forest {{{1
 
+## Checking object 8 on Zoel's map {{{2
+
+## N
 これは……
 まだ新しい薬莢……
-	これは……
-	まだ新しい薬莢……
-
+	This looks like... an
+	ammunition shell? It
+	looks new.
 もしかして、戦闘があったのかも
 しれませんね。
-	もしかして、戦闘があったのかも
-	しれませんね。
+	There may have been a
+	battle here.
 
+## W
 ふむ……
 ロイド、この辺で、
 ちょっと手分けしてみない？
-	ふむ……
-	ロイド、この辺で、
-	ちょっと手分けしてみない？
+	Hmm... Why don't we split
+	up and take a closer look
+	around here?
 
+## L
 そうだな。
 でも魔獣がいる可能性も高い。
 互いが見える距離までにしておこう。
-	そうだな。
-	でも魔獣がいる可能性も高い。
-	互いが見える距離までにしておこう。
+	Good idea. But remember, there are
+	monsters around. Let's not go farther
+	than so we can still see each other.
 
+## (They go in different directions: ????, Mireille (reluctantly) + Randy. Camera moves to M+R specifically.)
+
+## M
 ふぅ……
 うまくいかないものね。
-	ふぅ……
-	うまくいかないものね。
+	*sigh* This isn't
+	going so well.
 
+## R
 まぁ、森林道っていっても、
 人を捜すには広いからな。
-	まぁ、森林道っていっても、
-	人を捜すには広いからな。
-
+	Well, the forest's a big
+	place. Finding a single
+	person ain't easy.
 奥まで行くだけなら、
 そんなでもないけどよ。
-	奥まで行くだけなら、
-	そんなでもないけどよ。
+	Just getting around the
+	forest ain't so hard, though.
 
+## M
 あ……
 それもだけど……
-	あ……
-	それもだけど……
-
+	That's true, but...
 ランディと歩くなら、
 次はミシュラムか繁華街あたりかな、
 なんて思ってたのに。
-	ランディと歩くなら、
-	次はミシュラムか繁華街あたりかな、
-	なんて思ってたのに。
+	If I have to walk around with you,
+	why couldn't it be at Mishelam
+	or a shopping center or something?
 
+## R
 ん？　ミシュラムはともかく、
 繁華街は警備隊の管轄じゃないだろ？
-	ん？　ミシュラムはともかく、
-	繁華街は警備隊の管轄じゃないだろ？
+	Hm? I don't know about Mishelam,
+	but the CGF don't have anything to
+	do in a shopping center, do you?
 
+## M
 #5S仕事じゃなくて！#3S
-	#5S仕事じゃなくて！#3S
+	#5SThis isn't about work!#3S
 
+## R
 冗談だ。
 意外と期待されてたんだなあ。
-	冗談だ。
-	意外と期待されてたんだなあ。
+	Just kiddin'. But you sure
+	do seem excited about that.
 
+## M
 そ、そ、そんなことないわよ！
 ただ、も、もらいっぱなしは、
 私の主義に反するから……
-	そ、そ、そんなことないわよ！
-	ただ、も、もらいっぱなしは、
-	私の主義に反するから……
+	Th-Th-That's not it! It's
+	just, I can't just keep
+	getting things all the time.
 
+## M
 #5Sこのままじゃ
 済まさないんだから！#3S
-	#5Sこのままじゃ
-	済まさないんだから！#3S
+	#5SI can't keep this
+	up anymore!#3S
 
+## R
 お、おう。
-	お、おう。
+	Oh. Okay.
 
+## M
 ああ！？
 そ、そうじゃなくて……
-	ああ！？
-	そ、そうじゃなくて……
-
+	Wait, what?
+	That's not at all what I...
 と、とにかく！
 今度……
 時間、作りなさいよね。
-	と、とにかく！
-	今度……
-	時間、作りなさいよね。
+	Putting that aside!
+	Just... Make some time, okay?
 
+## R
 はは、わーったよ。
 次の休暇なら……
-	はは、わーったよ。
-	次の休暇なら……
+	Haha, got it.
+	I'll call you on
+	my next day off.
 
+## R
 あ………………
 いや………………
-	あ………………
-	いや………………
+	Wait...
+	No.
 
+## M
 ランディ？
-	ランディ？
+	Randy?
 
+## R
 まぁ、考えとくわ。
-	まぁ、考えとくわ。
-
+	Well, I'll think about it.
 さてと、あー……
 見つからねえな。
-	さてと、あー……
-	見つからねえな。
-
+	Now, let's see here...
+	Nope, nothing around here.
 やっぱり、
 実はクロスベル市内に
 いるんじゃねえか？
-	やっぱり、
-	実はクロスベル市内に
-	いるんじゃねえか？
+	Are you really sure
+	he didn't just go to
+	the big city?
 
+## M
 ランディ…………
-	ランディ…………
+	Randy...
 
+## (The group gathers again.)
+
+## L
 この辺りには、とくに何も
 見つからなかったな。
-	この辺りには、とくに何も
-	見つからなかったな。
+	No good. Doesn't seem to
+	be anything around here.
 
+## Finding any item {{{2
+## Dialogue is random
+
+## Part 1
+
+## L
 これは……
-	これは……
+	What's this?
 
+## E
 あら、これは……
-	あら、これは……
+	Huh? What's this?
 
+## T
 あ……なにかありますよ。
-	あ……なにかありますよ。
+	Look. There is something here.
 
+## R
 おっ、こいつはどうだ？
-	おっ、こいつはどうだ？
+	Hey, look at that.
 
+## N
 あっ、これは……
-	あっ、これは……
+	Oh! I just saw something.
 
+## W
 そこ、何か光ってるよ……
-	そこ、何か光ってるよ……
+	Something's shining over there.
 
+## M
 あ……待って。
 何か落ちてるわ……！
-	あ……待って。
-	何か落ちてるわ……！
+	Wait. There's something
+	over here.
 
+## Part 2
+
+## M
 うーん……何かの部品かしら？
 警備隊の物ではなさそうね。
-	うーん……何かの部品かしら？
-	警備隊の物ではなさそうね。
+	Hmm... Looks like trash.
+	I don't think that's what
+	we're looking for.
 
+## M
 これは……導力車の部品？
 上の街道から落ちてきたのかしら？
-	これは……導力車の部品？
-	上の街道から落ちてきたのかしら？
-
+	This is... an orbal car part?
+	Must have fallen from the road above.
 何にせよ隊員とは関係なさそうね。
-	何にせよ隊員とは関係なさそうね。
+	Doesn't seem to be related
+	to our missing person.
 
+## M
 これは……ただの木の枝ね。
 濡れて光っていたから
 金属に見えてしまったけど。
-	これは……ただの木の枝ね。
-	濡れて光っていたから
-	金属に見えてしまったけど。
+	This is... just an ordinary
+	tree branch. It's so damp
+	it almost looked like metal.
 
+## M
 これは警備隊装備の
 バックルみたいだけど……
-	これは警備隊装備の
-	バックルみたいだけど……
-
+	This looks like the belt
+	buckle of a CGF uniform?
 さびているわね、少なくとも
 最近の落し物ではないみたい。
-	さびているわね、少なくとも
-	最近の落し物ではないみたい。
+	It's rusted, so I don't think
+	it was dropped recently.
 
+## Part 3
+
+## L
 よし、他を探そう。
-	よし、他を探そう。
+	Let's check somewhere else.
 
+## E
 違うようね、他を探しましょう。
-	違うようね、他を探しましょう。
+	That's not what we're looking for.
+	Let's search somewhere else.
 
+## T
 ここはハズレだったようです。
-	ここはハズレだったようです。
+	This place was a miss.
 
+## R
 ハズレだな、ほかを探そうぜ。
-	ハズレだな、ほかを探そうぜ。
+	Miss. Let's check somewhere else.
 
+## N
 他を探しましょう、
 何か手がかりがあるはずです！
-	他を探しましょう、
-	何か手がかりがあるはずです！
+	Let's look somewhere else.
+	There must be a clue!
 
+## W
 ハズレみたいだね。
-	ハズレみたいだね。
+	That's a miss.
 
+## M
 ここはハズレね、他を探しましょう。
-	ここはハズレね、他を探しましょう。
+	This was a miss.
+	Let's look somewhere else.
 
+## Trying to go to the next area without checking all sparkles {{{2
+
+## M
 行き違いになると困るし、
 もうちょっと、この辺を
 捜してみましょう。
-	行き違いになると困るし、
-	もうちょっと、この辺を
-	捜してみましょう。
-
+	We don't want to accidentally miss
+	him. I think we should search a bit
+	more in this area first.
 何か手掛かりが見つかるかも
 しれないわ。
-	何か手掛かりが見つかるかも
-	しれないわ。
+	We might be able to find a clue.
 
+## R
 森林道のなかで、かくれんぼみたいに
 なっていたら嫌よね。
-	森林道のなかで、かくれんぼみたいに
-	なっていたら嫌よね。
+	I wouldn't like to play
+	hide-and-seek here.
 
+## W
 魔獣がいない市内なら、
 手分けして捜すんだけどね。
-	魔獣がいない市内なら、
-	手分けして捜すんだけどね。
+	In the city, we could have split
+	up. Might not want to do that with
+	all these monsters around, though.
 
+## T
 ……離ればなれになるのは、
 危険すぎるかと。
-	……離ればなれになるのは、
-	危険すぎるかと。
+	We shouldn't get into the habit
+	of splitting up all the time.
+	That would be dangerous.
 
 ## r4090 - Knox Forest depths {{{1
 
+## (They walk into the glen. The guard is there, collapsed, with Demon Wald towering over him.)
+
+## L
 おまえは……！
-	おまえは……！
+	You...!
 
+## W
 ヴァルド！
-	ヴァルド！
+	Wald!
 
+## M
 あっ！　彼よ！
 捜していた隊員は！
-	あっ！　彼よ！
-	捜していた隊員は！
+	On the ground!
+	That's the man we're looking for!
 
+## R
 チッ……
 生きてんだろうな！？
-	チッ……
-	生きてんだろうな！？
+	Damn. You think he's
+	alive?
 
+## T
 ……大丈夫。
 呼吸、感知できます
-	……大丈夫。
-	呼吸、感知できます
+	Don't worry.
+	I can sense him breathing.
 
+## (They ready their weapons.)
+
+## E
 今すぐ救助を！
-	今すぐ救助を！
+	We need to get him
+	away from here!
 
+## N
 やっちゃいましょう！
-	やっちゃいましょう！
+	Get him!
 
+## Wald
 {color 2}………………
-	{color 2}………………
-
+	{color 2}......
 ククク……
-	ククク……
-
+	Heh heh heh...
 まったく、うざい奴らだ。
 いちいち沸いてきやがって。
-	まったく、うざい奴らだ。
-	いちいち沸いてきやがって。
+	What an annoying bunch.
+	You keep popping up everywhere.
 
+## Wald (autoscroll)
 {color 2}#5Sグオオオオオオオ！
-	{color 2}#5Sグオオオオオオオ！
+	{color 2}#5SGHAAAAAA!
 
+## (Wald gathers power with an evil aura, with the camera moving around a bit. Suddenly the aura dissipates.)
+
+## Wald
 {color 2}……今日のところは、見逃してやる。
-	{color 2}……今日のところは、見逃してやる。
+	{color 2}...I'll let you go, this time.
 
+## (He jumps away, clipping through a tree in the process.)
+
+## Wald, in the distance
 {color 2}ククク……
-	{color 2}ククク……
-
+	{color 2}Heh heh heh...
 次に会ったときには、覚悟しておくんだな！
-	次に会ったときには、覚悟しておくんだな！
-
+	You'd better be ready next time!
 この場所には、近づかないことだ！
-	この場所には、近づかないことだ！
+	And you'd better stay away from her!
 
+## L
 逃げた……
 いや、見逃してもらった#16R㈲　㈲　㈲　㈲　㈲　㈲　㈲　㈲#のか。
-	逃げた……
-	いや、見逃してもらった#16R㈲　㈲　㈲　㈲　㈲　㈲　㈲　㈲#のか。
+	He ran...
+	Or did he let us get away?
 
+## W
 ロイド、今はそれよりも……
-	ロイド、今はそれよりも……
+	I don't think that's
+	the important thing here.
 
+## M
 大丈夫！？　しっかりして！
-	大丈夫！？　しっかりして！
+	Are you okay? Stay with me!
 
+## Guard
 ううぅ……
 こ、ここは……？
-	ううぅ……
-	こ、ここは……？
+	Ugh...
+	Where... am I?
 
+## Guard, flailing around
 あっ！　大型魔獣発見！
 #5Sうわあああああああ……！！
-	あっ！　大型魔獣発見！
-	#5Sうわあああああああ……！！
-
+	Ah! Monster spotted!
+	#5SAAAAAAAAAAAAAAAAAA...!
 #5Sあ#4Sあ#3Sあ……あれ？
-	#5Sあ#4Sあ#3Sあ……あれ？
+	#5SAA#4SAa#3Saa... Huh？
 
+## E
 今、手当てするわね。
-	今、手当てするわね。
+	I'll patch you up right now.
 
+## T
 ……どうやら、
 すこし頭を打っただけの
 ようですね。
-	……どうやら、
-	すこし頭を打っただけの
-	ようですね。
-
+	It appears that you
+	only hit your head.
 後ほど、念のために、
 お医者さんの診察を。
-	後ほど、念のために、
-	お医者さんの診察を。
+	But you should check with
+	a doctor to be safe.
 
+## M
 はぁ……
 よかった。
-	はぁ……
-	よかった。
-
+	Phew... What a relief.
 貴方、周りがどれだけ心配したと、
 思っているの！？
-	貴方、周りがどれだけ心配したと、
-	思っているの！？
-
+	Do you have any idea
+	how worried everyone
+	was about you?
 独断で行動するのはいけない、と
 いつも言っているでしょう！
-	独断で行動するのはいけない、と
-	いつも言っているでしょう！
+	Don't we always tell you
+	to never act on your own?
 
+## Guard
 す、すみません……
 人手がないなら、俺が頑張れば、
 なんて思っちゃって……
-	す、すみません……
-	人手がないなら、俺が頑張れば、
-	なんて思っちゃって……
+	I'm sorry... Since I know we're
+	short on hands, I figured I'd try
+	to work extra hard to compensate...
 
+## M
 まったく……
-	まったく……
-
+	For Aidios' sake...
 ……無事で、よかったわ。
-	……無事で、よかったわ。
+	...I'm glad you're okay.
 
+## Guard
 は、はい……
 ありがとうございます。
-	は、はい……
-	ありがとうございます。
+	Yes... Thank you very much.
 
+## (Randy is lost in thought.)
+
+## W
 ふふ……
 ちょっと今日は、
 らしくないんじゃない？
-	ふふ……
-	ちょっと今日は、
-	らしくないんじゃない？
+	You're being pretty
+	uncharacteristic today,
+	you know?
 
+## R
 ……なんだよ？
 べつに、いつも通りやってるだろ。
-	……なんだよ？
-	べつに、いつも通りやってるだろ。
+	You think? I think I'm
+	pretty much the same as usual.
 
+## W
 そうだね。
 いつも通りにやっているよ。
 不自然なくらい。
-	そうだね。
-	いつも通りにやっているよ。
-	不自然なくらい。
+	Exactly. Exactly
+	the same as usual.
+	To an unnatural degree.
 
+## R
 ………………
-	………………
-
+	...
 はぁ……
 お前は……
 勘ぐりすぎだっての。
-	はぁ……
-	お前は……
-	勘ぐりすぎだっての。
+	Oi. You're way too
+	paranoid.
 
+## W
 そうかい？
 なら、いいけどね。
-	そうかい？
-	なら、いいけどね。
-
+	That so?
+	I'm fine with that.
 ミレイユさんを
 泣かせないようにね。
-	ミレイユさんを
-	泣かせないようにね。
+	Just don't break
+	Mireille's heart.
 
+## R
 ………………
-	………………
+	...
 
+## R
 ……うるせーや。
-	……うるせーや。
+	...Shut up.
 
+## (The two walk up to the rest of the group.)
+
+## Guard
 ミレイユ三尉、特務支援課の皆さん、
 ご迷惑をおかけしました！
-	ミレイユ三尉、特務支援課の皆さん、
-	ご迷惑をおかけしました！
+	Lieutenant, Special Support Section,
+	I apologize for the problems I have caused.
 
+## L
 無事でよかったです。
-	無事でよかったです。
+	No need for that, as
+	long as you are unhurt.
 
+## M
 それじゃ、いったん
 ベルガード門に戻りましょう。
-	それじゃ、いったん
-	ベルガード門に戻りましょう。
+	How about we all head back
+	to Bellguard Gate?
 
 ## t2020 - Bellguard Gate {{{1
 
+## M
 ――――報告は、以上です。
-	――――報告は、以上です。
+	――And this concludes my report.
 
+## B
 ありがとう、ミレイユ三尉。
-	ありがとう、ミレイユ三尉。
+	Thank you, lieutenant.
 
+## B
 特務支援課には、立て続けに
 世話になってしまったわね。
-	特務支援課には、立て続けに
-	世話になってしまったわね。
-
+	And you all have once again
+	been an invaluable aid to me.
 脱線事故の原因を見つけてくれて、
 暴走車の問題も解決してくれ……
-	脱線事故の原因を見つけてくれて、
-	暴走車の問題も解決してくれ……
-
+	You discovered the cause of the
+	train derailment, you resolved
+	the runaway car incident...
 そのうえ、行方不明になっていた隊員も
 無事に捜し出してくれて。
-	そのうえ、行方不明になっていた隊員も
-	無事に捜し出してくれて。
+	And to top it off, you rescued one
+	of my men from a dangerous situation.
 
+## L
 お役に立てたなら、よかったです。
 また何かあれば呼んでください。
-	お役に立てたなら、よかったです。
-	また何かあれば呼んでください。
+	We're happy to be of help.
+	If you need anything else,
+	we're just a call away.
 
+## E
 そのための、特務支援課ですから。
-	そのための、特務支援課ですから。
+	That's what the SSS is here for.
 
+## N
 ソーニャ司令のお役に立てて、
 よかったです。
-	ソーニャ司令のお役に立てて、
-	よかったです。
+	If we can help ease your
+	workload, that's all we
+	can ask for.
 
 本当にありがとう。
 大型魔獣のことは、
 引き続き、任せてちょうだい。
-	本当にありがとう。
-	大型魔獣のことは、
-	引き続き、任せてちょうだい。
-
+	Truly, thank you.
+	As for the large monster,
+	we will continue to track it.
 もちろん、次は問題を起こさないよう
 人選を気をつけるつもりよ。
-	もちろん、次は問題を起こさないよう
-	人選を気をつけるつもりよ。
+	But I will be more careful
+	about who I assign for
+	guard duty next time.
 
+## W
 ふふ……行けと言われても、
 あの森林道に一人で行く者は、
 珍しいだろうけどね。
-	ふふ……行けと言われても、
-	あの森林道に一人で行く者は、
-	珍しいだろうけどね。
+	I imagine it would be difficult
+	to find anyone who would go into
+	the forest alone, even if ordered to.
 
+## T
 まったくです。
-	まったくです。
+	I would certainly not.
 
+## M
 今回も、手伝ってくれて、
 本当にありがとう。
-	今回も、手伝ってくれて、
-	本当にありがとう。
-
+	Once again, I am in your debt.
+	I can't thank you enough.
 医師の診断でも、あの警備隊員に、
 大きなケガはなかったわ。
-	医師の診断でも、あの警備隊員に、
-	大きなケガはなかったわ。
-
+	By the way, the doctor said
+	his injuries are nothing major.
 皆さんのおかげね。
-	皆さんのおかげね。
+	Which is all thanks to you.
 
+## L
 それはよかった。
-	それはよかった。
+	That's good to hear.
 
+## L
 また何かありましたら、
 呼んでください。
-	また何かありましたら、
-	呼んでください。
+	If you need anything else,
+	don't hesitate to ask.
 
+## B
 ありがとう。
 そのときは頼りにさせてもらうわね。
-	ありがとう。
-	そのときは頼りにさせてもらうわね。
+	Thank you. I think I'll
+	do exactly that.
 
 {color 2}クエスト【森林道での捜索】{color 0}を達成した！
-	{color 2}クエスト【森林道での捜索】{color 0}を達成した！
+	{color 0} Quest {color 2}[Searching the Forest]{color 0} completed!
