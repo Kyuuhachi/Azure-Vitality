@@ -156,7 +156,7 @@
 
 ## :15 talk to Commander Baelz after clearing quest 139: Runaway Vehicle Pursuit {{{2
 
-## B
+## Baelz
 暴走車の問題を解決してくれたそうね。
 私からも、お礼を言わせてもらうわ。
 ありがとう。
@@ -439,8 +439,8 @@
 ## System
 {color 5}{#06}{#18}#1Kノックス森林道の手前まで導力車を使いますか？
 導力車は最寄りの西クロスベル街道に移動します。{color 0}
-	{color 5}{#06}{#18}#1KUse the car to get to near the Knox Forest Road?
-	The car will be moved to West Crossbell Highway.{color 0}
+	{color 5}{#06}{#18}#1KGo to Knox Forest Road by car?
+	It will be moved to West Crossbell Highway.{color 0}
 
 ## Menu (previous line stays. That's possibly the effect of either {#06}, {#18}, or #1K.
 【導力車で移動する】
@@ -487,24 +487,28 @@
 
 ## :16 {{{2
 
+## B
 お疲れさま、皆さん。
 連絡の取れなくなった隊員は、
 見つかったかしら？
-	お疲れさま、皆さん。
-	連絡の取れなくなった隊員は、
-	見つかったかしら？
+	Hello, everyone. Any news
+	on our incommunicado guardsman?
 
 森林道にいると思うのだけれど……
-	森林道にいると思うのだけれど……
+	I believe he is somewhere
+	in the forest, but...
 
+## L
 まだ捜索中です。
-	まだ捜索中です。
+	We are still investigating that.
 
+## B
 そう。忙しいとは思うけれど、
 よろしくお願いするわね。
-	そう。忙しいとは思うけれど、
-	よろしくお願いするわね。
+	I see. I know you are busy,
+	but I'm counting on you.
 
+## :17 {{{2
 今回は、立て続けにお世話に
 なってしまったわね。
 	今回は、立て続けにお世話に
@@ -532,3 +536,110 @@
 	大型魔獣のことは、引き続き
 	こちらに任せてちょうだい。
 
+## r4000 - Knox Forest Road {{{1
+
+ミレイユ三尉
+	Second Lieutenant Mireille
+
+## Event {{{2
+
+## M
+本来なら、ここで監視しているだけの
+はずだったのだけれど……
+	Here is where the guard was
+	supposed to be stationed.
+
+## (Tio activates the Aeon System.)
+
+## T
+……この周辺には、気配がありませんね。
+	There are no signs of him
+	in the vicinity.
+
+## R
+案外、サボって街で遊んでたりしてな。
+	Maybe he got bored and is playing
+	hooky in the city.
+
+## E
+ランディじゃあるまいし……
+	He's not you.
+
+## M
+そうよ。そういう不真面目な人は、
+警備隊にはいないの。
+	Thankfully so. We do not have anyone
+	that irresponsible in our ranks.
+
+## R
+そうですよ、ランディ先輩。
+	You should learn from their example.
+
+## R
+お、俺だって、別にサボリはしないぞ。
+休みの日に、遊んでるだけだ。
+	Oi, I don't play hooky.
+	I only go on free days.
+
+## W
+ふふ、多勢に無勢だね。
+	I think you're outvoted.
+
+## L
+とにかく、下に降りてみよう。
+	I suppose we should head down.
+
+## Leaving the forest {{{2
+
+## M
+私は、ここで待つことにするわ。
+用意が整ったら、また声をかけてね。
+	I'll wait here. Tell me when
+	you're ready to go back in.
+
+## L
+わかりました。
+なるべく早く戻ります。
+	Understood. We won't be long.
+
+## Talk to Mireille or the rope {{{2
+
+## M
+お疲れさま。用意は整った？
+	Are you ready to jump
+	back into the fray?
+
+## Menu
+【すぐに捜索を再開する】
+	Resume investigation
+【少し待ってもらう】
+	Don't
+
+## If yes {{{3
+
+## L
+はい。用意できました。
+よろしくお願いします。
+	Yes, we have finished preparing
+	for now. Shall we go?
+
+## M
+こちらこそ、お願いするわね。
+	I'm right behind you.
+
+## If no {{{3
+
+## L
+すみません。
+もうちょっと時間をください。
+	Sorry. We'll need more time.
+
+## M
+わかったわ。
+こちらは、とくに変化なしよ。
+	Understood. I have nothing
+	to report for my part.
+
+## L
+すぐに戻ります。
+	We won't be long.

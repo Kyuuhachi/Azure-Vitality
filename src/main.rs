@@ -345,16 +345,14 @@ fn quest159(ctx: &mut Context) {
 		a.0.insert(0, translate(nil, &a.1[0]));
 	});
 
-	let tl = &mut Dump;
-
-	tl.comment("r4000");
+	tl.comment("r4000 - Knox Forest Road");
 	let s = ctx.scena("r4000");
 	s.main.chcp[0] = Some("chr/ch32600.itc".to_owned());
 	s.copy_npc(0, tl); // ミレイユ三尉, not to be confused with ミレイユ准
 	s.copy_func(0, 2, nil); // Mireille animation
-	s.copy_func(0, 39, tl); // event 273
-	s.copy_func(0, 40, tl); // event, unknown criteria. Maybe if leaving the forest?
-	s.copy_func(0, 41, tl); // when interacting with ladder
+	s.copy_func(0, 39, tl); // event
+	s.copy_func(0, 40, tl); // leaving the forest
+	s.copy_func(0, 41, tl); // talk to Mireille or the rope
 	s.copy_func(0, 42, nil); // fork in :39
 	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![273]), nil));
 	s.func(2, |a| {
@@ -376,12 +374,16 @@ fn quest159(ctx: &mut Context) {
 		let p1 = a.1.iter().enumerate().find_map(f).unwrap();
 		a.0.insert(p0, translate(nil, &a.1[p1-1]));
 	});
-	s.func(8, |a| { // interact with rope
-		a.if_with(&flag![2847].not()).copy_tail(nil);
-	});
+	s.func(8, |a| a.if_with(&flag![2847].not()).copy_tail(nil));
+
+	{let tl=&mut Dump;
+	tl.comment("r4050 - Knox Forest");
+	let s = ctx.scena("r4000");
+	}
+
 
 	let tl = &mut Nop;
-	tl.comment("t2020 - Bellguard Gate, again");
+	tl.comment("t2020 - Bellguard Gate");
 	let s = ctx.scena("t2020");
 	s.copy_func(0, 18, tl);
 }
