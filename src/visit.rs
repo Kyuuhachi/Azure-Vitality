@@ -187,12 +187,12 @@ fn accept_val_mut(mut e: IAM, v: &mut impl FnMut(IAM)) {
 		}
 		IAM::MandatoryMembers(a) => {
 			for i in a.iter_mut().flatten() {
-				accept_val_mut(IAM::Member(i), v);
+				accept_val_mut(IAM::NameId(i), v);
 			}
 		}
 		IAM::OptionalMembers(a) => {
 			for i in a.iter_mut() {
-				accept_val_mut(IAM::Member(i), v);
+				accept_val_mut(IAM::NameId(i), v);
 			}
 		}
 		IAM::Menu(a) => {

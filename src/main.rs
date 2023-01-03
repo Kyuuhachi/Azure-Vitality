@@ -6,8 +6,8 @@ use themelios::gamedata::GameData;
 use themelios::scena::{self, FuncRef};
 use themelios::scena::code::{Expr, Insn, InsnArgMut as IAM};
 use themelios::scena::code::decompile::TreeInsn;
-use themelios::tables::quest;
-use themelios::types::{QuestId, Flag};
+use themelios::tables::{quest, name};
+use themelios::types::{QuestId, Flag, NameId};
 
 mod visit;
 mod translate;
@@ -59,6 +59,15 @@ fn main() -> anyhow::Result<()> {
 	for (name, v) in &ctx.scenas {
 		fs::write(scenadir.join(format!("{name}.bin")), scena::ed7::write(GameData::AO, &v.main)?)?;
 	}
+
+	fs::write(textdir.join("t_name._dt"), {
+		let mut names = name::read_ed7(GameData::AO, &fs::read("./data/ao-gf/data_en/text/t_name._dt")?)?;
+		let names_evo = name::read_ed7(GameData::AO_EVO, &fs::read("./data/ao-evo/data/text/t_name._dt")?)?;
+		let mut mireille = names_evo.iter().find(|a| a.id == NameId(165)).unwrap().clone();
+		mireille.name = "Second Lieutenant Mireille".to_owned(); // Don't like that this is not in the tl files
+		names.push(mireille);
+		name::write_ed7(GameData::AO, &names)
+	}?)?;
 
 	// TODO do this in a better way
 	fs::create_dir_all(outdir.join("ops"))?;
