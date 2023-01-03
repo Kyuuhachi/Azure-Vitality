@@ -376,13 +376,52 @@ fn quest159(ctx: &mut Context) {
 	});
 	s.func(8, |a| a.if_with(&flag![2847].not()).copy_tail(nil));
 
-	{let tl=&mut Dump;
 	tl.comment("r4050 - Knox Forest");
-	let s = ctx.scena("r4000");
+	let s = ctx.scena("r4050");
+	for i in 6..=11 {
+		s.copy_look_point(i);
 	}
+	for i in 21..=23 {
+		s.copy_func(0, i, tl);
+	}
+	for i in 24..=29 {
+		s.copy_func(0, i, nil);
+	}
+	s.copy_func(0, 30, tl);
+	s.copy_func(0, 31, tl);
+	for i in 32..=38 {
+		s.copy_func(0, i, nil);
+	}
+	s.func(1, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
+	s.func(2, |a| {
+		a.0.splice(a.0.len()-1..a.0.len()-1, a.1[a.1.len()-8..a.1.len()-1].iter().cloned());
+	});
 
+	tl.comment("r4060 - Knox Forest");
+	let s = ctx.scena("r4060");
+	for i in 4..=9 {
+		s.copy_look_point(i);
+	}
+	s.copy_func(0, 7, tl);
+	for i in 8..=13 {
+		s.copy_func(0, i, nil);
+	}
+	s.copy_func(0, 14, tl);
+	s.copy_func(0, 15, tl);
+	s.copy_func(0, 16, nil);
+	s.func(1, |a| {
+		a.0.splice(a.0.len()-1..a.0.len()-1, a.1[a.1.len()-8..a.1.len()-1].iter().cloned());
+	});
 
-	let tl = &mut Nop;
+	tl.comment("r4090 - Knox Forest depths");
+	let s = ctx.scena("r4090");
+	s.copy_func(0, 73, tl);
+	s.copy_func(0, 74, nil);
+	s.copy_func(0, 75, nil);
+	s.func(0, |a| {
+		a.0.insert(1, translate(nil, &a.1[1]));
+	});
+
 	tl.comment("t2020 - Bellguard Gate");
 	let s = ctx.scena("t2020");
 	s.copy_func(0, 18, tl);

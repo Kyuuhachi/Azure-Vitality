@@ -228,8 +228,25 @@ impl AScena {
 		self.new_funcs.push(new_idx);
 	}
 
-	pub fn copy_look_point(&mut self, idx: usize) -> usize {
-		todo!();
+	pub fn copy_look_point(&mut self, idx: usize) {
+		let new_idx = self.main.look_points.len();
+
+		let start = idx as u16;
+		let end = new_idx as u16;
+		self.remap(&mut |a| {
+			if let IAM::LookPointId(a) = a {
+				if *a == start {
+					*a = end;
+				} else if start < *a && *a <= end {
+					*a -= 1;
+				}
+			}
+		});
+
+		let lp = self.evo.look_points.remove(idx);
+		self.main.look_points.push(lp.clone());
+		self.evo.look_points.insert(new_idx, lp);
+		self.new_lps.push(new_idx);
 	}
 
 	pub fn func(&mut self, idx: usize, f: impl FnOnce(AList<Vec<TreeInsn>>)) {
