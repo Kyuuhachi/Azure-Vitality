@@ -30,16 +30,38 @@ fn main() -> anyhow::Result<()> {
 		quest::read_ed7(GameData::AO_EVO, &fs::read("./data/ao-evo/data/text/t_quest._dt")?)?,
 	);
 
-	// c0110 (SSS base) has some functions moved to _1, which makes this ugly.
-	let s = ctx.scena("c0110");
-	s.evo.functions.insert(35, vec![]);
-	s.evo.functions.insert(36, vec![]);
+	let s = ctx.scena("c0110"); // SSS HQ
+	s.evo.functions.insert(16, vec![]);
+	s.evo.functions.insert(17, vec![]);
 	s.remap(&mut |a| {
 		if let IAM::FuncRef(FuncRef(0, i)) = a {
-			if *i >= 35 {
+			if *i >= 16 {
 				*i += 2;
 			}
 		}
+	});
+	s.func(18, |a| { // quest list
+		let a = alist_map!(a; .find_map(f!(TreeInsn::While(_, x) => x)).unwrap());
+		let a = alist_map!(a; .find_map(f!(TreeInsn::Switch(_, x) => x)).unwrap());
+		let a = a.clause(&Some(0)).if_clause(&flag![3074]);
+		*a.0 = a.1.clone();
+	});
+	s.func(18, |a| { // require quests to be taken
+		let a = a.if_with(&flag![275]);
+		let (i0, i1) = a.index_of(f!((Some(flag![275]), _)));
+		a.0[i0-1] = a.1[i1-1].clone();
+	});
+	s.func(19, |a| { // require quests to be taken
+		let a = a.if_clause(&flag![3074]);
+		*a.0 = a.1.clone();
+	});
+
+	let s = ctx.scena("c011b"); // SSS HQ, night
+	s.func(25, |a| { // quest list
+		let a = alist_map!(a; .find_map(f!(TreeInsn::While(_, x) => x)).unwrap());
+		let a = alist_map!(a; .find_map(f!(TreeInsn::Switch(_, x) => x)).unwrap());
+		let a = a.clause(&Some(0)).if_clause(&flag![3074]);
+		*a.0 = a.1.clone();
 	});
 
 	quest125(&mut ctx);
