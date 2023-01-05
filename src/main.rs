@@ -201,6 +201,15 @@ fn quest157(ctx: &mut Context) {
 	});
 
 	let s = ctx.copy_scena("c120d_1", tl);
+	s.remap(&mut |a| {
+		if let IAM::CharId(a) = a {
+			if a.0 == 21 {
+				a.0 = 25
+			} else if a.0 > 21 && a.0 < 25 {
+				a.0 -= 1;
+			}
+		}
+	});
 
 	let s = ctx.scena("t1390");
 	s.copy_func(0, 6, nil);
@@ -211,6 +220,8 @@ fn quest157(ctx: &mut Context) {
 	for i in 13..=29 {
 		s.copy_func(0, i, nil);
 	}
+	s.func(0, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
+	s.func(0, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![275]), nil));
 
 	let s = ctx.scena("c0130");
 	s.func(46, |a| {
