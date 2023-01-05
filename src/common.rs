@@ -297,9 +297,17 @@ impl<'a, A: PartialEq, B> AList<'a, Vec<(A, B)>> {
 	}
 }
 
-impl<'a, T: Clone + VisitMut> AList<'a, Vec<T>> {
+impl<'a, T> AList<'a, Vec<T>> {
 	#[track_caller]
-	pub fn copy_tail(&mut self, tl: &mut impl Translator) {
+	pub fn copy_tail(&mut self, tl: &mut impl Translator) where T: Clone + VisitMut {
 		self.0.extend(self.1[self.0.len()..].iter().map(|a| translate(tl, a)))
+	}
+
+	#[track_caller]
+	pub fn index_of(&self, f: impl Fn(&T) -> bool) -> (usize, usize) where T: Clone + VisitMut {
+		(
+			self.0.iter().enumerate().find_map(|(a, b)| f(b).then_some(a)).unwrap(),
+			self.1.iter().enumerate().find_map(|(a, b)| f(b).then_some(a)).unwrap(),
+		)
 	}
 }

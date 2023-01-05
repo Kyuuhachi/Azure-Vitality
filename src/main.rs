@@ -136,8 +136,7 @@ fn quest125(ctx: &mut Context) {
 	// c0110 - SSS building, quest deadline
 	let s = ctx.scena("c0110");
 	s.func(37, |a| {
-		let i0 = a.0.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::Sc_C4Unset(_))) => i)).unwrap();
-		let i1 = a.1.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::Sc_C4Unset(_))) => i)).unwrap();
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::Sc_C4Unset(_))));
 		a.0.insert(i0, translate(nil, &a.1[i1]));
 	});
 
@@ -324,9 +323,8 @@ fn quest158(ctx: &mut Context) {
 	// c0110 - Orchis Tower interior (?), quest deadline
 	let s = ctx.scena("c1510");
 	s.func(42, |a| {
-		let i0 = a.0.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::_1B(..))) => i)).unwrap();
-		let i1 = a.1.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::_1B(..))) => i)).unwrap();
-		a.0.insert(i0, translate(nil, &a.1[i1])); // there's a SoundLoad to account for
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::_1B(..))));
+		a.0.insert(i0, translate(nil, &a.1[i1]));
 	});
 }
 
@@ -363,20 +361,19 @@ fn quest159(ctx: &mut Context) {
 		a.0.insert(a.0.len()-1, translate(nil, &a.1[a.0.len()-1]));
 	});
 	s.func(3, |a| { // reinit
-		fn f((a,b): (usize, &TreeInsn)) -> Option<usize> {
+		fn f(b: &TreeInsn) -> bool {
 			let e = flag![2845].bool_and(flag![2848].not());
 			if let TreeInsn::If(b) = b {
 				if let Some((b, _)) = b.get(0) {
 					if b.as_ref() == Some(&e) {
-						return Some(a);
+						return true
 					}
 				}
 			}
-			None
+			false
 		}
-		let p0 = a.0.iter().enumerate().find_map(f).unwrap();
-		let p1 = a.1.iter().enumerate().find_map(f).unwrap();
-		a.0.insert(p0, translate(nil, &a.1[p1-1]));
+		let (i0, i1) = a.index_of(f);
+		a.0.insert(i0, translate(nil, &a.1[i1-1]));
 	});
 	s.func(8, |a| a.if_with(&flag![2847].not()).copy_tail(nil));
 
@@ -444,15 +441,13 @@ fn quest159(ctx: &mut Context) {
 	 // c0120 - Special Support Section, upper floors (?)
 	let s = ctx.scena("c0120");
 	s.func(43, |a| { // quest termination
-		let i0 = a.0.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::FlagSet(Flag(282)))) => i)).unwrap();
-		let i1 = a.1.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::FlagSet(Flag(282)))) => i)).unwrap();
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::FlagSet(Flag(282)))));
 		a.0.insert(i0, translate(nil, &a.1[i1-1]));
 	});
 
 	let s = ctx.scena("m4200");
 	s.func(22, |a| {
-		let i0 = a.0.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::Sc_C4Unset(_))) => i)).unwrap();
-		let i1 = a.1.iter().enumerate().find_map(f!((i, TreeInsn::Insn(Insn::Sc_C4Unset(_))) => i)).unwrap();
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::Sc_C4Unset(_))));
 		a.0.insert(i0, translate(nil, &a.1[i1-2]));
 		a.0.insert(i0+1, translate(nil, &a.1[i1-1]));
 	});
