@@ -65,6 +65,7 @@ fn main() -> anyhow::Result<()> {
 	});
 
 	quest125(&mut ctx);
+	quest157(&mut ctx);
 	quest158(&mut ctx);
 	quest159(&mut ctx);
 
@@ -119,7 +120,6 @@ fn main() -> anyhow::Result<()> {
 
 fn quest125(ctx: &mut Context) {
 	let nil = &mut Nil;
-
 	let tl = &mut Translate::load(include_str!("../text/quest125.txt"));
 	tl.comment("t_quest");
 	ctx.copy_quest(QuestId(125), tl);
@@ -179,9 +179,58 @@ fn quest125(ctx: &mut Context) {
 	});
 }
 
+fn quest157(ctx: &mut Context) {
+	let nil = &mut Nil;
+	let tl = &mut Translate::load(include_str!("../text/quest157.txt"));
+
+	tl.comment("t_quest");
+	ctx.copy_quest(QuestId(157), tl);
+
+	let s = ctx.scena("c120d");
+	s.main.includes[0] = s.evo.includes[0].clone();
+	s.main.includes[1] = s.evo.includes[1].clone();
+	s.main.chcp[12] = s.evo.chcp[12].clone();
+	s.copy_npc(13, tl);
+	for i in 18..=27 {
+		s.copy_npc(i, tl);
+	}
+	s.func(4, |a| a.if_clause(&flag![3074]).copy_tail(nil));
+	s.func(4, |a| {
+		// This doesn't use elif for the event flags. Doing ugly index stuff instead.
+		a.0.splice(a.0.len()-2..a.0.len()-2, a.1[a.1.len()-4..a.1.len()-2].to_owned());
+	});
+
+	let s = ctx.copy_scena("c120d_1", tl);
+
+	let s = ctx.scena("t1390");
+	s.copy_func(0, 6, nil);
+	s.copy_func(0, 7, nil);
+	for i in 8..=12 {
+		s.copy_func(0, i, tl);
+	}
+	for i in 13..=29 {
+		s.copy_func(0, i, nil);
+	}
+
+	let s = ctx.scena("c0130");
+	s.func(46, |a| {
+		// Inspecting Tio's toys, Lloyd recognizes Mishette
+		let a = alist_map!(a; .find_map(f!(TreeInsn::If(x) => x)).unwrap());
+		let a = AList(&mut a.0[0].1, &a.1[0].1);
+		let a = alist_map!(a; .find_map(f!(TreeInsn::If(x) if x.len() == 2 => x)).unwrap());
+		a.0[0].0 = a.1[0].0.clone();
+	});
+
+	let s = ctx.scena("c0100"); // termination
+	s.func(49, |a| {
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::ItemRemove(..))));
+		a.0.insert(i0, translate(nil, &a.1[i1-1])); // quest138, TODO
+		a.0.insert(i0, translate(nil, &a.1[i1-2])); // quest157
+	});
+}
+
 fn quest158(ctx: &mut Context) {
 	let nil = &mut Nil;
-
 	let tl = &mut Translate::load(include_str!("../text/quest158.txt"));
 	tl.comment("t_quest");
 	ctx.copy_quest(QuestId(158), tl);
