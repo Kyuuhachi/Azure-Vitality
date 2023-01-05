@@ -437,7 +437,6 @@ fn quest159(ctx: &mut Context) {
 		a.0.splice(.., [TreeInsn::If(if_)]);
 	});
 
-	let tl = &mut Dump;
 	 // c0120 - Special Support Section, upper floors (?)
 	let s = ctx.scena("c0120");
 	s.func(43, |a| { // quest termination
