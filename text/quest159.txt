@@ -11,18 +11,19 @@
 ノックス森林道の樹海を監視していた、
 若い警備隊員からの定時連絡が
 途絶えたと言う……
-	ベルガード門のソーニャ司令から、
-	人捜しの手伝いを依頼された。
-	ノックス森林道の樹海を監視していた、
-	若い警備隊員からの定時連絡が
-	途絶えたと言う……
+	Commander Baelz asked us to help with
+	a search-and-rescue mission.
+	She has dispatched a young man to guard the
+	entrance to Knox Forest, but she has not
+	received his regular reports. Something might
+	have happened to him.
 
 ★現地へは、ミレイユ三尉が
 　同行してくれることになった。
 　警備隊員が無事だと良いのだが……
-	★現地へは、ミレイユ三尉が
-	　同行してくれることになった。
-	　警備隊員が無事だと良いのだが……
+	★We will head to the site together with
+	　Lieutenant Mireille. I hope the guard is
+	　alright.
 
 ★行方不明の隊員が直前まで警備していた
 　訓練場の崖にやって来た。
@@ -31,35 +32,36 @@
 ★後は下に降りてみるしかないが、
 　昨日のヴァルドの件もある。
 　焦らず注意しながら進もう。
-	★行方不明の隊員が直前まで警備していた
-	　訓練場の崖にやって来た。
-	　周辺には彼の姿は見当たらず、
-	　気配もないようだ。
-	★後は下に降りてみるしかないが、
-	　昨日のヴァルドの件もある。
-	　焦らず注意しながら進もう。
+	★Arrived at the cliff that the man was
+	　supposed to be guarding, but here's nowhere
+	　to be seen. Tio cannot sense his presence,
+	　either.
+	★We have no choice but to climb down into the
+	　forest proper. This is where we encountered
+	　Wald yesterday, so we should be careful.
 
 ★崖下へ降りたところで、隊員のものと
 　思われる落し物を見つけた。
 　通信機のアンテナのようだ。
 ★彼がここに降りてきたと見て、
 　間違いないだろう。
-	★崖下へ降りたところで、隊員のものと
-	　思われる落し物を見つけた。
-	　通信機のアンテナのようだ。
-	★彼がここに降りてきたと見て、
-	　間違いないだろう。
+	★As we made our way down, we found something
+	　that seems to have been dropped recently.
+	　It looks like a part of an old communications
+	　device.
+	★It seems to have been dropped by the guard,
+	　so he must have passed by here.
 
 ★空になった水筒を発見した。
 　余程慌てていたのだろうか。
 　この険しい樹海で満足な水分補給が
 　できないのは厳しいだろう。
 　早く彼を見つけないと……
-	★空になった水筒を発見した。
-	　余程慌てていたのだろうか。
-	　この険しい樹海で満足な水分補給が
-	　できないのは厳しいだろう。
-	　早く彼を見つけないと……
+	★Found an empty water canteen. It seems to
+	　have been dropped in a hurry.
+	　A place like this becomes even more dangerous
+	　if you can't keep properly hydrated. We need
+	　to find him ASAP.
 
 ★真新しい薬莢を発見した。
 　付近で戦闘があったのだろうか？
@@ -67,23 +69,24 @@
 　認められず、
 　他の落し物も発見できなかった。
 　別の場所を捜してみよう。
-	★真新しい薬莢を発見した。
-	　付近で戦闘があったのだろうか？
-	　だが、周辺に目立った破壊の形跡は
-	　認められず、
-	　他の落し物も発見できなかった。
-	　別の場所を捜してみよう。
+	★Found a newly-fired ammunition shell. Was
+	　there a battle here recently?
+	　However, there were no other signs of
+	　destruction in the vicinity, nor any other
+	　dropped items. We'll have to continue
+	　searching.
 
 ★アンテナのない通信機を発見した。
 　これでは連絡がとれないのも道理だ。
 　ただ、意識を失ったため連絡が取れない
 　という可能性は下がったのも確かだ。
 　捜索を再開しよう。
-	★アンテナのない通信機を発見した。
-	　これでは連絡がとれないのも道理だ。
-	　ただ、意識を失ったため連絡が取れない
-	　という可能性は下がったのも確かだ。
-	　捜索を再開しよう。
+	★Found a broken communications device, missing
+	　an antenna. That would explain why he has
+	　dropped off the radar. The probability that
+	　he could not get in contact due to a physical
+	　condition is all but nil. Let's resume the
+	　search.
 
 ★樹海の奥で隊員を発見、しかしそこには
 　魔人化したヴァルドもいた。
@@ -91,12 +94,12 @@
 　俺たちに警告を残して去って行った。
 ★後を追いかけたいところだが、
 　隊員の救護を優先しないと。
-	★樹海の奥で隊員を発見、しかしそこには
-	　魔人化したヴァルドもいた。
-	　戦闘になるかと思われたが、
-	　俺たちに警告を残して去って行った。
-	★後を追いかけたいところだが、
-	　隊員の救護を優先しないと。
+	★Found the guard deep in the forest,
+	　unfortunately accompanied by the demonized
+	　Wald. We were prepared for a fight, but he
+	　suddenly left with just a warning.
+	★We did not pursue him -- treating the wounded
+	　guardsman takes priority.
 
 ★警備隊員は無事発見された。
 　大きなケガもなかったようで何よりだ。
@@ -104,21 +107,20 @@
 　ソーニャ司令から、大型魔獣の件は
 　引き続き任せてほしいと言われた以上、
 　後のことはお願いするしかないだろう。
-	★警備隊員は無事発見された。
-	　大きなケガもなかったようで何よりだ。
-	★ヴァルドのことは気がかりだが、
-	　ソーニャ司令から、大型魔獣の件は
-	　引き続き任せてほしいと言われた以上、
-	　後のことはお願いするしかないだろう。
+	★We managed to recover the lost guardsman.
+	　He's a bit bruised, but no major injuries.
+	★Wald's appearance is certainly concerning,
+	　but Commander Baelz asked that we let the
+	　CGF continue tracking him.
 
 ★ひとまず訓練場から外へ出た。
 　ミレイユ三尉は入口で待機すると言う。
 　あまり待たせてしまっては悪い。
 　手早く用を済ませて戻らなければ。
-	★ひとまず訓練場から外へ出た。
-	　ミレイユ三尉は入口で待機すると言う。
-	　あまり待たせてしまっては悪い。
-	　手早く用を済ませて戻らなければ。
+	★Left the training grounds for the time being.
+	　Mireille said she would wait at the entrance.
+	　We mustn't let her wait for too long --
+	　let's finish our business quickly and return.
 
 ★リンさんとエオリアさんが消息を絶った
 　件に気を取られ、訓練場で待たせている
@@ -131,26 +133,25 @@
 ★状況が状況なので怒っていない様子では
 　あったが、あとで日を改めて謝りに
 　行かなければ……
-	★リンさんとエオリアさんが消息を絶った
-	　件に気を取られ、訓練場で待たせている
-	　ミレイユ三尉のことを失念していた。
-	　ありえないミスだ。
-	★慌てて導力通信で連絡を取ったが、
-	　幸いにも警備隊員は訓練場を
-	　自力で脱出してきたため、
-	　捜索は無事終了したとのことだった。
-	★状況が状況なので怒っていない様子では
-	　あったが、あとで日を改めて謝りに
-	　行かなければ……
+	★We were so focused on Lynn and Aeolia's
+	　disappearance that we completely forgot about
+	　Mireille and the lost guardsman in the
+	　training grounds. We should never have let
+	　that happen.
+	★We quickly contacted her, and fortunately,
+	　it turns out she managed to rescue him by
+	　herself.
+	★She was understanding of the circumstances,
+	　but we should still go and apologize when we
+	　get a chance.
 
 ★後日改めてミレイユ三尉に
 　謝罪に行ったところ、お詫びの印として
 　ランディが彼女の買い物の荷物持ちを
 　する、ということで話がまとまった。
-	★後日改めてミレイユ三尉に
-	　謝罪に行ったところ、お詫びの印として
-	　ランディが彼女の買い物の荷物持ちを
-	　する、ということで話がまとまった。
+	★Later, we went to apologize to Mireille.
+	　Randy ended up helping her with her shopping
+	　as an apology.
 
 ## t2020 - Bellguard Gate {{{1
 
@@ -193,8 +194,8 @@
 ええ、大型魔獣の件があったから、
 警備隊は森林道を調査することにしたの。
 	Yes. After the... demon incident,
-	I sent out a squad to investigate
-	the forest.
+	we decided to look into the
+	happenings in the forest.
 
 ## R
 まぁ、蒼い花もあったし、
@@ -206,7 +207,7 @@
 ところが、慢性的な人手不足で、
 すぐに大勢は用意できなかったのよ。
 	But with our chronic understaffing,
-	I could only dispatch a small force.
+	I can't spare any sizeable force.
 
 ## T
 ……仕方がないかと。
@@ -229,9 +230,9 @@
 ## B
 森林道を監視するように命じた
 若い警備隊員からの定時連絡がないの。
-	I have not received his regular
-	reports.
-
+	He was instructed to send reports
+	periodically, but I have not
+	received any.
 職務熱心すぎるところがあったから……
 もしかしたら、中に入ってしまったのかも。
 	I fear that he may have gotten
@@ -288,10 +289,9 @@
 	I haven't heard anything back from
 	the young guardsman I stationed
 	at the forest entrance.
-
 よかったら、捜索に協力して
 もらえないかしら？
-	Would you be able to
+	Would you be willing to
 	cooperate with the search?
 
 ## }}}3
@@ -334,7 +334,6 @@
 とても助かるわ。
 	Thank you! That will be a
 	huge help.
-
 捜索の担当者を呼ぶから、
 彼女を手伝ってあげてちょうだい。
 	Let me call in the person in
@@ -349,8 +348,8 @@
 
 ## R
 それって……もしかして……
-	Oh for Aidios' sake,
-	don't tell me--
+	Oh, for Aidios' sake.
+	Don't tell me--
 
 ## B
 ――私よ。
@@ -362,13 +361,13 @@
 
 ## B
 すぐ来ると思うわ。
-	She'll be here momentarily.
+	She will be here momentarily.
 
 ## Mireille
 女性の声
 	Woman's voice
 失礼します！
-	Excuse me!
+	Reporting for duty!
 
 ## (She walks to stand next to Baelz.)
 
@@ -384,16 +383,16 @@
 あっ、それは助かります。
 	Oh, that'll be a huge help.
 
+## M
 助かるわ。正直、私だけで行っても、
 トラブルが発生したときに、
 対処できるかわからなかったし。
 	Frankly, I'm not confident I would
 	make it back out if I went alone.
-
 かといって、他の部署から、
 これ以上、人員は割けなくて。
-	And we can't spare any more
-	personnel from the other divisions.
+	And we can't spare any personnel
+	from the other divisions.
 
 ## R
 ……そういや、手伝いって言ってたな。
@@ -404,27 +403,28 @@
 あら、私が担当者だと知って、
 ランディが手伝ってくれるのかと
 思ったのに。
-	Oh, I thought you were going
-	to chicken out when you found
-	out I was in charge.
-## Not sure if that's what she's saying. Can't remember what their relationship was like at this point.
+	Don't tell me you agreed
+	to help just because I'm
+	the one in charge, Randy?
 
 ## R
 特務支援課で受ける、と
 決めたのはロイドさ。
 もちろん、異論はないけどな。
-	Well, it was Lloyd who decided
-	that we'd take on this request.
+	Well, it was Lloyd who
+	decided that we'd help out.
 	Not that I disagree.
 
 ## L
 さっそく、森林道に行ってみよう。
-	How about we go ahead to the forest?
+	How about we quit the flirting
+	and go ahead to the forest?
 
 ## M
 ええ、そうね。
 	Yes. Let's go.
 
+## System
 {color 2}クエスト【森林道での捜索】{color 0}を開始した！
 	{color 0}Quest {color 2}[Searching the Forest]{color 0} started!
 
@@ -432,7 +432,7 @@
 ……で、どうやって現地へ行く？
 この雨模様だ。途中まででも
 導力車を使うのがいいんじゃねぇか？
-	So, how are we getting there?
+	So, how're we getting there?
 	With this downpour, maybe it's
 	better to use the car?
 
@@ -442,7 +442,7 @@
 	{color 5}{#06}{#18}#1KGo to Knox Forest Road by car?
 	It will be moved to West Crossbell Highway.{color 0}
 
-## Menu (previous line stays. That's possibly the effect of either {#06}, {#18}, or #1K.
+## Menu (previous line stays)
 【導力車で移動する】
 	[Go by car]
 【導力車は使わず移動する】
@@ -455,19 +455,19 @@
 ノエル、運転のほうは
 よろしく頼むよ。
 	You've got a point there.
-	Noel, can you take the wheel?
+	Noel, mind taking the wheel?
 
 ## N
 お任せください！
-	It'd be my pleasure!
+	You couldn't stop me if you tried.
 
 ## (Fade to black.)
 
 ## System
 {color 5}支援課の導力車を
 西クロスベル街道に移動させました。{color 0}
-	{color 5}The orbal car was moved
-	to West Crossbell Highway.{color 0}
+	{color 5}The car is now parked
+	at West Crossbell Highway.{color 0}
 
 ## On foot {{{3
 
@@ -485,6 +485,8 @@
 
 ## }}}3
 
+## Continue in r4000
+
 ## :16 talking during quest {{{2
 
 ## B
@@ -493,7 +495,6 @@
 見つかったかしら？
 	Hello, everyone. Any news
 	on our incommunicado guardsman?
-
 森林道にいると思うのだけれど……
 	I believe he is somewhere
 	in the forest, but...
@@ -555,13 +556,13 @@
 
 ## T
 ……この周辺には、気配がありませんね。
-	There are no signs of him
-	in the vicinity.
+	There are no signs of
+	him in the vicinity.
 
 ## R
 案外、サボって街で遊んでたりしてな。
-	Maybe he got bored and is playing
-	hooky in the city.
+	Maybe he got bored and is
+	playing hooky in the city?
 
 ## E
 ランディじゃあるまいし……
@@ -581,7 +582,7 @@
 お、俺だって、別にサボリはしないぞ。
 休みの日に、遊んでるだけだ。
 	Oi, I don't play hooky.
-	I only go on free days.
+	I only go on my days off.
 
 ## W
 ふふ、多勢に無勢だね。
@@ -589,7 +590,8 @@
 
 ## L
 とにかく、下に降りてみよう。
-	I think we should head down.
+	No point in standing around here.
+	Let's climb down.
 
 ## Continue in r4050
 
@@ -610,8 +612,8 @@
 
 ## M
 お疲れさま。用意は整った？
-	Are you ready to jump
-	back into the fray?
+	Are you ready to jump back
+	into the fray?
 
 ## Menu
 【すぐに捜索を再開する】
@@ -641,8 +643,8 @@
 ## M
 わかったわ。
 こちらは、とくに変化なしよ。
-	Understood. I have nothing
-	to report for my part.
+	Understood. The situation
+	here hasn't changed.
 
 ## L
 すぐに戻ります。
@@ -671,7 +673,7 @@
 
 ## L
 ん？　これは、なんだ？
-	Hm? What's this?
+	Hm? What's that over there?
 
 ## (He bends down next to it, and takes out his tonfas for no obvious reason.)
 
@@ -691,8 +693,8 @@
 ## T
 ……小型通信機のアンテナでは
 ないでしょうか？
-	Isn't this the antenna
-	for a handheld radio?
+	Isn't this the antenna for a
+	handheld communications device?
 
 ## M
 あ、本当だわ。
@@ -707,7 +709,7 @@
 ## R
 そういや、俺が警備隊にいた頃は、
 そんなのを使ってたな。
-	I used that thing
+	I remember using that thing
 	when I was enlisted.
 
 ## M
@@ -722,9 +724,9 @@
 行方不明の警備員のものだと
 すると、何か手掛かりになるかも
 しれないな。
-	Assuming this belongs to our
-	lost guardsman, this might
-	be a clue.
+	Assuming this belongs to
+	our lost guard, this might
+	be a lead.
 
 ## M
 そうね。他にも手掛かりになる物を
@@ -735,16 +737,19 @@
 ## W
 本人が落ちていれば、
 それが一番早いんだけどね。
-	Sounds like our best bet
-	to find him.
+	We've got nothing else to
+	go on, so that's our best bet.
 
 ## M
 そうね。早く合流できるといいけど。
-	Agreed. We should collect them.
+	Agreed. We should look for more.
 
 ## E
 この辺りは、どうかしら……？
-	Are there any more around here...?
+	Let's see, are there
+	any more around here...?
+
+## (Camera zooms out.)
 
 ## M
 この近くにはいないみたいね。
@@ -756,7 +761,7 @@
 
 ## L
 ん？　これは、何だろう？
-	Hm? What's this?
+	Hey, look over there.
 
 ## M
 ちょっと、
@@ -837,8 +842,8 @@
 ## M
 それ、旧式の通信機だと思うわ。
 アンテナが壊れてるけど。
-	This looks like an old radio.
-	The antenna is broken off.
+	This looks like an old communications
+	device. The antenna is broken off.
 
 ## N
 もしかして、入口のところで拾った
@@ -853,7 +858,7 @@
 ## T
 ……たしかに、破損したところが、
 ほぼ、ぴったりです。
-	Indeed, the damaged are
+	Indeed, the damaged area
 	is almost a perfect fit.
 
 ## R
@@ -861,7 +866,7 @@
 ようやく無線を使おうとして、
 壊れてることに気付いたのか？
 	You think he tried to use
-	the radio here, but noticed
+	the device here, but noticed
 	it was broken?
 
 ## W
@@ -876,7 +881,7 @@
 
 ## L
 とにかく、さらに奥へ行ってみよう。
-	Maybe we should check deeper in.
+	Maybe. We should check deeper in.
 あ……
 その前に、ちょっと休憩して
 おいたほうがいいな。
@@ -897,8 +902,8 @@
 ……いや、何かあったときに、
 疲れていたら危ないからな。
 	No. It would be dangerous
-	if something happened when
-	we're this tired.
+	if something happened
+	when we're this tired.
 疲れ切ってしまう前に、
 休憩を取らないと。
 	We should get some rest
@@ -945,9 +950,8 @@
 ## W
 キミがぼうっとするなんて、
 珍しいんじゃない？
-	You're not one to
-	usually space out
-	like that.
+	You're not one to usually
+	space out like that.
 
 ## R
 俺だって考え事くらい
@@ -966,12 +970,11 @@
 …………いや。
 すまないな。
 たいしたことじゃねえよ。
-	...No. Sorry,
-	it's nothing.
+	...No. Sorry, it's nothing.
 
 ## M
 そう…………
-	Right...
+	If you say so.
 
 ## M
 ランディ、何かあるなら、
@@ -984,7 +987,7 @@
 あ、ああ……
 本当に平気だって。
 心配すんな。
-	Ah, okay...
+	Got it...
 	Really, it's nothing.
 	Don't worry about it.
 ロイド、そろそろ行こうぜ。
@@ -1013,7 +1016,7 @@
 
 ## R
 おっ、こいつはどうだ？
-	Hey, look at that.
+	Hey, would you look at that.
 
 ## N
 あっ、これは……
@@ -1059,7 +1062,7 @@
 これは警備隊装備の
 バックルみたいだけど……
 	This looks like the belt
-	buckle of a CGF uniform?
+	buckle of a CGF uniform.
 さびているわね、少なくとも
 最近の落し物ではないみたい。
 	It's rusted, so I don't think
@@ -1092,11 +1095,11 @@
 
 ## W
 ハズレみたいだね。
-	That's a miss.
+	Nothing good here.
 
 ## M
 ここはハズレね、他を探しましょう。
-	This was a miss.
+	Doesn't seem to be anything here.
 	Let's look somewhere else.
 
 ## Trying to go to the next area without checking all sparkles {{{2
@@ -1110,7 +1113,7 @@
 	more in this area first.
 何か手掛かりが見つかるかも
 しれないわ。
-	We might be able to find a clue.
+	We might be able to find a lead.
 
 ## L
 そうだな。
@@ -1136,8 +1139,8 @@
 これは……
 まだ新しい薬莢……
 	This looks like... an
-	ammunition shell? It
-	looks new.
+	ammunition shell? It looks
+	like it was fired recently.
 もしかして、戦闘があったのかも
 しれませんね。
 	There may have been a
@@ -1159,7 +1162,7 @@
 	monsters around. Let's not go farther
 	than so we can still see each other.
 
-## (They go in different directions: ????, Mireille (reluctantly) + Randy. Camera moves to M+R specifically.)
+## (They go in different directions: Lloyd + Elie + Tio, Wazy + Noel, Mireille (reluctantly) + Randy. Camera moves to M+R specifically.)
 
 ## M
 ふぅ……
@@ -1187,18 +1190,18 @@
 なんて思ってたのに。
 	If I have to walk around with you,
 	why couldn't it be at Mishelam
-	or a shopping center or something?
+	or a shopping center?
 
 ## R
 ん？　ミシュラムはともかく、
 繁華街は警備隊の管轄じゃないだろ？
-	Hm? I don't know about Mishelam,
-	but the CGF don't have anything to
+	I don't know about Mishelam, but
+	the CGF don't have anything to
 	do in a shopping center, do you?
 
 ## M
 #5S仕事じゃなくて！#3S
-	#5SThis isn't about work!#3S
+	#5SI'm not talking about work!#3S
 
 ## R
 冗談だ。
@@ -1211,8 +1214,8 @@
 ただ、も、もらいっぱなしは、
 私の主義に反するから……
 	Th-Th-That's not it! It's
-	just, I can't just keep
-	getting things all the time.
+	just, getting gifts all the time
+	goes against my principles.
 
 ## M
 #5Sこのままじゃ
@@ -1238,15 +1241,13 @@
 ## R
 はは、わーったよ。
 次の休暇なら……
-	Haha, got it.
-	I'll call you on
-	my next day off.
+	Haha, got it. I'll call
+	you on my next day off.
 
 ## R
 あ………………
 いや………………
-	Wait...
-	No.
+	Wait... No.
 
 ## M
 ランディ？
@@ -1262,9 +1263,8 @@
 やっぱり、
 実はクロスベル市内に
 いるんじゃねえか？
-	Are you really sure
-	he didn't just go to
-	the big city?
+	Are you really sure he didn't
+	just go to the big city?
 
 ## M
 ランディ…………
@@ -1297,7 +1297,7 @@
 
 ## R
 おっ、こいつはどうだ？
-	Hey, look at that.
+	Hey, would you look at that.
 
 ## N
 あっ、これは……
@@ -1343,7 +1343,7 @@
 これは警備隊装備の
 バックルみたいだけど……
 	This looks like the belt
-	buckle of a CGF uniform?
+	buckle of a CGF uniform.
 さびているわね、少なくとも
 最近の落し物ではないみたい。
 	It's rusted, so I don't think
@@ -1376,11 +1376,11 @@
 
 ## W
 ハズレみたいだね。
-	That's a miss.
+	Nothing good here.
 
 ## M
 ここはハズレね、他を探しましょう。
-	This was a miss.
+	Doesn't seem to be anything here.
 	Let's look somewhere else.
 
 ## Trying to go to the next area without checking all sparkles {{{2
@@ -1422,7 +1422,7 @@
 
 ## L
 おまえは……！
-	You...!
+	It's you!
 
 ## W
 ヴァルド！
@@ -1465,7 +1465,7 @@
 まったく、うざい奴らだ。
 いちいち沸いてきやがって。
 	What an annoying bunch.
-	You keep popping up everywhere.
+	Popping up one after another.
 
 ## Wald (autoscroll)
 {color 2}#5Sグオオオオオオオ！
@@ -1485,7 +1485,7 @@
 次に会ったときには、覚悟しておくんだな！
 	You'd better be ready next time!
 この場所には、近づかないことだ！
-	And you'd better stay away from her!
+	And you'd better stay away from here!
 
 ## L
 逃げた……
@@ -1514,7 +1514,7 @@
 	Ah! Monster spotted!
 	#5SAAAAAAAAAAAAAAAAAA...!
 #5Sあ#4Sあ#3Sあ……あれ？
-	#5SAA#4SAa#3Saa... Huh？
+	#5SAA#4SAa#3Saa... Huh?
 
 ## E
 今、手当てするわね。
@@ -1537,20 +1537,19 @@
 	Phew... What a relief.
 貴方、周りがどれだけ心配したと、
 思っているの！？
-	Do you have any idea
-	how worried everyone
-	was about you?
+	Do you have any idea how worried
+	everyone has been about you?
 独断で行動するのはいけない、と
 いつも言っているでしょう！
-	Don't we always tell you
-	to never act on your own?
+	Don't we always tell you to never
+	act on your own?
 
 ## Guard
 す、すみません……
 人手がないなら、俺が頑張れば、
 なんて思っちゃって……
 	I'm sorry... Since I know we're
-	short on hands, I figured I'd try
+	short on hands, I thought I'd try
 	to work extra hard to compensate...
 
 ## M
@@ -1570,22 +1569,20 @@
 ふふ……
 ちょっと今日は、
 らしくないんじゃない？
-	You're being pretty
-	uncharacteristic today,
-	you know?
+	You're being uncharacteristically 
+	quiet, you know?
 
 ## R
 ……なんだよ？
 べつに、いつも通りやってるだろ。
-	You think? I think I'm
-	pretty much the same as usual.
+	You think? I think I'm pretty
+	much the same as usual.
 
 ## W
 そうだね。
 いつも通りにやっているよ。
 不自然なくらい。
-	Exactly. Exactly
-	the same as usual.
+	That's it. Exactly the same as usual.
 	To an unnatural degree.
 
 ## R
