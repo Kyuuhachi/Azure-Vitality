@@ -1711,7 +1711,9 @@
 	By the way, the doctor said
 	his injuries are nothing major.
 皆さんのおかげね。
-	Which is all thanks to you.
+	We only got there on time
+	thanks to you. I dread to think
+	what would happened otherwise.
 
 ## L
 それはよかった。
@@ -1729,5 +1731,27 @@
 	Thank you. I think I'll
 	do exactly that.
 
+## System
 {color 2}クエスト【森林道での捜索】{color 0}を達成した！
 	{color 0} Quest {color 2}[Searching the Forest]{color 0} completed!
+
+## t2000 - Bellguard Gate exterior {{{1
+
+## Talking to Mireille post-quest {{{2
+
+## M
+森林道での捜索に協力してくれて
+ありがとう。助かったわ。
+	Thank you for your help with the
+	forest search. We couldn't have
+	done it without you.
+暴走車を止めることもできたし。
+これでしばらくは
+国境の警備に集中できそう。
+	And you took care of that runaway
+	car, too. Now maybe we can focus
+	on border security for a while.
+特務支援課の皆さんのおかげよ。
+本当にありがとうね。
+	I really can't thank you
+	enough.
