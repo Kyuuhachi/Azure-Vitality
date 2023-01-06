@@ -75,8 +75,8 @@ fn main() -> anyhow::Result<()> {
 	if outdir.exists() {
 		fs::remove_dir_all(outdir)?;
 	}
-	let scenadir = outdir.join("scena");
-	let textdir = outdir.join("text");
+	let scenadir = outdir.join("data_en/scena");
+	let textdir = outdir.join("data_en/text");
 	fs::create_dir_all(&scenadir)?;
 	fs::create_dir_all(&textdir)?;
 
@@ -95,12 +95,14 @@ fn main() -> anyhow::Result<()> {
 	}?)?;
 
 	// TODO do this in a better way
-	fs::create_dir_all(outdir.join("ops"))?;
-	fs::create_dir_all(outdir.join("map/objects"))?;
-	fs::create_dir_all(outdir.join("visual"))?;
-	fs::copy("./data/ao-evo/data/ops/e3210.op2", outdir.join("ops/e3210.op2"))?;
-	fs::copy("./data/ao-evo/data/map/objects/e3210isu.it3", outdir.join("map/objects/e3210isu.it3"))?;
-	fs::copy("./data/ao-evo/data/visual/c_vis600.itp", outdir.join("visual/c_vis600.itp"))?;
+	fs::create_dir_all(outdir.join("data/ops"))?;
+	fs::create_dir_all(outdir.join("data/map/objects"))?;
+	fs::create_dir_all(outdir.join("data/visual"))?;
+	fs::create_dir_all(outdir.join("data/chr"))?;
+	fs::copy("./data/ao-evo/data/ops/e3210.op2", outdir.join("data/ops/e3210.op2"))?;
+	fs::copy("./data/ao-evo/data/map/objects/e3210isu.it3", outdir.join("data/map/objects/e3210isu.it3"))?;
+	fs::copy("./data/ao-evo/data/visual/c_vis600.itp", outdir.join("data/visual/c_vis600.itp"))?;
+	fs::copy("./data/ao-evo/data/chr/ch40004.itc", outdir.join("data/chr/ch40004.itc"))?;
 
 	let dumpdir = Path::new("./dump");
 	if dumpdir.exists() {
