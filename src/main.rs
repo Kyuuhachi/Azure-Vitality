@@ -109,9 +109,9 @@ fn main() -> anyhow::Result<()> {
 	fs::create_dir_all(dumpdir)?;
 
 	for (name, v) in &ctx.scenas {
-		let ctx = calmare::Context::new(BufWriter::new(fs::File::create(dumpdir.join(name))?));
+		let ctx = calmare::Context::new(GameData::AO, BufWriter::new(fs::File::create(dumpdir.join(name))?));
 		calmare::ed7::write(ctx, &v.main)?;
-		let ctx = calmare::Context::new(BufWriter::new(fs::File::create(dumpdir.join(format!("{name}.evo")))?));
+		let ctx = calmare::Context::new(GameData::AO, BufWriter::new(fs::File::create(dumpdir.join(format!("{name}.evo")))?));
 		calmare::ed7::write(ctx, &v.evo)?;
 	}
 
