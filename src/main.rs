@@ -30,39 +30,7 @@ fn main() -> anyhow::Result<()> {
 		quest::read_ed7(GameData::AO_EVO, &fs::read("./data/ao-evo/data/text/t_quest._dt")?)?,
 	);
 
-	let s = ctx.scena("c0110"); // SSS HQ
-	s.evo.functions.insert(16, vec![]);
-	s.evo.functions.insert(17, vec![]);
-	s.remap(&mut |a| {
-		if let IAM::FuncRef(FuncRef(0, i)) = a {
-			if *i >= 16 {
-				*i += 2;
-			}
-		}
-	});
-	s.func(18, |a| { // quest list
-		let a = alist_map!(a; .find_map(f!(TreeInsn::While(_, x) => x)).unwrap());
-		let a = alist_map!(a; .find_map(f!(TreeInsn::Switch(_, x) => x)).unwrap());
-		let a = a.clause(&Some(0)).if_clause(&flag![3074]);
-		*a.0 = a.1.clone();
-	});
-	s.func(18, |a| { // require quests to be taken
-		let a = a.if_with(&flag![275]);
-		let (i0, i1) = a.index_of(f!((Some(flag![275]), _)));
-		a.0[i0-1] = a.1[i1-1].clone();
-	});
-	s.func(19, |a| { // require quests to be taken
-		let a = a.if_clause(&flag![3074]);
-		*a.0 = a.1.clone();
-	});
-
-	let s = ctx.scena("c011b"); // SSS HQ, night
-	s.func(25, |a| { // quest list
-		let a = alist_map!(a; .find_map(f!(TreeInsn::While(_, x) => x)).unwrap());
-		let a = alist_map!(a; .find_map(f!(TreeInsn::Switch(_, x) => x)).unwrap());
-		let a = a.clause(&Some(0)).if_clause(&flag![3074]);
-		*a.0 = a.1.clone();
-	});
+	timing(&mut ctx);
 
 	quest125(&mut ctx);
 	quest157(&mut ctx);
@@ -120,6 +88,92 @@ fn main() -> anyhow::Result<()> {
 	Ok(())
 }
 
+fn timing(ctx: &mut Context) {
+	let nil = &mut Nil;
+
+	let s = ctx.scena("c0110"); // SSS HQ
+	// Two functions were moved to a subscript, undo that and reorder the functions to match
+	s.evo.functions.insert(16, vec![]);
+	s.evo.functions.insert(17, vec![]);
+	s.remap(&mut |a| {
+		if let IAM::FuncRef(FuncRef(0, i)) = a {
+			if *i >= 16 {
+				*i += 2;
+			}
+		}
+	});
+
+	// Add quests 138 and 157 to quest list
+	s.func(18, |a| {
+		let a = alist_map!(a; .find_map(f!(TreeInsn::While(_, x) => x)).unwrap());
+		let a = alist_map!(a; .find_map(f!(TreeInsn::Switch(_, x) => x)).unwrap());
+		let a = a.clause(&Some(0)).if_clause(&flag![3074]);
+		*a.0 = a.1.clone();
+	});
+	// And require those two to be taken before closing
+	s.func(18, |a| {
+		let a = a.if_with(&flag![275]);
+		let (i0, i1) = a.index_of(f!((Some(flag![275]), _)));
+		a.0[i0-1] = a.1[i1-1].clone();
+	});
+	s.func(19, |a| {
+		let a = a.if_clause(&flag![3074]);
+		*a.0 = a.1.clone();
+	});
+
+	// quest125 deadline
+	s.func(37, |a| {
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::Sc_C4Unset(_))));
+		a.0.insert(i0, translate(nil, &a.1[i1]));
+	});
+
+	let s = ctx.scena("c011b"); // SSS HQ, night
+	// Also add 138 and 157 to quest list at night
+	s.func(25, |a| {
+		let a = alist_map!(a; .find_map(f!(TreeInsn::While(_, x) => x)).unwrap());
+		let a = alist_map!(a; .find_map(f!(TreeInsn::Switch(_, x) => x)).unwrap());
+		let a = a.clause(&Some(0)).if_clause(&flag![3074]);
+		*a.0 = a.1.clone();
+	});
+
+	let s = ctx.scena("c0120"); // SSS, upper floors (?)
+	// quest159 termination
+	s.func(43, |a| {
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::FlagSet(Flag(282)))));
+		a.0.insert(i0, translate(nil, &a.1[i1-1]));
+	});
+
+	let s = ctx.scena("c0100"); // Central Square
+	// quest138 and 157 deadline
+	s.func(49, |a| {
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::ItemRemove(..))));
+		a.0.insert(i0, translate(nil, &a.1[i1-1])); // quest138
+		a.0.insert(i0, translate(nil, &a.1[i1-2])); // quest157
+	});
+
+	let s = ctx.scena("c1500"); // Orchis Tower exterior
+	// There is a check for whether you have any outstanding quests before entering Orchis Tower for the conference; add quest158 to that check
+	s.func(58, |a| {
+		let a = alist_map!(a; .find_map(f!(TreeInsn::If(x) => x)).unwrap());
+		a.0[0].0 = translate(nil, &a.1[0].0);
+	});
+
+	let s = ctx.scena("c1510"); // Orchis Tower interior (?)
+	// quest158 deadline
+	s.func(42, |a| {
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::_1B(..))));
+		a.0.insert(i0, translate(nil, &a.1[i1-1]));
+	});
+
+	let s = ctx.scena("m4200"); // Azure Wetland?
+	// quest159 termintion, and log entry
+	s.func(22, |a| {
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::Sc_C4Unset(_))));
+		a.0.insert(i0, translate(nil, &a.1[i1-2]));
+		a.0.insert(i0+1, translate(nil, &a.1[i1-1]));
+	});
+}
+
 fn quest125(ctx: &mut Context) {
 	let nil = &mut Nil;
 	let tl = &mut Translate::load(include_str!("../text/quest125.txt"));
@@ -157,13 +211,6 @@ fn quest125(ctx: &mut Context) {
 	let s = ctx.scena("c0400");
 	s.func(5, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![279]), nil));
 
-	// c0110 - SSS building, quest deadline
-	let s = ctx.scena("c0110");
-	s.func(37, |a| {
-		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::Sc_C4Unset(_))));
-		a.0.insert(i0, translate(nil, &a.1[i1]));
-	});
-
 	tl.comment("c1030 - Long Lao Tavern & Inn");
 	let s = ctx.scena("c1030");
 	s.func(3, |a| { // Make Grace and Reins not appear in the tavern while the quest is available
@@ -184,7 +231,6 @@ fn quest125(ctx: &mut Context) {
 fn quest157(ctx: &mut Context) {
 	let nil = &mut Nil;
 	let tl = &mut Translate::load(include_str!("../text/quest157.txt"));
-
 	tl.comment("t_quest");
 	ctx.copy_quest(QuestId(157), tl);
 
@@ -232,13 +278,6 @@ fn quest157(ctx: &mut Context) {
 		let a = AList(&mut a.0[0].1, &a.1[0].1);
 		let a = alist_map!(a; .find_map(f!(TreeInsn::If(x) if x.len() == 2 => x)).unwrap());
 		a.0[0].0 = a.1[0].0.clone();
-	});
-
-	let s = ctx.scena("c0100"); // termination
-	s.func(49, |a| {
-		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::ItemRemove(..))));
-		a.0.insert(i0, translate(nil, &a.1[i1-1])); // quest138, TODO
-		a.0.insert(i0, translate(nil, &a.1[i1-2])); // quest157
 	});
 }
 
@@ -387,6 +426,7 @@ fn quest158(ctx: &mut Context) {
 	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![287]), nil));
 
 	tl.comment("t4100 - Orchis Tower");
+	// Klaudia's dialogue at Orchis is different after the quest
 	let s = ctx.scena("t4100");
 	s.func(22, |a| {
 		let (i, if_) = a.1.iter().enumerate().find_map(f!((i, TreeInsn::If(c)) => (i, c))).unwrap();
@@ -395,26 +435,10 @@ fn quest158(ctx: &mut Context) {
 		do_translate(tl, &mut if_[1].1);
 		a.0.insert(i, TreeInsn::If(if_));
 	});
-
-	// Timing stuff, Orchis Tower exterior
-	let s = ctx.scena("c1500");
-	s.func(58, |a| {
-		// Different dialogue if you have outstanding quests, so add this to the list
-		let a = alist_map!(a; .find_map(f!(TreeInsn::If(x) => x)).unwrap());
-		a.0[0].0 = translate(nil, &a.1[0].0);
-	});
-
-	// c0110 - Orchis Tower interior (?), quest deadline
-	let s = ctx.scena("c1510");
-	s.func(42, |a| {
-		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::_1B(..))));
-		a.0.insert(i0, translate(nil, &a.1[i1]));
-	});
 }
 
 fn quest159(ctx: &mut Context) {
 	let nil = &mut Nil;
-
 	let tl = &mut Translate::load(include_str!("../text/quest159.txt"));
 	tl.comment("t_quest");
 	ctx.copy_quest(QuestId(159), tl);
@@ -521,18 +545,13 @@ fn quest159(ctx: &mut Context) {
 		a.0.splice(.., [TreeInsn::If(if_)]);
 	});
 
-	 // c0120 - Special Support Section, upper floors (?)
-	let s = ctx.scena("c0120");
-	s.func(43, |a| { // quest termination
+	// There's a log entry coupled with the termination in m4200
+
+	let s = ctx.scena("c0120"); // SSS, upper floors (?)
+	// add another log entry if failed
+	s.func(43, |a| {
 		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::FlagSet(Flag(282)))));
 		a.0.insert(i0, translate(nil, &a.1[i1-1]));
-	});
-
-	let s = ctx.scena("m4200");
-	s.func(22, |a| {
-		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::Sc_C4Unset(_))));
-		a.0.insert(i0, translate(nil, &a.1[i1-2]));
-		a.0.insert(i0+1, translate(nil, &a.1[i1-1]));
 	});
 }
 
