@@ -184,13 +184,6 @@ fn timing(ctx: &mut Context) {
 		*a.0 = a.1.clone();
 	});
 
-	let s = ctx.scena("c0120"); // SSS, upper floors (?)
-	// quest159 termination
-	s.func(43, |a| {
-		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::FlagSet(Flag(282)))));
-		a.0.insert(i0, translate(nil, &a.1[i1-1]));
-	});
-
 	let s = ctx.scena("c0100"); // Central Square
 	// quest138 and 157 deadline
 	s.func(49, |a| {
