@@ -1,0 +1,1656 @@
+## t_quest {{{1
+
+パン屋の呼び込み
+	Bringing Home the Bakery
+
+モルジュ
+	Morges
+
+　街が襲撃されちまって、
+　みんなしょげかえっちまってる。
+　これじゃ商売あがったりだ。
+
+　そこで、景気づけに
+　一発歌でも歌ってくれよ。
+
+　特売セールのための客寄せだが、
+　悪い話じゃないだろ？
+	　With the city being attacked, everyone's
+	　feelin' kind of down. And with that, my sales
+	　are down too.
+	
+	　So I thought I'd try to spice it up a little
+	　by putting on a singing show.
+	
+	　Combined with a nice discount, I think that
+	　would really get my sales running again.
+	　Whatddya say?
+
+★モルジュさんから特売セールの
+　呼び込みの手伝いを頼まれた。
+　手品や、歌を歌ったりで店の前に人を
+　集めてほしいとのこと。
+	★Morges wants us to attract customers to the
+	　sale he is planning to hold. He wants us to
+	　get some people in front of the shop by doing
+	　magic tricks or singing songs.
+
+★相談の結果、歌を歌って呼び込みをする
+　ことになった。
+　しかし、問題はだれが歌うかだ。
+　みんな、なかなか気が進まないようだし
+　俺が決めるしかないな……
+	★We eventually decided to sing a song. But the
+	　problem is who will do the singing. Nobody
+	　really feels up to the task, so it falls to
+	　me to decide...
+
+★歌い手は、エリィに決めた。
+　エリィなら上手くやってくれる筈だ。
+	★I picked Elie. I know she'll do it well.
+
+★歌い手は、ティオに決めた。
+　ティオが歌えば、道行く人の注目を
+　集めるに違いない。
+	★I picked Tio. I'm sure her singing will
+	　attract a lot of people.
+
+★歌い手は、ランディに決めた。
+　人を集めるなら声の大きい方が
+　いいだろう。
+	★I picked Randy. If we want to catch
+	　attention, a loud voice would be good.
+
+★歌い手は、ノエルに決めた。
+　訓練したことがないとはいえ、フランと
+　よく歌っていたのなら、大丈夫だろう。
+	★I picked Noel. She says she has no training,
+	　but since she's often sung with Fran, she'll
+	　probably do fine.
+
+★悩んだ結果、自分が歌うことにした。
+　上手くいくかは分からないが、
+　ベストを尽くそう。
+	★In the heat of the moment, I volunteered.
+	　I don't really know why I did that, but I'll
+	　have to see this thing through.
+
+★歌うのは、ベネットさんが歌っていた
+　『Ｗａｙ　Ｏｆ　Ｌｉｆｅ』に決めた。
+　店の前でこれを情熱的に歌えば、
+　きっとたくさんの人が集まるだろう。
+	★As for the song, we decided on "Way Of Life",
+	　a favorite of Bennet's. I'm sure a lot of
+	　people will stop to listen if we sing that
+	　passionately in front of the shop.
+
+★歌うのは、ベネットさんが歌っていた
+　『Ｗａｙ　Ｏｆ　Ｌｉｆｅ』に決めた。
+　店の前でこれをクールに歌えば、
+　皆が注目してくれるに違いない。
+	★As for the song, we decided on "Way Of Life",
+	　a favorite of Bennet's. Singing that coolly
+	　outside the shop should grab plenty of
+	　attention.
+
+★歌うのは、ベネットさんが歌っていた
+　『Ｗａｙ　Ｏｆ　Ｌｉｆｅ』に決めた。
+　店の前でこれをかわいく歌えば、
+　子供たちや女性の注目を集めるに
+　違いない。
+	★As for the song, we decided on "Way Of Life",
+	　a favorite of Bennet's. I think singing that
+	　cutely outside the shop will attract a lot of
+	　customers, especially women and children.
+
+★たくさんの人が歌声に足を止め、
+　パンを買ってくれた。
+　歌にこんな力があるとは思わなかった。
+　モルジュさんからお礼を頂いた。
+　せっかくのご厚意なので、ありがたく
+　頂戴した。
+	★We got a huge crowd to stop and listen, who
+	　also stayed to buy bread afterwards. I didn't
+	　realize music could be this powerful.
+	★Got some bread as thanks. I tried to refuse,
+	　but was eventually persuaded to accept it.
+
+★まずまずの出来だった。
+　頑張れば、もっと人を集められ
+　たような気もするが……
+　モルジュさんからお礼を頂いた。
+　せっかくのご厚意なので、ありがたく
+　頂戴した。
+	★Got a decent number of customers, but I think
+	　we could have gotten more if we had done
+	　better.
+	★Got some bread as thanks. I tried to refuse,
+	　but was eventually persuaded to accept it.
+
+★……お客さんはそこそこ集まってくれた
+　が、歌い方のチョイスは失敗だった。
+　これでお礼をもらうのは気がひけたが、
+　せっかくのご厚意なので、ありがたく
+　頂戴した。
+	★...We got a few customers, but I can't help
+	　but to think I chose a poor direction.
+	★Got some bread as thanks. I tried to refuse,
+	　but was eventually persuaded to accept it.
+
+## c0210 - Morges Bakery {{{1
+
+## Talk to Morges {{{2
+
+## M
+おう、ロイド！　無事だったか。
+	Hey, Lloyd. Seems you made it
+	out of that mess unscathed.
+
+## L
+モルジュさんも、
+ご無事でなによりです。
+	More or less. I'm glad
+	you seem well too.
+
+## M
+ハハッ、簡単にやられてたまるかよ！
+だが……街がどうにも沈んでてなぁ。
+	Hah, they're not gonna get me that
+	easily! ...Though the feeling out
+	in the city is kinda depressing.
+
+## N
+あんなことがあった直後ですからね……
+	That's no surprise, considering
+	what just happened.
+
+## M
+そりゃあそうなんだが、
+ずっと落ちこんでても、
+どうにもなるもんじゃない。
+	Maybe so, but going around
+	all depressed like that
+	ain't good for anyone.
+このままじゃ、商売あがったりだ。
+景気づけに一発セールでもやろうかと
+思ってんだが……
+	I'm not getting any customers like
+	this, either. I was thinking of having
+	a sale to kick sales back into gear.
+
+## (!) bubble
+
+## M
+そうだ！　お前達、
+ちょっと呼び込みやってくれないか？
+	Hey, why don't you go out
+	and get me some customers?
+
+## L
+え？
+	Huh?
+
+## E
+呼び込み……ですか？
+	Get you customers... How?
+
+## M
+なんか、手品したり、歌を歌ったり、
+そういうのでいいんだよ。
+	I dunno, do magic tricks, or
+	sing a song? That kinda thing.
+とにかく、この店の前に
+人を集めたいんだ。
+手伝っちゃくれないか？
+	Point is, I'd like to get some
+	customers in front of the shop.
+	Think you could do that?
+
+## Second time {{{3
+## M
+とにかく、この店の前に
+人を集めたいんだ。
+このままじゃ、商売あがったりでな。
+	I'd like to gather customers in
+	front of the shop. I'm not making
+	any sales like this.
+歌でも手品でもいい、
+とにかく呼び込みを
+手伝っちゃくれないか？
+	A song or a magic trick would be
+	great. Think you could help with
+	bringing in some customers?
+## }}}
+
+## TODO Can't think of anything witty to write here
+【引き受ける】
+	[Accept]
+【やめる】
+	[Refuse]
+
+## If accepted {{{3
+## M
+ありがたい！
+じゃあ、さっそく頼むぜ！
+	Good to hear! Well, I'll
+	leave it to you, then.
+
+## System
+{color 2}クエスト【パン屋の呼び込み】{color 0}を開始した！
+	{color 0}Quest {color 2}[Bringing Home the Bakery]{color 0} started!
+
+## Continues below
+
+## If rejected {{{3
+## L
+すみません。
+今、別件で捜査を抱えていて……
+	I'm sorry, but we're all
+	wrapped up with another case.
+
+## M
+そうか……ま、そりゃそうだよな。
+	That so? Well, with things like
+	this, guess that's to be expected.
+もし時間が出来たら、
+その時は頼むわ！
+	But don't forget about me if you
+	do get some time to spare.
+## End talk
+## }}}3
+
+## R
+頼むぜって……おいロイド、
+なにか算段はあるのか？
+	Leave it to us, my ass.
+	Lloyd, you got any ideas?
+
+## L
+うーん……普通に
+『いらっしゃい』って
+呼び込むんじゃ、やっぱダメかな？
+	I suppose just saying
+	"please come in" to
+	passers-by is no good?
+
+## T
+それはあまりに無策かと。
+	I imagine that would not be
+	very effective. And far outside
+	of my comfort zone, I might add.
+
+## E
+そうよねぇ……
+	Agreed on both points.
+
+## W
+何を言ってるんだい？
+だって、歌うんだろう？
+	What are you all talking about?
+	Aren't we supposed to sing a song?
+
+## L
+う……それはできれば、
+やりたくないんだけど……
+	I would rather avoid that
+	if at all possible...
+
+## W
+でも、依頼主は
+それをご所望らしいよ？
+	But our employer specifically
+	requested it, didn't he?
+
+## M
+普通に呼び込みしても、
+いまの調子じゃ、
+みんな足も止めてくれないさ。
+	With the normal advertising
+	tricks, nobody even stops
+	to look at us.
+だからこそ、お前さんたちに
+頼んでいるんだよ。
+	Which is why I'm asking
+	you guys for help.
+大丈夫だよ、お客さんの目を
+引くことができればいいんだ。
+上手いヘタは関係ないって！
+	It doesn't matter if you're
+	good or not. You'll get plenty
+	of attention either way.
+
+## W
+ね？
+	What he said.
+
+## L
+『ね？』って……
+	I don't think that's the kind of
+	attention we want, Wazy.
+
+## R
+気楽に言ってくれるぜ。
+	I don't think it's as easy as that.
+
+## W
+あぁ、先に言っておくけど
+僕は歌わないよ。
+	I suppose now would be a
+	good time to mention that
+	I can't sing, legally.
+
+## R
+ちょ！？　お前、ズリィぞ！
+	What? You conniving hypocrite!
+
+## W
+人前で歌を歌うなって、
+亡くなった祖父の遺言でね。
+あしからず……フフ。
+	My late grandfather wrote in his
+	testament that I am not to sing
+	in front of people... Heh.
+
+## T
+とっても嘘くさいです……
+	I am not sure if I
+	believe that story.
+
+## R
+それを言うなら、俺だって歌は
+得意じゃあないぜ。
+	Now that you mention it,
+	I'm no good at singing either.
+
+## T
+ランディさんに同じ、です。
+	Me as well.
+……そもそも、人前で
+歌を歌うような機会、
+ありませんでしたし
+	Though it should be mentioned
+	that I have not tried singing
+	in front of a crowd before.
+
+## L
+おいおい、みんな……
+	Hey, you guys...
+
+## R
+ていうか、お嬢あたりに
+任せちまえばいいんじゃねぇか？
+歌とか楽器とか、得意そうだし。
+	Why don't we have Mademois-Elie do
+	it? Singing or playing instruments is
+	common in high society, ain't it?
+
+## E
+そんな、急に振られても……
+	You can't volunteer someone
+	else like that...
+まぁ、おじいさまの
+バイオリンにあわせて、
+歌ったことはあるけど。
+	Though it is true that I did sing
+	sometimes when Grandfather was
+	playing the violin.
+
+## R
+……つい忘れがちだけど
+お嬢って、本当に
+お嬢様なんだよな……
+	You know, I keep forgetting
+	that Mademois-Elie actually
+	IS from high society.
+
+## N
+でも、ぜひ聴いてみたいです、
+みなさんの歌声！
+	I really want to hear everyone's
+	singing voices!
+
+## T
+そういうノエルさんは
+どうなんですか……？
+	Speaking of which, how
+	is your singing, Noel?
+
+## N
+私ですか？　ええと……
+	Me? Well...
+妹が歌うの好きで、
+よくデュエットしてましたよ。
+ハモりも特訓したり。
+	Fran loves singing, so she sometimes
+	made me sing duets. I think we
+	harmonize pretty well together.
+ただ、正規の訓練を
+受けたわけではないので、
+自信があるかと言われれば……
+	But I haven't received any formal
+	training, so I can't say I'm confident
+	about it.
+
+## L
+正規の訓練って……
+	I don't think anyone's asking
+	for formal training here.
+
+## E
+そういう意味では、
+私も似たようなものよ。
+誰に師事したことはないし。
+	I'm the same way. I never had
+	singing lessons or anything.
+
+## W
+さて……これ以上話をしてても
+決まりそうもないね。
+	Alright, everyone's said their
+	lines, and we're no closer to
+	a decision than when we started.
+ここはスパッと、
+リーダーが決めるべきところじゃ
+ないかな？
+	Why don't we simply have our
+	illustrious leader make the choice?
+
+## L
+（簡単に言ってくれるな……。
+　でも、確かに
+　その通りかもしれない。）
+	(Easy for you to say...
+	But I can't say you're wrong.)
+……わかった。
+じゃあ、俺が決めるよ。
+	Fine. But don't blame me
+	if it goes badly.
+
+## L
+（誰に歌ってもらうか……）
+	(Who should I have sing?)
+
+エリィ
+	Elie
+ティオ
+	Tio
+ランディ
+	Randy
+ノエル
+	Noel
+ロイド
+	Lloyd
+
+## Elie {{{3
+## E
+わ、私！？
+	Me!?
+
+## R
+お、順当じゃねーか。
+	Seems appropriate.
+
+## T
+私も最適だと思います。
+	I concur.
+
+## N
+エリィさんなら、いけますよ！
+	You can do it!
+
+## E
+もう、みんな……
+自分が歌わなくて済むからって……
+	Oh, you're all so... You're
+	just glad you're not the ones
+	who have to sing.
+
+## W
+でも、決めたのはロイドだからね。
+引き受けるしかないんじゃない？
+	Our leader has made his choice.
+	Are you going to rebel?
+
+## E
+もう、分かっているわ。
+……こういう時は、
+強引なんだから。
+	Yes, I know. No, I won't.
+	But you can be so pushy in times
+	like this, you know that?
+
+## L
+あはは……
+	Haha...
+（後が怖いかもな、これは）
+	(I'd better watch my back after this.)
+
+## Tio {{{3
+## T
+……え？
+	Huh?
+
+## N
+ティオちゃんが歌えば、
+人目を惹きますもんね！
+	With a cutie like Tio singing,
+	there will be a huge crowd before
+	you know it!
+
+## T
+……ノエルさん、
+本気で言ってますか？
+	Noel. Were you serious
+	just now?
+
+## E
+でも、ティオちゃん、
+歌はあまり得意じゃないって
+言っていたし……
+	Tio did say that she
+	is not good at singing.
+
+## W
+とはいえ、ロイドが
+決めたことだからね。
+	Well, it's what our
+	leader has decided.
+
+## T
+……大丈夫です、エリィさん。
+	It's okay, Elie.
+失敗したら、
+ロイドさんに責任、
+取ってもらいますから。
+	If it goes badly, I will
+	have Lloyd take responsibility.
+
+## L
+あはは……
+	Haha...
+（責任ってなんだよ……）
+	(I wonder what kind of
+	responsibility that would be.)
+
+## Randy {{{3
+## R
+お、俺か！？
+	What, me?
+
+## T
+いいのではないでしょうか。
+声は大きいでしょうし。
+	I believe that is a good choice.
+	Your voice is very loud.
+
+## E
+こういうのを、男の人が
+やるっていうのは、
+逆に新鮮でいいかもね。
+	And having a man doing this
+	will be refreshing and novel.
+
+## N
+ええ、
+人目は集められるかと！
+	Agreed. You will bring in
+	a lot of customers.
+
+## R
+お前ら……自分がやらないって
+分かった途端、
+好き勝手言いやがって！
+	You bastards... Just because
+	you weren't picked you think
+	you can say whatever you want.
+
+## W
+フフ。でも、決めたのは
+あくまでロイドだからね。
+	Heh. Well, the one who chose
+	was Lloyd. Take your complaints
+	to him.
+
+## R
+……ロイド、今度おごれよ。
+	Lloyd, you're treating
+	me next time.
+すんげーいい店で
+豪遊してやる！
+	I know this REALLY good place
+	I've been wanting to go to.
+
+あはは、あは……
+	Haha, ha...
+（ミラ、大丈夫かな……）
+	(Will my wallet survive?)
+
+## Noel {{{3
+わ、私ですか！？
+	Who, me!?
+
+## E
+ノエルさん、フランさんと
+よく歌ってたっていうし、
+大丈夫よ、きっと。
+	Noel, you said you used to sing
+	together with Fran. I'm sure
+	you'll do great.
+
+## T
+わたし、ノエルさんの歌声
+ぜひ聴いてみたいです。
+	I want to hear Noel's
+	singing voice too.
+
+## R
+自分が歌わなくて済むと
+わかったら、途端に……
+女って怖いわ。
+	Ganging up on her just because
+	you weren't picked... Women
+	are scary.
+
+## E
+#4Sなにか言った？　ランディ。#3S
+	#4SDid you say something, Randy?#3S
+
+## R
+#4Sなんでもありません！#3S
+	#4SNothing at all!#3S
+
+## N
+……わかりました。
+こうなったら、
+当たって砕けろです！
+	...Understood!
+	I will take on this
+	mission with all my power!
+
+## L
+あはは……
+	Haha...
+（砕けちゃ
+　困るんだけどな……）
+	(I don't think power is
+	what you'll need here...)
+
+## Lloyd {{{3
+## L
+俺が歌うよ。
+	I'll do it.
+
+## T
+えっ、ロイドさんがですか？
+	You mean you will sing?
+
+## E
+そう、ならいいんだけど……
+	I think that will be okay...
+
+## N
+人前で歌うとか、
+ロイドさん、度胸ありますね……
+	Singing in public, that
+	takes a lot of courage.
+
+## R
+いや～、お前ならきっと出来る！
+俺は信じてるぜ！
+	Man, I know you can do it.
+	I believe in you!
+
+## W
+フフ。自分が歌わなくていいから
+気楽だよね。
+	Must be a relief knowing that
+	you were not picked.
+
+## R
+うるせー！　最初から逃げたやつに
+言われたくねぇ！
+	Shut up! I don't want to
+	hear that from the guy who
+	quit from the get-go.
+## }}}3
+
+## W
+で、歌う人間を決めたのはいいけど。
+曲はどうするんだい？
+	Well, having decided the
+	singer is all well and good.
+	But what about the song?
+
+## R
+なんか、適当な鼻歌じゃ……
+ダメか、やっぱ。
+	I guess just humming...
+	Yeah, no good.
+
+## M
+おお、それなら、
+ベネットのやつがいつも歌ってた
+あの曲がいいんじゃねぇか？
+	In that case, how about
+	that song Bennet is always
+	going around singing?
+
+## M
+おーい、ベネット！
+ちょっと来てくれ！
+	Hey, Bennet!
+	Could you get over here?
+
+## (Fade to black, then back. Bennet is here now.)
+
+## B
+……客よせで歌ねぇ。
+悪くないとは思うけど……
+	A song to attract customers?
+	That's not a bad idea.
+
+## E
+さっき曲名を聞いたけど、
+ベネットさんの歌っていた曲、
+結構有名なやつよね。
+	I've heard the name of the
+	song Bennet was singing. It's
+	a pretty famous one.
+
+## R
+『Ｗａｙ　Ｏｆ　Ｌｉｆｅ』
+だったか？
+	"Way Of Life", right?
+
+## N
+ちょっと前に流行ってて、
+あちこちで聞きましたよね。
+	It was all the rage a while
+	back. It was played everywhere.
+
+## W
+なら、人目を惹くという目的は
+果たせそうだね。
+	Should be good to draw
+	customers' attention, then.
+じゃあ、早速行こうか。
+	What are we waiting for? Let's go.
+
+## L
+ああ、そうしよう。
+	Let's.
+
+## (Fade to black, continue outside in t0200.)
+
+## Back inside {{{2
+## L
+いやー今回は助かったよ！
+ありがとうな。
+	My business is saved!
+	Thank you.
+
+## L
+お役に立てて嬉しいです。
+がんばったかいがありました。
+	I'm glad we could be of help.
+	It really was worth the effort.
+
+## If good {{{3
+## If not Lloyd {{{4
+## W
+歌も評判良かったようだね。
+	Looks like the song was well
+	received.
+人選もさることながら、
+リーダーの適切な歌い方の指導が
+功を奏したって感じかな？
+	The choice of person and the
+	singing style worked well together.
+	Nice choice, leader.
+
+## if Elie {{{5
+## E
+ええ、私もそう思うわ。
+これもロイドのおかげね。
+	Yes, I think so too. This
+	is all thanks to Lloyd.
+
+## L
+そんな、エリィが
+うまく歌ってくれた
+おかげだよ。ありがとう。
+	Not at all, it's because
+	you sang really well.
+	Thanks, Elie.
+
+## Tio and Randy cannot get good
+
+## if Noel {{{5
+## N
+私もそう思います！
+ロイドさんの助言、
+とっても助かりました！
+	I think so too!
+	Your instructions
+	were very helpful.
+
+## L
+いや、ノエルの実力だよ。
+本当に助かった。ありがとう。
+	No, this is all your own power.
+	You did great, Noel.
+
+## if Lloyd {{{4
+歌も評判良かったようだね。
+	Looks like the song was well
+	received.
+リーダー自らが、
+見事なお手本を示した、
+といったところかな？
+	Our leader is setting a
+	excellent example, isn't he?
+
+## L
+からかわないでくれよ、ワジ。
+	Okay, that's enough teasing, Wazy.
+
+## E
+でも、ロイドの歌声、
+とっても素敵だったわ。
+	But Lloyd's singing voice really
+	is better than I expected.
+
+## N
+はい！　私、思わず
+聴き惚れちゃいました！
+	Yes! I was completely entranced.
+
+## L
+ふたりとも……。
+お世辞でもうれしいよ、
+ありがとう。
+	That's quite enough from you
+	two too. Thanks, though.
+## }}}4
+
+## M
+おかげさまで、パンの売り上げも
+上々だよ！
+ホント、助かったぜ！
+	Thanks to you, my sales
+	are skyrocketing!
+	Really, thanks a lot.
+
+## If ok {{{3
+歌も、無難にこなせたしね。
+ま、合格点って
+ところじゃないかな？
+	I think my ears are still
+	intact, so I think the song
+	gets a passing grade, too.
+
+## If Elie {{{4
+## E
+そうね、あくまでお手伝いとして
+やっていることだし、
+これだけ出来れば十分よね。
+	I agree. I think for a task like
+	this, this level of success is
+	all we can hope for.
+
+## L
+ああ。エリィには無茶を
+言ったけど、やり遂げてくれて、
+感謝してるよ。
+	Yeah. I feel bad about asking you,
+	but you really came through.
+	Thank you.
+
+## If Tio {{{4
+## T
+どうも。まぁ、歌うのは
+本職の方に任せるべきですね。
+	Thank you. But in the future,
+	I think it would be better to
+	leave singing to the professionals.
+
+## L
+あはは……確かに。
+でも、ティオのおかげで
+助かったよ。ありがとう。
+	Can't say you're wrong there.
+	But you really did a good job
+	out there, Tio. Thanks.
+
+## If Randy {{{4
+## R
+合格点って……
+自分は早々に降りたくせに、
+好き勝手言いやがって
+	A passing grade? I didn't
+	see you out there doing
+	a better job, though.
+
+## L
+まあまあ。俺はランディに
+歌ってもらって、
+よかったって思ってるよ。
+	Well, I, for one,
+	am glad that I picked
+	you, Randy.
+
+## Noel can't get ok
+
+## If Lloyd {{{4
+## L
+ワジにそう言ってもらえたなら
+まんざら悪くはないかな。
+	If you say so, it can't
+	have been all that bad.
+## }}}4
+
+## M
+パンのほうも、そこそこ
+売れてくれたしな。
+	I got plenty of sales from
+	the deal, too.
+急な頼みを、よくぞ聞いてくれた！
+感謝するぜ。
+	You've done me a great favor.
+	And on such short notice, too.
+
+## If bad {{{3
+## W
+でも、あの歌はね……。
+	Though, that singing...
+	If you can call it that.
+
+## Elie can't do badly
+
+## T, if chosen
+……だから言ったのに。
+	I did warn you.
+
+## R, if chosen
+あのなぁ、じゃあお前が
+歌ってみろっつーんだよ！
+	Well, how about you sing next
+	time and show us how it's done!?
+
+## N, if chosen
+ううぅ……やっぱり歌うべきじゃ
+なかったですよね……
+	Uuu... I knew I shouldn't
+	have accepted this mission...
+
+## Lloyd has no dialogue here.
+
+## L
+お、おい、ワジ！
+	Hey, Wazy!
+
+## W
+君が、もっと適切な歌い方を
+選択していれば……
+	Though, if you had picked
+	a more appropriate singing
+	style...
+ここまで悪くは
+ならなかったと思うけど？
+	...don't you think we could
+	have avoided all of this?
+
+## Again, Elie cannot fail
+
+## E, if Tio chosen
+そうね……正直、
+ティオちゃんのかわいさを
+活かしてるとは言えなかったし。
+	Yes... Honestly, it feels like
+	a waste not to make use of Tio's
+	cuteness for something like this.
+
+## N, if Randy chosen
+確かに、もっと違うものが
+聴きたかったというか……
+	Yes, this was not exactly
+	what I was hoping to hear.
+
+## T, if Noel chosen
+言われてみれば……ノエルさんには
+もっと向いたアドバイスが、
+あったかもしれません。
+	Now that you mention it, this
+	did not seem like the optimal
+	singing style for Noel.
+
+## R, if Lloyd chosen
+確かになぁ。ロイドは
+あの歌い方、向いてなかった気が。
+	Word. That singing style
+	just ain't you, Lloyd.
+
+## L
+う……ご、ごめん。
+俺のせいだな……
+	Sorry. It's all my fault.
+
+## M
+まぁ、ぶっちゃけ、
+パンの売れ行きも
+イマイチだったんだが……
+	To be frank, the bread didn't
+	sell all that great either...
+
+## L
+す、すみません！
+	I'm sorry!
+
+## M
+あーいやいや、急な話だったしな
+よくやってくれたよ、うん！
+	No, no. I did spring this task
+	on you without any time for
+	preparation. So anyway.
+## }}}3
+
+## M
+こいつは、俺からの気持ちだ。
+大した物じゃないが、
+とっといてくれ。
+	Here's a token of my
+	appreciation. It's nothin'
+	big, but please take it.
+
+## If good: Thick Cutlet Sandwich, +2 DP
+{item 531}{color 0}を貰った。
+	{color 0}Received {item 531}{color 0}.
+
+## If ok: Bennet Supreme, +1 DP
+{item 530}{color 0}を貰った。
+	{color 0}Received {item 530}{color 0}.
+
+## If bad: Melon Cream Bread
+{item 529}{color 0}を貰った。
+	{color 0}Received {item 529}{color 0}.
+
+## L
+そんな、悪いですよ。
+	No, we can't take this.
+
+## M
+いいっていいって！
+無茶言って
+迷惑かけちまったしな。
+	I'm telling you, it's fine.
+	Stop talking nonsense and
+	just take it.
+
+## W
+フフ、こういう時の厚意は
+素直に受け取っておくに
+限ると思うよ。
+	Leader, in this kind of situation
+	the best thing to do is to just
+	smile and nod.
+
+## L
+そういうものか……。
+じゃあ、ありがたく。
+	If you insist.
+	Well, thanks.
+
+## M
+そっちの仕事も大変だと思うけど
+クロスベルを元に戻すために
+がんばってくれよ！
+	It won't be easy, but I'm
+	trusting in you to bring
+	Crossbell back to order.
+また、いつでもパンを
+買いに来てくれ！
+	The bakery will always
+	be here if you need a snack.
+ベネットとオスカーと一緒に、
+待ってるぜ！
+	Bennet, Oscar, and I are
+	behind you all the way!
+
+{color 2}クエスト【パン屋の呼び込み】{color 0}を達成した！
+	{color 0}Quest {color 2}[Bringing Home the Bakery]{color 0} completed!
+
+## c0200 - West Street {{{1
+
+モルジュ
+	Morges
+タリーズ
+	Tallys
+サミィ
+	Sammie
+キンドール
+	Kendall
+ブリジッタ
+	Brigitta
+アルム
+	Armand
+エアリー
+	Ellie
+レイテ
+	Leyte
+パンセ
+	Pansy
+フェイ
+	Fay
+コウケン
+	Koken
+
+## L
+それじゃあ、
+そろそろはじめようか。
+	I suppose we should get started.
+
+## Lloyd {{{3
+## L
+って、いざとなると
+緊張するな……
+	Though I can't deny that I'm
+	getting a bit nervous.
+
+## W
+フフ、固くなることはないさ。
+リラックスが大事だよ。
+	Don't think too hard on it.
+	Relaxation is key.
+……そうだ、ロイド。
+歌い方だけは、決めておいた方が
+いいんじゃないかな？
+	Oh, and Lloyd. Have you
+	decided on a singing style
+	yet?
+
+## L
+歌い方？
+	A singing style?
+
+## W
+ああ。指針が決まっている方が
+迷いなく歌えるだろう？
+	Choosing a direction from
+	the beginning will make it
+	easier to stay focused.
+
+## Others {{{3
+## E, if chosen
+いざ歌うとなると、緊張するわね。
+ドキドキしてきたわ……
+	I'm pretty nervous, being
+	told to sing all of a sudden.
+	My heart is racing...
+
+## T, if chosen
+……はい。
+なんか、緊張します……
+	Yes. But I will not
+	deny that I am nervous.
+
+## R, if chosen
+お、おう。
+やー、なんかやるとなると
+キンチョーするなぁ。
+	Righty-o. Hey, anyone seen my
+	nerves? I think I lost them
+	somewhere.
+
+## N, if chosen
+は、はい！
+うぅ～、なんだか急に、
+緊張してきちゃった……
+	Y-Yes, sir!
+	Aww, I'm getting nervous
+	all of a sudden...
+
+## W
+フフ、固くなることはないさ。
+リラックスが大事だよ。
+	Don't think too hard on it.
+	Relaxation is key.
+……そうだ、ロイド。
+アドバイスをするのはどうだい？
+	Oh, and Lloyd. Do you
+	have any particular advice
+	for our singer?
+
+## L
+アドバイス？
+	Advice?
+
+## W
+歌い方についてアドバイスや
+指針があった方が
+歌いやすくなるだろう？
+	Any pointer on what style to
+	sing in. Having a direction would
+	make it easier to focus, I think.
+## }}}3
+
+## L
+（なるほど、歌い方か……。
+　歌う人間にあわせた方針が、
+　大事そうだな……）
+	(A direction? I think having
+	a style that suits the singer
+	would be best...)
+
+情熱的に
+	Passionate
+クールに
+	Cool
+かわいく
+	Cute
+
+## Passionate {{{3
+## E, if chosen (⇒ Ok)
+情熱的……
+うまくやれるかしら。
+でも、やってみるわ。
+	Sing passionately? I'm
+	not sure if I can do that.
+	But I'll give it a shot.
+
+## T, if chosen (sweatdrops) (⇒ Bad)
+え……本気で言っていますか？
+……まぁ、やれるだけは
+やりますが……。
+	Just to confirm, were you serious
+	just now? Well, I suppose I will
+	do my best.
+
+## R, if chosen (⇒ Ok)
+情熱的に、か。
+ま、やるだけやってみるぜ。
+	Passion, huh.
+	Sure, will do.
+
+## N, if chosen (⇒ Great)
+情熱的に、ですね。
+わかりました！
+	Passionately?
+	Understood!
+
+## L, if chosen (⇒ Great)
+（情熱的に歌ってみるか。
+　……うまく、やれるといいけど）
+	(I should try singing with passion.
+	I wonder if I can do that.)
+
+## Cool {{{3
+## E, if chosen (⇒ Ok)
+クールに、ね……
+難しそうだけど、
+やるだけやってみるわ。
+	Cool? That'll be
+	hard, but I'll do
+	my best.
+
+## T, if chosen (⇒ Ok)
+クールに、ですか。
+それなら、なんとか。
+	Sing coolly? I think
+	I can do that.
+
+## R, if chosen (⇒ Ok)
+クールに決めろって？
+そいつは得意だぜ！
+	Cool, you say?
+	You betcha.
+
+## N, if chosen (⇒ Great)
+クールに、ですか……
+分かりました！
+全力で、クールにいきます！
+	Coolly? Understood!
+	Coolness, full speed ahead!
+
+（クールに歌ってみよう。
+　……うまく、やれるといいけど）
+	(I should try singing coolly.
+	I wonder if I can do that.)
+
+## Cute {{{3
+## E, if chosen (⇒ Great)
+か、かわいく！？
+わたしに出来るかしら……
+でも、やってみるわね！
+	Cutely!? I'm not sure
+	if I can do that. But
+	I will try.
+
+## T, if chosen (⇒ Ok)
+かわいく、ですか？
+……よくわかりませんが、
+やってみます。
+	Sing cutely? I do not
+	quite understand, but
+	I will do my best.
+
+## R, if chosen (sweatdrops) (⇒ Bad)
+かわいくだぁ！？
+おいおい、本気かよ？
+……ま、いいけどよ。
+	Cute!? You know who you're
+	talking to, right?
+	...Fine, I'll do it.
+
+## N, if chosen (sweatdrops) (⇒ Bad)
+か、かわいく、ですか……
+厳しいですが……
+死力を尽くします！
+	Cutely...? That will be
+	difficult. But I will try
+	to follow your orders!
+
+## L, if chosen (sparkles) (⇒ Bad)
+（かわいく歌ってみよう。
+　……けど、それでいいのか？）
+	(Maybe I should try singing cutely?
+	...I'm not sure that's such a great idea.)
+## }}}3
+
+## W
+指針も決まったところで、
+いよいよ本番と行こうか。
+	Now that we've decided on a
+	direction, I see no reason
+	to delay any longer.
+
+## R
+そうするか。
+	Let's get started, then.
+……ってお前さっきから、
+妙に仕切ってないか？
+	Wait, who made you
+	the leader?
+
+## (Music starts, and with it, the text autoscrolls)
+
+## W
+いやぁ、人が歌うところを見るのは
+案外嫌いじゃなくてね。
+楽しみだなぁ、フフ
+	Oh, I just want to see you guys
+	sing. It's gonna be hilarious.
+
+## T
+……でも、自分は歌わないんですね。
+	But of course you refuse
+	to sing yourself.
+
+## N
+なんというか、
+ワジ君らしいというか……
+	Well, it's in-character,
+	to say the least.
+
+## L
+やれやれ……
+とにかく、はじめようか。
+	Anyway, I think it's time.
+
+## E
+……いくわ。　
+	I'm starting now.
+
+## T
+……いきます。
+	Commencing.
+
+## R
+……いくぜ！　
+	Let's go!
+
+## N
+……いきます！
+	Begin operation!
+
+## L
+……いこうか。
+	Let's get started.
+
+## ♪
+#5S理不尽で　矛盾だらけの世の中#3S
+	#5S理不尽#5Rりふじん#で　矛盾#4Rむじゅん#だらけの世#2Rよ#の中#2Rなか##3S
+	In this world we live　that's unfair and filled up with contradictions
+
+## ♪
+#5Sヘコんだり　挫けたりもするさ
+　#3S
+	#5Sヘコんだり　挫#2Rくじ#けたりもするさ#3S
+	It is too easy　to give in and fall to depression
+
+## ♪
+#5Sだけどただ　不満数えていたって
+　#3S
+	#5Sだけどただ　不満#4Rふまん#数#2Rかぞ#えていたって#3S
+	But if you just list　all the things you are so unhappy about
+
+## ♪
+#5S思うように　変わることはないさ
+　#3S
+	#5S思#2Rおも#うように　変#2Rか#わることはないさ#3S
+	Do you really think　that the world will change to your liking?
+
+## ♪
+#5S泣きたくなった夜は
+涙枯れるまで泣こう#3S
+	#5S泣#2Rな#きたくなった夜#2Rよる#は
+	涙#2Rなみだ# 枯#2Rこ#れるまで泣#2Rな#こう#3S
+	If you ever want to cry at night
+	Go 'head and cry, 'til there's no tears to dry
+
+## If good {{{3
+## W
+へぇ……これは予想以上だね。
+	Hoh... This is better than
+	I expected.
+
+## L, if not singing
+ああ、これなら
+大成功間違いなしだ！
+	Yeah, this is shaping
+	up to a great success!
+
+## E, if Lloyd is singing
+ええ、これなら
+大成功間違いなしね！
+	Yes, this looks like it
+	will be a great success!
+
+## If ok {{{3
+## W
+うん、まずまずだね。
+とりあえずお客さんは
+集まってきてるみたいだよ？
+	Well, that's not too bad.
+	Looks like we're getting
+	an audience, too.
+
+## L, if he's not singing
+よかった。
+なんとか役目は
+果たせそうだな。
+	That's good. Looks like
+	I picked the right person
+	for the job.
+
+## R, if Lloyd is singing.
+ま、これなら
+モルジュの親父さんへの
+義理は果たせそうだな。
+	Morges'll probably
+	be happy with this.
+
+## If bad {{{3
+## If Lloyd is not singing {{{4
+## W
+……ちょっと、マズいかな。
+歌い方の指導、
+間違えたんじゃない？
+	Wait a minute, this is crap.
+	Are you sure you picked
+	a good direction?
+
+## L
+うう……面目ない。
+	Yeah... I'm having second thoughts.
+
+## If Lloyd is singing {{{4
+……ちょっと、マズいかな。
+歌い方のチョイス、
+間違えたみたいだね。
+	Wait a minute, this is crap.
+	I think he picked a
+	bad direction.
+
+## R
+だよなぁ……って、
+冷静に言ってる場合かよ！
+	Yeah, no doubt...
+	Wait, what right do YOU
+	have to complain?
+## }}}4
+
+## E
+今さら言っても、仕方ないわ。
+ほら、みんな手拍子を入れて。
+	Not much we can do about it at
+	this point. Everyone, how about
+	we clap our hands?
+
+## E
+応援して、少しでも
+歌いやすくしてあげましょう。
+	Maybe we can at least help out
+	a little with keeping the rhythm.
+## }}}3
+
+## ♪
+#5Sいつかは尽きる命だから
+今を諦めずに足掻け#3S
+	#5Sいつかは尽#2Rつ#きる命#2Rいのち#だから
+	今#2Rいま#を諦#2Rあきら#めずに足掻#3Rはが#け#3S
+	Your life is short, a day will come when it's all over
+	And that's why you fight on, and never once give up
+
+## ♪
+#5S生きてるその意味を　探し続ける
+それが生きることさ　きっと――#3S
+	#5S生#2Rい#きてるその意味#3Rいみ#を　探#3Rさが#し続#3Rつづ#ける
+	それが生#2Rい#きることさ　きっと――#3S
+	To be alive, what is the meaning?　Searching for that answer
+	Is itself what it means to be alive　That, I know――
+
+## M
+さぁさ、素敵な歌を聴いた後は
+おいしいパンを食べて
+元気を出しておくれ！
+	How about a delicious piece
+	of bread after the song? It's
+	great for your health!
+今日は特別大サービス、
+７０％オフだ！
+みんな、寄ってってくれよー！
+	Everything is 70% off,
+	only today! Come on in!
+
+## (End auto-scroll.)
+
+## L, if he did not sing
+お疲れさま。
+お客さん、来てくれてよかった。
+	Good job. Seems like we managed
+	to bring some customers in.
+
+## W, if Lloyd did
+フフ。お疲れさま。
+	Good job. Heh.
+
+## E, if Elie sang
+ありがとう。
+……でも、ちゃんと歌えたかしら？
+	Thank you. But I'm not sure
+	if I really did such a good job.
+
+## R, if Elie sang
+心配性だな、お嬢は。
+きっちり役目は果たしてたと思うぜ。
+	You're just a worrywart,
+	Mademois-Elie. I think you
+	did fine.
+
+## T, if Tio sang
+……どうも。
+はぁ、疲れました……。
+	Looks like it...
+	*sigh* I'm exhausted...
+
+## E, if Tio sang
+ふふっ、お疲れさま、ティオちゃん。
+	Good job, Tio.
+
+## R, if Randy sang
+おう、お疲れ。
+……にしても、やっぱりガラじゃねぇな、
+人前で歌うなんてのは。
+	Sure did.
+	...That said, this really isn't
+	my kind of gig, singing in public.
+
+## W, if Randy sang
+そうかい？
+なかなか様になってたよ。フフ……
+	You don't say?
+	I enjoyed it thorougly.
+
+## N, if Noel sang
+お粗末様でした！
+……あんなので、
+良かったんですかね？
+	I apologize for the crude showing.
+	Was it good enough?
+
+## E, if Noel sang
+もちろんよ。
+お客さんも喜んでくれたし。
+	It absolutely was.
+	Did you see that crowd?
+
+## L, if Lloyd sang
+ありがとう。
+やれやれ、なんとか無事に
+終わらせられたよ。
+	Thanks. Seems like I didn't
+	screw the whole thing up,
+	at least.
+
+## N, if Lloyd sang
+でも、なんだか不思議でした。
+ロイドさんの歌を聴く機会なんて
+そうそうないですし。
+	It did feel kind of strange.
+	It's not every day we get to
+	hear Lloyd sing.
+
+## W
+さて、パン屋の店主は
+売るのに忙しそうだから、
+少し時間を置かないとね。
+	Morges seems to be having
+	his hands full, so how about
+	we give him a bit of time?
+
+## L
+そうだな。しばらくしてから
+また来よう。
+	Agreed. We'll come back in a bit.
+
+## (A very short bit. Fade to black and we're back inside; continued above.)

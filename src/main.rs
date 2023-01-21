@@ -1,13 +1,13 @@
-#![feature(decl_macro)]
+#![feature(decl_macro, let_chains)]
 
 use std::path::Path;
 
 use themelios::gamedata::GameData;
-use themelios::scena::{self, FuncRef};
-use themelios::scena::code::{Expr, Insn, InsnArgMut as IAM};
+use themelios::scena::{self, FuncRef, Var, CharId};
+use themelios::scena::code::{Expr, Insn, InsnArgMut as IAM, FlatInsn};
 use themelios::scena::code::decompile::TreeInsn;
-use themelios::tables::{quest, name};
-use themelios::types::{QuestId, Flag, NameId};
+use themelios::tables::{quest, name, bgm, se};
+use themelios::types::*;
 
 mod visit;
 mod translate;
@@ -33,6 +33,7 @@ fn main() -> anyhow::Result<()> {
 	timing(&mut ctx);
 
 	quest125(&mut ctx);
+	quest138(&mut ctx);
 	quest157(&mut ctx);
 	quest158(&mut ctx);
 	quest159(&mut ctx);
@@ -43,34 +44,81 @@ fn main() -> anyhow::Result<()> {
 	if outdir.exists() {
 		fs::remove_dir_all(outdir)?;
 	}
-	let scenadir = outdir.join("data_en/scena");
-	let textdir = outdir.join("data_en/text");
-	fs::create_dir_all(&scenadir)?;
-	fs::create_dir_all(&textdir)?;
+	fs::create_dir_all(outdir.join("data/text"))?;
+	fs::create_dir_all(outdir.join("data_en/text"))?;
+	fs::create_dir_all(outdir.join("data_en/scena"))?;
 
-	fs::write(textdir.join("t_quest._dt"), quest::write_ed7(GameData::AO, &ctx.quests)?)?;
+	fs::write(outdir.join("data_en/text/t_quest._dt"), quest::write_ed7(GameData::AO, &ctx.quests)?)?;
 	for (name, v) in &ctx.scenas {
-		fs::write(scenadir.join(format!("{name}.bin")), scena::ed7::write(GameData::AO, &v.main)?)?;
+		fs::write(outdir.join(format!("data_en/scena/{name}.bin")), scena::ed7::write(GameData::AO, &v.main)?)?;
 	}
 
-	fs::write(textdir.join("t_name._dt"), {
+	fs::write(outdir.join("data_en/text/t_name._dt"), {
 		let mut names = name::read_ed7(GameData::AO, &fs::read("./data/ao-gf/data_en/text/t_name._dt")?)?;
 		let names_evo = name::read_ed7(GameData::AO_EVO, &fs::read("./data/ao-evo/data/text/t_name._dt")?)?;
 		let mut mireille = names_evo.iter().find(|a| a.id == NameId(165)).unwrap().clone();
 		mireille.name = "Second Lieutenant Mireille".to_owned(); // Don't like that this is not in the tl files
 		names.push(mireille);
-		name::write_ed7(GameData::AO, &names)
-	}?)?;
+		name::write_ed7(GameData::AO, &names)?
+	})?;
+
+	// NISA Zero has both text/t_bgm and text_us/t_bgm, but they are identical. Better patch both.
+	fs::write(outdir.join("data/text/t_bgm._dt"), {
+		let mut bgms = bgm::read_ed7(GameData::AO, &fs::read("./data/ao-gf/data/text/t_bgm._dt")?)?;
+		let bgms_evo = bgm::read_ed7(GameData::AO_EVO, &fs::read("./data/ao-evo/data/text/t_bgm._dt")?)?;
+		bgms.push(bgms_evo.iter().find(|a| a.id == BgmId(4)).unwrap().clone());
+		bgm::write_ed7(GameData::AO, &bgms)?
+	})?;
+
+	// Geofront only. NISA instead has data/bgm/info.yaml
+	fs::write(outdir.join("music.json"), {
+		let data = fs::read_to_string("./data/ao-gf/music.json")?;
+		let data = data.trim_start_matches('\u{FEFF}');
+		let mut music: serde_json::Value = serde_json::from_str(data)?;
+		music["files"].as_object_mut().unwrap().insert("4".into(), serde_json::json!({
+			"en": "Way Of Life",
+			"jp": "Way Of Life",
+			"source": 7, // Trails to Azure Evolution
+			"path": "ed7004.ogg",
+			"enabled": false,
+		}));
+		music["soundtracks"]["0"]["files"].as_object_mut().unwrap().insert("4".into(), serde_json::json!({
+			"loop": false,
+			"path": "bgm/ed7004.ogg",
+		}));
+		serde_json::to_vec_pretty(&music)?
+	})?;
+
+	fs::write(outdir.join("data/text/t_se._dt"), {
+		let mut se = se::read_ed7(GameData::AO, &fs::read("./data/ao-gf/data/text/t_se._dt")?)?;
+		let se_evo = se::read_ed7(GameData::AO_EVO, &fs::read("./data/ao-evo/data/text/t_se._dt")?)?;
+		se.push(se_evo.iter().find(|a| a.id == SoundId(1100)).unwrap().clone());
+		se.push(se_evo.iter().find(|a| a.id == SoundId(1101)).unwrap().clone());
+		se.push(se_evo.iter().find(|a| a.id == SoundId(1102)).unwrap().clone());
+		se.push(se_evo.iter().find(|a| a.id == SoundId(1104)).unwrap().clone());
+		se::write_ed7(GameData::AO, &se)?
+	})?;
 
 	// TODO do this in a better way
 	fs::create_dir_all(outdir.join("data/ops"))?;
 	fs::create_dir_all(outdir.join("data/map/objects"))?;
 	fs::create_dir_all(outdir.join("data/visual"))?;
 	fs::create_dir_all(outdir.join("data/chr"))?;
+	fs::create_dir_all(outdir.join("data/bgm"))?;
+	fs::create_dir_all(outdir.join("data/se"))?;
 	fs::copy("./data/ao-evo/data/ops/e3210.op2", outdir.join("data/ops/e3210.op2"))?;
+	// For NISA, this it3 should be updated to use TEXI instead of TEXF. Think it'll still work without, though.
 	fs::copy("./data/ao-evo/data/map/objects/e3210isu.it3", outdir.join("data/map/objects/e3210isu.it3"))?;
+	// These two might need upscaling.
 	fs::copy("./data/ao-evo/data/visual/c_vis600.itp", outdir.join("data/visual/c_vis600.itp"))?;
 	fs::copy("./data/ao-evo/data/chr/ch40004.itc", outdir.join("data/chr/ch40004.itc"))?;
+	// In NISA, this should be data_pc/bgm/ed7004.opus
+	fs::copy("./text/ed7004.ogg", outdir.join("data/bgm/ed7004.ogg"))?;
+	// And data_pc/se/ed7s1100.opus for these
+	fs::copy("./text/ed7s1100.wav", outdir.join("data/se/ed7s1100.wav"))?;
+	fs::copy("./text/ed7s1101.wav", outdir.join("data/se/ed7s1101.wav"))?;
+	fs::copy("./text/ed7s1102.wav", outdir.join("data/se/ed7s1102.wav"))?;
+	fs::copy("./text/ed7s1104.wav", outdir.join("data/se/ed7s1104.wav"))?;
 
 	let dumpdir = Path::new("./dump");
 	if dumpdir.exists() {
@@ -226,6 +274,61 @@ fn quest125(ctx: &mut Context) {
 		do_translate(tl, &mut if_[1].1);
 		a.0.insert(i, TreeInsn::If(if_));
 	});
+}
+
+fn quest138(ctx: &mut Context) {
+	let nil = &mut Nil;
+	let tl = &mut Translate::load(include_str!("../text/quest138.txt"));
+	tl.comment("t_quest");
+	ctx.copy_quest(QuestId(138), tl);
+
+	tl.comment("c0210 - Morges Bakery");
+	let s = ctx.scena("c0210");
+	s.copy_func(0, 30, tl);
+	s.copy_func(0, 31, tl);
+	s.copy_func(0, 32, tl);
+	s.func(2, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![273]), nil));
+	s.func(12, |a| { // Talk to Morges
+		let a = a.if_clause(&flag![3074]).if_with(&flag![1].not());
+		a.0.insert(0, translate(nil, &a.1[0]));
+	});
+
+	tl.comment("c0200 - West Street");
+	let s = ctx.scena("c0200");
+	s.copy_npc(18, tl); // Morges
+	for i in 20..=29 {
+		s.copy_npc(i, tl);
+	}
+	let start = s.main.functions.len();
+	s.copy_func(0, 53, tl);
+	for i in 54..=83 {
+		s.copy_func(0, i, nil);
+	}
+	s.func(11, |a| a.if_with(&flag![272]).copy_clause(&Some(flag![274]), nil));
+	// Replace AoEvo_F0 and F1 with userspace implementations
+	let v = Var(0);
+	let f = &mut s.main.functions[start];
+	let i = f.iter().position(f!(FlatInsn::Insn(Insn::AoEvo_F1()))).unwrap();
+	f.splice(i..i+1, [
+		FlatInsn::Insn(Insn::Var(v, Expr::Unop(scena::code::ExprUnop::Ass, Box::new(Expr::Const(0))))),
+		FlatInsn::Insn(Insn::ForkLoop(CharId(0), 3, vec![
+			Insn::Var(v, Expr::Unop(scena::code::ExprUnop::AddAss, Box::new(Expr::Const(1)))),
+			Insn::Sleep(15),
+			// Need 30fps, but sleeps don't really work well on frame-precision.
+			// This 15ms sleep works on my machine, but might not work on different framerates and stuff.
+			// I'm starting to understand why they put in F1 and F0.
+		])),
+	]);
+	for f in &mut s.main.functions[start..] {
+		for i in f {
+			if let FlatInsn::Unless(e, _) = i
+			&& let Expr::Binop(scena::code::ExprBinop::Lt, a, _) = e
+			&& let Expr::Insn(i) = &**a
+			&& let Insn::AoEvo_F0() = &**i {
+				*a = Box::new(Expr::Var(v));
+			}
+		}
+	}
 }
 
 fn quest157(ctx: &mut Context) {
