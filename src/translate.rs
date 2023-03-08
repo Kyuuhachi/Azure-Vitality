@@ -1,52 +1,40 @@
 use std::collections::VecDeque;
 
 use regex::Regex;
+use themelios::scena::code::{FlatInsn, Insn, Expr};
 use themelios::text::{Text, TextSegment};
-use themelios::scena::code::InsnArgMut as IAM;
-
-use crate::visit::VisitMut;
+use themelios::scena::code::decompile::TreeInsn;
+use themelios::types::TString;
 
 pub trait Translator {
-	fn comment(&mut self, s: &str);
-	fn translate(&mut self, s: &str) -> String;
+	fn text(&mut self, s: &mut Text);
+	fn tstring(&mut self, s: &mut TString);
 }
 
-#[deprecated]
-pub struct Dump;
-#[allow(deprecated)]
-impl Translator for Dump {
-	fn comment(&mut self, s: &str) {
-		println!("\n## {s} {{{{{{1");
-	}
-
-	fn translate(&mut self, s: &str) -> String {
-		println!();
-		for l in s.split('\n') {
-			println!("{l}");
-		}
-		for l in s.split('\n') {
-			println!("\t{l}");
-		}
-		s.to_owned()
-	}
-}
+// #[deprecated]
+// pub struct Dump;
+// #[allow(deprecated)]
+// impl Translator for Dump {
+// 	fn translate(&mut self, s: &str) -> String {
+// 		println!();
+// 		for l in s.split('\n') {
+// 			println!("{l}");
+// 		}
+// 		for l in s.split('\n') {
+// 			println!("\t{l}");
+// 		}
+// 		s.to_owned()
+// 	}
+// }
 
 pub struct Nil;
 impl Translator for Nil {
-	fn comment(&mut self, _: &str) {}
-
-	fn translate(&mut self, s: &str) -> String {
-		panic!("no translation expected! {s}");
+	fn text(&mut self, s: &mut Text) {
+		panic!("no translation expected! {}", text2str(s));
 	}
-}
-
-#[deprecated]
-pub struct Nop;
-#[allow(deprecated)]
-impl Translator for Nop {
-	fn comment(&mut self, _: &str) {}
-
-	fn translate(&mut self, s: &str) -> String { s.to_owned() }
+	fn tstring(&mut self, s: &mut TString) {
+		panic!("no translation expected! {}", &s.0);
+	}
 }
 
 pub struct Translate(VecDeque<(String, String)>);
@@ -60,6 +48,10 @@ impl Translate {
 			let line = line.split_once("##").map_or_else(|| line, |a| a.0.trim_end_matches(' '));
 
 			if state == State::Tl && !line.starts_with('\t') {
+				let (a, b) = lines.last().unwrap();
+				if a == b {
+					println!("{:?}", a);
+				}
 				state = State::None;
 			}
 
@@ -87,6 +79,28 @@ impl Translate {
 		assert!(state != State::Raw);
 		Translate(lines.into())
 	}
+
+	fn translate(&mut self, s: &str) -> String {
+		if s.is_empty() {
+			return String::new();
+		}
+
+		// println!("{:?}", s);
+		// let f = std::backtrace::Backtrace::force_capture();
+		// let f = f.frames();
+		// let f = &f[3..f.len()-10];
+		// for f in f {
+		// 	println!("{:?}", f);
+		// }
+		// println!();
+
+		let a = self.0.front().map(|a| a.0.as_str());
+		if Some(s) != a {
+			println!("{:?}\n{:?}\n", Some(s), a);
+		}
+
+		self.0.pop_front().unwrap().1
+	}
 }
 
 impl Drop for Translate {
@@ -98,32 +112,193 @@ impl Drop for Translate {
 }
 
 impl Translator for Translate {
-	fn comment(&mut self, _: &str) {}
+	fn text(&mut self, s: &mut Text) {
+		lazy_static::lazy_static! {
+			static ref CONTENT: Regex = Regex::new(r"(?xs)
+				^
+				((?:\{.*?\}|\#\d+[S])*)
+				((?:\#\d*[ABFNPVWZ])*)
+				(.*?)
+				((?:\{wait\})?)
+				$
+			").unwrap();
+		}
+		let ss = text2str(s);
+		assert_eq!(s, &str2text(&ss));
+		let s2 = ss.split("{page}").map(|p| {
+			let c = CONTENT.captures(p).unwrap();
+			let t = self.translate(&format!("{}{}", &c[1], &c[3]).replace('\r', "\n"));
+			format!("{}{}{}", &c[2], t, &c[4])
+		}).collect::<Vec<_>>().join("{page}");
+		*s = str2text(&s2);
+	}
 
-	fn translate(&mut self, s: &str) -> String {
-		assert_eq!(Some(s), self.0.front().map(|a| a.0.as_str()));
-		self.0.pop_front().unwrap().1
+	fn tstring(&mut self, s: &mut TString) {
+		s.0 = self.translate(&s.0);
 	}
 }
 
-pub fn translate<T: Clone + VisitMut>(tl: &mut impl Translator, a: &T) -> T {
-	let mut a = a.clone();
-	do_translate(tl, &mut a);
-	a
+pub enum TlObj {
+	Text(Text),
+	TString(TString),
 }
 
-pub fn do_translate<T: VisitMut + ?Sized>(tl: &mut impl Translator, a: &mut T) {
-	a.accept_mut(&mut |a| {
-		match a {
-			IAM::Text(a) => *a = translate_text(tl, a),
-			IAM::TextTitle(a) if !a.is_empty() => *a = tl.translate(a),
-			IAM::MenuItem(a) if !a.is_empty() => *a = tl.translate(a),
-			_ => {}
+pub struct Extract {
+	strings: Vec<TlObj>
+}
+
+impl Extract {
+	pub fn new() -> Self {
+		Self {
+			strings: Vec::new(),
 		}
-	});
+	}
+
+	pub fn finish(self) -> Vec<TlObj> {
+		self.strings
+	}
 }
 
-fn text2str(t: &Text) -> String {
+impl Translator for Extract {
+	fn text(&mut self, s: &mut Text) {
+		self.strings.push(TlObj::Text(s.clone()));
+	}
+
+	fn tstring(&mut self, s: &mut TString) {
+		self.strings.push(TlObj::TString(s.clone()));
+	}
+}
+
+pub struct Inject {
+	strings: VecDeque<TlObj>,
+	failed: bool,
+}
+
+impl Inject {
+	pub fn new(strings: Vec<TlObj>) -> Self {
+		Self {
+			strings: strings.into(),
+			failed: false,
+		}
+	}
+
+	pub fn finish(&self) -> bool {
+		self.strings.is_empty() && !self.failed
+	}
+}
+
+impl Translator for Inject {
+	fn text(&mut self, s: &mut Text) {
+		match self.strings.pop_front() {
+			Some(TlObj::Text(z)) => *s = z,
+			_ => self.failed = true,
+		}
+	}
+
+	fn tstring(&mut self, s: &mut TString) {
+		match self.strings.pop_front() {
+			Some(TlObj::TString(z)) => *s = z,
+			_ => self.failed = true,
+		}
+	}
+}
+
+pub trait Translatable {
+	fn translate(&mut self, tl: &mut impl Translator);
+
+	fn translated(&self, tl: &mut impl Translator) -> Self where Self: Clone {
+		let mut a = self.clone();
+		a.translate(tl);
+		a
+	}
+
+	fn no_tl(&self) -> Self where Self: Clone {
+		let mut a = self.clone();
+		a.translate(&mut Nil);
+		a
+	}
+}
+
+impl Translatable for Text {
+	fn translate(&mut self, tl: &mut impl Translator) {
+		tl.text(self);
+	}
+}
+
+impl Translatable for TString {
+	fn translate(&mut self, tl: &mut impl Translator) {
+		tl.tstring(self);
+	}
+}
+
+impl<T: Translatable> Translatable for Vec<T> {
+	fn translate(&mut self, tl: &mut impl Translator) {
+		self.iter_mut().for_each(|a| a.translate(tl))
+	}
+}
+
+impl<T: Translatable> Translatable for Option<T> {
+	fn translate(&mut self, tl: &mut impl Translator) {
+		self.iter_mut().for_each(|a| a.translate(tl))
+	}
+}
+
+impl<T: Translatable, U: Translatable> Translatable for (T, U) {
+	fn translate(&mut self, tl: &mut impl Translator) {
+		self.0.translate(tl);
+		self.1.translate(tl);
+	}
+}
+
+impl Translatable for FlatInsn {
+	fn translate(&mut self, tl: &mut impl Translator) {
+		if let Self::Insn(a) = self { a.translate(tl) }
+	}
+}
+
+impl Translatable for TreeInsn {
+	fn translate(&mut self, tl: &mut impl Translator) {
+		if let Self::Insn(a) = self { a.translate(tl) }
+	}
+}
+
+impl Translatable for Insn {
+	fn translate(&mut self, tl: &mut impl Translator) {
+		macro run {
+			([$(($ident:ident $(($_n:ident $($ty:tt)*))*))*]) => {
+				match self {
+					$(Insn::$ident($($_n),*) => {
+						$(run!($_n $($ty)*);)*
+					})*
+				}
+			},
+			($v:ident Text) => { tl.text($v); },
+			($v:ident TString) => { tl.tstring($v); },
+			($v:ident Vec<TString>) => { for i in $v { tl.tstring(i) } },
+			($i:ident $($t:tt)*) => {}
+		}
+		themelios::scena::code::introspect!(run);
+	}
+}
+
+impl Translatable for Expr {
+	fn translate(&mut self, _: &mut impl Translator) {
+		// There aren't any translatable strings in exprs
+	}
+}
+
+// pub fn do_translate(tl: &mut impl Translator, a: &mut [TreeInsn]) {
+// 	a.accept_mut(&mut |a| {
+// 		match a {
+// 			IAM::Text(a) => *a = translate_text(tl, a),
+// 			IAM::TextTitle(a) if !a.is_empty() => *a = tl.translate(a),
+// 			IAM::MenuItem(a) if !a.is_empty() => *a = tl.translate(a),
+// 			_ => {}
+// 		}
+// 	});
+// }
+
+pub fn text2str(t: &Text) -> String {
 	let mut s = String::new();
 	for i in t.iter() {
 		match i {
@@ -140,7 +315,7 @@ fn text2str(t: &Text) -> String {
 	s
 }
 
-fn str2text(s: &str) -> Text {
+pub fn str2text(s: &str) -> Text {
 	lazy_static::lazy_static! {
 		static ref SEGMENT: Regex = Regex::new(r"(?x)
 			(?P<t>.*?)
@@ -186,24 +361,4 @@ fn str2text(s: &str) -> Text {
 		}
 	}
 	out
-}
-
-fn translate_text(tl: &mut impl Translator, t: &Text) -> Text {
-	lazy_static::lazy_static! {
-		static ref CONTENT: Regex = Regex::new(r"(?xs)
-			^
-			((?:\{.*?\}|\#\d+[S])*)
-			((?:\#\d*[ABFNPVWZ])*)
-			(.*?)
-			((?:\{wait\})?)
-			$
-		").unwrap();
-	}
-	let s = text2str(t);
-	assert_eq!(t, &str2text(&s));
-	let s2 = s.split("{page}").map(|p| {
-		let c = CONTENT.captures(p).unwrap();
-		format!("{}{}{}", &c[2], tl.translate(&format!("{}{}", &c[1], &c[3]).replace('\r', "\n")), &c[4])
-	}).collect::<Vec<_>>().join("{page}");
-	str2text(&s2)
 }

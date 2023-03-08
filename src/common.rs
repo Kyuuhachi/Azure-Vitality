@@ -1,36 +1,31 @@
+use std::borrow::Cow;
 use std::path::{Path, PathBuf};
 use std::collections::HashMap;
 
-use themelios::gamedata::GameData;
-use themelios::scena;
-use themelios::scena::code::{Expr, FlatInsn, InsnArgMut as IAM};
+use themelios::scena::{self, FuncId};
+use themelios::scena::code::{Expr, Bytecode};
 use themelios::scena::code::decompile::{TreeInsn, decompile, recompile};
 use themelios::scena::ed7::Scena;
 use themelios::tables::quest::ED7Quest;
-use themelios::text::Text;
-use themelios::types::QuestId;
+use themelios::types::{QuestId, Game};
 
-use crate::visit::VisitMut;
-use crate::translate::{Translator, translate};
+use crate::translate::{Translator, Translatable, self};
+use crate::visit;
 
-// Hack for syntax highlighting not supporting macros 2.0
-mod m {
-	pub macro f {
-		($p:pat $(if $e:expr)? => $v:expr) => { |_a| {
-			match _a {
-				$p $(if $e)? => Some($v),
-				_ => None
-			}
-		} },
-		($p:pat $(if $e:expr)? ) => { |_a| {
-			match _a {
-				$p $(if $e)? => true,
-				_ => false
-			}
-		} },
-	}
+pub macro f {
+	($p:pat $(if $e:expr)? => $v:expr) => { |_a| {
+		match _a {
+			$p $(if $e)? => Some($v),
+			_ => None
+		}
+	} },
+	($p:pat $(if $e:expr)? ) => { |_a| {
+		match _a {
+			$p $(if $e)? => true,
+			_ => false
+		}
+	} },
 }
-pub use m::f;
 
 pub struct Context {
 	psp_path:   PathBuf,
@@ -39,6 +34,7 @@ pub struct Context {
 	pub scenas: HashMap<String, AScena>,
 	pub quests: Vec<ED7Quest>,
 	evo_quests: Vec<ED7Quest>,
+	others: HashMap<PathBuf, Cow<'static, [u8]>>,
 }
 
 impl Context {
@@ -56,14 +52,15 @@ impl Context {
 			scenas: HashMap::new(),
 			quests,
 			evo_quests,
+			others: HashMap::new(),
 		}
 	}
 
 	pub fn scena(&mut self, name: &str) -> &mut AScena {
 		self.scenas.entry(name.to_owned()).or_insert_with(|| {
-			let mut gf = scena::ed7::read(GameData::AO, &std::fs::read(self.gf_path.join(format!("{name}.bin"))).unwrap()).unwrap();
-			let psp = scena::ed7::read(GameData::AO, &std::fs::read(self.psp_path.join(format!("{name}.bin"))).unwrap()).unwrap();
-			let evo = scena::ed7::read(GameData::AO_EVO, &std::fs::read(self.evo_path.join(format!("{name}.bin"))).unwrap()).unwrap();
+			let mut gf = scena::ed7::read(Game::Ao, &std::fs::read(self.gf_path.join(format!("{name}.bin"))).unwrap()).unwrap();
+			let psp = scena::ed7::read(Game::Ao, &std::fs::read(self.psp_path.join(format!("{name}.bin"))).unwrap()).unwrap();
+			let evo = scena::ed7::read(Game::AoEvo, &std::fs::read(self.evo_path.join(format!("{name}.bin"))).unwrap()).unwrap();
 			assert_eq!(gf.functions.len(), psp.functions.len());
 			for (i, (a, b)) in gf.functions.iter_mut().zip(psp.functions.iter()).enumerate() {
 				if let Some(c) = merge_gf(a, b) {
@@ -84,12 +81,16 @@ impl Context {
 
 	pub fn copy_scena(&mut self, name: &str, tl: &mut impl Translator) -> &mut AScena {
 		self.scenas.entry(name.to_owned()).or_insert_with(|| {
-			let evo = scena::ed7::read(GameData::AO_EVO, &std::fs::read(self.evo_path.join(format!("{name}.bin"))).unwrap()).unwrap();
+			let evo = scena::ed7::read(Game::AoEvo, &std::fs::read(self.evo_path.join(format!("{name}.bin"))).unwrap()).unwrap();
 			let new_npcs = (0..evo.npcs.len()).collect();
 			let new_lps = (0..evo.look_points.len()).collect();
 			let new_funcs = (0..evo.functions.len()).collect();
+			let mut main = evo.clone();
+			main.labels.iter_mut().flatten().for_each(|a| a.name.translate(tl));
+			main.npcs.iter_mut().for_each(|a| a.name.translate(tl));
+			main.functions.iter_mut().for_each(|a| a.0.translate(tl));
 			AScena {
-				main: translate(tl, &evo),
+				main,
 				evo,
 				new_npcs,
 				new_lps,
@@ -101,54 +102,23 @@ impl Context {
 	pub fn copy_quest(&mut self, id: QuestId, tl: &mut impl Translator) -> &mut ED7Quest {
 		let q1 = self.quests.iter_mut().find(|a| a.id == id).unwrap();
 		let q2 = self.evo_quests.iter().find(|a| a.id == id).unwrap();
-		*q1 = translate(tl, q2);
+		q1.name = q2.name.translated(tl);
+		q1.client = q2.client.translated(tl);
+		q1.desc = q2.desc.translated(tl);
+		q1.steps = q2.steps.translated(tl);
 		q1
 	}
 }
 
-fn merge_gf(gf: &[FlatInsn], psp: &[FlatInsn]) -> Option<Vec<FlatInsn>> {
-	let mut gf = gf.to_owned();
-	let mut psp = psp.to_owned(); // Because I don't have any non-mut visit
-	enum I {
-		Text(Text),
-		TextTitle(String),
-		MenuItem(String),
-	}
-	let mut texts = Vec::new();
-	gf.accept_mut(&mut |a| match a {
-		IAM::Text(a) => texts.push(I::Text(a.clone())),
-		IAM::TextTitle(a) => texts.push(I::TextTitle(a.clone())),
-		IAM::MenuItem(a) => texts.push(I::MenuItem(a.clone())),
-		_ => {}
-	});
-	texts.reverse();
-	let mut success = true;
-	psp.accept_mut(&mut |a| match a {
-		IAM::Text(a) => {
-			if let Some(I::Text(b)) = texts.pop() {
-				*a = b
-			} else {
-				success = false
-			}
-		}
-		IAM::TextTitle(a) => {
-			if let Some(I::TextTitle(b)) = texts.pop() {
-				*a = b
-			} else {
-				success = false
-			}
-		}
-		IAM::MenuItem(a) => {
-			if let Some(I::MenuItem(b)) = texts.pop() {
-				*a = b
-			} else {
-				success = false
-			}
-		}
-		_ => {}
-	});
-	success &= texts.is_empty();
-	success.then_some(psp)
+
+fn merge_gf(gf: &Bytecode, psp: &Bytecode) -> Option<Bytecode> {
+	let mut gf = gf.0.to_owned();
+	let mut psp = psp.0.to_owned(); // Because I don't have any non-mut visit
+	let mut extract = translate::Extract::new();
+	gf.translate(&mut extract);
+	let mut inject = translate::Inject::new(extract.finish());
+	psp.translate(&mut inject);
+	inject.finish().then_some(Bytecode(psp))
 }
 
 pub struct AScena {
@@ -161,27 +131,12 @@ pub struct AScena {
 }
 
 impl AScena {
-	pub fn remap(&mut self, v: &mut impl FnMut(IAM)) {
-		self.evo.accept_mut(v);
-		for i in &self.new_npcs {
-			self.main.npcs[*i].accept_mut(v);
-		}
-		for i in &self.new_lps {
-			self.main.look_points[*i].accept_mut(v);
-		}
-		for i in &self.new_funcs {
-			self.main.functions[*i].accept_mut(v);
-		}
-	}
-
 	pub fn copy_npc(&mut self, idx: usize, tl: &mut impl Translator) {
 		let monster_start = (8+self.main.npcs.len()) as u16;
 		let monster_end = (8+self.main.npcs.len()+self.main.monsters.len()) as u16;
-		self.main.accept_mut(&mut |a| {
-			if let IAM::CharId(a) = a {
-				if a.0 >= monster_start && a.0 < monster_end {
-					a.0 += 1;
-				}
+		visit::char_id::ed7scena(&mut self.evo, &mut |a| {
+			if a.0 >= monster_start && a.0 < monster_end {
+				a.0 += 1;
 			}
 		});
 
@@ -189,18 +144,18 @@ impl AScena {
 
 		let start = 8 + idx as u16;
 		let end = 8 + new_idx as u16;
-		self.remap(&mut |a| {
-			if let IAM::CharId(a) = a {
-				if a.0 == start {
-					a.0 = end;
-				} else if start < a.0 && a.0 <= end {
-					a.0 -= 1;
-				}
+		visit::char_id::ed7scena(&mut self.evo, &mut |a| {
+			if a.0 == start {
+				a.0 = end;
+			} else if start < a.0 && a.0 <= end {
+				a.0 -= 1;
 			}
 		});
 
 		let npc = self.evo.npcs.remove(idx);
-		self.main.npcs.insert(new_idx, translate(tl, &npc));
+		let mut npc2 = npc.clone();
+		npc2.name.translate(tl);
+		self.main.npcs.insert(new_idx, npc2);
 		self.evo.npcs.insert(new_idx, npc);
 		self.new_npcs.push(new_idx);
 	}
@@ -210,20 +165,29 @@ impl AScena {
 
 		let start = idx as u16;
 		let end = new_idx as u16;
-		self.remap(&mut |a| {
-			if let IAM::FuncRef(a) = a {
-				if a.0 == scp {
-					if a.1 == start {
-						a.1 = end;
-					} else if start < a.1 && a.1 <= end {
-						a.1 -= 1;
-					}
+		let mut f = |a: &mut FuncId| {
+			if a.0 == scp {
+				if a.1 == start {
+					a.1 = end;
+				} else if start < a.1 && a.1 <= end {
+					a.1 -= 1;
 				}
 			}
-		});
+		};
+		visit::func_id::ed7scena(&mut self.evo, &mut f);
+		for &i in &self.new_npcs {
+			f(&mut self.main.npcs[i].init);
+			f(&mut self.main.npcs[i].talk);
+		}
+		for &i in &self.new_lps {
+			f(&mut self.main.look_points[i].function);
+		}
+		for &i in &self.new_funcs {
+			visit::func_id::func(&mut self.main.functions[i], &mut f);
+		}
 
 		let func = self.evo.functions.remove(idx);
-		self.main.functions.push(translate(tl, &func));
+		self.main.functions.push(Bytecode(func.0.translated(tl)));
 		self.evo.functions.insert(new_idx, func);
 		self.new_funcs.push(new_idx);
 	}
@@ -233,13 +197,11 @@ impl AScena {
 
 		let start = idx as u16;
 		let end = new_idx as u16;
-		self.remap(&mut |a| {
-			if let IAM::LookPointId(a) = a {
-				if *a == start {
-					*a = end;
-				} else if start < *a && *a <= end {
-					*a -= 1;
-				}
+		visit::look_point::ed7scena(&mut self.evo, &mut |a| {
+			if a.0 == start {
+				a.0 = end;
+			} else if start < a.0 && a.0 <= end {
+				a.0 -= 1;
 			}
 		});
 
@@ -260,18 +222,15 @@ impl AScena {
 #[derive(Debug)]
 pub struct AList<'a, T>(pub &'a mut T, pub &'a T);
 
-mod m2 {
-	pub macro alist_map($e:expr; $($t:tt)*) {
-		{
-			let x = $e;
-			$crate::common::AList(
-				x.0.iter_mut() $($t)*,
-				x.1.iter() $($t)*,
-			)
-		}
+pub macro alist_map($e:expr; $($t:tt)*) {
+	{
+		let x = $e;
+		$crate::common::AList(
+			x.0.iter_mut() $($t)*,
+			x.1.iter() $($t)*,
+		)
 	}
 }
-pub use m2::alist_map;
 
 impl<'a> AList<'a, Vec<TreeInsn>> {
 	#[track_caller]
@@ -292,19 +251,19 @@ impl<'a, A: PartialEq, B> AList<'a, Vec<(A, B)>> {
 	}
 
 	#[track_caller]
-	pub fn copy_clause(&mut self, k: &A, tl: &mut impl Translator) where (A, B): Clone + VisitMut {
-		self.0.push(translate(tl, self.1.iter().find(|a| &a.0 == k).unwrap()));
+	pub fn copy_clause(&mut self, k: &A) where (A, B): Clone + Translatable {
+		self.0.push(self.1.iter().find(|a| &a.0 == k).unwrap().no_tl());
 	}
 }
 
 impl<'a, T> AList<'a, Vec<T>> {
 	#[track_caller]
-	pub fn copy_tail(&mut self, tl: &mut impl Translator) where T: Clone + VisitMut {
-		self.0.extend(self.1[self.0.len()..].iter().map(|a| translate(tl, a)))
+	pub fn copy_tail(&mut self) where T: Clone + Translatable {
+		self.0.extend(self.1[self.0.len()..].iter().map(|a| a.no_tl()))
 	}
 
 	#[track_caller]
-	pub fn index_of(&self, f: impl Fn(&T) -> bool) -> (usize, usize) where T: Clone + VisitMut {
+	pub fn index_of(&self, f: impl Fn(&T) -> bool) -> (usize, usize) {
 		(
 			self.0.iter().enumerate().find_map(|(a, b)| f(b).then_some(a)).unwrap(),
 			self.1.iter().enumerate().find_map(|(a, b)| f(b).then_some(a)).unwrap(),
