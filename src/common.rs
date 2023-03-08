@@ -100,16 +100,16 @@ impl Context {
 	}
 
 	pub fn copy_quest(&mut self, id: QuestId, tl: &mut impl Translator) -> &mut ED7Quest {
-		let q1 = self.quests.iter_mut().find(|a| a.id == id).unwrap();
-		let q2 = self.evo_quests.iter().find(|a| a.id == id).unwrap();
-		q1.name = q2.name.translated(tl);
-		q1.client = q2.client.translated(tl);
-		q1.desc = q2.desc.translated(tl);
-		q1.steps = q2.steps.translated(tl);
-		q1
+		let mut q1 = self.evo_quests.iter().find(|a| a.id == id).unwrap().clone();
+		q1.name.translate(tl);
+		q1.client.translate(tl);
+		q1.desc.translate(tl);
+		q1.steps.translate(tl);
+		let q = self.quests.iter_mut().find(|a| a.id == id).unwrap();
+		*q = q1;
+		q
 	}
 }
-
 
 fn merge_gf(gf: &Code, psp: &Code) -> Option<Code> {
 	let mut gf = gf.0.to_owned();
