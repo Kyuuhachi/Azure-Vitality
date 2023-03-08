@@ -1,4 +1,4 @@
-use themelios::scena::code::{Insn, Bytecode, FlatInsn, Expr, ExprTerm};
+use themelios::scena::code::{Insn, Code, FlatInsn, Expr, ExprTerm};
 use themelios::scena::{ed7, FuncId, CharId, LookPointId};
 
 pub mod func_id {
@@ -25,7 +25,7 @@ pub mod func_id {
 		}
 	}
 
-	pub fn func(s: &mut Bytecode, f: &mut impl FnMut(&mut FuncId)) {
+	pub fn func(s: &mut Code, f: &mut impl FnMut(&mut FuncId)) {
 		for i in &mut s.0 {
 			flat_insn(i, f)
 		}
@@ -78,7 +78,7 @@ pub mod char_id {
 		}
 	}
 
-	pub fn func(s: &mut Bytecode, f: &mut impl FnMut(&mut CharId)) {
+	pub fn func(s: &mut Code, f: &mut impl FnMut(&mut CharId)) {
 		for i in &mut s.0 {
 			flat_insn(i, f)
 		}
@@ -133,7 +133,7 @@ pub mod look_point {
 		}
 	}
 
-	pub fn func(s: &mut Bytecode, f: &mut impl FnMut(&mut LookPointId)) {
+	pub fn func(s: &mut Code, f: &mut impl FnMut(&mut LookPointId)) {
 		for i in &mut s.0 {
 			flat_insn(i, f)
 		}

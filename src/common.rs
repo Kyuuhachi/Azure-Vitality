@@ -3,7 +3,7 @@ use std::path::{Path, PathBuf};
 use std::collections::HashMap;
 
 use themelios::scena::{self, FuncId};
-use themelios::scena::code::{Expr, Bytecode};
+use themelios::scena::code::{Expr, Code};
 use themelios::scena::code::decompile::{TreeInsn, decompile, recompile};
 use themelios::scena::ed7::Scena;
 use themelios::tables::quest::ED7Quest;
@@ -111,14 +111,14 @@ impl Context {
 }
 
 
-fn merge_gf(gf: &Bytecode, psp: &Bytecode) -> Option<Bytecode> {
+fn merge_gf(gf: &Code, psp: &Code) -> Option<Code> {
 	let mut gf = gf.0.to_owned();
 	let mut psp = psp.0.to_owned(); // Because I don't have any non-mut visit
 	let mut extract = translate::Extract::new();
 	gf.translate(&mut extract);
 	let mut inject = translate::Inject::new(extract.finish());
 	psp.translate(&mut inject);
-	inject.finish().then_some(Bytecode(psp))
+	inject.finish().then_some(Code(psp))
 }
 
 pub struct AScena {
@@ -187,7 +187,7 @@ impl AScena {
 		}
 
 		let func = self.evo.functions.remove(idx);
-		self.main.functions.push(Bytecode(func.0.translated(tl)));
+		self.main.functions.push(Code(func.0.translated(tl)));
 		self.evo.functions.insert(new_idx, func);
 		self.new_funcs.push(new_idx);
 	}

@@ -3,7 +3,7 @@
 use std::path::Path;
 
 use themelios::scena::{self, Var, CharId, ForkId, FuncId};
-use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn, Bytecode};
+use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn, Code};
 use themelios::scena::code::decompile::{TreeInsn, recompile};
 use themelios::tables::{quest, name, bgm, se};
 use themelios::types::*;
@@ -143,8 +143,8 @@ fn timing(ctx: &mut Context) {
 
 	let s = ctx.scena("c0110"); // SSS HQ
 	// Two functions were moved to a subscript, undo that and reorder the functions to match
-	s.evo.functions.insert(16, Bytecode(vec![]));
-	s.evo.functions.insert(17, Bytecode(vec![]));
+	s.evo.functions.insert(16, Code(vec![]));
+	s.evo.functions.insert(17, Code(vec![]));
 	visit::func_id::ed7scena(&mut s.evo, &mut |a| {
 		if a.0 == 0 && a.1 >= 16 {
 			a.1 += 2
@@ -319,7 +319,7 @@ fn quest138(ctx: &mut Context) {
 			a.1 += 1;
 		}
 	});
-	s.evo.functions.insert(timer_func, Bytecode(vec![]));
+	s.evo.functions.insert(timer_func, Code(vec![]));
 	s.main.functions.insert(timer_func, recompile(&[
 		TreeInsn::While(expr![E::Const(1)], vec![
 			TreeInsn::Insn(Insn::Var(timer_var, expr![E::Const(1), op!(AddAss)])),
