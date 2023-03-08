@@ -21,7 +21,6 @@ macro flag_e($n:literal) { expr![flag!($n)] }
 
 fn main() -> anyhow::Result<()> {
 	use std::fs;
-	use std::io::BufWriter;
 	let mut ctx = Context::new(
 		"./data/ao-psp/PSP_GAME/USRDIR/data/scena/",
 		"./data/ao-evo/data/scena/",
