@@ -138,8 +138,6 @@ fn main() -> anyhow::Result<()> {
 }
 
 fn timing(ctx: &mut Context) {
-	let nil = &mut Nil;
-
 	let s = ctx.scena("c0110"); // SSS HQ
 	// Two functions were moved to a subscript, undo that and reorder the functions to match
 	s.evo.functions.insert(16, Code(vec![]));
@@ -216,7 +214,6 @@ fn timing(ctx: &mut Context) {
 
 /// Illicit Trade Stakeout
 fn quest125(ctx: &mut Context) {
-	let nil = &mut Nil;
 	let tl = &mut Translate::load(include_str!("../text/quest125.txt"));
 	ctx.copy_quest(QuestId(125), tl);
 
@@ -240,7 +237,7 @@ fn quest125(ctx: &mut Context) {
 	}
 	s.copy_func(0, 15, tl);
 	for i in 16..=23 {
-		s.copy_func(0, i, nil);
+		s.copy_func(0, i, &mut Nil);
 	}
 	s.func(1, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
 
@@ -266,7 +263,6 @@ fn quest125(ctx: &mut Context) {
 
 /// Bringing Home the Bakery
 fn quest138(ctx: &mut Context) {
-	let nil = &mut Nil;
 	let tl = &mut Translate::load(include_str!("../text/quest138.txt"));
 	ctx.copy_quest(QuestId(138), tl);
 
@@ -288,7 +284,7 @@ fn quest138(ctx: &mut Context) {
 	let start = s.main.functions.len();
 	s.copy_func(0, 53, tl);
 	for i in 54..=83 {
-		s.copy_func(0, i, nil);
+		s.copy_func(0, i, &mut Nil);
 	}
 	s.func(11, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
 
@@ -330,7 +326,6 @@ fn quest138(ctx: &mut Context) {
 
 /// Temporary Theme Park Job, part 2
 fn quest157(ctx: &mut Context) {
-	let nil = &mut Nil;
 	let tl = &mut Translate::load(include_str!("../text/quest157.txt"));
 	ctx.copy_quest(QuestId(157), tl);
 
@@ -358,13 +353,13 @@ fn quest157(ctx: &mut Context) {
 	});
 
 	let s = ctx.scena("t1390"); // MWL locker room
-	s.copy_func(0, 6, nil);
-	s.copy_func(0, 7, nil);
+	s.copy_func(0, 6, &mut Nil);
+	s.copy_func(0, 7, &mut Nil);
 	for i in 8..=12 {
 		s.copy_func(0, i, tl);
 	}
 	for i in 13..=29 {
-		s.copy_func(0, i, nil);
+		s.copy_func(0, i, &mut Nil);
 	}
 	s.func(0, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
 	s.func(0, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![275])));
@@ -382,7 +377,6 @@ fn quest157(ctx: &mut Context) {
 
 /// Introduction to Crossbell
 fn quest158(ctx: &mut Context) {
-	let nil = &mut Nil;
 	let tl = &mut Translate::load(include_str!("../text/quest158.txt"));
 	ctx.copy_quest(QuestId(158), tl);
 
@@ -404,7 +398,7 @@ fn quest158(ctx: &mut Context) {
 	s.copy_npc(23, tl); // Guardsman
 	s.copy_func(0, 35, tl);
 	for i in 36..=45 {
-		s.copy_func(0, i, nil);
+		s.copy_func(0, i, &mut Nil);
 	}
 	s.func(1, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![275])));
 
@@ -439,9 +433,9 @@ fn quest158(ctx: &mut Context) {
 	s.copy_npc(29, tl); // Senior Captain Schwarz
 	s.copy_func(0, 54, tl);
 	s.copy_func(0, 55, tl);
-	s.copy_func(0, 56, nil);
-	s.copy_func(0, 57, nil);
-	s.copy_func(0, 58, nil);
+	s.copy_func(0, 56, &mut Nil);
+	s.copy_func(0, 57, &mut Nil);
+	s.copy_func(0, 58, &mut Nil);
 	s.func(2, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![273])));
 
 	let s = ctx.scena("c0200"); // West Street
@@ -455,7 +449,7 @@ fn quest158(ctx: &mut Context) {
 	s.copy_npc(10, tl); // Senior Captain Schwarz
 	s.copy_func(0, 33, tl);
 	s.copy_func(0, 34, tl);
-	s.copy_func(0, 35, nil);
+	s.copy_func(0, 35, &mut Nil);
 	s.func(2, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
 
 	let s = ctx.scena("c1000"); // East Street
@@ -476,7 +470,7 @@ fn quest158(ctx: &mut Context) {
 	s.copy_npc(15, tl); // Princess Klaudia
 	s.copy_npc(16, tl); // Senior Captain Schwarz
 	s.copy_func(0, 42, tl);
-	s.copy_func(0, 43, nil);
+	s.copy_func(0, 43, &mut Nil);
 	s.func(5, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![280])));
 
 	let s = ctx.scena("c0410"); // Arc en Ciel
@@ -487,7 +481,7 @@ fn quest158(ctx: &mut Context) {
 	s.new_funcs.pop();
 	s.copy_func(0, 59, tl);
 	for i in 60..=68 {
-		s.copy_func(0, i, nil);
+		s.copy_func(0, i, &mut Nil);
 	}
 	s.func(5, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![275])));
 
@@ -500,7 +494,7 @@ fn quest158(ctx: &mut Context) {
 
 	let s = ctx.scena("e3210"); // Arseille
 	s.copy_func(0, 15, tl);
-	s.copy_func(0, 16, nil);
+	s.copy_func(0, 16, &mut Nil);
 	s.func(1, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
 
 	let s = ctx.scena("c0110"); // Special Support Section
@@ -520,7 +514,6 @@ fn quest158(ctx: &mut Context) {
 
 // Searching the Forest
 fn quest159(ctx: &mut Context) {
-	let nil = &mut Nil;
 	let tl = &mut Translate::load(include_str!("../text/quest159.txt"));
 	ctx.copy_quest(QuestId(159), tl);
 
@@ -538,11 +531,11 @@ fn quest159(ctx: &mut Context) {
 	let s = ctx.scena("r4000"); // Knox Forest Road
 	s.main.chcp[0] = fileid("chr/ch32600.itc");
 	s.copy_npc(0, tl); // ミレイユ三尉, not to be confused with ミレイユ准
-	s.copy_func(0, 2, nil); // Mireille animation
+	s.copy_func(0, 2, &mut Nil); // Mireille animation
 	s.copy_func(0, 39, tl); // event
 	s.copy_func(0, 40, tl); // leaving the forest
 	s.copy_func(0, 41, tl); // talk to Mireille or the rope
-	s.copy_func(0, 42, nil); // fork in :39
+	s.copy_func(0, 42, &mut Nil); // fork in :39
 	s.func(2, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![273])));
 	s.func(2, |a| {
 		a.0.insert(a.0.len()-1, a.1[a.0.len()-1].no_tl());
@@ -572,12 +565,12 @@ fn quest159(ctx: &mut Context) {
 		s.copy_func(0, i, tl);
 	}
 	for i in 24..=29 {
-		s.copy_func(0, i, nil);
+		s.copy_func(0, i, &mut Nil);
 	}
 	s.copy_func(0, 30, tl);
 	s.copy_func(0, 31, tl);
 	for i in 32..=38 {
-		s.copy_func(0, i, nil);
+		s.copy_func(0, i, &mut Nil);
 	}
 	s.func(1, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
 	s.func(2, |a| {
@@ -593,19 +586,19 @@ fn quest159(ctx: &mut Context) {
 	}
 	s.copy_func(0, 7, tl);
 	for i in 8..=13 {
-		s.copy_func(0, i, nil);
+		s.copy_func(0, i, &mut Nil);
 	}
 	s.copy_func(0, 14, tl);
 	s.copy_func(0, 15, tl);
-	s.copy_func(0, 16, nil);
+	s.copy_func(0, 16, &mut Nil);
 	s.func(1, |a| {
 		a.0.splice(a.0.len()-1..a.0.len()-1, a.1[a.1.len()-8..a.1.len()-1].iter().cloned());
 	});
 
 	let s = ctx.scena("r4090"); // Knox Forest
 	s.copy_func(0, 73, tl);
-	s.copy_func(0, 74, nil);
-	s.copy_func(0, 75, nil);
+	s.copy_func(0, 74, &mut Nil);
+	s.copy_func(0, 75, &mut Nil);
 	s.func(0, |a| {
 		a.0.insert(1, a.1[1].no_tl());
 	});

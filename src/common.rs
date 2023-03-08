@@ -9,7 +9,7 @@ use themelios::scena::ed7::Scena;
 use themelios::tables::quest::ED7Quest;
 use themelios::types::{QuestId, Game};
 
-use crate::translate::{Translator, Translatable, self};
+use crate::translate::{self, Translator, Translatable};
 use crate::visit;
 
 pub macro f {
