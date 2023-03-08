@@ -2,9 +2,9 @@
 
 use std::path::Path;
 
-use themelios::scena::{self, Var, CharId, ForkId};
+use themelios::scena::{self, Var, CharId, ForkId, FuncId};
 use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn, Bytecode};
-use themelios::scena::code::decompile::TreeInsn;
+use themelios::scena::code::decompile::{TreeInsn, recompile};
 use themelios::tables::{quest, name, bgm, se};
 use themelios::types::*;
 
@@ -290,29 +290,41 @@ fn quest138(ctx: &mut Context) {
 		s.copy_func(0, i, nil);
 	}
 	s.func(11, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
+
 	// Replace AoEvo_F0 and F1 with userspace implementations
-	let v = Var(0);
+	let timer_var = Var(0);
+	let timer_func = s.main.functions.len();
 	let f = &mut s.main.functions[start];
 	let i = f.iter().position(f!(FlatInsn::Insn(Insn::AoEvo_F1()))).unwrap();
 	f.0.splice(i..i+1, [
-		FlatInsn::Insn(Insn::Var(v, expr![E::Const(0), op!(Ass)])),
-		FlatInsn::Insn(Insn::ForkLoop(CharId(0), ForkId(3), vec![
-			Insn::Var(v, expr![E::Const(1), op!(AddAss)]),
-			Insn::Sleep(Time(15)),
-			// Need 30fps, but sleeps don't really work well on frame-precision.
-			// This 15ms sleep works on my machine, but might not work on different framerates and stuff.
-			// I'm starting to understand why they put in F1 and F0.
-		])),
+		FlatInsn::Insn(Insn::Var(timer_var, expr![E::Const(0), op!(Ass)])),
+		FlatInsn::Insn(Insn::ForkFunc(CharId(0), ForkId(3), FuncId(0, timer_func as u16))),
 	]);
 	for f in &mut s.main.functions[start..] {
 		for i in &mut f.0 {
 			if let FlatInsn::Unless(Expr(e), _) = i
 			&& let [E::Insn(i), _, op!(Lt)] = e.as_mut_slice()
 			&& let Insn::AoEvo_F0() = &**i {
-				e[0] = E::Var(v);
+				e[0] = E::Var(timer_var);
 			}
 		}
 	}
+
+	// timer function implementation
+	// the loop never stops, but it'll end when reentering the bakery, so that doesn't matter
+	visit::func_id::ed7scena(&mut s.evo, &mut |a| {
+		if a.0 == 0 && a.1 as usize >= timer_func {
+			a.1 += 1;
+		}
+	});
+	s.evo.functions.insert(timer_func, Bytecode(vec![]));
+	s.main.functions.insert(timer_func, recompile(&[
+		TreeInsn::While(expr![E::Const(1)], vec![
+			TreeInsn::Insn(Insn::Var(timer_var, expr![E::Const(1), op!(AddAss)])),
+			TreeInsn::Insn(Insn::Sleep(Time(33))),
+		]),
+		TreeInsn::Insn(Insn::Return()),
+	]).unwrap());
 }
 
 /// Temporary Theme Park Job, part 2
@@ -434,7 +446,7 @@ fn quest158(ctx: &mut Context) {
 	let s = ctx.scena("c0200"); // West Street
 	s.copy_npc(30, tl); // Princess Klaudia
 	s.copy_npc(31, tl); // Senior Captain Schwarz
-	s.copy_func(0, 84, tl);
+	s.copy_func(0, 85, tl); // it's normally 84 but I add one for the singing
 	s.func(11, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![275])));
 
 	let s = ctx.scena("c0210"); // Morges Bakery
