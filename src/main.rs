@@ -288,10 +288,10 @@ fn quest138(ctx: &mut Context) {
 	}
 	s.func(11, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
 
-	// Replace AoEvo_F0 and F1 with userspace implementations
+	// Replace stopwatch with userspace implementations
 	let timer_var = Var(0);
 	let f = &mut s.main.functions[start];
-	let i = f.iter().position(f!(FlatInsn::Insn(Insn::AoEvo_F1()))).unwrap();
+	let i = f.iter().position(f!(FlatInsn::Insn(Insn::AoEvoStopwatchStart()))).unwrap();
 	f.0.splice(i..i+1, [
 		FlatInsn::Insn(Insn::Var(timer_var, expr![E::Const(0), op!(Ass)])),
 		FlatInsn::Insn(Insn::Fork(CharId(0), ForkId(3), recompile(&[
@@ -306,7 +306,7 @@ fn quest138(ctx: &mut Context) {
 		for i in &mut f.0 {
 			if let FlatInsn::Unless(Expr(e), _) = i
 			&& let [E::Insn(i), _, op!(Lt)] = e.as_mut_slice()
-			&& let Insn::AoEvo_F0() = &**i {
+			&& let Insn::AoEvoStopwatchGet() = &**i {
 				e[0] = E::Var(timer_var);
 			}
 		}
