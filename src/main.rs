@@ -5,7 +5,7 @@ use std::path::Path;
 use themelios::scena;
 use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn, Code};
 use themelios::scena::decompile::{TreeInsn, recompile};
-use themelios::tables::{quest, name, bgm, se};
+use themelios::tables::{name, bgm, se};
 use themelios::types::*;
 
 mod visit;
@@ -22,11 +22,17 @@ macro flag_e($n:literal) { expr![flag!($n)] }
 fn main() -> anyhow::Result<()> {
 	use std::fs;
 	let mut ctx = Context::new(
-		"./data/ao-psp/PSP_GAME/USRDIR/data/scena/",
-		"./data/ao-evo/data/scena/",
-		"./data/ao-gf/data_en/scena/",
-		quest::read_ed7(&fs::read("./data/ao-gf/data_en/text/t_quest._dt")?)?,
-		quest::read_ed7(&fs::read("./data/ao-evo/data/text/t_quest._dt")?)?,
+		// PathBuf::from("./data/ao-psp/PSP_GAME/USRDIR/"),
+		|s| {
+			let mut pc = load_scena("./data/ao-gf/data_en/scena", s);
+			let psp = load_scena("./data/ao-psp/PSP_GAME/USRDIR/data/scena", s);
+			copy_shape(&mut pc, &psp);
+			pc
+		},
+		"./data/ao-evo/data/scena",
+		"./data/ao-gf/data_en/text",
+		"./data/ao-evo/data/text",
+		true,
 	);
 
 	timing(&mut ctx);
@@ -39,30 +45,28 @@ fn main() -> anyhow::Result<()> {
 
 	// TODO interactible furniture in c0120
 
+	// let textdir_n = outdir.join("data/text");
+	// fs::create_dir_all(&textdir_n)?;
+
 	let outdir = Path::new("./patch");
+	let scena_path = outdir.join("data_en/scena");
+	let text_path = outdir.join("data_en/text");
 	if outdir.exists() {
 		fs::remove_dir_all(outdir)?;
 	}
-	fs::create_dir_all(outdir.join("data/text"))?;
-	fs::create_dir_all(outdir.join("data_en/text"))?;
-	fs::create_dir_all(outdir.join("data_en/scena"))?;
 
-	fs::write(outdir.join("data_en/text/t_quest._dt"), quest::write_ed7(&ctx.quests)?)?;
-	for (name, v) in &ctx.scenas {
-		fs::write(outdir.join(format!("data_en/scena/{name}.bin")), scena::ed7::write(Game::Ao, &v.pc)?)?;
+	fs::create_dir_all(&scena_path)?;
+	for (name, v) in &ctx.scena {
+		fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::Ao, &v.pc)?)?;
 	}
 
-	fs::write(outdir.join("data_en/text/t_name._dt"), {
-		let mut names = name::read_ed7(&fs::read("./data/ao-gf/data_en/text/t_name._dt")?)?;
-		let names_evo = name::read_ed7(&fs::read("./data/ao-evo/data/text/t_name._dt")?)?;
-		let mut mireille = names_evo.iter().find(|a| a.id == NameId(165)).unwrap().clone();
-		mireille.name.0 = "Second Lieutenant Mireille".to_owned(); // Don't like that this is not in the tl files
-		names.push(mireille);
-		name::write_ed7(&names)?
-	})?;
+	fs::create_dir_all(&text_path)?;
+	for (name, v) in &ctx.text {
+		fs::write(text_path.join(name), v)?;
+	}
 
 	// NISA Zero has both text/t_bgm and text_us/t_bgm, but they are identical. Better patch both.
-	fs::write(outdir.join("data/text/t_bgm._dt"), {
+	fs::write(text_path.join("t_bgm._dt"), {
 		let mut bgms = bgm::read_ed7(&fs::read("./data/ao-gf/data/text/t_bgm._dt")?)?;
 		let bgms_evo = bgm::read_ed7(&fs::read("./data/ao-evo/data/text/t_bgm._dt")?)?;
 		bgms.push(bgms_evo.iter().find(|a| a.id == BgmId(4)).unwrap().clone());
@@ -88,6 +92,7 @@ fn main() -> anyhow::Result<()> {
 		serde_json::to_vec_pretty(&music)?
 	})?;
 
+	fs::create_dir_all(outdir.join("data/text"))?;
 	fs::write(outdir.join("data/text/t_se._dt"), {
 		let mut se = se::read_ed7(&fs::read("./data/ao-gf/data/text/t_se._dt")?)?;
 		let se_evo = se::read_ed7(&fs::read("./data/ao-evo/data/text/t_se._dt")?)?;
@@ -125,7 +130,7 @@ fn main() -> anyhow::Result<()> {
 	}
 	fs::create_dir_all(dumpdir)?;
 
-	for (name, v) in &ctx.scenas {
+	for (name, v) in &ctx.scena {
 		let mut ctx = calmare::Context::new(Game::Ao, None);
 		calmare::ed7::write(&mut ctx, &v.pc);
 		fs::write(dumpdir.join(name), ctx.finish())?;
@@ -505,6 +510,14 @@ fn quest158(ctx: &mut Context) {
 fn quest159(ctx: &mut Context) {
 	let tl = &mut Translate::load(include_str!("../text/quest159.txt"));
 	ctx.copy_quest(QuestId(159), tl);
+
+	let (pc, evo) = ctx.text("t_name._dt");
+	let mut names = name::read_ed7(pc).unwrap();
+	let names_evo = name::read_ed7(&evo).unwrap();
+	let mut mireille = names_evo.iter().find(|a| a.id == NameId(165)).unwrap().clone();
+	mireille.name.0 = "Second Lieutenant Mireille".to_owned(); // Don't like that this is not in the tl files
+	names.push(mireille);
+	*pc = name::write_ed7(&names).unwrap();
 
 	let s = ctx.scena("t2020"); // Bellguard Gate
 	s.copy_func(0, 15, tl);

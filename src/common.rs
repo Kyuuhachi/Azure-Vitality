@@ -1,11 +1,11 @@
-use std::borrow::Cow;
+use std::fs;
 use std::path::{Path, PathBuf};
 use std::collections::HashMap;
 
 use themelios::scena;
 use themelios::scena::code::{Expr, Code};
 use themelios::scena::decompile::{TreeInsn, decompile, recompile};
-use themelios::tables::quest::ED7Quest;
+use themelios::tables::quest;
 use themelios::types::*;
 
 use crate::translate::{self, Translator, Translatable};
@@ -26,51 +26,52 @@ pub macro f {
 	} },
 }
 
-pub struct Context {
-	psp_path:   PathBuf,
-	evo_path:   PathBuf,
-	gf_path:    PathBuf,
-	pub scenas: HashMap<String, AScena>,
-	pub quests: Vec<ED7Quest>,
-	evo_quests: Vec<ED7Quest>,
-	others: HashMap<PathBuf, Cow<'static, [u8]>>,
+pub struct Context<'a> {
+	pc_scena:   Box<dyn FnMut(&str) -> scena::ed7::Scena + 'a>,
+	evo_scena:  PathBuf,
+	pc_text:    PathBuf,
+	evo_text:   PathBuf,
+
+	pub is_en: bool,
+
+	pub scena: HashMap<String, AScena>,
+	pub text: HashMap<String, Vec<u8>>,
 }
 
-impl Context {
+pub fn load_scena(dir: impl AsRef<Path>, name: &str) -> scena::ed7::Scena {
+	let data = fs::read(dir.as_ref().join(format!("{name}.bin"))).unwrap();
+	scena::ed7::read(Game::Ao, &data).unwrap()
+}
+
+pub fn load_scena_evo(dir: impl AsRef<Path>, name: &str) -> scena::ed7::Scena {
+	let data = fs::read(dir.as_ref().join(format!("{name}.bin"))).unwrap();
+	scena::ed7::read(Game::AoEvo, &data).unwrap()
+}
+
+impl<'a> Context<'a> {
 	pub fn new(
-		psp: impl AsRef<Path>,
-		evo: impl AsRef<Path>,
-		gf: impl AsRef<Path>,
-		quests: Vec<ED7Quest>,
-		evo_quests: Vec<ED7Quest>,
-	) -> Context {
-		Context {
-			psp_path: psp.as_ref().to_owned(),
-			evo_path: evo.as_ref().to_owned(),
-			gf_path: gf.as_ref().to_owned(),
-			scenas: HashMap::new(),
-			quests,
-			evo_quests,
-			others: HashMap::new(),
+		pc_scena: impl FnMut(&str) -> scena::ed7::Scena + 'a,
+		evo_scena: impl AsRef<Path>,
+		pc_text: impl AsRef<Path>,
+		evo_text: impl AsRef<Path>,
+		is_en: bool,
+	) -> Self {
+		Self {
+			pc_scena: Box::new(pc_scena),
+			evo_scena: evo_scena.as_ref().to_owned(),
+			pc_text: pc_text.as_ref().to_owned(),
+			evo_text: evo_text.as_ref().to_owned(),
+			is_en,
+			scena: HashMap::new(),
+			text: HashMap::new(),
 		}
 	}
 
 	pub fn scena(&mut self, name: &str) -> &mut AScena {
-		self.scenas.entry(name.to_owned()).or_insert_with(|| {
-			let mut gf = scena::ed7::read(Game::Ao, &std::fs::read(self.gf_path.join(format!("{name}.bin"))).unwrap()).unwrap();
-			let psp = scena::ed7::read(Game::Ao, &std::fs::read(self.psp_path.join(format!("{name}.bin"))).unwrap()).unwrap();
-			let evo = scena::ed7::read(Game::AoEvo, &std::fs::read(self.evo_path.join(format!("{name}.bin"))).unwrap()).unwrap();
-			assert_eq!(gf.functions.len(), psp.functions.len());
-			for (i, (a, b)) in gf.functions.iter_mut().zip(psp.functions.iter()).enumerate() {
-				if let Some(c) = merge_gf(a, b) {
-					*a = c;
-				} else {
-					eprintln!("failed to merge {name}:{i}, using plain GF");
-				}
-			}
+		self.scena.entry(name.to_owned()).or_insert_with(|| {
 			AScena {
-				pc: gf,
-				evo,
+				pc: (self.pc_scena)(name),
+				evo: load_scena_evo(&self.evo_scena, name),
 				new_npcs: Vec::new(),
 				new_lps: Vec::new(),
 				new_funcs: Vec::new(),
@@ -79,8 +80,8 @@ impl Context {
 	}
 
 	pub fn copy_scena(&mut self, name: &str, tl: &mut impl Translator) -> &mut AScena {
-		self.scenas.entry(name.to_owned()).or_insert_with(|| {
-			let evo = scena::ed7::read(Game::AoEvo, &std::fs::read(self.evo_path.join(format!("{name}.bin"))).unwrap()).unwrap();
+		self.scena.entry(name.to_owned()).or_insert_with(|| {
+			let evo = load_scena_evo(&self.evo_scena, name);
 			let new_npcs = (0..evo.npcs.len()).collect();
 			let new_lps = (0..evo.look_points.len()).collect();
 			let new_funcs = (0..evo.functions.len()).collect();
@@ -98,26 +99,42 @@ impl Context {
 		})
 	}
 
-	pub fn copy_quest(&mut self, id: QuestId, tl: &mut impl Translator) -> &mut ED7Quest {
-		let mut q1 = self.evo_quests.iter().find(|a| a.id == id).unwrap().clone();
-		q1.name.translate(tl);
-		q1.client.translate(tl);
-		q1.desc.translate(tl);
-		q1.steps.translate(tl);
-		let q = self.quests.iter_mut().find(|a| a.id == id).unwrap();
-		*q = q1;
-		q
+	pub fn text(&mut self, name: &str) -> (&mut Vec<u8>, Vec<u8>) {
+		let pc = self.text.entry(name.to_owned()).or_insert_with(|| {
+			fs::read(self.pc_text.join(name)).unwrap()
+		});
+		let evo = fs::read(self.evo_text.join(name)).unwrap();
+		(pc, evo)
+	}
+
+	pub fn copy_quest(&mut self, id: QuestId, tl: &mut impl Translator) {
+		let (pc, evo) = self.text("t_quest._dt");
+		let mut pc_quests = quest::read_ed7(pc).unwrap();
+		let evo_quests = quest::read_ed7(&evo).unwrap();
+		let mut q = pc_quests.iter_mut().find(|a| a.id == id).unwrap().clone();
+		let q1 = evo_quests.iter().find(|a| a.id == id).unwrap().clone();
+		q.name = q1.name.translated(tl);
+		q.client = q1.client.translated(tl);
+		q.desc = q1.desc.translated(tl);
+		q.steps = q1.steps.translated(tl);
+		*pc_quests.iter_mut().find(|a| a.id == id).unwrap() = q;
+		*pc = quest::write_ed7(&pc_quests).unwrap();
 	}
 }
 
-fn merge_gf(gf: &Code, psp: &Code) -> Option<Code> {
-	let mut gf = gf.0.to_owned();
-	let mut psp = psp.0.to_owned(); // Because I don't have any non-mut visit
-	let mut extract = translate::Extract::new();
-	gf.translate(&mut extract);
-	let mut inject = translate::Inject::new(extract.finish());
-	psp.translate(&mut inject);
-	inject.finish().then_some(Code(psp))
+pub fn copy_shape(scena: &mut scena::ed7::Scena, shape: &scena::ed7::Scena) {
+	for (i, (a, b)) in scena.functions.iter_mut().zip(shape.functions.iter()).enumerate() {
+		let mut extract = translate::Extract::new();
+		a.0.translate(&mut extract);
+		let mut inject = translate::Inject::new(extract.finish());
+		let mut c = b.clone();
+		c.0.translate(&mut inject);
+		if inject.finish() {
+			*a = c;
+		} else {
+			eprintln!("failed to copy shape of fn[{i}]");
+		}
+	}
 }
 
 pub struct AScena {
