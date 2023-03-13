@@ -2,12 +2,11 @@ use std::borrow::Cow;
 use std::path::{Path, PathBuf};
 use std::collections::HashMap;
 
-use themelios::scena::{self, FuncId};
+use themelios::scena;
 use themelios::scena::code::{Expr, Code};
-use themelios::scena::code::decompile::{TreeInsn, decompile, recompile};
-use themelios::scena::ed7::Scena;
+use themelios::scena::decompile::{TreeInsn, decompile, recompile};
 use themelios::tables::quest::ED7Quest;
-use themelios::types::{QuestId, Game};
+use themelios::types::*;
 
 use crate::translate::{self, Translator, Translatable};
 use crate::visit;
@@ -122,8 +121,8 @@ fn merge_gf(gf: &Code, psp: &Code) -> Option<Code> {
 }
 
 pub struct AScena {
-	pub main: Scena,
-	pub evo: Scena,
+	pub main: scena::ed7::Scena,
+	pub evo: scena::ed7::Scena,
 
 	pub new_npcs: Vec<usize>,
 	pub new_lps: Vec<usize>,

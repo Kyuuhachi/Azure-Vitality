@@ -55,7 +55,6 @@ dependencies = [
  "regex",
  "serde_json",
  "themelios",
- "themelios-archive",
 ]
 
 [[package]]
@@ -73,12 +72,8 @@ dependencies = [
 name = "calmare"
 version = "0.1.0"
 dependencies = [
- "codespan-reporting",
  "extend",
  "themelios",
- "themelios-archive",
- "themelios-archive-prebuilt",
- "total-float",
  "unicode-xid",
 ]
 
@@ -102,16 +97,6 @@ name = "choubun"
 version = "0.1.0"
 dependencies = [
  "linked-hash-map",
-]
-
-[[package]]
-name = "codespan-reporting"
-version = "0.11.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3538270d33cc669650c4b093848450d380def10c331d38c768e34cac80576e6e"
-dependencies = [
- "termcolor",
- "unicode-width",
 ]
 
 [[package]]
@@ -144,26 +129,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9852635589dc9f9ea1b6fe9f05b50ef208c85c834a562f0c6abb1c475736ec2b"
 dependencies = [
  "cfg-if",
-]
-
-[[package]]
-name = "enumflags2"
-version = "0.7.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e75d4cd21b95383444831539909fbb14b9dc3fdceb2a6f5d36577329a1f55ccb"
-dependencies = [
- "enumflags2_derive",
-]
-
-[[package]]
-name = "enumflags2_derive"
-version = "0.7.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f58dc3c5e468259f19f2d46304a6b28f1c3d034442e14b322d2b850e36f6d5ae"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
 ]
 
 [[package]]
@@ -435,20 +400,18 @@ dependencies = [
 ]
 
 [[package]]
-name = "termcolor"
-version = "1.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "be55cf8942feac5c765c2c993422806843c9a9a45d4d5c407ad6dd2ea95eb9b6"
-dependencies = [
- "winapi-util",
-]
-
-[[package]]
 name = "themelios"
 version = "0.1.0"
 dependencies = [
+ "hamu",
+ "lazy_static",
+ "num_enum",
+ "strict_result",
+ "themelios-archive",
  "themelios-scena",
- "themelios-tables",
+ "themelios-types",
+ "thiserror",
+ "zstd",
 ]
 
 [[package]]
@@ -457,15 +420,6 @@ version = "0.1.0"
 dependencies = [
  "cp932",
  "hamu",
-]
-
-[[package]]
-name = "themelios-archive-prebuilt"
-version = "0.1.0"
-dependencies = [
- "lazy_static",
- "themelios-archive",
- "zstd",
 ]
 
 [[package]]
@@ -484,27 +438,18 @@ name = "themelios-scena"
 version = "0.1.0"
 dependencies = [
  "cp932",
- "derive_more",
  "extend",
  "hamu",
  "num_enum",
  "strict_result",
  "themelios-macros",
+ "themelios-types",
  "thiserror",
 ]
 
 [[package]]
-name = "themelios-tables"
+name = "themelios-types"
 version = "0.1.0"
-dependencies = [
- "derive_more",
- "enumflags2",
- "hamu",
- "num_enum",
- "strict_result",
- "themelios-scena",
- "thiserror",
-]
 
 [[package]]
 name = "thiserror"
@@ -536,20 +481,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "total-float"
-version = "0.1.0"
-
-[[package]]
 name = "unicode-ident"
 version = "1.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "84a22b9f218b40614adcb3f4ff08b703773ad44fa9423e4e0d346d5db86e4ebc"
-
-[[package]]
-name = "unicode-width"
-version = "0.1.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c0edd1e5b14653f783770bce4a4dabb4a5108a5370a5f5d8cfe8710c361f6c8b"
 
 [[package]]
 name = "unicode-xid"
@@ -578,15 +513,6 @@ name = "winapi-i686-pc-windows-gnu"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
-
-[[package]]
-name = "winapi-util"
-version = "0.1.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "70ec6ce85bb158151cae5e5c87f95a8e97d2c0c4b001223f33a334e3ce5de178"
-dependencies = [
- "winapi",
-]
 
 [[package]]
 name = "winapi-x86_64-pc-windows-gnu"

@@ -3,7 +3,7 @@ use std::collections::VecDeque;
 use regex::Regex;
 use themelios::scena::code::{FlatInsn, Insn, Expr};
 use themelios::text::{Text, TextSegment};
-use themelios::scena::code::decompile::TreeInsn;
+use themelios::scena::decompile::TreeInsn;
 use themelios::types::TString;
 
 pub trait Translator {
@@ -304,7 +304,6 @@ pub fn text2str(t: &Text) -> String {
 		match i {
 			TextSegment::String(v) => s.push_str(v),
 			TextSegment::Line => s.push('\n'),
-			TextSegment::Line2 => s.push('\r'),
 			TextSegment::Wait => s.push_str("{wait}"),
 			TextSegment::Page => s.push_str("{page}"),
 			TextSegment::Color(v) => s.push_str(&format!("{{color {v}}}")),
@@ -340,9 +339,6 @@ pub fn str2text(s: &str) -> Text {
 		}
 		if c.name("line").is_some() {
 			out.push(TextSegment::Line)
-		}
-		if c.name("line2").is_some() {
-			out.push(TextSegment::Line2)
 		}
 		if c.name("wait").is_some() {
 			out.push(TextSegment::Wait)

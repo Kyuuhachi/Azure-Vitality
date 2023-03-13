@@ -2,9 +2,9 @@
 
 use std::path::Path;
 
-use themelios::scena::{self, Var, CharId, ForkId, FuncId};
+use themelios::scena;
 use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn, Code};
-use themelios::scena::code::decompile::{TreeInsn, recompile};
+use themelios::scena::decompile::{TreeInsn, recompile};
 use themelios::tables::{quest, name, bgm, se};
 use themelios::types::*;
 
@@ -218,13 +218,13 @@ fn quest125(ctx: &mut Context) {
 	ctx.copy_quest(QuestId(125), tl);
 
 	let s = ctx.scena("c1200"); // Harbor District
-	s.main.chcp[19] = fileid("chr/ch28100.itc");
+	s.main.chip[19] = fileid("chr/ch28100.itc");
 	s.copy_npc(31, tl); // Reins
 	s.copy_func(0, 107, tl); // talk Reins
 	s.func(8, |a| a.if_clause(&flag_e![2564]).copy_tail());
 
 	let s = ctx.scena("c1300"); // IBC Exterior
-	s.main.chcp.push(fileid("chr/ch06000.itc"));
+	s.main.chip.push(fileid("chr/ch06000.itc"));
 	s.copy_npc(1, tl);  // Grace
 	s.copy_npc(10, tl); // Shirley
 	s.copy_npc(11, tl); // Sigmund
@@ -321,7 +321,7 @@ fn quest157(ctx: &mut Context) {
 	let s = ctx.scena("c120d"); // Harbor District
 	s.main.includes[0] = s.evo.includes[0];
 	s.main.includes[1] = s.evo.includes[1];
-	s.main.chcp[12] = s.evo.chcp[12];
+	s.main.chip[12] = s.evo.chip[12];
 	s.copy_npc(13, tl);
 	for i in 18..=27 {
 		s.copy_npc(i, tl);
@@ -370,7 +370,7 @@ fn quest158(ctx: &mut Context) {
 	ctx.copy_quest(QuestId(158), tl);
 
 	let s = ctx.scena("c0100"); // Central Square
-	s.main.chcp.push(fileid("chr/ch41600.itc"));
+	s.main.chip.push(fileid("chr/ch41600.itc"));
 	s.copy_npc(57, tl); // Uniformed man
 	s.func(7, |a| {
 		let b = a.if_clause(&flag_e![2848]);
@@ -518,7 +518,7 @@ fn quest159(ctx: &mut Context) {
 	});
 
 	let s = ctx.scena("r4000"); // Knox Forest Road
-	s.main.chcp[0] = fileid("chr/ch32600.itc");
+	s.main.chip[0] = fileid("chr/ch32600.itc");
 	s.copy_npc(0, tl); // ミレイユ三尉, not to be confused with ミレイユ准
 	s.copy_func(0, 2, &mut Nil); // Mireille animation
 	s.copy_func(0, 39, tl); // event
@@ -615,6 +615,6 @@ fn quest159(ctx: &mut Context) {
 }
 
 fn fileid(name: &str) -> FileId {
-	use themelios_archive::{ED7Lookup, Lookup};
+	use themelios::lookup::{ED7Lookup, Lookup};
 	FileId(ED7Lookup.index(name).unwrap())
 }

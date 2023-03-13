@@ -5,9 +5,8 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.65"
-themelios = { path = "../kaiseki/themelios" }
-themelios-archive.path = "../kaiseki/themelios-archive"
-calmare = { path = "../kaiseki/calmare" }
+themelios.path = "../Aureole/themelios"
+calmare.path = "../Aureole/calmare"
 extend = "1.1.2"
 derive_more = "0.99.17"
 regex = "1.7.0"

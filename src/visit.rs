@@ -1,5 +1,6 @@
 use themelios::scena::code::{Insn, Code, FlatInsn, Expr, ExprTerm};
-use themelios::scena::{ed7, FuncId, CharId, LookPointId};
+use themelios::scena::ed7;
+use themelios::types::*;
 
 pub mod func_id {
 	use super::*;
