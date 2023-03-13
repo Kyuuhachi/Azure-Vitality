@@ -21,50 +21,85 @@ macro op($i:ident) { E::Op(Op::$i) }
 macro flag_e($n:literal) { expr![flag!($n)] }
 
 fn main() -> anyhow::Result<()> {
-	let pc_path: &Path = Path::new("./data/ao-gf");
-	let evo_path: &Path = Path::new("./data/ao-evo");
-
 	let outdir = Path::new("./patch");
-
-	let scena_path = outdir.join("data_en/scena");
-	let text_path = outdir.join("data_en/text");
-
-	let mut ctx = Context::new(
-		|s| {
-			let mut pc = load_scena(pc_path.join("data_en/scena"), s);
-			let psp = load_scena("./data/ao-psp/PSP_GAME/USRDIR/data/scena", s);
-			copy_shape(&mut pc, &psp);
-			pc
-		},
-		evo_path.join("data/scena"),
-		pc_path.join("data_en/text"),
-		evo_path.join("data/text"),
-		true,
-	);
-
-	timing(&mut ctx);
-
-	quest125(&mut ctx);
-	quest138(&mut ctx);
-	quest157(&mut ctx);
-	quest158(&mut ctx);
-	quest159(&mut ctx);
-
-	// TODO interactible furniture in c0120
-
 	if outdir.exists() {
 		fs::remove_dir_all(outdir)?;
 	}
 
-	fs::create_dir_all(&scena_path)?;
-	for (name, v) in &ctx.scena {
-		fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::Ao, &v.pc)?)?;
+	let pc_path: &Path = Path::new("./data/ao-gf");
+	let psp_path: &Path = Path::new("./data/ao-psp/PSP_GAME/USRDIR");
+	let evo_path: &Path = Path::new("./data/ao-evo");
+
+	{ // Jp
+		let mut ctx = Context::new(
+			|s| load_scena(psp_path.join("data/scena"), s),
+			evo_path.join("data/scena"),
+			psp_path.join("data/text"),
+			evo_path.join("data/text"),
+			false,
+		);
+
+		timing(&mut ctx);
+
+		quest125(&mut ctx);
+		quest138(&mut ctx);
+		quest157(&mut ctx);
+		quest158(&mut ctx);
+		quest159(&mut ctx);
+
+		// TODO interactible furniture in c0120
+
+		let scena_path = outdir.join("data/scena");
+		fs::create_dir_all(&scena_path)?;
+		for (name, v) in &ctx.scena {
+			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::Ao, &v.pc)?)?;
+		}
+
+		let text_path = outdir.join("data/text");
+		fs::create_dir_all(&text_path)?;
+		for (name, v) in &ctx.text {
+			fs::write(text_path.join(name), v)?;
+		}
 	}
 
-	fs::create_dir_all(&text_path)?;
-	for (name, v) in &ctx.text {
-		fs::write(text_path.join(name), v)?;
-	}
+	let scenas = { // En
+		let mut ctx = Context::new(
+			|s| {
+				let mut pc = load_scena(pc_path.join("data_en/scena"), s);
+				let psp = load_scena(psp_path.join("data/scena"), s);
+				copy_shape(&mut pc, &psp);
+				pc
+			},
+			evo_path.join("data/scena"),
+			pc_path.join("data_en/text"),
+			evo_path.join("data/text"),
+			true,
+		);
+
+		timing(&mut ctx);
+
+		quest125(&mut ctx);
+		quest138(&mut ctx);
+		quest157(&mut ctx);
+		quest158(&mut ctx);
+		quest159(&mut ctx);
+
+		// TODO interactible furniture in c0120
+
+		let scena_path = outdir.join("data_en/scena");
+		fs::create_dir_all(&scena_path)?;
+		for (name, v) in &ctx.scena {
+			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::Ao, &v.pc)?)?;
+		}
+
+		let text_path = outdir.join("data_en/text");
+		fs::create_dir_all(&text_path)?;
+		for (name, v) in &ctx.text {
+			fs::write(text_path.join(name), v)?;
+		}
+
+		ctx.scena
+	};
 
 	// Geofront only. NISA instead has data/bgm/info.yaml
 	fs::write(outdir.join("music.json"), {
@@ -117,10 +152,10 @@ fn main() -> anyhow::Result<()> {
 	fs::create_dir_all(dumpdir.join("patch"))?;
 	fs::create_dir_all(dumpdir.join("evo"))?;
 
-	for (name, v) in &ctx.scena {
+	for (name, v) in scenas {
 		use calmare::Content::ED7Scena;
-		fs::write(dumpdir.join("patch").join(name), calmare::to_string(Game::Ao, &ED7Scena(v.pc.clone()), None))?;
-		fs::write(dumpdir.join("evo").join(name), calmare::to_string(Game::Ao, &ED7Scena(v.evo.clone()), None))?;
+		fs::write(dumpdir.join("patch").join(&name), calmare::to_string(Game::Ao, &ED7Scena(v.pc), None))?;
+		fs::write(dumpdir.join("evo").join(&name), calmare::to_string(Game::Ao, &ED7Scena(v.evo), None))?;
 	}
 
 	Ok(())
