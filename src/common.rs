@@ -69,7 +69,7 @@ impl Context {
 				}
 			}
 			AScena {
-				main: gf,
+				pc: gf,
 				evo,
 				new_npcs: Vec::new(),
 				new_lps: Vec::new(),
@@ -84,12 +84,12 @@ impl Context {
 			let new_npcs = (0..evo.npcs.len()).collect();
 			let new_lps = (0..evo.look_points.len()).collect();
 			let new_funcs = (0..evo.functions.len()).collect();
-			let mut main = evo.clone();
-			main.labels.iter_mut().flatten().for_each(|a| a.name.translate(tl));
-			main.npcs.iter_mut().for_each(|a| a.name.translate(tl));
-			main.functions.iter_mut().for_each(|a| a.0.translate(tl));
+			let mut pc = evo.clone();
+			pc.labels.iter_mut().flatten().for_each(|a| a.name.translate(tl));
+			pc.npcs.iter_mut().for_each(|a| a.name.translate(tl));
+			pc.functions.iter_mut().for_each(|a| a.0.translate(tl));
 			AScena {
-				main,
+				pc,
 				evo,
 				new_npcs,
 				new_lps,
@@ -121,7 +121,7 @@ fn merge_gf(gf: &Code, psp: &Code) -> Option<Code> {
 }
 
 pub struct AScena {
-	pub main: scena::ed7::Scena,
+	pub pc: scena::ed7::Scena,
 	pub evo: scena::ed7::Scena,
 
 	pub new_npcs: Vec<usize>,
@@ -131,15 +131,15 @@ pub struct AScena {
 
 impl AScena {
 	pub fn copy_npc(&mut self, idx: usize, tl: &mut impl Translator) {
-		let monster_start = (8+self.main.npcs.len()) as u16;
-		let monster_end = (8+self.main.npcs.len()+self.main.monsters.len()) as u16;
+		let monster_start = (8+self.pc.npcs.len()) as u16;
+		let monster_end = (8+self.pc.npcs.len()+self.pc.monsters.len()) as u16;
 		visit::char_id::ed7scena(&mut self.evo, &mut |a| {
 			if a.0 >= monster_start && a.0 < monster_end {
 				a.0 += 1;
 			}
 		});
 
-		let new_idx = self.main.npcs.len();
+		let new_idx = self.pc.npcs.len();
 
 		let start = 8 + idx as u16;
 		let end = 8 + new_idx as u16;
@@ -154,13 +154,13 @@ impl AScena {
 		let npc = self.evo.npcs.remove(idx);
 		let mut npc2 = npc.clone();
 		npc2.name.translate(tl);
-		self.main.npcs.insert(new_idx, npc2);
+		self.pc.npcs.insert(new_idx, npc2);
 		self.evo.npcs.insert(new_idx, npc);
 		self.new_npcs.push(new_idx);
 	}
 
 	pub fn copy_func(&mut self, scp: u16, idx: usize, tl: &mut impl Translator) {
-		let new_idx = self.main.functions.len();
+		let new_idx = self.pc.functions.len();
 
 		let start = idx as u16;
 		let end = new_idx as u16;
@@ -175,24 +175,24 @@ impl AScena {
 		};
 		visit::func_id::ed7scena(&mut self.evo, &mut f);
 		for &i in &self.new_npcs {
-			f(&mut self.main.npcs[i].init);
-			f(&mut self.main.npcs[i].talk);
+			f(&mut self.pc.npcs[i].init);
+			f(&mut self.pc.npcs[i].talk);
 		}
 		for &i in &self.new_lps {
-			f(&mut self.main.look_points[i].function);
+			f(&mut self.pc.look_points[i].function);
 		}
 		for &i in &self.new_funcs {
-			visit::func_id::func(&mut self.main.functions[i], &mut f);
+			visit::func_id::func(&mut self.pc.functions[i], &mut f);
 		}
 
 		let func = self.evo.functions.remove(idx);
-		self.main.functions.push(Code(func.0.translated(tl)));
+		self.pc.functions.push(Code(func.0.translated(tl)));
 		self.evo.functions.insert(new_idx, func);
 		self.new_funcs.push(new_idx);
 	}
 
 	pub fn copy_look_point(&mut self, idx: usize) {
-		let new_idx = self.main.look_points.len();
+		let new_idx = self.pc.look_points.len();
 
 		let start = idx as u16;
 		let end = new_idx as u16;
@@ -205,16 +205,16 @@ impl AScena {
 		});
 
 		let lp = self.evo.look_points.remove(idx);
-		self.main.look_points.push(lp.clone());
+		self.pc.look_points.push(lp.clone());
 		self.evo.look_points.insert(new_idx, lp);
 		self.new_lps.push(new_idx);
 	}
 
 	pub fn func(&mut self, idx: usize, f: impl FnOnce(AList<Vec<TreeInsn>>)) {
-		let mut f1 = decompile(&self.main.functions[idx]).unwrap();
+		let mut f1 = decompile(&self.pc.functions[idx]).unwrap();
 		let f2 = decompile(&self.evo.functions[idx]).unwrap();
 		f(AList(&mut f1, &f2));
-		self.main.functions[idx] = recompile(&f1).unwrap();
+		self.pc.functions[idx] = recompile(&f1).unwrap();
 	}
 }
 

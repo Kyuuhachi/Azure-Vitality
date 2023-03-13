@@ -49,7 +49,7 @@ fn main() -> anyhow::Result<()> {
 
 	fs::write(outdir.join("data_en/text/t_quest._dt"), quest::write_ed7(&ctx.quests)?)?;
 	for (name, v) in &ctx.scenas {
-		fs::write(outdir.join(format!("data_en/scena/{name}.bin")), scena::ed7::write(Game::Ao, &v.main)?)?;
+		fs::write(outdir.join(format!("data_en/scena/{name}.bin")), scena::ed7::write(Game::Ao, &v.pc)?)?;
 	}
 
 	fs::write(outdir.join("data_en/text/t_name._dt"), {
@@ -127,7 +127,7 @@ fn main() -> anyhow::Result<()> {
 
 	for (name, v) in &ctx.scenas {
 		let mut ctx = calmare::Context::new(Game::Ao, None);
-		calmare::ed7::write(&mut ctx, &v.main);
+		calmare::ed7::write(&mut ctx, &v.pc);
 		fs::write(dumpdir.join(name), ctx.finish())?;
 		let mut ctx = calmare::Context::new(Game::Ao, None);
 		calmare::ed7::write(&mut ctx, &v.evo);
@@ -218,13 +218,13 @@ fn quest125(ctx: &mut Context) {
 	ctx.copy_quest(QuestId(125), tl);
 
 	let s = ctx.scena("c1200"); // Harbor District
-	s.main.chip[19] = fileid("chr/ch28100.itc");
+	s.pc.chip[19] = fileid("chr/ch28100.itc");
 	s.copy_npc(31, tl); // Reins
 	s.copy_func(0, 107, tl); // talk Reins
 	s.func(8, |a| a.if_clause(&flag_e![2564]).copy_tail());
 
 	let s = ctx.scena("c1300"); // IBC Exterior
-	s.main.chip.push(fileid("chr/ch06000.itc"));
+	s.pc.chip.push(fileid("chr/ch06000.itc"));
 	s.copy_npc(1, tl);  // Grace
 	s.copy_npc(10, tl); // Shirley
 	s.copy_npc(11, tl); // Sigmund
@@ -281,7 +281,7 @@ fn quest138(ctx: &mut Context) {
 	for i in 20..=29 {
 		s.copy_npc(i, tl);
 	}
-	let start = s.main.functions.len();
+	let start = s.pc.functions.len();
 	s.copy_func(0, 53, tl);
 	for i in 54..=83 {
 		s.copy_func(0, i, &mut Nil);
@@ -290,7 +290,7 @@ fn quest138(ctx: &mut Context) {
 
 	// Replace stopwatch with userspace implementations
 	let timer_var = Var(0);
-	let f = &mut s.main.functions[start];
+	let f = &mut s.pc.functions[start];
 	let i = f.iter().position(f!(FlatInsn::Insn(Insn::AoEvoStopwatchStart()))).unwrap();
 	f.0.splice(i..i+1, [
 		FlatInsn::Insn(Insn::Var(timer_var, expr![E::Const(0), op!(Ass)])),
@@ -302,7 +302,7 @@ fn quest138(ctx: &mut Context) {
 			]),
 		]).unwrap())),
 	]);
-	for f in &mut s.main.functions[start..] {
+	for f in &mut s.pc.functions[start..] {
 		for i in &mut f.0 {
 			if let FlatInsn::Unless(Expr(e), _) = i
 			&& let [E::Insn(i), _, op!(Lt)] = e.as_mut_slice()
@@ -319,9 +319,9 @@ fn quest157(ctx: &mut Context) {
 	ctx.copy_quest(QuestId(157), tl);
 
 	let s = ctx.scena("c120d"); // Harbor District
-	s.main.includes[0] = s.evo.includes[0];
-	s.main.includes[1] = s.evo.includes[1];
-	s.main.chip[12] = s.evo.chip[12];
+	s.pc.includes[0] = s.evo.includes[0];
+	s.pc.includes[1] = s.evo.includes[1];
+	s.pc.chip[12] = s.evo.chip[12];
 	s.copy_npc(13, tl);
 	for i in 18..=27 {
 		s.copy_npc(i, tl);
@@ -370,7 +370,7 @@ fn quest158(ctx: &mut Context) {
 	ctx.copy_quest(QuestId(158), tl);
 
 	let s = ctx.scena("c0100"); // Central Square
-	s.main.chip.push(fileid("chr/ch41600.itc"));
+	s.pc.chip.push(fileid("chr/ch41600.itc"));
 	s.copy_npc(57, tl); // Uniformed man
 	s.func(7, |a| {
 		let b = a.if_clause(&flag_e![2848]);
@@ -404,7 +404,7 @@ fn quest158(ctx: &mut Context) {
 			a.0 = 1;
 		}
 	});
-	s.main.includes[2] = s.evo.includes[2];
+	s.pc.includes[2] = s.evo.includes[2];
 	s.copy_npc(63, tl); // Princess Klaudia
 	s.copy_npc(64, tl); // Senior Captain Schwarz
 	s.func(7, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![276])));
@@ -466,7 +466,7 @@ fn quest158(ctx: &mut Context) {
 	s.copy_npc(15, tl); // Princess Klaudia
 	s.copy_npc(16, tl); // Senior Captain Schwarz
 	s.copy_func(0, 38, tl);
-	s.main.functions.pop();
+	s.pc.functions.pop();
 	s.new_funcs.pop();
 	s.copy_func(0, 59, tl);
 	for i in 60..=68 {
@@ -518,7 +518,7 @@ fn quest159(ctx: &mut Context) {
 	});
 
 	let s = ctx.scena("r4000"); // Knox Forest Road
-	s.main.chip[0] = fileid("chr/ch32600.itc");
+	s.pc.chip[0] = fileid("chr/ch32600.itc");
 	s.copy_npc(0, tl); // ミレイユ三尉, not to be confused with ミレイユ准
 	s.copy_func(0, 2, &mut Nil); // Mireille animation
 	s.copy_func(0, 39, tl); // event
