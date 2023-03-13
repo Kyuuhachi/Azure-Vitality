@@ -11,6 +11,13 @@ pub trait Translator {
 	fn tstring(&mut self, s: &mut TString);
 }
 
+pub struct NullTranslator;
+
+impl Translator for NullTranslator {
+	fn text(&mut self, _: &mut Text) {}
+	fn tstring(&mut self, _: &mut TString) {}
+}
+
 // #[deprecated]
 // pub struct Dump;
 // #[allow(deprecated)]
@@ -203,6 +210,16 @@ impl Translator for Inject {
 	}
 }
 
+impl<T: Translator + ?Sized> Translator for Box<T> {
+	fn text(&mut self, s: &mut Text) {
+		Box::as_mut(self).text(s)
+	}
+
+	fn tstring(&mut self, s: &mut TString) {
+		Box::as_mut(self).tstring(s)
+	}
+}
+
 pub trait Translatable {
 	fn translate(&mut self, tl: &mut impl Translator);
 
@@ -286,17 +303,6 @@ impl Translatable for Expr {
 		// There aren't any translatable strings in exprs
 	}
 }
-
-// pub fn do_translate(tl: &mut impl Translator, a: &mut [TreeInsn]) {
-// 	a.accept_mut(&mut |a| {
-// 		match a {
-// 			IAM::Text(a) => *a = translate_text(tl, a),
-// 			IAM::TextTitle(a) if !a.is_empty() => *a = tl.translate(a),
-// 			IAM::MenuItem(a) if !a.is_empty() => *a = tl.translate(a),
-// 			_ => {}
-// 		}
-// 	});
-// }
 
 pub fn text2str(t: &Text) -> String {
 	let mut s = String::new();

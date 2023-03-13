@@ -67,6 +67,14 @@ impl<'a> Context<'a> {
 		}
 	}
 
+	pub fn load_tl(&self, data: &str) -> Box<dyn Translator> {
+		if self.is_en {
+			Box::new(translate::Translate::load(data))
+		} else {
+			Box::new(translate::NullTranslator)
+		}
+	}
+
 	pub fn scena(&mut self, name: &str) -> &mut AScena {
 		self.scena.entry(name.to_owned()).or_insert_with(|| {
 			AScena {

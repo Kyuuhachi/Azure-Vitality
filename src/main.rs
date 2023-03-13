@@ -219,7 +219,7 @@ fn timing(ctx: &mut Context) {
 
 /// Illicit Trade Stakeout
 fn quest125(ctx: &mut Context) {
-	let tl = &mut Translate::load(include_str!("../text/quest125.txt"));
+	let tl = &mut ctx.load_tl(include_str!("../text/quest125.txt"));
 	ctx.copy_quest(QuestId(125), tl);
 
 	let s = ctx.scena("c1200"); // Harbor District
@@ -268,7 +268,7 @@ fn quest125(ctx: &mut Context) {
 
 /// Bringing Home the Bakery
 fn quest138(ctx: &mut Context) {
-	let tl = &mut Translate::load(include_str!("../text/quest138.txt"));
+	let tl = &mut ctx.load_tl(include_str!("../text/quest138.txt"));
 	ctx.copy_quest(QuestId(138), tl);
 
 	let s = ctx.scena("c0210"); // Morges Bakery
@@ -320,7 +320,7 @@ fn quest138(ctx: &mut Context) {
 
 /// Temporary Theme Park Job, part 2
 fn quest157(ctx: &mut Context) {
-	let tl = &mut Translate::load(include_str!("../text/quest157.txt"));
+	let tl = &mut ctx.load_tl(include_str!("../text/quest157.txt"));
 	ctx.copy_quest(QuestId(157), tl);
 
 	let s = ctx.scena("c120d"); // Harbor District
@@ -371,7 +371,7 @@ fn quest157(ctx: &mut Context) {
 
 /// Introduction to Crossbell
 fn quest158(ctx: &mut Context) {
-	let tl = &mut Translate::load(include_str!("../text/quest158.txt"));
+	let tl = &mut ctx.load_tl(include_str!("../text/quest158.txt"));
 	ctx.copy_quest(QuestId(158), tl);
 
 	let s = ctx.scena("c0100"); // Central Square
@@ -508,7 +508,7 @@ fn quest158(ctx: &mut Context) {
 
 // Searching the Forest
 fn quest159(ctx: &mut Context) {
-	let tl = &mut Translate::load(include_str!("../text/quest159.txt"));
+	let tl = &mut ctx.load_tl(include_str!("../text/quest159.txt"));
 	ctx.copy_quest(QuestId(159), tl);
 
 	let (pc, evo) = ctx.text("t_name._dt");
