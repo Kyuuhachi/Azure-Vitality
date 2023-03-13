@@ -515,7 +515,7 @@ fn quest159(ctx: &mut Context) {
 	let mut names = name::read_ed7(pc).unwrap();
 	let names_evo = name::read_ed7(&evo).unwrap();
 	let mut mireille = names_evo.iter().find(|a| a.id == NameId(165)).unwrap().clone();
-	mireille.name.0 = "Second Lieutenant Mireille".to_owned(); // Don't like that this is not in the tl files
+	mireille.name.translate(tl);
 	names.push(mireille);
 	*pc = name::write_ed7(&names).unwrap();
 

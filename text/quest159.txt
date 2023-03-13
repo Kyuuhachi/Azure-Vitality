@@ -153,6 +153,10 @@
 	　Randy ended up helping her with her shopping
 	　as an apology.
 
+## t_name {{{1
+ミレイユ三尉
+	Second Lieutenant Mireille
+
 ## t2020 - Bellguard Gate {{{1
 
 ## :15 talk to Commander Baelz after clearing quest 139: Runaway Vehicle Pursuit {{{2
