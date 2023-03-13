@@ -26,15 +26,14 @@ fn main() -> anyhow::Result<()> {
 		fs::remove_dir_all(outdir)?;
 	}
 
-	let pc_path: &Path = Path::new("./data/ao-gf");
-	let psp_path: &Path = Path::new("./data/ao-psp/PSP_GAME/USRDIR");
+	let pc_path: &Path = Path::new("./data/ao");
 	let evo_path: &Path = Path::new("./data/ao-evo");
 
 	{ // Jp
 		let mut ctx = Context::new(
-			|s| load_scena(psp_path.join("data/scena"), s),
+			|s| load_scena(pc_path.join("data/scena"), s),
 			evo_path.join("data/scena"),
-			psp_path.join("data/text"),
+			pc_path.join("data/text"),
 			evo_path.join("data/text"),
 			false,
 		);
@@ -64,14 +63,9 @@ fn main() -> anyhow::Result<()> {
 
 	let scenas = { // En
 		let mut ctx = Context::new(
-			|s| {
-				let mut pc = load_scena(pc_path.join("data_en/scena"), s);
-				let psp = load_scena(psp_path.join("data/scena"), s);
-				copy_shape(&mut pc, &psp);
-				pc
-			},
+			|s| load_scena(pc_path.join("data_en/scena_us"), s),
 			evo_path.join("data/scena"),
-			pc_path.join("data_en/text"),
+			pc_path.join("data/text_us"),
 			evo_path.join("data/text"),
 			true,
 		);
@@ -86,13 +80,13 @@ fn main() -> anyhow::Result<()> {
 
 		// TODO interactible furniture in c0120
 
-		let scena_path = outdir.join("data_en/scena");
+		let scena_path = outdir.join("data/scena_us");
 		fs::create_dir_all(&scena_path)?;
 		for (name, v) in &ctx.scena {
 			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::Ao, &v.pc)?)?;
 		}
 
-		let text_path = outdir.join("data_en/text");
+		let text_path = outdir.join("data/text_us");
 		fs::create_dir_all(&text_path)?;
 		for (name, v) in &ctx.text {
 			fs::write(text_path.join(name), v)?;
@@ -101,23 +95,13 @@ fn main() -> anyhow::Result<()> {
 		ctx.scena
 	};
 
-	// Geofront only. NISA instead has data/bgm/info.yaml
-	fs::write(outdir.join("music.json"), {
-		let data = fs::read_to_string(pc_path.join("music.json"))?;
-		let data = data.trim_start_matches('\u{FEFF}');
-		let mut music: serde_json::Value = serde_json::from_str(data)?;
-		music["files"].as_object_mut().unwrap().insert("4".into(), serde_json::json!({
-			"en": "Way Of Life",
-			"jp": "Way Of Life",
-			"source": 7, // Trails to Azure Evolution
-			"path": "ed7004.ogg",
-			"enabled": false,
-		}));
-		music["soundtracks"]["0"]["files"].as_object_mut().unwrap().insert("4".into(), serde_json::json!({
-			"loop": false,
-			"path": "bgm/ed7004.ogg",
-		}));
-		serde_json::to_vec_pretty(&music)?
+	fs::write(outdir.join("data/bgm/info.yaml"), {
+		let mut data = fs::read_to_string(pc_path.join("data/bgm/info.yaml"))?;
+		if !data.ends_with('\n') {
+			data.push('\n');
+		}
+		data.push_str("  '4':\n    en: Way Of Life\n    jp: Ｗａｙ　Ｏｆ　Ｌｉｆｅ\n");
+		data
 	})?;
 
 	// An extra chair for Wazy
@@ -137,13 +121,13 @@ fn main() -> anyhow::Result<()> {
 	fs::copy(evo_path.join("data/chr/ch40004.itc"), outdir.join("data/chr/ch40004.itc"))?;
 	// Could do with some upscaling
 
-	fs::create_dir_all(outdir.join("data/bgm"))?;
-	fs::create_dir_all(outdir.join("data/se"))?;
-	fs::copy("./text/ed7004.ogg", outdir.join("data/bgm/ed7004.ogg"))?;
-	fs::copy("./text/ed7s1100.wav", outdir.join("data/se/ed7s1100.wav"))?;
-	fs::copy("./text/ed7s1101.wav", outdir.join("data/se/ed7s1101.wav"))?;
-	fs::copy("./text/ed7s1102.wav", outdir.join("data/se/ed7s1102.wav"))?;
-	fs::copy("./text/ed7s1104.wav", outdir.join("data/se/ed7s1104.wav"))?;
+	fs::create_dir_all(outdir.join("data_pc/bgm"))?;
+	fs::create_dir_all(outdir.join("data_pc/se"))?;
+	fs::copy("./text/ed7004.opus", outdir.join("data_pc/bgm/ed7004.opus"))?;
+	fs::copy("./text/ed7s1100.opus", outdir.join("data_pc/se/ed7s1100.opus"))?;
+	fs::copy("./text/ed7s1101.opus", outdir.join("data_pc/se/ed7s1101.opus"))?;
+	fs::copy("./text/ed7s1102.opus", outdir.join("data_pc/se/ed7s1102.opus"))?;
+	fs::copy("./text/ed7s1104.opus", outdir.join("data_pc/se/ed7s1104.opus"))?;
 
 	let dumpdir = Path::new("./dump");
 	if dumpdir.exists() {
@@ -290,7 +274,7 @@ fn quest138(ctx: &mut Context) {
 	let tl = &mut ctx.load_tl(include_str!("../text/quest138.txt"));
 	ctx.copy_quest(QuestId(138), tl);
 
-	if !ctx.is_en {
+	{
 		let (pc, evo) = ctx.text("t_bgm._dt");
 		let mut bgms = bgm::read_ed7(pc).unwrap();
 		let bgms_evo = bgm::read_ed7(&evo).unwrap();
