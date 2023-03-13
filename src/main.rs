@@ -1,6 +1,7 @@
 #![feature(decl_macro, let_chains, backtrace_frames)]
 
 use std::path::Path;
+use std::fs;
 
 use themelios::scena;
 use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn, Code};
@@ -20,18 +21,24 @@ macro op($i:ident) { E::Op(Op::$i) }
 macro flag_e($n:literal) { expr![flag!($n)] }
 
 fn main() -> anyhow::Result<()> {
-	use std::fs;
+	let pc_path: &Path = Path::new("./data/ao-gf");
+	let evo_path: &Path = Path::new("./data/ao-evo");
+
+	let outdir = Path::new("./patch");
+
+	let scena_path = outdir.join("data_en/scena");
+	let text_path = outdir.join("data_en/text");
+
 	let mut ctx = Context::new(
-		// PathBuf::from("./data/ao-psp/PSP_GAME/USRDIR/"),
 		|s| {
-			let mut pc = load_scena("./data/ao-gf/data_en/scena", s);
+			let mut pc = load_scena(pc_path.join("data_en/scena"), s);
 			let psp = load_scena("./data/ao-psp/PSP_GAME/USRDIR/data/scena", s);
 			copy_shape(&mut pc, &psp);
 			pc
 		},
-		"./data/ao-evo/data/scena",
-		"./data/ao-gf/data_en/text",
-		"./data/ao-evo/data/text",
+		evo_path.join("data/scena"),
+		pc_path.join("data_en/text"),
+		evo_path.join("data/text"),
 		true,
 	);
 
@@ -45,12 +52,6 @@ fn main() -> anyhow::Result<()> {
 
 	// TODO interactible furniture in c0120
 
-	// let textdir_n = outdir.join("data/text");
-	// fs::create_dir_all(&textdir_n)?;
-
-	let outdir = Path::new("./patch");
-	let scena_path = outdir.join("data_en/scena");
-	let text_path = outdir.join("data_en/text");
 	if outdir.exists() {
 		fs::remove_dir_all(outdir)?;
 	}
@@ -65,17 +66,9 @@ fn main() -> anyhow::Result<()> {
 		fs::write(text_path.join(name), v)?;
 	}
 
-	// NISA Zero has both text/t_bgm and text_us/t_bgm, but they are identical. Better patch both.
-	fs::write(text_path.join("t_bgm._dt"), {
-		let mut bgms = bgm::read_ed7(&fs::read("./data/ao-gf/data/text/t_bgm._dt")?)?;
-		let bgms_evo = bgm::read_ed7(&fs::read("./data/ao-evo/data/text/t_bgm._dt")?)?;
-		bgms.push(bgms_evo.iter().find(|a| a.id == BgmId(4)).unwrap().clone());
-		bgm::write_ed7(&bgms)?
-	})?;
-
 	// Geofront only. NISA instead has data/bgm/info.yaml
 	fs::write(outdir.join("music.json"), {
-		let data = fs::read_to_string("./data/ao-gf/music.json")?;
+		let data = fs::read_to_string(pc_path.join("music.json"))?;
 		let data = data.trim_start_matches('\u{FEFF}');
 		let mut music: serde_json::Value = serde_json::from_str(data)?;
 		music["files"].as_object_mut().unwrap().insert("4".into(), serde_json::json!({
@@ -92,33 +85,26 @@ fn main() -> anyhow::Result<()> {
 		serde_json::to_vec_pretty(&music)?
 	})?;
 
-	fs::create_dir_all(outdir.join("data/text"))?;
-	fs::write(outdir.join("data/text/t_se._dt"), {
-		let mut se = se::read_ed7(&fs::read("./data/ao-gf/data/text/t_se._dt")?)?;
-		let se_evo = se::read_ed7(&fs::read("./data/ao-evo/data/text/t_se._dt")?)?;
-		se.push(se_evo.iter().find(|a| a.id == SoundId(1100)).unwrap().clone());
-		se.push(se_evo.iter().find(|a| a.id == SoundId(1101)).unwrap().clone());
-		se.push(se_evo.iter().find(|a| a.id == SoundId(1102)).unwrap().clone());
-		se.push(se_evo.iter().find(|a| a.id == SoundId(1104)).unwrap().clone());
-		se::write_ed7(&se)?
-	})?;
-
-	// TODO do this in a better way
+	// An extra chair for Wazy
 	fs::create_dir_all(outdir.join("data/ops"))?;
+	fs::copy(evo_path.join("data/ops/e3210.op2"), outdir.join("data/ops/e3210.op2"))?;
 	fs::create_dir_all(outdir.join("data/map/objects"))?;
+	fs::copy(evo_path.join("data/map/objects/e3210isu.it3"), outdir.join("data/map/objects/e3210isu.it3"))?;
+	// This it3 contains embedded textures, so that needs to change
+
+	// Crossbell overfiew, for Guide quest
 	fs::create_dir_all(outdir.join("data/visual"))?;
+	fs::copy(evo_path.join("data/visual/c_vis600.itp"), outdir.join("data/visual/c_vis600.itp"))?;
+	// Could do with some upscaling
+
+	// Tio/Mishette chimera
 	fs::create_dir_all(outdir.join("data/chr"))?;
+	fs::copy(evo_path.join("data/chr/ch40004.itc"), outdir.join("data/chr/ch40004.itc"))?;
+	// Could do with some upscaling
+
 	fs::create_dir_all(outdir.join("data/bgm"))?;
 	fs::create_dir_all(outdir.join("data/se"))?;
-	fs::copy("./data/ao-evo/data/ops/e3210.op2", outdir.join("data/ops/e3210.op2"))?;
-	// For NISA, this it3 should be updated to use TEXI instead of TEXF. Think it'll still work without, though.
-	fs::copy("./data/ao-evo/data/map/objects/e3210isu.it3", outdir.join("data/map/objects/e3210isu.it3"))?;
-	// These two might need upscaling.
-	fs::copy("./data/ao-evo/data/visual/c_vis600.itp", outdir.join("data/visual/c_vis600.itp"))?;
-	fs::copy("./data/ao-evo/data/chr/ch40004.itc", outdir.join("data/chr/ch40004.itc"))?;
-	// In NISA, this should be data_pc/bgm/ed7004.opus
 	fs::copy("./text/ed7004.ogg", outdir.join("data/bgm/ed7004.ogg"))?;
-	// And data_pc/se/ed7s1100.opus for these
 	fs::copy("./text/ed7s1100.wav", outdir.join("data/se/ed7s1100.wav"))?;
 	fs::copy("./text/ed7s1101.wav", outdir.join("data/se/ed7s1101.wav"))?;
 	fs::copy("./text/ed7s1102.wav", outdir.join("data/se/ed7s1102.wav"))?;
@@ -128,15 +114,13 @@ fn main() -> anyhow::Result<()> {
 	if dumpdir.exists() {
 		fs::remove_dir_all(dumpdir)?;
 	}
-	fs::create_dir_all(dumpdir)?;
+	fs::create_dir_all(dumpdir.join("patch"))?;
+	fs::create_dir_all(dumpdir.join("evo"))?;
 
 	for (name, v) in &ctx.scena {
-		let mut ctx = calmare::Context::new(Game::Ao, None);
-		calmare::ed7::write(&mut ctx, &v.pc);
-		fs::write(dumpdir.join(name), ctx.finish())?;
-		let mut ctx = calmare::Context::new(Game::Ao, None);
-		calmare::ed7::write(&mut ctx, &v.evo);
-		fs::write(dumpdir.join(format!("{name}.evo")), ctx.finish())?;
+		use calmare::Content::ED7Scena;
+		fs::write(dumpdir.join("patch").join(name), calmare::to_string(Game::Ao, &ED7Scena(v.pc.clone()), None))?;
+		fs::write(dumpdir.join("evo").join(name), calmare::to_string(Game::Ao, &ED7Scena(v.evo.clone()), None))?;
 	}
 
 	Ok(())
@@ -270,6 +254,25 @@ fn quest125(ctx: &mut Context) {
 fn quest138(ctx: &mut Context) {
 	let tl = &mut ctx.load_tl(include_str!("../text/quest138.txt"));
 	ctx.copy_quest(QuestId(138), tl);
+
+	if !ctx.is_en {
+		let (pc, evo) = ctx.text("t_bgm._dt");
+		let mut bgms = bgm::read_ed7(pc).unwrap();
+		let bgms_evo = bgm::read_ed7(&evo).unwrap();
+		bgms.push(bgms_evo.iter().find(|a| a.id == BgmId(4)).unwrap().clone());
+		*pc = bgm::write_ed7(&bgms).unwrap();
+	}
+
+	if !ctx.is_en {
+		let (pc, evo) = ctx.text("t_se._dt");
+		let mut se = se::read_ed7(pc).unwrap();
+		let se_evo = se::read_ed7(&evo).unwrap();
+		se.push(se_evo.iter().find(|a| a.id == SoundId(1100)).unwrap().clone());
+		se.push(se_evo.iter().find(|a| a.id == SoundId(1101)).unwrap().clone());
+		se.push(se_evo.iter().find(|a| a.id == SoundId(1102)).unwrap().clone());
+		se.push(se_evo.iter().find(|a| a.id == SoundId(1104)).unwrap().clone());
+		*pc = se::write_ed7(&se).unwrap();
+	}
 
 	let s = ctx.scena("c0210"); // Morges Bakery
 	s.copy_func(0, 30, tl);
