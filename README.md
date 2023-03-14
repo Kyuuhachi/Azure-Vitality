@@ -54,3 +54,12 @@ clips for them.
 detective ranks easier to attain since there are more DP in total. I believe
 adjusting the rank thresholds would require modding the exe, which is beyond
 the scope of this mod.
+
+## Credits
+Nihon Falcom: for creating the game.
+
+[GeofrontTeam](https://github.com/GeofrontTeam) and NIS America: for bringing it to the west.
+
+[Ouroboros](https://github.com/Ouroboros): for creating [EDDecompiler](https://github.com/Ouroboros/EDDecompiler). While I do not use it directly, it was invaluable as documentation for creating my own.
+
+Discord members: for help with upscaling a couple of images
