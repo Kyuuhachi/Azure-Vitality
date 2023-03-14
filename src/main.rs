@@ -51,7 +51,7 @@ fn main() -> anyhow::Result<()> {
 		let scena_path = outdir.join("data/scena");
 		fs::create_dir_all(&scena_path)?;
 		for (name, v) in &ctx.scena {
-			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::Ao, &v.pc)?)?;
+			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::AoKai, &v.pc)?)?;
 		}
 
 		let text_path = outdir.join("data/text");
@@ -83,7 +83,7 @@ fn main() -> anyhow::Result<()> {
 		let scena_path = outdir.join("data/scena_us");
 		fs::create_dir_all(&scena_path)?;
 		for (name, v) in &ctx.scena {
-			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::Ao, &v.pc)?)?;
+			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::AoKai, &v.pc)?)?;
 		}
 
 		let text_path = outdir.join("data/text_us");
@@ -95,12 +95,13 @@ fn main() -> anyhow::Result<()> {
 		ctx.scena
 	};
 
+	fs::create_dir_all(outdir.join("data/bgm"))?;
 	fs::write(outdir.join("data/bgm/info.yaml"), {
 		let mut data = fs::read_to_string(pc_path.join("data/bgm/info.yaml"))?;
 		if !data.ends_with('\n') {
 			data.push('\n');
 		}
-		data.push_str("  '4':\n    en: Way Of Life\n    jp: Ｗａｙ　Ｏｆ　Ｌｉｆｅ\n");
+		data.push_str("  '4':\n    source: 1\n    en: Way Of Life\n    jp: Ｗａｙ　Ｏｆ　Ｌｉｆｅ\n");
 		data
 	})?;
 
@@ -113,7 +114,11 @@ fn main() -> anyhow::Result<()> {
 
 	// Crossbell overfiew, for Guide quest
 	fs::create_dir_all(outdir.join("data/visual"))?;
+	fs::create_dir_all(outdir.join("data/visual_en"))?;
 	fs::copy(evo_path.join("data/visual/c_vis600.itp"), outdir.join("data/visual/c_vis600.itp"))?;
+	fs::copy(evo_path.join("data/visual/c_vis600.itp"), outdir.join("data/visual_en/c_vis600.itp"))?;
+	fs::copy(evo_path.join("data/visual/c_vis606.itp"), outdir.join("data/visual/c_vis606.itp"))?;
+	fs::copy(evo_path.join("data/visual/c_vis606.itp"), outdir.join("data/visual_en/c_vis606.itp"))?;
 	// Could do with some upscaling
 
 	// Tio/Mishette chimera
@@ -121,13 +126,13 @@ fn main() -> anyhow::Result<()> {
 	fs::copy(evo_path.join("data/chr/ch40004.itc"), outdir.join("data/chr/ch40004.itc"))?;
 	// Could do with some upscaling
 
-	fs::create_dir_all(outdir.join("data_pc/bgm"))?;
-	fs::create_dir_all(outdir.join("data_pc/se"))?;
-	fs::copy("./text/ed7004.opus", outdir.join("data_pc/bgm/ed7004.opus"))?;
-	fs::copy("./text/ed7s1100.opus", outdir.join("data_pc/se/ed7s1100.opus"))?;
-	fs::copy("./text/ed7s1101.opus", outdir.join("data_pc/se/ed7s1101.opus"))?;
-	fs::copy("./text/ed7s1102.opus", outdir.join("data_pc/se/ed7s1102.opus"))?;
-	fs::copy("./text/ed7s1104.opus", outdir.join("data_pc/se/ed7s1104.opus"))?;
+	fs::create_dir_all(outdir.join("data/bgm"))?;
+	fs::create_dir_all(outdir.join("data/se"))?;
+	fs::copy("./text/ed7004.opus", outdir.join("data/bgm/ed7004.opus"))?;
+	fs::copy("./text/ed7s1100.opus", outdir.join("data/se/ed7s1100.opus"))?;
+	fs::copy("./text/ed7s1101.opus", outdir.join("data/se/ed7s1101.opus"))?;
+	fs::copy("./text/ed7s1102.opus", outdir.join("data/se/ed7s1102.opus"))?;
+	fs::copy("./text/ed7s1104.opus", outdir.join("data/se/ed7s1104.opus"))?;
 
 	let dumpdir = Path::new("./dump");
 	if dumpdir.exists() {
@@ -138,23 +143,25 @@ fn main() -> anyhow::Result<()> {
 
 	for (name, v) in scenas {
 		use calmare::Content::ED7Scena;
-		fs::write(dumpdir.join("patch").join(&name), calmare::to_string(Game::Ao, &ED7Scena(v.pc), None))?;
-		fs::write(dumpdir.join("evo").join(&name), calmare::to_string(Game::Ao, &ED7Scena(v.evo), None))?;
+		fs::write(dumpdir.join("patch").join(&name), calmare::to_string(Game::AoKai, &ED7Scena(v.pc), None))?;
+		fs::write(dumpdir.join("evo").join(&name), calmare::to_string(Game::AoKai, &ED7Scena(v.evo), None))?;
 	}
 
 	Ok(())
 }
 
 fn timing(ctx: &mut Context) {
+	let s = ctx.scena("c0200"); // West Street
+	s.pad_npc(12); // Ken
+	s.pad_npc(13); // Nana
+	s.pad_func(0, 14);
+	s.pad_func(0, 15);
+	s.pad_func(0, 16);
+
 	let s = ctx.scena("c0110"); // SSS HQ
 	// Two functions were moved to a subscript, undo that and reorder the functions to match
-	s.evo.functions.insert(16, Code(vec![]));
-	s.evo.functions.insert(17, Code(vec![]));
-	visit::func_id::ed7scena(&mut s.evo, &mut |a| {
-		if a.0 == 0 && a.1 >= 16 {
-			a.1 += 2
-		}
-	});
+	s.pad_func(0, 16);
+	s.pad_func(0, 17);
 
 	// Add quests 138 and 157 to quest list
 	s.func(18, |a| {
@@ -304,13 +311,13 @@ fn quest138(ctx: &mut Context) {
 	});
 
 	let s = ctx.scena("c0200"); // West Street
-	s.copy_npc(18, tl); // Morges
-	for i in 20..=29 {
+	s.copy_npc(20, tl); // Morges
+	for i in 22..=31 {
 		s.copy_npc(i, tl);
 	}
 	let start = s.pc.functions.len();
-	s.copy_func(0, 53, tl);
-	for i in 54..=83 {
+	s.copy_func(0, 56, tl);
+	for i in 57..=86 {
 		s.copy_func(0, i, &mut Nil);
 	}
 	s.func(11, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
@@ -361,9 +368,9 @@ fn quest157(ctx: &mut Context) {
 
 	let s = ctx.copy_scena("c120d_1", tl);
 	visit::char_id::ed7scena(&mut s.evo, &mut |a| {
-		if a.0 == 21 {
-			a.0 = 25
-		} else if a.0 > 21 && a.0 < 25 {
+		if a.0 == 13 { // move Hanks
+			a.0 = 17
+		} else if a.0 > 13 && a.0 < 17 {
 			a.0 -= 1;
 		}
 	});
@@ -455,9 +462,9 @@ fn quest158(ctx: &mut Context) {
 	s.func(2, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![273])));
 
 	let s = ctx.scena("c0200"); // West Street
-	s.copy_npc(30, tl); // Princess Klaudia
-	s.copy_npc(31, tl); // Senior Captain Schwarz
-	s.copy_func(0, 84, tl);
+	s.copy_npc(32, tl); // Princess Klaudia
+	s.copy_npc(33, tl); // Senior Captain Schwarz
+	s.copy_func(0, 87, tl);
 	s.func(11, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![275])));
 
 	let s = ctx.scena("c0210"); // Morges Bakery

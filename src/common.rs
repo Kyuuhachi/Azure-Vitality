@@ -40,7 +40,7 @@ pub struct Context<'a> {
 
 pub fn load_scena(dir: impl AsRef<Path>, name: &str) -> scena::ed7::Scena {
 	let data = fs::read(dir.as_ref().join(format!("{name}.bin"))).unwrap();
-	scena::ed7::read(Game::Ao, &data).unwrap()
+	scena::ed7::read(Game::AoKai, &data).unwrap()
 }
 
 pub fn load_scena_evo(dir: impl AsRef<Path>, name: &str) -> scena::ed7::Scena {
@@ -158,7 +158,7 @@ impl AScena {
 	pub fn copy_npc(&mut self, idx: usize, tl: &mut impl Translator) {
 		let monster_start = (8+self.pc.npcs.len()) as u16;
 		let monster_end = (8+self.pc.npcs.len()+self.pc.monsters.len()) as u16;
-		visit::char_id::ed7scena(&mut self.evo, &mut |a| {
+		visit::char_id::ed7scena(&mut self.pc, &mut |a| {
 			if a.0 >= monster_start && a.0 < monster_end {
 				a.0 += 1;
 			}
@@ -214,6 +214,34 @@ impl AScena {
 		self.pc.functions.push(Code(func.0.translated(tl)));
 		self.evo.functions.insert(new_idx, func);
 		self.new_funcs.push(new_idx);
+	}
+
+	pub fn pad_func(&mut self, scp: u16, n: usize) {
+		self.evo.functions.insert(n, Code(vec![]));
+		visit::func_id::ed7scena(&mut self.evo, &mut |a| {
+			if a.0 == scp && a.1 as usize >= n {
+				a.1 += 1
+			}
+		});
+	}
+
+	pub fn pad_npc(&mut self, n: usize) {
+		self.evo.npcs.insert(n, scena::ed7::Npc {
+			name: "".into(),
+			pos: Pos3(0,0,0),
+			angle: Angle(0),
+			flags: CharFlags(0),
+			unk2: 0,
+			chip: ChipId(0),
+			init: FuncId(0xFF,0xFFFF),
+			talk: FuncId(0xFF,0xFFFF),
+			unk4: 0,
+		});
+		visit::char_id::ed7scena(&mut self.evo, &mut |a| {
+			if a.0 as usize >= n + 8 && a.0 <= 200 {
+				a.0 += 1
+			}
+		});
 	}
 
 	pub fn copy_look_point(&mut self, idx: usize) {

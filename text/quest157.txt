@@ -565,8 +565,8 @@
 今日は、みっしぃとみーしぇが
 ダンスを披露してくれるよー！
 	Now, all good children! Come one,
-	come all! Mishy and Mishette will
-	now perform a dance for us all!
+	come all! Mishy and Mishette are
+	here to dance for us all!
 
 観客たち
 	Audience
@@ -803,9 +803,9 @@
 {color 10}（前も思ったけど、
 全身覆ってるんだから
 似合うもなにもないような……）
-	{color 10}(You too? Seriously, it's a
-	full bodysuit. You can't
-	even see my eyes.)
+	{color 10}(Seriously, it's a full
+	bodysuit. You can't even
+	see my eyes.)
 
 ## E
 ティオちゃんも、
@@ -1005,7 +1005,8 @@
 
 ## T
 {color 21}#4Sみっしぃはいつでも完璧です。#3S
-	{color 21}#4SMishy is never anything short of perfect.#3S
+	{color 21}#4SMishy is never
+	anything short of perfect.#3S
 
 ## R
 いや、そこで
@@ -1438,9 +1439,9 @@
 彼女には申し訳ないんだが、
 みっしぃグッズでなくて、
 これを渡そうと思ってね。
-	It's no Mishy goods --
-	sorry to the girl there --
-	but I thought I'd give you this.
+	It's no Mishy goods -- sorry
+	to the girl -- but I thought
+	I'd give you this.
 
 ## If all good
 {item 540}{color 0}を６本手に入れた。

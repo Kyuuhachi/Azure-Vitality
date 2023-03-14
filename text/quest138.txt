@@ -1418,8 +1418,8 @@
 
 ## ♪
 #5S理不尽で　矛盾だらけの世の中#3S
-	#5S理不尽#5Rりふじん#で　矛盾#4Rむじゅん#だらけの世#2Rよ#の中#2Rなか##3S
-	In this world we live　that's unfair and filled up with contradiction
+	#5S理不尽#5Rりふじん#で　矛盾#4Rむじゅん#だらけの世#2Rよ#の中#2Rなか#
+	#3SIn this world we live　that's unfair and filled up with contradiction
 
 ## ♪
 #5Sヘコんだり　挫けたりもするさ
@@ -1536,16 +1536,16 @@
 ## ♪
 #5Sいつかは尽きる命だから
 今を諦めずに足掻け#3S
-	#5Sいつかは尽#2Rつ#きる命#2Rいのち#だから
-	今#2Rいま#を諦#2Rあきら#めずに足掻#3Rはが#け#3S
+	#5Sいつかは尽#2R つ#きる命#2R いのち#だから
+	今#2R いま#を諦#3R あきら#めずに足掻#3Rはが#け#3S
 	Your life is short, a day will come when it's all over
 	And that's why you fight on, and never once give up
 
 ## ♪
 #5S生きてるその意味を　探し続ける
 それが生きることさ　きっと――#3S
-	#5S生#2Rい#きてるその意味#3Rいみ#を　探#3Rさが#し続#3Rつづ#ける
-	それが生#2Rい#きることさ　きっと――#3S
+	#5S生#2R い#きてるその意味#3Rいみ#を　探#2Rさが#し続#2Rつづ#ける
+	それが生#2R い#きることさ　きっと――#3S
 	To be alive, what is the meaning?　Searching for that answer
 	Is itself what it means to be alive　That, I know――
 
