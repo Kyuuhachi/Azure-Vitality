@@ -114,12 +114,9 @@ fn main() -> anyhow::Result<()> {
 
 	// Crossbell overfiew, for Guide quest
 	fs::create_dir_all(outdir.join("data/visual"))?;
-	fs::create_dir_all(outdir.join("data/visual_en"))?;
-	fs::copy(evo_path.join("data/visual/c_vis600.itp"), outdir.join("data/visual/c_vis600.itp"))?;
-	fs::copy(evo_path.join("data/visual/c_vis600.itp"), outdir.join("data/visual_en/c_vis600.itp"))?;
-	fs::copy(evo_path.join("data/visual/c_vis606.itp"), outdir.join("data/visual/c_vis606.itp"))?;
-	fs::copy(evo_path.join("data/visual/c_vis606.itp"), outdir.join("data/visual_en/c_vis606.itp"))?;
-	// Could do with some upscaling
+	fs::write(outdir.join("data/visual/c_vis600.itp"), include_bytes!("../text/c_vis600.itp"))?;
+	fs::write(outdir.join("data/visual/c_vis606.itp"), include_bytes!("../text/c_vis606.itp"))?;
+	// 600 is not upscaled, but it looks good anyway.
 
 	// Tio/Mishette chimera
 	fs::create_dir_all(outdir.join("data/chr"))?;
@@ -128,11 +125,11 @@ fn main() -> anyhow::Result<()> {
 
 	fs::create_dir_all(outdir.join("data/bgm"))?;
 	fs::create_dir_all(outdir.join("data/se"))?;
-	fs::copy("./text/ed7004.opus", outdir.join("data/bgm/ed7004.opus"))?;
-	fs::copy("./text/ed7s1100.opus", outdir.join("data/se/ed7s1100.opus"))?;
-	fs::copy("./text/ed7s1101.opus", outdir.join("data/se/ed7s1101.opus"))?;
-	fs::copy("./text/ed7s1102.opus", outdir.join("data/se/ed7s1102.opus"))?;
-	fs::copy("./text/ed7s1104.opus", outdir.join("data/se/ed7s1104.opus"))?;
+	fs::write(outdir.join("data/bgm/ed7004.opus"),  include_bytes!("../text/ed7004.opus"))?;
+	fs::write(outdir.join("data/se/ed7s1100.opus"), include_bytes!("../text/ed7s1100.opus"))?;
+	fs::write(outdir.join("data/se/ed7s1101.opus"), include_bytes!("../text/ed7s1101.opus"))?;
+	fs::write(outdir.join("data/se/ed7s1102.opus"), include_bytes!("../text/ed7s1102.opus"))?;
+	fs::write(outdir.join("data/se/ed7s1104.opus"), include_bytes!("../text/ed7s1104.opus"))?;
 
 	let dumpdir = Path::new("./dump");
 	if dumpdir.exists() {
