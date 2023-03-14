@@ -1276,9 +1276,9 @@
 ……ワジさんは、
 特になにもしていないと
 思うのですが。
-	Indeed, nothing is the word
-	I would use to describe
-	your contribution.
+	Indeed, "nothing" is precisely
+	the word I would use to
+	describe your contribution.
 
 ## N
 まあまあ。
@@ -1404,7 +1404,7 @@
 そん、な……
 いつ出るのかと、胸を高鳴らせながら
 待っていたのに……{#05}
-	It cannot be...
+	This cannot be...
 	I had the day marked in my calendar...{#05}
 
 ## T (auto-scrolls)

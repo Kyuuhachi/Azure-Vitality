@@ -120,8 +120,7 @@ fn main() -> anyhow::Result<()> {
 
 	// Tio/Mishette chimera
 	fs::create_dir_all(outdir.join("data/chr"))?;
-	fs::copy(evo_path.join("data/chr/ch40004.itc"), outdir.join("data/chr/ch40004.itc"))?;
-	// Could do with some upscaling
+	fs::write(outdir.join("data/chr/ch40004.itc"), include_bytes!("../text/ch40004.itc"))?;
 
 	fs::create_dir_all(outdir.join("data/bgm"))?;
 	fs::create_dir_all(outdir.join("data/se"))?;
