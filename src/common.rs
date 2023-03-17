@@ -119,12 +119,11 @@ impl<'a> Context<'a> {
 		let (pc, evo) = self.text("t_quest._dt");
 		let mut pc_quests = quest::read_ed7(pc).unwrap();
 		let evo_quests = quest::read_ed7(&evo).unwrap();
-		let mut q = pc_quests.iter_mut().find(|a| a.id == id).unwrap().clone();
-		let q1 = evo_quests.iter().find(|a| a.id == id).unwrap().clone();
-		q.name = q1.name.translated(tl);
-		q.client = q1.client.translated(tl);
-		q.desc = q1.desc.translated(tl);
-		q.steps = q1.steps.translated(tl);
+		let mut q = evo_quests.iter().find(|a| a.id == id).unwrap().clone();
+		q.name.translate(tl);
+		q.client.translate(tl);
+		q.desc.translate(tl);
+		q.steps.translate(tl);
 		*pc_quests.iter_mut().find(|a| a.id == id).unwrap() = q;
 		*pc = quest::write_ed7(&pc_quests).unwrap();
 	}
