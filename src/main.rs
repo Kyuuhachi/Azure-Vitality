@@ -48,13 +48,13 @@ fn main() -> anyhow::Result<()> {
 
 		// TODO interactible furniture in c0120
 
-		let scena_path = outdir.join("data/scena");
+		let scena_path = outdir.join("scena");
 		fs::create_dir_all(&scena_path)?;
 		for (name, v) in &ctx.scena {
 			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::AoKai, &v.pc)?)?;
 		}
 
-		let text_path = outdir.join("data/text");
+		let text_path = outdir.join("text");
 		fs::create_dir_all(&text_path)?;
 		for (name, v) in &ctx.text {
 			fs::write(text_path.join(name), v)?;
@@ -63,7 +63,7 @@ fn main() -> anyhow::Result<()> {
 
 	let scenas = { // En
 		let mut ctx = Context::new(
-			|s| load_scena(pc_path.join("data_en/scena_us"), s),
+			|s| load_scena(pc_path.join("data/scena_us"), s),
 			evo_path.join("data/scena"),
 			pc_path.join("data/text_us"),
 			evo_path.join("data/text"),
@@ -80,13 +80,13 @@ fn main() -> anyhow::Result<()> {
 
 		// TODO interactible furniture in c0120
 
-		let scena_path = outdir.join("data/scena_us");
+		let scena_path = outdir.join("scena_us");
 		fs::create_dir_all(&scena_path)?;
 		for (name, v) in &ctx.scena {
 			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::AoKai, &v.pc)?)?;
 		}
 
-		let text_path = outdir.join("data/text_us");
+		let text_path = outdir.join("text_us");
 		fs::create_dir_all(&text_path)?;
 		for (name, v) in &ctx.text {
 			fs::write(text_path.join(name), v)?;
@@ -95,8 +95,8 @@ fn main() -> anyhow::Result<()> {
 		ctx.scena
 	};
 
-	fs::create_dir_all(outdir.join("data/bgm"))?;
-	fs::write(outdir.join("data/bgm/info.yaml"), {
+	fs::create_dir_all(outdir.join("bgm"))?;
+	fs::write(outdir.join("bgm/info.yaml"), {
 		let mut data = fs::read_to_string(pc_path.join("data/bgm/info.yaml"))?;
 		if !data.ends_with('\n') {
 			data.push('\n');
@@ -106,29 +106,29 @@ fn main() -> anyhow::Result<()> {
 	})?;
 
 	// An extra chair for Wazy
-	fs::create_dir_all(outdir.join("data/ops"))?;
-	fs::copy(evo_path.join("data/ops/e3210.op2"), outdir.join("data/ops/e3210.op2"))?;
-	fs::create_dir_all(outdir.join("data/map/objects"))?;
-	fs::copy(evo_path.join("data/map/objects/e3210isu.it3"), outdir.join("data/map/objects/e3210isu.it3"))?;
+	fs::create_dir_all(outdir.join("ops"))?;
+	fs::copy(evo_path.join("data/ops/e3210.op2"), outdir.join("ops/e3210.op2"))?;
+	fs::create_dir_all(outdir.join("map/objects"))?;
+	fs::copy(evo_path.join("data/map/objects/e3210isu.it3"), outdir.join("map/objects/e3210isu.it3"))?;
 	// This it3 contains embedded textures, so that needs to change
 
 	// Crossbell overfiew, for Guide quest
-	fs::create_dir_all(outdir.join("data/visual"))?;
-	fs::write(outdir.join("data/visual/c_vis600.itp"), include_bytes!("../text/c_vis600.itp"))?;
-	fs::write(outdir.join("data/visual/c_vis606.itp"), include_bytes!("../text/c_vis606.itp"))?;
+	fs::create_dir_all(outdir.join("visual"))?;
+	fs::write(outdir.join("visual/c_vis600.itp"), include_bytes!("../text/c_vis600.itp"))?;
+	fs::write(outdir.join("visual/c_vis606.itp"), include_bytes!("../text/c_vis606.itp"))?;
 	// 600 is not upscaled, but it looks good anyway.
 
 	// Tio/Mishette chimera
-	fs::create_dir_all(outdir.join("data/chr"))?;
-	fs::write(outdir.join("data/chr/ch40004.itc"), include_bytes!("../text/ch40004.itc"))?;
+	fs::create_dir_all(outdir.join("chr"))?;
+	fs::write(outdir.join("chr/ch40004.itc"), include_bytes!("../text/ch40004.itc"))?;
 
-	fs::create_dir_all(outdir.join("data/bgm"))?;
-	fs::create_dir_all(outdir.join("data/se"))?;
-	fs::write(outdir.join("data/bgm/ed7004.opus"),  include_bytes!("../text/ed7004.opus"))?;
-	fs::write(outdir.join("data/se/ed7s1100.opus"), include_bytes!("../text/ed7s1100.opus"))?;
-	fs::write(outdir.join("data/se/ed7s1101.opus"), include_bytes!("../text/ed7s1101.opus"))?;
-	fs::write(outdir.join("data/se/ed7s1102.opus"), include_bytes!("../text/ed7s1102.opus"))?;
-	fs::write(outdir.join("data/se/ed7s1104.opus"), include_bytes!("../text/ed7s1104.opus"))?;
+	fs::create_dir_all(outdir.join("bgm"))?;
+	fs::create_dir_all(outdir.join("se"))?;
+	fs::write(outdir.join("bgm/ed7004.opus"),  include_bytes!("../text/ed7004.opus"))?;
+	fs::write(outdir.join("se/ed7s1100.opus"), include_bytes!("../text/ed7s1100.opus"))?;
+	fs::write(outdir.join("se/ed7s1101.opus"), include_bytes!("../text/ed7s1101.opus"))?;
+	fs::write(outdir.join("se/ed7s1102.opus"), include_bytes!("../text/ed7s1102.opus"))?;
+	fs::write(outdir.join("se/ed7s1104.opus"), include_bytes!("../text/ed7s1104.opus"))?;
 
 	let dumpdir = Path::new("./dump");
 	if dumpdir.exists() {
