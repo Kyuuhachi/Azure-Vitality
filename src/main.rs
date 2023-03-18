@@ -515,6 +515,8 @@ fn quest158(ctx: &mut Context) {
 	s.copy_func(0, 15, tl);
 	s.copy_func(0, 16, &mut Nil);
 	s.func(1, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![274])));
+	// Workaround for what I think is an engine bug: BgmPlay does not seem to work if called on the first frame after entering an event, or something like that.
+	s.pc.functions[16].0.insert(0, FlatInsn::Insn(Insn::NextFrame()));
 
 	let s = ctx.scena("c0110"); // Special Support Section
 	s.func(2, |a| a.if_with(&flag_e![272]).copy_clause(&Some(flag_e![287])));
