@@ -257,8 +257,8 @@
 
 ## R
 よくあるよな、そういう事故。
-	That kind of problems happen
-	all the time.
+	Yeah, I've heard of that
+	sorta thing happening before.
 
 ## W
 二重遭難ってやつだね。
@@ -863,7 +863,7 @@
 ……たしかに、破損したところが、
 ほぼ、ぴったりです。
 	Indeed, the damaged area
-	is almost a perfect fit.
+	is an almost perfect fit.
 
 ## R
 こんだけ奥に来て、
@@ -889,8 +889,8 @@
 あ……
 その前に、ちょっと休憩して
 おいたほうがいいな。
-	Or maybe we should take
-	a short break first?
+	...Actually, I think we should
+	take a breather first.
 
 ## T
 え……
@@ -1163,16 +1163,15 @@
 でも魔獣がいる可能性も高い。
 互いが見える距離までにしておこう。
 	Good idea. But remember, there are
-	monsters around. Let's not go farther
-	than so we can still see each other.
+	monsters around, so we shouldn't get
+	too far from each other.
 
 ## (They go in different directions: Lloyd + Elie + Tio, Wazy + Noel, Mireille (reluctantly) + Randy. Camera moves to M+R specifically.)
 
 ## M
 ふぅ……
 うまくいかないものね。
-	*sigh* This isn't
-	going so well.
+	*sigh* This isn't going so well.
 
 ## R
 まぁ、森林道っていっても、
@@ -1183,7 +1182,7 @@
 奥まで行くだけなら、
 そんなでもないけどよ。
 	Just getting around the
-	forest ain't so hard, though.
+	forest ain't so bad, though.
 
 ## M
 あ……
@@ -1192,40 +1191,40 @@
 ランディと歩くなら、
 次はミシュラムか繁華街あたりかな、
 なんて思ってたのに。
-	If I have to walk around with you,
-	why couldn't it be at Mishelam
-	or a shopping center?
+	I was just thinking... Next time we
+	go out together, how about Mishelam?
+	Or a shopping center?
 
 ## R
 ん？　ミシュラムはともかく、
 繁華街は警備隊の管轄じゃないだろ？
-	I don't know about Mishelam, but
-	the CGF don't have anything to
-	do in a shopping center, do you?
+	Hm? Mishelam is one thing, but why
+	would the CGF be patrolling in a
+	shopping center?
 
 ## M
 #5S仕事じゃなくて！#3S
-	#5SI'm not talking about work!#3S
+	#5SThis isn't about work!#3S
 
 ## R
 冗談だ。
 意外と期待されてたんだなあ。
 	Just kiddin'. But you sure
-	do seem excited about that.
+	do seem eager about that.
 
 ## M
 そ、そ、そんなことないわよ！
 ただ、も、もらいっぱなしは、
 私の主義に反するから……
-	Th-Th-That's not it! It's
-	just, getting gifts all the time
-	goes against my principles.
+	Th-Th-That's not it! It's just,
+	it's always you who...
+	It doesn't sit right with me.
 
 ## M
 #5Sこのままじゃ
 済まさないんだから！#3S
-	#5SI can't keep this
-	up anymore!#3S
+	#5SI just can't keep
+	this up anymore!#3S
 
 ## R
 お、おう。
@@ -1239,7 +1238,7 @@
 と、とにかく！
 今度……
 時間、作りなさいよね。
-	Putting that aside!
+	Forget that!
 	Just... Make some time, okay?
 
 ## R
@@ -1614,7 +1613,7 @@
 
 ## R
 ……うるせーや。
-	...Shut up.
+	...Shut up, you.
 
 ## (The two walk up to the rest of the group.)
 
