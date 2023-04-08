@@ -28,7 +28,7 @@ struct Cli {
 	#[clap(long, short, value_hint = clap::ValueHint::DirPath)]
 	evo: PathBuf,
 	#[clap(long, short='P', value_hint = clap::ValueHint::DirPath)]
-	portrait: Option<PathBuf>,
+	portraits: Option<PathBuf>,
 	#[clap(long, short, value_hint = clap::ValueHint::DirPath)]
 	pc: PathBuf,
 	#[clap(long, short, value_hint = clap::ValueHint::DirPath)]
@@ -49,9 +49,9 @@ fn main() -> anyhow::Result<()> {
 		fs::remove_dir_all(&cli.out)?;
 	}
 
-	{ // Jp
+	if cli.portraits.is_none() { // Jp
 		let mut ctx = Context::new(
-			|s| load_scena(cli.pc.join("data/scena"), s),
+			|s| load_scena(cli.pc.join("data/scena"), s).unwrap(),
 			cli.evo.join("data/scena"),
 			cli.pc.join("data/text"),
 			cli.evo.join("data/text"),
@@ -83,7 +83,14 @@ fn main() -> anyhow::Result<()> {
 
 	let scenas = { // En
 		let mut ctx = Context::new(
-			|s| load_scena(cli.pc.join("data/scena_us"), s),
+			|s| {
+				let pc = load_scena(cli.pc.join("data/scena_us"), s).unwrap();
+				if let Some(p) = &cli.portraits && let Ok(port) = load_scena(p.join("data/scena_us"), s) {
+					common::insert_portraits(pc, &port)
+				} else {
+					pc
+				}
+			},
 			cli.evo.join("data/scena"),
 			cli.pc.join("data/text_us"),
 			cli.evo.join("data/text"),

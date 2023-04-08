@@ -3,9 +3,10 @@ use std::path::{Path, PathBuf};
 use std::collections::HashMap;
 
 use themelios::scena;
-use themelios::scena::code::{Expr, Code};
+use themelios::scena::code::{Expr, Code, FlatInsn, Insn};
 use themelios::scena::decompile::{TreeInsn, decompile, recompile};
 use themelios::tables::quest;
+use themelios::text::Text;
 use themelios::types::*;
 
 use crate::translate::{self, Translator, Translatable};
@@ -38,14 +39,14 @@ pub struct Context<'a> {
 	pub text: HashMap<String, Vec<u8>>,
 }
 
-pub fn load_scena(dir: impl AsRef<Path>, name: &str) -> scena::ed7::Scena {
-	let data = fs::read(dir.as_ref().join(format!("{name}.bin"))).unwrap();
-	scena::ed7::read(Game::AoKai, &data).unwrap()
+pub fn load_scena(dir: impl AsRef<Path>, name: &str) -> anyhow::Result<scena::ed7::Scena> {
+	let data = fs::read(dir.as_ref().join(format!("{name}.bin")))?;
+	Ok(scena::ed7::read(Game::AoKai, &data).unwrap())
 }
 
-pub fn load_scena_evo(dir: impl AsRef<Path>, name: &str) -> scena::ed7::Scena {
-	let data = fs::read(dir.as_ref().join(format!("{name}.bin"))).unwrap();
-	scena::ed7::read(Game::AoEvo, &data).unwrap()
+pub fn load_scena_evo(dir: impl AsRef<Path>, name: &str) -> anyhow::Result<scena::ed7::Scena> {
+	let data = fs::read(dir.as_ref().join(format!("{name}.bin")))?;
+	Ok(scena::ed7::read(Game::AoEvo, &data).unwrap())
 }
 
 impl<'a> Context<'a> {
@@ -79,7 +80,7 @@ impl<'a> Context<'a> {
 		self.scena.entry(name.to_owned()).or_insert_with(|| {
 			AScena {
 				pc: (self.pc_scena)(name),
-				evo: load_scena_evo(&self.evo_scena, name),
+				evo: load_scena_evo(&self.evo_scena, name).unwrap(),
 				new_npcs: Vec::new(),
 				new_lps: Vec::new(),
 				new_funcs: Vec::new(),
@@ -89,7 +90,7 @@ impl<'a> Context<'a> {
 
 	pub fn copy_scena(&mut self, name: &str, tl: &mut impl Translator) -> &mut AScena {
 		self.scena.entry(name.to_owned()).or_insert_with(|| {
-			let evo = load_scena_evo(&self.evo_scena, name);
+			let evo = load_scena_evo(&self.evo_scena, name).unwrap();
 			let new_npcs = (0..evo.npcs.len()).collect();
 			let new_lps = (0..evo.look_points.len()).collect();
 			let new_funcs = (0..evo.functions.len()).collect();
@@ -319,5 +320,54 @@ impl<'a, T> AList<'a, Vec<T>> {
 			self.0.iter().enumerate().find_map(|(a, b)| f(b).then_some(a)).unwrap(),
 			self.1.iter().enumerate().find_map(|(a, b)| f(b).then_some(a)).unwrap(),
 		)
+	}
+}
+
+pub fn insert_portraits(mut a: scena::ed7::Scena, b: &scena::ed7::Scena) -> scena::ed7::Scena {
+	assert_eq!(a.functions.len(), b.functions.len());
+	for (Code(a), Code(b)) in a.functions.iter_mut().zip(b.functions.iter()) {
+		let mut i = 0;
+		let mut j = 0;
+		while i < a.len() && j < b.len() {
+			let FlatInsn::Insn(Insn::TextTalk(a1, a2) | Insn::TextMessage(a1, a2)) = &a[i]
+				else { i += 1; continue; };
+			let FlatInsn::Insn(Insn::TextTalk(b1, b2) | Insn::TextMessage(b1, b2)) = &b[j]
+				else { j += 1; continue; };
+
+			assert_eq!(a1, b1);
+
+			if a2.pages.len() < b2.pages.len() {
+				let a1 = *a1;
+				let a2 = a2.clone();
+				a.remove(i); // TextTalk | TextMessage
+				assert_eq!(a.remove(i), FlatInsn::Insn(Insn::TextWait()));
+				do_insert(a, i, a1, a2);
+			} else {
+				if a[i] != b[j] {
+					println!();
+					println!("{:?}", &a[i]);
+					println!("{:?}", &b[j]);
+				}
+				i += 1;
+				j += 1;
+			}
+		}
+	}
+	a
+}
+
+fn do_insert(a: &mut Vec<FlatInsn>, i: usize, a1: CharId, a2: Text) {
+	match &mut a[i] {
+		FlatInsn::Unless(_, l) => {
+			let l = *l;
+			do_insert(a, i+1, a1, a2.clone());
+			let j = a.iter().position(|i| i == &FlatInsn::Label(l)).unwrap();
+			do_insert(a, j+1, a1, a2);
+		}
+		FlatInsn::Insn(Insn::TextTalk(b1, b2) | Insn::TextMessage(b1, b2)) => {
+			assert_eq!(&a1, b1);
+			b2.pages.splice(0..0, a2.pages);
+		}
+		i => panic!("{i:?}")
 	}
 }
