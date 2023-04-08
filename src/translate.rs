@@ -37,7 +37,7 @@ impl Translator for NullTranslator {
 pub struct Nil;
 impl Translator for Nil {
 	fn text(&mut self, s: &mut Text) {
-		panic!("no translation expected! {}", text2str(s));
+		panic!("no translation expected! {}", s.pages.iter().map(text2str).collect::<Vec<_>>().join("{page}"));
 	}
 	fn tstring(&mut self, s: &mut TString) {
 		panic!("no translation expected! {}", &s.0);
@@ -130,14 +130,16 @@ impl Translator for Translate {
 				$
 			").unwrap();
 		}
-		let ss = text2str(s);
-		assert_eq!(s, &str2text(&ss));
-		let s2 = ss.split("{page}").map(|p| {
-			let c = CONTENT.captures(p).unwrap();
-			let t = self.translate(&format!("{}{}", &c[1], &c[3]).replace('\r', "\n"));
-			format!("{}{}{}", &c[2], t, &c[4])
-		}).collect::<Vec<_>>().join("{page}");
-		*s = str2text(&s2);
+		for t in &mut s.pages {
+			let ss = text2str(t);
+			assert_eq!(t, &str2text(&ss));
+			let s2 = ss.split("{page}").map(|p| {
+				let c = CONTENT.captures(p).unwrap();
+				let t = self.translate(&format!("{}{}", &c[1], &c[3]).replace('\r', "\n"));
+				format!("{}{}{}", &c[2], t, &c[4])
+			}).collect::<Vec<_>>().join("{page}");
+			*t = str2text(&s2);
+		}
 	}
 
 	fn tstring(&mut self, s: &mut TString) {
@@ -304,14 +306,13 @@ impl Translatable for Expr {
 	}
 }
 
-pub fn text2str(t: &Text) -> String {
+pub fn text2str(t: &Vec<TextSegment>) -> String {
 	let mut s = String::new();
-	for i in t.iter() {
+	for i in t {
 		match i {
 			TextSegment::String(v) => s.push_str(v),
 			TextSegment::Line => s.push('\n'),
 			TextSegment::Wait => s.push_str("{wait}"),
-			TextSegment::Page => s.push_str("{page}"),
 			TextSegment::Color(v) => s.push_str(&format!("{{color {v}}}")),
 			TextSegment::Item(v) => s.push_str(&format!("{{item {v}}}", v=v.0)),
 			TextSegment::Byte(v) => s.push_str(&format!("{{#{v:02X}}}")),
@@ -320,7 +321,7 @@ pub fn text2str(t: &Text) -> String {
 	s
 }
 
-pub fn str2text(s: &str) -> Text {
+pub fn str2text(s: &str) -> Vec<TextSegment> {
 	lazy_static::lazy_static! {
 		static ref SEGMENT: Regex = Regex::new(r"(?x)
 			(?P<t>.*?)
@@ -336,7 +337,7 @@ pub fn str2text(s: &str) -> Text {
 			)
 		").unwrap();
 	}
-	let mut out = Text(Vec::new());
+	let mut out = Vec::new();
 	for c in SEGMENT.captures_iter(s) {
 		if let Some(t) = c.name("t") {
 			if !t.as_str().is_empty() {
@@ -350,7 +351,7 @@ pub fn str2text(s: &str) -> Text {
 			out.push(TextSegment::Wait)
 		}
 		if c.name("page").is_some() {
-			out.push(TextSegment::Page)
+			out.push(TextSegment::Byte(0x03))
 		}
 		if let Some(c) = c.name("color") {
 			out.push(TextSegment::Color(c.as_str().parse().unwrap()))
