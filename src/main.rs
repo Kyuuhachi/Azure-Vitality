@@ -1,7 +1,9 @@
 #![feature(decl_macro, let_chains, backtrace_frames)]
 
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use std::fs;
+
+use clap::Parser;
 
 use themelios::scena;
 use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn, Code};
@@ -20,21 +22,39 @@ macro flag($i:literal) { E::Flag(Flag($i)) }
 macro op($i:ident) { E::Op(Op::$i) }
 macro flag_e($n:literal) { expr![flag!($n)] }
 
-fn main() -> anyhow::Result<()> {
-	let outdir = Path::new("./patch");
-	if outdir.exists() {
-		fs::remove_dir_all(outdir)?;
-	}
+#[derive(Debug, Clone, clap::Parser)]
+struct Cli {
+	which: CliGame,
+	#[clap(long, short, value_hint = clap::ValueHint::DirPath)]
+	evo: PathBuf,
+	#[clap(long, short='P', value_hint = clap::ValueHint::DirPath)]
+	portrait: Option<PathBuf>,
+	#[clap(long, short, value_hint = clap::ValueHint::DirPath)]
+	pc: PathBuf,
+	#[clap(long, short, value_hint = clap::ValueHint::DirPath)]
+	out: PathBuf,
+	#[clap(long, short, value_hint = clap::ValueHint::DirPath)]
+	dump: Option<PathBuf>,
+}
 
-	let pc_path: &Path = Path::new("./data/ao");
-	let evo_path: &Path = Path::new("./data/ao-evo");
+#[derive(Debug, Clone, Copy, PartialEq, Eq, clap::ValueEnum)]
+enum CliGame {
+	Azure
+}
+
+fn main() -> anyhow::Result<()> {
+	let cli = Cli::parse();
+
+	if cli.out.exists() {
+		fs::remove_dir_all(&cli.out)?;
+	}
 
 	{ // Jp
 		let mut ctx = Context::new(
-			|s| load_scena(pc_path.join("data/scena"), s),
-			evo_path.join("data/scena"),
-			pc_path.join("data/text"),
-			evo_path.join("data/text"),
+			|s| load_scena(cli.pc.join("data/scena"), s),
+			cli.evo.join("data/scena"),
+			cli.pc.join("data/text"),
+			cli.evo.join("data/text"),
 			false,
 		);
 
@@ -48,13 +68,13 @@ fn main() -> anyhow::Result<()> {
 
 		// TODO interactible furniture in c0120
 
-		let scena_path = outdir.join("scena");
+		let scena_path = cli.out.join("scena");
 		fs::create_dir_all(&scena_path)?;
 		for (name, v) in &ctx.scena {
 			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::AoKai, &v.pc)?)?;
 		}
 
-		let text_path = outdir.join("text");
+		let text_path = cli.out.join("text");
 		fs::create_dir_all(&text_path)?;
 		for (name, v) in &ctx.text {
 			fs::write(text_path.join(name), v)?;
@@ -63,10 +83,10 @@ fn main() -> anyhow::Result<()> {
 
 	let scenas = { // En
 		let mut ctx = Context::new(
-			|s| load_scena(pc_path.join("data/scena_us"), s),
-			evo_path.join("data/scena"),
-			pc_path.join("data/text_us"),
-			evo_path.join("data/text"),
+			|s| load_scena(cli.pc.join("data/scena_us"), s),
+			cli.evo.join("data/scena"),
+			cli.pc.join("data/text_us"),
+			cli.evo.join("data/text"),
 			true,
 		);
 
@@ -80,13 +100,13 @@ fn main() -> anyhow::Result<()> {
 
 		// TODO interactible furniture in c0120
 
-		let scena_path = outdir.join("scena_us");
+		let scena_path = cli.out.join("scena_us");
 		fs::create_dir_all(&scena_path)?;
 		for (name, v) in &ctx.scena {
 			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::AoKai, &v.pc)?)?;
 		}
 
-		let text_path = outdir.join("text_us");
+		let text_path = cli.out.join("text_us");
 		fs::create_dir_all(&text_path)?;
 		for (name, v) in &ctx.text {
 			fs::write(text_path.join(name), v)?;
@@ -95,9 +115,9 @@ fn main() -> anyhow::Result<()> {
 		ctx.scena
 	};
 
-	fs::create_dir_all(outdir.join("bgm"))?;
-	fs::write(outdir.join("bgm/info.yaml"), {
-		let mut data = fs::read_to_string(pc_path.join("data/bgm/info.yaml"))?;
+	fs::create_dir_all(cli.out.join("bgm"))?;
+	fs::write(cli.out.join("bgm/info.yaml"), {
+		let mut data = fs::read_to_string(cli.pc.join("data/bgm/info.yaml"))?;
 		if !data.ends_with('\n') {
 			data.push('\n');
 		}
@@ -106,41 +126,42 @@ fn main() -> anyhow::Result<()> {
 	})?;
 
 	// An extra chair for Wazy
-	fs::create_dir_all(outdir.join("ops"))?;
-	fs::copy(evo_path.join("data/ops/e3210.op2"), outdir.join("ops/e3210.op2"))?;
-	fs::create_dir_all(outdir.join("map/objects"))?;
-	fs::copy(evo_path.join("data/map/objects/e3210isu.it3"), outdir.join("map/objects/e3210isu.it3"))?;
+	fs::create_dir_all(cli.out.join("ops"))?;
+	fs::copy(cli.evo.join("data/ops/e3210.op2"), cli.out.join("ops/e3210.op2"))?;
+	fs::create_dir_all(cli.out.join("map/objects"))?;
+	fs::copy(cli.evo.join("data/map/objects/e3210isu.it3"), cli.out.join("map/objects/e3210isu.it3"))?;
 	// This it3 contains embedded textures, so that needs to change
 
 	// Crossbell overfiew, for Guide quest
-	fs::create_dir_all(outdir.join("visual"))?;
-	fs::write(outdir.join("visual/c_vis600.itp"), include_bytes!("../text/c_vis600.itp"))?;
-	fs::write(outdir.join("visual/c_vis606.itp"), include_bytes!("../text/c_vis606.itp"))?;
+	fs::create_dir_all(cli.out.join("visual"))?;
+	fs::write(cli.out.join("visual/c_vis600.itp"), include_bytes!("../text/c_vis600.itp"))?;
+	fs::write(cli.out.join("visual/c_vis606.itp"), include_bytes!("../text/c_vis606.itp"))?;
 	// 600 is not upscaled, but it looks good anyway.
 
 	// Tio/Mishette chimera
-	fs::create_dir_all(outdir.join("chr"))?;
-	fs::write(outdir.join("chr/ch40004.itc"), include_bytes!("../text/ch40004.itc"))?;
+	fs::create_dir_all(cli.out.join("chr"))?;
+	fs::write(cli.out.join("chr/ch40004.itc"), include_bytes!("../text/ch40004.itc"))?;
 
-	fs::create_dir_all(outdir.join("bgm"))?;
-	fs::create_dir_all(outdir.join("se"))?;
-	fs::write(outdir.join("bgm/ed7004.opus"),  include_bytes!("../text/ed7004.opus"))?;
-	fs::write(outdir.join("se/ed7s1100.opus"), include_bytes!("../text/ed7s1100.opus"))?;
-	fs::write(outdir.join("se/ed7s1101.opus"), include_bytes!("../text/ed7s1101.opus"))?;
-	fs::write(outdir.join("se/ed7s1102.opus"), include_bytes!("../text/ed7s1102.opus"))?;
-	fs::write(outdir.join("se/ed7s1104.opus"), include_bytes!("../text/ed7s1104.opus"))?;
+	fs::create_dir_all(cli.out.join("bgm"))?;
+	fs::create_dir_all(cli.out.join("se"))?;
+	fs::write(cli.out.join("bgm/ed7004.opus"),  include_bytes!("../text/ed7004.opus"))?;
+	fs::write(cli.out.join("se/ed7s1100.opus"), include_bytes!("../text/ed7s1100.opus"))?;
+	fs::write(cli.out.join("se/ed7s1101.opus"), include_bytes!("../text/ed7s1101.opus"))?;
+	fs::write(cli.out.join("se/ed7s1102.opus"), include_bytes!("../text/ed7s1102.opus"))?;
+	fs::write(cli.out.join("se/ed7s1104.opus"), include_bytes!("../text/ed7s1104.opus"))?;
 
-	let dumpdir = Path::new("./dump");
-	if dumpdir.exists() {
-		fs::remove_dir_all(dumpdir)?;
-	}
-	fs::create_dir_all(dumpdir.join("patch"))?;
-	fs::create_dir_all(dumpdir.join("evo"))?;
+	if let Some(dumpdir) = &cli.dump {
+		if dumpdir.exists() {
+			fs::remove_dir_all(dumpdir)?;
+		}
+		fs::create_dir_all(dumpdir.join("patch"))?;
+		fs::create_dir_all(dumpdir.join("evo"))?;
 
-	for (name, v) in scenas {
-		use calmare::Content::ED7Scena;
-		fs::write(dumpdir.join("patch").join(&name), calmare::to_string(Game::AoKai, &ED7Scena(v.pc), None))?;
-		fs::write(dumpdir.join("evo").join(&name), calmare::to_string(Game::AoKai, &ED7Scena(v.evo), None))?;
+		for (name, v) in scenas {
+			use calmare::Content::ED7Scena;
+			fs::write(dumpdir.join("patch").join(&name), calmare::to_string(Game::AoKai, &ED7Scena(v.pc), None))?;
+			fs::write(dumpdir.join("evo").join(&name), calmare::to_string(Game::AoKai, &ED7Scena(v.evo), None))?;
+		}
 	}
 
 	Ok(())
