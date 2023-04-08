@@ -229,13 +229,13 @@ fn quest125(ctx: &mut Context) {
 	ctx.copy_quest(QuestId(125), tl);
 
 	let s = ctx.scena("c1200"); // Harbor District
-	s.pc.chip[19] = fileid("chr/ch28100.itc");
+	s.pc.chips[19] = fileid("chr/ch28100.itc");
 	s.copy_npc(31, tl); // Reins
 	s.copy_func(0, 107, tl); // talk Reins
 	s.func(8, |a| a.if_clause(&flag_e![2564]).copy_tail());
 
 	let s = ctx.scena("c1300"); // IBC Exterior
-	s.pc.chip.push(fileid("chr/ch06000.itc"));
+	s.pc.chips.push(fileid("chr/ch06000.itc"));
 	s.copy_npc(1, tl);  // Grace
 	s.copy_npc(10, tl); // Shirley
 	s.copy_npc(11, tl); // Sigmund
@@ -351,7 +351,7 @@ fn quest157(ctx: &mut Context) {
 	let s = ctx.scena("c120d"); // Harbor District
 	s.pc.includes[0] = s.evo.includes[0];
 	s.pc.includes[1] = s.evo.includes[1];
-	s.pc.chip[12] = s.evo.chip[12];
+	s.pc.chips[12] = s.evo.chips[12];
 	s.copy_npc(13, tl);
 	for i in 18..=27 {
 		s.copy_npc(i, tl);
@@ -400,7 +400,7 @@ fn quest158(ctx: &mut Context) {
 	ctx.copy_quest(QuestId(158), tl);
 
 	let s = ctx.scena("c0100"); // Central Square
-	s.pc.chip.push(fileid("chr/ch41600.itc"));
+	s.pc.chips.push(fileid("chr/ch41600.itc"));
 	s.copy_npc(57, tl); // Uniformed man
 	s.func(7, |a| {
 		let b = a.if_clause(&flag_e![2848]);
@@ -558,7 +558,7 @@ fn quest159(ctx: &mut Context) {
 	});
 
 	let s = ctx.scena("r4000"); // Knox Forest Road
-	s.pc.chip[0] = fileid("chr/ch32600.itc");
+	s.pc.chips[0] = fileid("chr/ch32600.itc");
 	s.copy_npc(0, tl); // ミレイユ三尉, not to be confused with ミレイユ准
 	s.copy_func(0, 2, &mut Nil); // Mireille animation
 	s.copy_func(0, 39, tl); // event
