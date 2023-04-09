@@ -2003,51 +2003,56 @@
 新聞で紹介されていたとおり、
 親しみがあって、素敵なお店ね！
 	It's such a cozy shop, just
-	like the magazine said.
+	like it said in the magazine!
 
 ## Oscar
 やあ、ロイド。
-	Hey, Lloyd.
+	{#14700F}Hey, Lloyd.
 
 ## Bennet
 いらっしゃいませ。
-	Welcome.
+	{#14800F}Welcome.
 
 ## L
 やあ、寄らせてもらったよ。
-	We happened to be passing by.
+	We happened to be in the area,
+	so we thought we'd stop by.
 
 ## O
 見慣れない方を連れてるね？
-	You seem to be having some new
-	faces with you?
+	{#14702F}I don't think I've seen your
+	two friends here before.
+	Are they new in town?
 
 ## L
 他国の方に、
 クロスベル市内を案内中なんだ。
-	They're from abroad. We're
-	currently giving them a tour.
+	Yeah, they're visiting from abroad.
+	We're currently giving them
+	a tour of the city.
 
 ## O
 ああ、外国人だったのか。
 街にも観光客が多いもんな。
-	Got it. Lots of foreign tourists
-	these days.
+	{#14702F}Ah, got'cha. We've been seeing
+	more and more foreigners coming
+	to visit these days.
 
 ## B
 ……外国では、どんなパンが
 流行っているのかしら？
-	...What kinds of bread are
-	trendy there?
+	{#14804F}...I wonder what kinds of bread
+	are popular outside of Crossbell.
 
 ## O
 おっ、たしかに新作のヒントに
 なるかもしれないな。
-	Oh yeah, that could be some
-	good inspiration. Nice idea.
+	{#14705F}Oh, good question. If we knew that,
+	that could help us come up with
+	new types of bread.
 
 ちょっといいかい？
-	If you don't mind us asking?
+	{#14700F}Could you help us out?
 
 ## K
 私でしょうか？
@@ -2057,7 +2062,7 @@
 そちらの国では、
 どんなパンが流行っているのか、
 よかったら教えてくれませんか？
-	In the country you're from,
+	{#14702F}In the country you're from,
 	what sorts of bread are popular?
 	If you don't mind me asking.
 
@@ -2068,26 +2073,24 @@
 	Let me think... I haven't
 	personally visited a bakery
 	before, so I wouldn't know.
-
 ニガトマトは
 私の国で生まれた
 ものなんです。
 	But it is the country that
 	birthed the acerbic tomato.
-
 よかったら、
 使ってみてもらえませんか？
-	So perhaps you could try
-	using those?
+	Would you consider trying
+	to use those in your bread?
 
 ## O
 ニガトマトか……
-	Acerbic tomatoes, huh?
+	{#14705F}Acerbic tomatoes, huh?
 
 ## B
 あの味を活かして、
 総菜パンに使おうかしら？
-	If you use that right,
+	{#14802F}If you use that right,
 	I think you could make
 	a decent appetizer.
 
@@ -2095,21 +2098,22 @@
 意外と、砂糖をまぶして
 野菜のケーキっぽい味も
 いいかもしれないな。
-	Put on some sugar, and I think
+	{#14704F}Put on some sugar, and I think
 	it'll make a surprisingly good
 	vegetable cake.
 
 ## B
 #5S…………負けない。#3S
-	#5S...I won't lose.#3S
+	{#14803F}#5S...I won't lose.#3S
 
 ## (Oscar doesn't get it.)
 
 ## O
 ありがとう、お客さん。
 面白そうですよ。
-	Thanks you. This'll
-	be interesting.
+	{#14709F}Thanks for the suggestion.
+	I think you've given us
+	some interesting ideas.
 
 ## K
 そうですか？
@@ -2121,9 +2125,9 @@
 ところで……
 お客さん、誰かに似てるって
 言われないかい？
-	Oh, and lady? Do people
-	ever tell you that you
-	resemble anyone?
+	{#14702F}Oh, by the way...
+	Do people ever tell you that
+	you look really familiar?
 
 ## K
 そ、そんなことないですよ？

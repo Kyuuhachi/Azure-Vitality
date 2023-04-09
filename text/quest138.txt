@@ -269,9 +269,9 @@
 うーん……普通に
 『いらっしゃい』って
 呼び込むんじゃ、やっぱダメかな？
-	I suppose just saying
-	"please come in" to
-	passers-by is no good?
+	I guess just asking people
+	to come into the shop isn't
+	gonna work, huh?
 
 ## T
 それはあまりに無策かと。
@@ -406,30 +406,29 @@
 ## N
 でも、ぜひ聴いてみたいです、
 みなさんの歌声！
-	I really want to hear everyone's
-	singing voices!
+	I really want to hear everyone sing!
 
 ## T
 そういうノエルさんは
 どうなんですか……？
-	Speaking of which, how
-	is your singing, Noel?
+	Is that so?
+	How is your voice, Noel?
 
 ## N
 私ですか？　ええと……
-	Me? Well...
+	My voice? Well...
 妹が歌うの好きで、
 よくデュエットしてましたよ。
 ハモりも特訓したり。
-	Fran loves singing, so she sometimes
-	made me sing duets. I think we
-	harmonize pretty well together.
+	Fran loves singing, so the two of us
+	would sometimes sing together. I think
+	we harmonize pretty well together.
 ただ、正規の訓練を
 受けたわけではないので、
 自信があるかと言われれば……
 	But I haven't received any formal
-	training, so I can't say I'm confident
-	about it.
+	training, so I can't say I have
+	a lot of confidence in my singing.
 
 ## L
 正規の訓練って……
@@ -446,8 +445,8 @@
 ## W
 さて……これ以上話をしてても
 決まりそうもないね。
-	Alright, everyone's said their
-	lines, and we're no closer to
+	All right, everyone's said their
+	piece, and we're no closer to
 	a decision than when we started.
 ここはスパッと、
 リーダーが決めるべきところじゃ
@@ -488,7 +487,7 @@
 
 ## R
 お、順当じゃねーか。
-	Seems appropriate.
+	Sounds good to me.
 
 ## T
 私も最適だと思います。
@@ -496,7 +495,7 @@
 
 ## N
 エリィさんなら、いけますよ！
-	You can do it!
+	You can do it, Elie!
 
 ## E
 もう、みんな……
@@ -508,16 +507,16 @@
 ## W
 でも、決めたのはロイドだからね。
 引き受けるしかないんじゃない？
-	Our leader has made his choice.
-	Are you going to rebel?
+	Well, Lloyd's already made his decision.
+	Do you really want to let him down?
 
 ## E
 もう、分かっているわ。
 ……こういう時は、
 強引なんだから。
-	Yes, I know. No, I won't.
+	*sigh* No, I'll do it.
 	But you can be so pushy in times
-	like this, you know that?
+	like this, you know that, Lloyd?
 
 ## L
 あはは……
@@ -548,7 +547,7 @@
 歌はあまり得意じゃないって
 言っていたし……
 	Tio did say that she
-	is not good at singing.
+	wasn't good at singing.
 
 ## W
 とはいえ、ロイドが
@@ -562,15 +561,15 @@
 失敗したら、
 ロイドさんに責任、
 取ってもらいますから。
-	If it goes badly, I will
+	If this goes badly, I will
 	have Lloyd take responsibility.
 
 ## L
 あはは……
 	Haha...
 （責任ってなんだよ……）
-	(I wonder what kind of
-	responsibility that would be.)
+	(I'm scared to know what
+	she means by that...)
 
 ## Randy {{{3
 ## R
@@ -581,28 +580,28 @@
 いいのではないでしょうか。
 声は大きいでしょうし。
 	I believe that is a good choice.
-	Your voice is very loud.
+	Your loud voice will be heard
+	all over Crossbell.
 
 ## E
 こういうのを、男の人が
 やるっていうのは、
 逆に新鮮でいいかもね。
-	And having a man doing this
-	will be refreshing and novel.
+	And having a man as the singer
+	will be a nice change of pace.
 
 ## N
 ええ、
 人目は集められるかと！
-	Agreed. You will bring in
-	a lot of customers.
+	Agreed. You'll bring in
+	a lot of customers!
 
 ## R
 お前ら……自分がやらないって
 分かった途端、
 好き勝手言いやがって！
-	You bastards... Just because
-	you weren't picked you think
-	you can say whatever you want.
+	You bastards... Easy for you guys
+	to say now that you're off the hook!
 
 ## W
 フフ。でも、決めたのは
@@ -621,13 +620,13 @@
 	I've been wanting to go to.
 
 あはは、あは……
-	Haha, ha...
+	H-Haha...
 （ミラ、大丈夫かな……）
 	(Will my wallet survive?)
 
 ## Noel {{{3
 わ、私ですか！？
-	Who, me!?
+	Who, me?!
 
 ## E
 ノエルさん、フランさんと
@@ -697,14 +696,14 @@
 ## R
 いや～、お前ならきっと出来る！
 俺は信じてるぜ！
-	Man, I know you can do it.
+	Man, I know you can do it!
 	I believe in you!
 
 ## W
 フフ。自分が歌わなくていいから
 気楽だよね。
-	Must be a relief knowing that
-	you were not picked.
+	Heh. Must be a relief knowing
+	that you weren't picked.
 
 ## R
 うるせー！　最初から逃げたやつに
@@ -746,7 +745,7 @@
 ## B
 ……客よせで歌ねぇ。
 悪くないとは思うけど……
-	A song to attract customers?
+	{#14802F}A song to attract customers?
 	That's not a bad idea.
 
 ## E
@@ -760,13 +759,13 @@
 ## R
 『Ｗａｙ　Ｏｆ　Ｌｉｆｅ』
 だったか？
-	"Way Of Life", right?
+	'Way Of Life,' right?
 
 ## N
 ちょっと前に流行ってて、
 あちこちで聞きましたよね。
-	It was all the rage a while
-	back. It was played everywhere.
+	It was really popular a while back.
+	I remember hearing it everywhere.
 
 ## W
 なら、人目を惹くという目的は
@@ -837,7 +836,7 @@
 ## L
 いや、ノエルの実力だよ。
 本当に助かった。ありがとう。
-	No, this is all your own power.
+	No, this is all your doing.
 	You did great, Noel.
 
 ## if Lloyd {{{4
@@ -975,12 +974,12 @@
 あのなぁ、じゃあお前が
 歌ってみろっつーんだよ！
 	Well, how about you sing next
-	time and show us how it's done!?
+	time and show us how it's done?!
 
 ## N, if chosen
 ううぅ……やっぱり歌うべきじゃ
 なかったですよね……
-	Uuu... I knew I shouldn't
+	Ugh... I knew I shouldn't
 	have accepted this mission...
 
 ## Lloyd has no dialogue here.
@@ -1051,7 +1050,7 @@
 よくやってくれたよ、うん！
 	No, no. I did spring this task
 	on you without any time for
-	preparation. So anyway.
+	preparation. So here you go!
 ## }}}3
 
 ## M
@@ -1082,9 +1081,8 @@
 いいっていいって！
 無茶言って
 迷惑かけちまったしな。
-	I'm telling you, it's fine.
-	Stop talking nonsense and
-	just take it.
+	Please, I insist! It's the least
+	that we can do to repay you.
 
 ## W
 フフ、こういう時の厚意は
