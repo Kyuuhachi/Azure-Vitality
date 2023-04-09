@@ -44,9 +44,14 @@ impl Translator for Nil {
 	}
 }
 
-pub struct Translate(VecDeque<(String, String)>);
+pub struct Translate {
+	lines: VecDeque<(String, String)>,
+	translate: bool,
+	portraits: bool,
+}
+
 impl Translate {
-	pub fn load(i: &str) -> Translate {
+	pub fn load(i: &str, translate: bool, portraits: bool) -> Translate {
 		let mut lines = Vec::<(String, String)>::new();
 		#[derive(PartialEq)]
 		enum State { None, Raw, Tl }
@@ -84,7 +89,11 @@ impl Translate {
 			}
 		}
 		assert!(state != State::Raw);
-		Translate(lines.into())
+		Translate {
+			lines: lines.into(),
+			translate,
+			portraits,
+		}
 	}
 
 	fn translate(&mut self, s: &str) -> String {
@@ -101,20 +110,12 @@ impl Translate {
 		// }
 		// println!();
 
-		let a = self.0.front().map(|a| a.0.as_str());
+		let a = self.lines.front().map(|a| a.0.as_str());
 		if Some(s) != a {
 			println!("{:?}\n{:?}\n", Some(s), a);
 		}
 
-		self.0.pop_front().unwrap().1
-	}
-}
-
-impl Drop for Translate {
-	fn drop(&mut self) {
-		if !self.0.is_empty() {
-			panic!("Not all was translated! {:?}", &self.0);
-		}
+		self.lines.pop_front().unwrap().1
 	}
 }
 
@@ -129,13 +130,26 @@ impl Translator for Translate {
 				((?:\{wait\})?)
 				$
 			").unwrap();
+			static ref FACE: Regex = Regex::new(r"^\{(#\d*F)\}").unwrap();
 		}
 		for t in &mut s.pages {
 			let ss = text2str(t);
 			assert_eq!(t, &str2text(&ss));
 			let s2 = ss.split("{page}").map(|p| {
 				let c = CONTENT.captures(p).unwrap();
-				let t = self.translate(&format!("{}{}", &c[1], &c[3]).replace('\r', "\n"));
+				let orig = format!("{}{}", &c[1], &c[3]);
+				let t = self.translate(&orig.replace('\r', "\n"));
+				let face = FACE.captures(&t);
+				let mut t = t.clone();
+				if let Some(face) = &face {
+					t = t[face[0].len()..].to_owned()
+				}
+				if !self.translate {
+					t = orig;
+				}
+				if let Some(face) = &face && self.portraits {
+					t = format!("{}{}", &face[1], t);
+				}
 				format!("{}{}{}", &c[2], t, &c[4])
 			}).collect::<Vec<_>>().join("{page}");
 			*t = str2text(&s2);

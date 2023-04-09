@@ -1,12 +1,12 @@
 #![feature(decl_macro, let_chains, backtrace_frames)]
 
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 use std::fs;
 
 use clap::Parser;
 
 use themelios::scena;
-use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn, Code};
+use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn};
 use themelios::scena::decompile::{TreeInsn, recompile};
 use themelios::tables::{name, bgm, se};
 use themelios::types::*;
@@ -56,6 +56,7 @@ fn main() -> anyhow::Result<()> {
 			cli.pc.join("data/text"),
 			cli.evo.join("data/text"),
 			false,
+			cli.portraits.is_some(),
 		);
 
 		timing(&mut ctx);
@@ -95,6 +96,7 @@ fn main() -> anyhow::Result<()> {
 			cli.pc.join("data/text_us"),
 			cli.evo.join("data/text"),
 			true,
+			cli.portraits.is_some(),
 		);
 
 		timing(&mut ctx);

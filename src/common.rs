@@ -36,6 +36,7 @@ pub struct Context<'a> {
 	evo_text:   PathBuf,
 
 	pub is_en: bool,
+	pub has_portraits: bool,
 
 	pub scena: HashMap<String, AScena>,
 	pub text: HashMap<String, Vec<u8>>,
@@ -58,6 +59,7 @@ impl<'a> Context<'a> {
 		pc_text: impl AsRef<Path>,
 		evo_text: impl AsRef<Path>,
 		is_en: bool,
+		has_portraits: bool,
 	) -> Self {
 		Self {
 			pc_scena: Box::new(pc_scena),
@@ -65,17 +67,14 @@ impl<'a> Context<'a> {
 			pc_text: pc_text.as_ref().to_owned(),
 			evo_text: evo_text.as_ref().to_owned(),
 			is_en,
+			has_portraits,
 			scena: HashMap::new(),
 			text: HashMap::new(),
 		}
 	}
 
-	pub fn load_tl(&self, data: &str) -> Box<dyn Translator> {
-		if self.is_en {
-			Box::new(translate::Translate::load(data))
-		} else {
-			Box::new(translate::NullTranslator)
-		}
+	pub fn load_tl(&self, data: &str) -> translate::Translate {
+		translate::Translate::load(data, self.is_en, self.has_portraits)
 	}
 
 	pub fn scena(&mut self, name: &str) -> &mut AScena {
