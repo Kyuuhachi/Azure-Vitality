@@ -2,6 +2,8 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::collections::HashMap;
 
+use regex::Regex;
+
 use themelios::scena;
 use themelios::scena::code::{Expr, Code, FlatInsn, Insn};
 use themelios::scena::decompile::{TreeInsn, decompile, recompile};
@@ -329,7 +331,7 @@ pub fn insert_portraits(mut a: scena::ed7::Scena, b: &scena::ed7::Scena) -> scen
 		let mut i = 0;
 		let mut j = 0;
 		while i < a.len() && j < b.len() {
-			let FlatInsn::Insn(Insn::TextTalk(a1, a2) | Insn::TextMessage(a1, a2)) = &a[i]
+			let FlatInsn::Insn(Insn::TextTalk(a1, a2) | Insn::TextMessage(a1, a2)) = &mut a[i]
 				else { i += 1; continue; };
 			let FlatInsn::Insn(Insn::TextTalk(b1, b2) | Insn::TextMessage(b1, b2)) = &b[j]
 				else { j += 1; continue; };
@@ -343,10 +345,22 @@ pub fn insert_portraits(mut a: scena::ed7::Scena, b: &scena::ed7::Scena) -> scen
 				assert_eq!(a.remove(i), FlatInsn::Insn(Insn::TextWait()));
 				do_insert(a, i, a1, a2);
 			} else {
-				if a[i] != b[j] {
-					println!();
-					println!("{:?}", &a[i]);
-					println!("{:?}", &b[j]);
+				for (a, b) in a2.pages.iter_mut().zip(b2.pages.iter()) {
+					if a != b {
+						lazy_static::lazy_static! {
+							static ref PREFIX: Regex = Regex::new(r"^(?:#\d*[PVA])*").unwrap();
+							static ref FACE: Regex = Regex::new(r"^(#\d*F)").unwrap();
+						}
+						let bs = translate::text2str(b);
+						let prefix = PREFIX.find(&bs).unwrap().as_str();
+						let ap = translate::text2str(a);
+						let ap = ap.strip_prefix(prefix).unwrap();
+						let bp = translate::text2str(b);
+						let bp = bp.strip_prefix(prefix).unwrap();
+						let face = FACE.find(bp).unwrap().as_str();
+						assert_eq!(ap, bp.strip_prefix(face).unwrap());
+						*a = translate::str2text(&format!("{prefix}{face}{ap}"));
+					}
 				}
 				i += 1;
 				j += 1;
