@@ -2,13 +2,10 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::collections::HashMap;
 
-use regex::Regex;
-
-use themelios::scena;
-use themelios::scena::code::{Expr, Code, FlatInsn, Insn};
+use themelios::scena::ed7::Scena;
+use themelios::scena::code::{Expr, Code, FlatInsn};
 use themelios::scena::decompile::{TreeInsn, decompile, recompile};
-use themelios::tables::quest;
-use themelios::text::Text;
+use themelios::tables::quest::ED7Quest;
 use themelios::types::*;
 
 use crate::translate::{self, Translator, Translatable};
@@ -30,7 +27,7 @@ pub macro f {
 }
 
 pub struct Context<'a> {
-	pc_scena:   Box<dyn FnMut(&str) -> scena::ed7::Scena + 'a>,
+	pc_scena:   Box<dyn FnMut(&str) -> Scena + 'a>,
 	evo_scena:  PathBuf,
 	pc_text:    PathBuf,
 	evo_text:   PathBuf,
@@ -42,19 +39,19 @@ pub struct Context<'a> {
 	pub text: HashMap<String, Vec<u8>>,
 }
 
-pub fn load_scena(dir: impl AsRef<Path>, name: &str) -> anyhow::Result<scena::ed7::Scena> {
+pub fn load_scena(dir: impl AsRef<Path>, name: &str) -> anyhow::Result<Scena> {
 	let data = fs::read(dir.as_ref().join(format!("{name}.bin")))?;
-	Ok(scena::ed7::read(Game::AoKai, &data).unwrap())
+	Ok(Scena::read(Game::AoKai, &data).unwrap())
 }
 
-pub fn load_scena_evo(dir: impl AsRef<Path>, name: &str) -> anyhow::Result<scena::ed7::Scena> {
+pub fn load_scena_evo(dir: impl AsRef<Path>, name: &str) -> anyhow::Result<Scena> {
 	let data = fs::read(dir.as_ref().join(format!("{name}.bin")))?;
-	Ok(scena::ed7::read(Game::AoEvo, &data).unwrap())
+	Ok(Scena::read(Game::AoEvo, &data).unwrap())
 }
 
 impl<'a> Context<'a> {
 	pub fn new(
-		pc_scena: impl FnMut(&str) -> scena::ed7::Scena + 'a,
+		pc_scena: impl FnMut(&str) -> Scena + 'a,
 		evo_scena: impl AsRef<Path>,
 		pc_text: impl AsRef<Path>,
 		evo_text: impl AsRef<Path>,
@@ -119,19 +116,19 @@ impl<'a> Context<'a> {
 
 	pub fn copy_quest(&mut self, id: QuestId, tl: &mut impl Translator) {
 		let (pc, evo) = self.text("t_quest._dt");
-		let mut pc_quests = quest::read_ed7(pc).unwrap();
-		let evo_quests = quest::read_ed7(&evo).unwrap();
+		let mut pc_quests = ED7Quest::read(pc).unwrap();
+		let evo_quests = ED7Quest::read(&evo).unwrap();
 		let mut q = evo_quests.iter().find(|a| a.id == id).unwrap().clone();
 		q.name.translate(tl);
 		q.client.translate(tl);
 		q.desc.translate(tl);
 		q.steps.translate(tl);
 		*pc_quests.iter_mut().find(|a| a.id == id).unwrap() = q;
-		*pc = quest::write_ed7(&pc_quests).unwrap();
+		*pc = ED7Quest::write(&pc_quests).unwrap();
 	}
 }
 
-pub fn copy_shape(scena: &mut scena::ed7::Scena, shape: &scena::ed7::Scena) {
+pub fn copy_shape(scena: &mut Scena, shape: &Scena) {
 	for (i, (a, b)) in scena.functions.iter_mut().zip(shape.functions.iter()).enumerate() {
 		let mut extract = translate::Extract::new();
 		a.0.translate(&mut extract);
@@ -147,8 +144,8 @@ pub fn copy_shape(scena: &mut scena::ed7::Scena, shape: &scena::ed7::Scena) {
 }
 
 pub struct AScena {
-	pub pc: scena::ed7::Scena,
-	pub evo: scena::ed7::Scena,
+	pub pc: Scena,
+	pub evo: Scena,
 
 	pub new_npcs: Vec<usize>,
 	pub new_lps: Vec<usize>,
@@ -227,7 +224,7 @@ impl AScena {
 	}
 
 	pub fn pad_npc(&mut self, n: usize) {
-		self.evo.npcs.insert(n, scena::ed7::Npc {
+		self.evo.npcs.insert(n, themelios::scena::ed7::Npc {
 			name: "".into(),
 			pos: Pos3(0,0,0),
 			angle: Angle(0),
@@ -381,7 +378,7 @@ fn align<'a, 'b, A: std::fmt::Debug, B: std::fmt::Debug>(
 	out
 }
 
-pub fn insert_portraits(a: &scena::ed7::Scena, b: &scena::ed7::Scena) -> scena::ed7::Scena {
+pub fn insert_portraits(a: &Scena, b: &Scena) -> Scena {
 	let mut a = a.clone();
 	assert_eq!(a.functions.len(), b.functions.len());
 	for (Code(a), Code(b)) in a.functions.iter_mut().zip(b.functions.iter()) {

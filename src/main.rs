@@ -5,10 +5,10 @@ use std::fs;
 
 use clap::Parser;
 
-use themelios::scena;
+use themelios::scena::ed7::Scena;
 use themelios::scena::code::{Expr, ExprTerm as E, ExprOp as Op, Insn, FlatInsn};
 use themelios::scena::decompile::{TreeInsn, recompile};
-use themelios::tables::{name, bgm, se};
+use themelios::tables::{name::ED7Name, bgm::ED7Bgm, se::ED7Sound};
 use themelios::types::*;
 
 mod visit;
@@ -72,7 +72,7 @@ fn main() -> anyhow::Result<()> {
 		let scena_path = cli.out.join("scena");
 		fs::create_dir_all(&scena_path)?;
 		for (name, v) in &ctx.scena {
-			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::AoKai, &v.pc)?)?;
+			fs::write(scena_path.join(format!("{name}.bin")), Scena::write(Game::AoKai, &v.pc)?)?;
 		}
 
 		let text_path = cli.out.join("text");
@@ -112,7 +112,7 @@ fn main() -> anyhow::Result<()> {
 		let scena_path = cli.out.join("scena_us");
 		fs::create_dir_all(&scena_path)?;
 		for (name, v) in &ctx.scena {
-			fs::write(scena_path.join(format!("{name}.bin")), scena::ed7::write(Game::AoKai, &v.pc)?)?;
+			fs::write(scena_path.join(format!("{name}.bin")), Scena::write(Game::AoKai, &v.pc)?)?;
 		}
 
 		let text_path = cli.out.join("text_us");
@@ -309,21 +309,21 @@ fn quest138(ctx: &mut Context) {
 
 	{
 		let (pc, evo) = ctx.text("t_bgm._dt");
-		let mut bgms = bgm::read_ed7(pc).unwrap();
-		let bgms_evo = bgm::read_ed7(&evo).unwrap();
+		let mut bgms = ED7Bgm::read(pc).unwrap();
+		let bgms_evo = ED7Bgm::read(&evo).unwrap();
 		bgms.push(bgms_evo.iter().find(|a| a.id == BgmId(4)).unwrap().clone());
-		*pc = bgm::write_ed7(&bgms).unwrap();
+		*pc = ED7Bgm::write(&bgms).unwrap();
 	}
 
 	if !ctx.is_en {
 		let (pc, evo) = ctx.text("t_se._dt");
-		let mut se = se::read_ed7(pc).unwrap();
-		let se_evo = se::read_ed7(&evo).unwrap();
+		let mut se = ED7Sound::read(pc).unwrap();
+		let se_evo = ED7Sound::read(&evo).unwrap();
 		se.push(se_evo.iter().find(|a| a.id == SoundId(1100)).unwrap().clone());
 		se.push(se_evo.iter().find(|a| a.id == SoundId(1101)).unwrap().clone());
 		se.push(se_evo.iter().find(|a| a.id == SoundId(1102)).unwrap().clone());
 		se.push(se_evo.iter().find(|a| a.id == SoundId(1104)).unwrap().clone());
-		*pc = se::write_ed7(&se).unwrap();
+		*pc = ED7Sound::write(&se).unwrap();
 	}
 
 	let s = ctx.scena("c0210"); // Morges Bakery
@@ -569,12 +569,12 @@ fn quest159(ctx: &mut Context) {
 	ctx.copy_quest(QuestId(159), tl);
 
 	let (pc, evo) = ctx.text("t_name._dt");
-	let mut names = name::read_ed7(pc).unwrap();
-	let names_evo = name::read_ed7(&evo).unwrap();
+	let mut names = ED7Name::read(pc).unwrap();
+	let names_evo = ED7Name::read(&evo).unwrap();
 	let mut mireille = names_evo.iter().find(|a| a.id == NameId(165)).unwrap().clone();
 	mireille.name.translate(tl);
 	names.push(mireille);
-	*pc = name::write_ed7(&names).unwrap();
+	*pc = ED7Name::write(&names).unwrap();
 
 	let s = ctx.scena("t2020"); // Bellguard Gate
 	s.copy_func(0, 15, tl);
