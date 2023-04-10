@@ -37,7 +37,7 @@ impl Translator for NullTranslator {
 pub struct Nil;
 impl Translator for Nil {
 	fn text(&mut self, s: &mut Text) {
-		panic!("no translation expected! {}", s.pages.iter().map(text2str).collect::<Vec<_>>().join("{page}"));
+		panic!("no translation expected! {}", s.0.iter().map(text2str).collect::<Vec<_>>().join("{page}"));
 	}
 	fn tstring(&mut self, s: &mut TString) {
 		panic!("no translation expected! {}", &s.0);
@@ -132,7 +132,7 @@ impl Translator for Translate {
 			").unwrap();
 			static ref FACE: Regex = Regex::new(r"^\{(#\d*F)\}").unwrap();
 		}
-		for t in &mut s.pages {
+		for t in &mut s.0 {
 			let ss = text2str(t);
 			assert_eq!(t, &str2text(&ss));
 			let s2 = ss.split("{page}").map(|p| {
