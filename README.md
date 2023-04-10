@@ -39,6 +39,10 @@ This is normally at
 `C:\Program Files (x86)\Steam\steamapps\common\The Legend of Heroes Trails to Azure`,
 or it can be found by right-clicking the game in Steam and choosing Manage » Browse local files.
 
+If using ShinKiseki's [More Portraits in Azure](https://github.com/shinkiseki/MorePortraitsInAzure),
+install that one first, and then install `vitality-portraits.tar.gz` on top of
+that. The base `vitality.tar.gz` is not necessary.
+
 ## FAQ
 
 **Can I install this mid-playthrough?** Yes. But I can't guarantee stability if
@@ -61,5 +65,7 @@ Nihon Falcom: for creating the game.
 [GeofrontTeam](https://github.com/GeofrontTeam) and NIS America: for bringing it to the west.
 
 [Ouroboros](https://github.com/Ouroboros): for creating [EDDecompiler](https://github.com/Ouroboros/EDDecompiler). While I do not use it directly, it was invaluable as documentation for creating my own.
+
+[ShinKiseki](https://github.com/ShinKiseki): some proofreading, and adding portraits to quest dialogue.
 
 Discord members: for help with upscaling a couple of images
