@@ -385,38 +385,14 @@ pub fn insert_portraits(a: &scena::ed7::Scena, b: &scena::ed7::Scena) -> scena::
 	let mut a = a.clone();
 	assert_eq!(a.functions.len(), b.functions.len());
 	for (Code(a), Code(b)) in a.functions.iter_mut().zip(b.functions.iter()) {
-
 		use FlatInsn as FI;
-		let align = align(a, b, |e| match e {
-			Edit::Del(a) => match a {
-				FI::Goto(_) => -1, // TODO goto only if previous was also goto/return? Probably unnecessary
-				FI::Label(_) => 0,
-				_ => -5,
-			},
-			Edit::Eq(a, b) => match (a, b) {
-				(FI::Unless(a, _), FI::Unless(b, _)) => if a == b { 10 } else { 1 },
-				(FI::Goto(_), FI::Goto(_)) => 5,
-				(FI::Switch(a, _, _), FI::Switch(b, _, _)) => if a == b { 10 } else { 1 },
-				(FI::Insn(a), FI::Insn(b)) => {
-					if a == b {
-						10
-					} else if std::mem::discriminant(a) == std::mem::discriminant(b) {
-						1
-					} else {
-						-10
-					}
-				},
-				(FI::Label(_), FI::Label(_)) => 5,
-				_ => -100, // matching control flow in mismatched ways is almost never right
-			},
-			Edit::Ins(_) => -5,
-		});
+		let align = align(a, b, insn_alignment_score);
 
 		let mut c = Vec::new();
 		for e in align {
 			match e {
 				Edit::Del(FI::Goto(l)) => c.push(FI::Goto(*l)),
-				Edit::Del(FI::Label(l)) => c.push(FI::Label(*l)),
+				Edit::Del(FI::Label(l)) => c.push(FI::Label(*l)), // XXX this messes up the label order.
 				Edit::Del(_) => {},
 				Edit::Eq(_, b) => c.push(b.clone()),
 				Edit::Ins(b) => c.push(b.clone()),
@@ -425,4 +401,32 @@ pub fn insert_portraits(a: &scena::ed7::Scena, b: &scena::ed7::Scena) -> scena::
 		*a = c;
 	}
 	a
+}
+
+fn insn_alignment_score(e: Edit<&FlatInsn, &FlatInsn>) -> i32 {
+	use FlatInsn as FI;
+	match e {
+		Edit::Del(a) => match a {
+			FI::Goto(_) => -1, // TODO goto only if previous was also goto/return? Probably unnecessary
+			FI::Label(_) => 0,
+			_ => -5,
+		},
+		Edit::Eq(a, b) => match (a, b) {
+			(FI::Unless(a, _), FI::Unless(b, _)) => if a == b { 10 } else { 1 },
+			(FI::Goto(_), FI::Goto(_)) => 5,
+			(FI::Switch(a, _, _), FI::Switch(b, _, _)) => if a == b { 10 } else { 1 },
+			(FI::Insn(a), FI::Insn(b)) => {
+				if a == b {
+					10
+				} else if std::mem::discriminant(a) == std::mem::discriminant(b) {
+					1
+				} else {
+					-10
+				}
+			},
+			(FI::Label(_), FI::Label(_)) => 5,
+			_ => -100, // matching control flow in mismatched ways is almost never right
+		},
+		Edit::Ins(_) => -5,
+	}
 }
