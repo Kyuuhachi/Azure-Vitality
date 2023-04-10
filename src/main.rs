@@ -87,7 +87,7 @@ fn main() -> anyhow::Result<()> {
 			|s| {
 				let pc = load_scena(cli.pc.join("data/scena_us"), s).unwrap();
 				if let Some(p) = &cli.portraits && let Ok(port) = load_scena(p.join("data/scena_us"), s) {
-					common::insert_portraits(pc, &port)
+					common::insert_portraits(&pc, &port)
 				} else {
 					pc
 				}

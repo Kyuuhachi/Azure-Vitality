@@ -324,63 +324,105 @@ impl<'a, T> AList<'a, Vec<T>> {
 	}
 }
 
-pub fn insert_portraits(mut a: scena::ed7::Scena, b: &scena::ed7::Scena) -> scena::ed7::Scena {
-	assert_eq!(a.functions.len(), b.functions.len());
-	for (Code(a), Code(b)) in a.functions.iter_mut().zip(b.functions.iter()) {
-		let mut i = 0;
-		let mut j = 0;
-		while i < a.len() && j < b.len() {
-			let FlatInsn::Insn(Insn::TextTalk(a1, a2) | Insn::TextMessage(a1, a2)) = &mut a[i]
-				else { i += 1; continue; };
-			let FlatInsn::Insn(Insn::TextTalk(b1, b2) | Insn::TextMessage(b1, b2)) = &b[j]
-				else { j += 1; continue; };
-
-			assert_eq!(a1, b1);
-
-			if a2.pages.len() < b2.pages.len() {
-				let a1 = *a1;
-				let a2 = a2.clone();
-				a.remove(i); // TextTalk | TextMessage
-				assert_eq!(a.remove(i), FlatInsn::Insn(Insn::TextWait()));
-				do_insert(a, i, a1, a2);
-			} else {
-				for (a, b) in a2.pages.iter_mut().zip(b2.pages.iter()) {
-					if a != b {
-						lazy_static::lazy_static! {
-							static ref PREFIX: Regex = Regex::new(r"^(?:#\d*[PVA])*").unwrap();
-							static ref FACE: Regex = Regex::new(r"^(#\d*F)").unwrap();
-						}
-						let bs = translate::text2str(b);
-						let prefix = PREFIX.find(&bs).unwrap().as_str();
-						let ap = translate::text2str(a);
-						let ap = ap.strip_prefix(prefix).unwrap();
-						let bp = translate::text2str(b);
-						let bp = bp.strip_prefix(prefix).unwrap();
-						let face = FACE.find(bp).unwrap().as_str();
-						assert_eq!(ap, bp.strip_prefix(face).unwrap());
-						*a = translate::str2text(&format!("{prefix}{face}{ap}"));
-					}
-				}
-				i += 1;
-				j += 1;
-			}
-		}
-	}
-	a
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Edit<A, B> {
+	Del(A),
+	Eq(A, B),
+	Ins(B),
 }
 
-fn do_insert(a: &mut Vec<FlatInsn>, i: usize, a1: CharId, a2: Text) {
-	match &mut a[i] {
-		FlatInsn::Unless(_, l) => {
-			let l = *l;
-			do_insert(a, i+1, a1, a2.clone());
-			let j = a.iter().position(|i| i == &FlatInsn::Label(l)).unwrap();
-			do_insert(a, j+1, a1, a2);
-		}
-		FlatInsn::Insn(Insn::TextTalk(b1, b2) | Insn::TextMessage(b1, b2)) => {
-			assert_eq!(&a1, b1);
-			b2.pages.splice(0..0, a2.pages);
-		}
-		i => panic!("{i:?}")
+#[allow(clippy::erasing_op, clippy::identity_op)]
+fn align<'a, 'b, A: std::fmt::Debug, B: std::fmt::Debug>(
+	a: &'a [A],
+	b: &'b [B],
+	mut score: impl FnMut(Edit<&'a A, &'b B>) -> i32,
+) -> Vec<Edit<&'a A, &'b B>> {
+	let stride = a.len()+1;
+	let mut edits = Vec::with_capacity((a.len()+1)*(b.len()+1));
+	let mut scores = Vec::with_capacity((a.len()+1)*(b.len()+1));
+	scores.push(0);
+	for (i, a) in a.iter().rev().enumerate() {
+		let i = i+1;
+		let j = 0;
+		let e = (scores[(i-1)+(j-0)*stride], Edit::Del(a));
+		scores.push(e.0 + score(e.1));
+		edits.push(e.1);
 	}
+
+	for (j, b) in b.iter().rev().enumerate() {
+		let i = 0;
+		let j = j+1;
+		let e = (scores[(i-0)+(j-1)*stride], Edit::Ins(b));
+		scores.push(e.0 + score(e.1));
+		edits.push(e.1);
+
+		for (i, a) in a.iter().rev().enumerate() {
+			let i = i+1;
+			let e = [
+				(scores[(i-1)+(j-0)*stride], Edit::Del(a)),
+				(scores[(i-1)+(j-1)*stride], Edit::Eq(a, b)),
+				(scores[(i-0)+(j-1)*stride], Edit::Ins(b))
+			].into_iter().max_by_key(|e| e.0 + score(e.1)).unwrap();
+			scores.push(e.0 + score(e.1));
+			edits.push(e.1);
+		}
+	}
+
+	let mut out = Vec::new();
+	let mut p = edits.len();
+	while p > 0 {
+		out.push(edits[p-1]);
+		p -= match edits[p-1] {
+			Edit::Del(_) => 1,
+			Edit::Eq(_, _) => stride + 1,
+			Edit::Ins(_) => stride,
+		}
+	}
+	out
+}
+
+pub fn insert_portraits(a: &scena::ed7::Scena, b: &scena::ed7::Scena) -> scena::ed7::Scena {
+	let mut a = a.clone();
+	assert_eq!(a.functions.len(), b.functions.len());
+	for (Code(a), Code(b)) in a.functions.iter_mut().zip(b.functions.iter()) {
+
+		use FlatInsn as FI;
+		let align = align(a, b, |e| match e {
+			Edit::Del(a) => match a {
+				FI::Goto(_) => -1, // TODO goto only if previous was also goto/return? Probably unnecessary
+				FI::Label(_) => 0,
+				_ => -5,
+			},
+			Edit::Eq(a, b) => match (a, b) {
+				(FI::Unless(a, _), FI::Unless(b, _)) => if a == b { 10 } else { 1 },
+				(FI::Goto(_), FI::Goto(_)) => 5,
+				(FI::Switch(a, _, _), FI::Switch(b, _, _)) => if a == b { 10 } else { 1 },
+				(FI::Insn(a), FI::Insn(b)) => {
+					if a == b {
+						10
+					} else if std::mem::discriminant(a) == std::mem::discriminant(b) {
+						1
+					} else {
+						-10
+					}
+				},
+				(FI::Label(_), FI::Label(_)) => 5,
+				_ => -100, // matching control flow in mismatched ways is almost never right
+			},
+			Edit::Ins(_) => -5,
+		});
+
+		let mut c = Vec::new();
+		for e in align {
+			match e {
+				Edit::Del(FI::Goto(l)) => c.push(FI::Goto(*l)),
+				Edit::Del(FI::Label(l)) => c.push(FI::Label(*l)),
+				Edit::Del(_) => {},
+				Edit::Eq(_, b) => c.push(b.clone()),
+				Edit::Ins(b) => c.push(b.clone()),
+			}
+		}
+		*a = c;
+	}
+	a
 }
