@@ -49,9 +49,16 @@ fn main() -> anyhow::Result<()> {
 		fs::remove_dir_all(&cli.out)?;
 	}
 
-	if cli.portraits.is_none() { // Jp
+	{ // Jp
 		let mut ctx = Context::new(
-			|s| load_scena(cli.pc.join("data/scena"), s).unwrap(),
+			|s| {
+				let pc = load_scena(cli.pc.join("data/scena"), s).unwrap();
+				if let Some(p) = &cli.portraits && let Ok(port) = load_scena(p.join("data/scena"), s) {
+					common::insert_portraits(&pc, &port)
+				} else {
+					pc
+				}
+			},
 			cli.evo.join("data/scena"),
 			cli.pc.join("data/text"),
 			cli.evo.join("data/text"),
