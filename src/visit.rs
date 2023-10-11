@@ -73,19 +73,19 @@ pub mod func_id {
 pub mod char_id {
 	use super::*;
 
-	pub fn ed7scena(s: &mut ed7::Scena, f: &mut impl FnMut(&mut CharId)) {
+	pub fn ed7scena(s: &mut ed7::Scena, f: &mut impl FnMut(&mut LocalCharId)) {
 		for fun in &mut s.functions {
 			func(fun, f)
 		}
 	}
 
-	pub fn func(s: &mut Code, f: &mut impl FnMut(&mut CharId)) {
+	pub fn func(s: &mut Code, f: &mut impl FnMut(&mut LocalCharId)) {
 		for i in &mut s.0 {
 			flat_insn(i, f)
 		}
 	}
 
-	pub fn flat_insn(i: &mut FlatInsn, f: &mut impl FnMut(&mut CharId)) {
+	pub fn flat_insn(i: &mut FlatInsn, f: &mut impl FnMut(&mut LocalCharId)) {
 		match i {
 			FlatInsn::Unless(e, _) => expr(e, f),
 			FlatInsn::Goto(_) => {},
@@ -95,7 +95,7 @@ pub mod char_id {
 		}
 	}
 
-	pub fn insn(i: &mut Insn, f: &mut impl FnMut(&mut CharId)) {
+	pub fn insn(i: &mut Insn, f: &mut impl FnMut(&mut LocalCharId)) {
 		macro run {
 			([$(($ident:ident $(($_n:ident $($ty:tt)*))*))*]) => {
 				match i {
@@ -104,8 +104,8 @@ pub mod char_id {
 					})*
 				}
 			},
-			($v:ident CharId) => { f($v); },
-			($v:ident CharAttr) => { f(&mut $v.0); },
+			($v:ident CharId) => { call($v, f); },
+			($v:ident CharAttr) => { call(&mut $v.0, f); },
 			($v:ident Expr) => { expr($v, f); },
 			($v:ident Vec<Insn>) => { for i in $v { insn(i, f) } },
 			($i:ident $($t:tt)*) => {}
@@ -113,14 +113,20 @@ pub mod char_id {
 		themelios::scena::code::introspect!(run);
 	}
 
-	pub fn expr(i: &mut Expr, f: &mut impl FnMut(&mut CharId)) {
+	pub fn expr(i: &mut Expr, f: &mut impl FnMut(&mut LocalCharId)) {
 		for t in &mut i.0 {
 			#[allow(clippy::single_match)]
 			match t {
 				ExprTerm::Insn(i) => insn(i, f),
-				ExprTerm::CharAttr(v) => f(&mut v.0),
+				ExprTerm::CharAttr(v) => call(&mut v.0, f),
 				_ => {}
 			}
+		}
+	}
+
+	fn call(i: &mut CharId, f: &mut impl FnMut(&mut LocalCharId)) {
+		if let CharId::Local(i) = i {
+			f(i)
 		}
 	}
 }

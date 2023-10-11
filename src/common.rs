@@ -154,18 +154,15 @@ pub struct AScena {
 
 impl AScena {
 	pub fn copy_npc(&mut self, idx: usize, tl: &mut impl Translator) {
-		let monster_start = (8+self.pc.npcs.len()) as u16;
-		let monster_end = (8+self.pc.npcs.len()+self.pc.monsters.len()) as u16;
+		let new_idx = self.pc.npcs.len();
 		visit::char_id::ed7scena(&mut self.pc, &mut |a| {
-			if a.0 >= monster_start && a.0 < monster_end {
+			if a.0 as usize >= new_idx {
 				a.0 += 1;
 			}
 		});
 
-		let new_idx = self.pc.npcs.len();
-
-		let start = 8 + idx as u16;
-		let end = 8 + new_idx as u16;
+		let start = idx as u16;
+		let end = new_idx as u16;
 		visit::char_id::ed7scena(&mut self.evo, &mut |a| {
 			if a.0 == start {
 				a.0 = end;
@@ -226,7 +223,7 @@ impl AScena {
 	pub fn pad_npc(&mut self, n: usize) {
 		self.evo.npcs.insert(n, themelios::scena::ed7::Npc {
 			name: "".into(),
-			pos: Pos3(0,0,0),
+			pos: Default::default(),
 			angle: Angle(0),
 			flags: CharFlags(0),
 			unk2: 0,
@@ -236,7 +233,7 @@ impl AScena {
 			unk4: 0,
 		});
 		visit::char_id::ed7scena(&mut self.evo, &mut |a| {
-			if a.0 as usize >= n + 8 && a.0 <= 200 {
+			if a.0 as usize > n {
 				a.0 += 1
 			}
 		});

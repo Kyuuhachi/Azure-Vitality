@@ -247,7 +247,7 @@ fn timing(ctx: &mut Context) {
 	let s = ctx.scena("c1510"); // Orchis Tower interior (?)
 	// quest158 deadline
 	s.func(42, |a| {
-		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::_1B(..))));
+		let (i0, i1) = a.index_of(f!(TreeInsn::Insn(Insn::EntranceSetFunc(..))));
 		a.0.insert(i0, a.1[i1-1].no_tl());
 	});
 
@@ -361,7 +361,7 @@ fn quest138(ctx: &mut Context) {
 	let i = f.iter().position(f!(FlatInsn::Insn(Insn::AoEvoStopwatchStart()))).unwrap();
 	f.0.splice(i..i+1, [
 		FlatInsn::Insn(Insn::Var(timer_var, expr![E::Const(0), op!(Ass)])),
-		FlatInsn::Insn(Insn::Fork(CharId(0), ForkId(3), recompile(&[
+		FlatInsn::Insn(Insn::Fork(CharId::FieldParty(0), ForkId(3), recompile(&[
 			// Can't use ForkLoop here because it implicitly adds a NextFrame and messes up timing.
 			TreeInsn::While(expr![E::Const(1)], vec![
 				TreeInsn::Insn(Insn::Var(timer_var, expr![E::Const(1), op!(AddAss)])),
@@ -401,9 +401,9 @@ fn quest157(ctx: &mut Context) {
 
 	let s = ctx.copy_scena("c120d_1", tl);
 	visit::char_id::ed7scena(&mut s.evo, &mut |a| {
-		if a.0 == 13 { // move Hanks
-			a.0 = 17
-		} else if a.0 > 13 && a.0 < 17 {
+		if a.0 == 5 { // move Hanks
+			a.0 = 9
+		} else if a.0 > 5 && a.0 < 9 {
 			a.0 -= 1;
 		}
 	});

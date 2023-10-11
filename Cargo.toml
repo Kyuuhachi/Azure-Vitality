@@ -5,8 +5,8 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.65"
-themelios.path = "../Aureole/themelios"
-calmare.path = "../Aureole/calmare"
+themelios = { git = "https://github.com/Kyuuhachi/Aureole", rev = "e591f99" }
+calmare = { git = "https://github.com/Kyuuhachi/Aureole", rev = "e591f99" }
 extend = "1.1.2"
 derive_more = "0.99.17"
 regex = "1.7.0"
