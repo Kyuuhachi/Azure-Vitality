@@ -33,15 +33,15 @@ From the computer at start of chapter 4.
 </details>
 
 ## Installation
-Download the `vitality.tar.gz` file from the latest [release](https://github.com/Kyuuhachi/Azure-Vitality/releases)
+Download the `vitality.zip` file from the latest [release](https://github.com/Kyuuhachi/Azure-Vitality/releases)
 and extract `data/` directory into the game's directory (you can open it like a .zip file).
 This is normally at
 `C:\Program Files (x86)\Steam\steamapps\common\The Legend of Heroes Trails to Azure`,
 or it can be found by right-clicking the game in Steam and choosing Manage » Browse local files.
 
 If using ShinKiseki's [More Portraits in Azure](https://github.com/shinkiseki/MorePortraitsInAzure),
-install that one first, and then install `vitality-portraits.tar.gz` on top of
-that. The base `vitality.tar.gz` is not necessary.
+install that one first, and then install `vitality-portraits.zip` on top of
+that. The base `vitality.zip` is not necessary.
 
 ## FAQ
 
